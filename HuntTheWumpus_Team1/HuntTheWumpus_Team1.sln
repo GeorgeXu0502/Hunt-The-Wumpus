@@ -7,6 +7,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HuntTheWumpus_Team1", "Hunt
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameControl_Main_Team1", "..\GameControl_Main_Team1\GameControl_Main_Team1.csproj", "{6BFA1537-E687-4CCD-B11F-9167853E377B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cave_Main_Team1", "..\Cave_Main_Team1\Cave_Main_Team1.csproj", "{88DB1446-0516-4961-8DBD-F05D5288B909}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlayerInventory_Main_Team1", "..\PlayerInventory_Main_Team1\PlayerInventory_Main_Team1.csproj", "{48137F2D-F6F7-4B52-9722-0E9272FC53C4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TriviaMachine_Main_Team1", "..\TriviaMachine_Main_Team1\TriviaMachine_Main_Team1.csproj", "{C719032D-7D24-4F0F-ADB2-3B073D1F3FA5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +27,18 @@ Global
 		{6BFA1537-E687-4CCD-B11F-9167853E377B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6BFA1537-E687-4CCD-B11F-9167853E377B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6BFA1537-E687-4CCD-B11F-9167853E377B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88DB1446-0516-4961-8DBD-F05D5288B909}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88DB1446-0516-4961-8DBD-F05D5288B909}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88DB1446-0516-4961-8DBD-F05D5288B909}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88DB1446-0516-4961-8DBD-F05D5288B909}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48137F2D-F6F7-4B52-9722-0E9272FC53C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48137F2D-F6F7-4B52-9722-0E9272FC53C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48137F2D-F6F7-4B52-9722-0E9272FC53C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48137F2D-F6F7-4B52-9722-0E9272FC53C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C719032D-7D24-4F0F-ADB2-3B073D1F3FA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C719032D-7D24-4F0F-ADB2-3B073D1F3FA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C719032D-7D24-4F0F-ADB2-3B073D1F3FA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C719032D-7D24-4F0F-ADB2-3B073D1F3FA5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
