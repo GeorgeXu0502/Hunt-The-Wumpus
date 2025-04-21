@@ -28,12 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            buttonConstructor = new Button();
+            SuspendLayout();
+            // 
+            // buttonConstructor
+            // 
+            buttonConstructor.Location = new Point(297, 47);
+            buttonConstructor.Name = "buttonConstructor";
+            buttonConstructor.Size = new Size(187, 64);
+            buttonConstructor.TabIndex = 0;
+            buttonConstructor.Text = "Constructor Button";
+            buttonConstructor.UseVisualStyleBackColor = true;
+            buttonConstructor.Click += buttonConstructor_Click;
+            // 
+            // Form1
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 450);
+            Controls.Add(buttonConstructor);
+            Name = "Form1";
+            Text = "Wumpus Player & HighScore";
+            ResumeLayout(false);
         }
 
         #endregion
+
+        private Button buttonConstructor;
     }
 }
