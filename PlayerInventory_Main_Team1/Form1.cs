@@ -6,5 +6,13 @@ namespace PlayerInventory_Main_Team1
         {
             InitializeComponent();
         }
+
+        private Player_HighScore PlayerHighScore;
+        private void buttonConstructor_Click(object sender, EventArgs e)
+        {
+
+
+            PlayerHighScore = new Player_HighScore();
+        }
     }
 }
