@@ -5,7 +5,7 @@ namespace Cave_Main_Team1
         public Form1()
         {
             InitializeComponent();
-            Console.WriteLine("testing");
+            Console.WriteLine("testing hi");
         }
     }
 }
