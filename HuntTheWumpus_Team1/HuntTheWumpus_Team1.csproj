@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Cave_Main_Team1\CaveMain_Offical\CaveMain_Offical.csproj" />
     <ProjectReference Include="..\TriviaMachine_Main_Team1\TrivaMachine_Offical\TrivaMachine_Offical.csproj" />
   </ItemGroup>
 

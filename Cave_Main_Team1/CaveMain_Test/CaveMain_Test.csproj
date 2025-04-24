@@ -8,4 +8,8 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\CaveMain_Offical\CaveMain_Offical.csproj" />
+  </ItemGroup>
+
 </Project>

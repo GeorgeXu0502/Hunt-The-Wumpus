@@ -1,4 +1,4 @@
-namespace Cave_Main_Team1
+namespace CaveMain_Test
 {
     internal static class Program
     {
