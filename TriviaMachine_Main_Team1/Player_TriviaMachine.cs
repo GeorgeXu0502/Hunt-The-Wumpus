@@ -9,5 +9,10 @@ namespace TriviaMachine_Main_Team1
     public class Player_TriviaMachine
     {
 
+        public bool GetReuslt()
+        {
+            return true;
+        }
+
     }
 }
