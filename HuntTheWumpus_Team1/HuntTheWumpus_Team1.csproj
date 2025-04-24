@@ -9,10 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Cave_Main_Team1\Cave_Main_Team1.csproj" />
-    <ProjectReference Include="..\GameControl_Main_Team1\GameControl_Main_Team1.csproj" />
-    <ProjectReference Include="..\PlayerInventory_Main_Team1\PlayerInventory_Main_Team1.csproj" />
-    <ProjectReference Include="..\TriviaMachine_Main_Team1\TriviaMachine_Main_Team1.csproj" />
+    <ProjectReference Include="..\TriviaMachine_Main_Team1\TrivaMachine_Offical\TrivaMachine_Offical.csproj" />
   </ItemGroup>
 
 </Project>

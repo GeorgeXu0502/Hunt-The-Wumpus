@@ -4,12 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TriviaMachine_Main_Team1
+namespace TrivaMachine_Offical
 {
     public class Player_TriviaMachine
     {
-
-        public bool GetReuslt()
+        public bool GetResult()
         {
             return true;
         }

@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cave_Main_Team1", "..\Cave_
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlayerInventory_Main_Team1", "..\PlayerInventory_Main_Team1\PlayerInventory_Main_Team1.csproj", "{48137F2D-F6F7-4B52-9722-0E9272FC53C4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TriviaMachine_Main_Team1", "..\TriviaMachine_Main_Team1\TriviaMachine_Main_Team1.csproj", "{C719032D-7D24-4F0F-ADB2-3B073D1F3FA5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrivaMachine_Offical", "..\TriviaMachine_Main_Team1\TrivaMachine_Offical\TrivaMachine_Offical.csproj", "{B12C28F5-835B-4C0E-8035-3F83707A911A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,10 +35,10 @@ Global
 		{48137F2D-F6F7-4B52-9722-0E9272FC53C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{48137F2D-F6F7-4B52-9722-0E9272FC53C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{48137F2D-F6F7-4B52-9722-0E9272FC53C4}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C719032D-7D24-4F0F-ADB2-3B073D1F3FA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C719032D-7D24-4F0F-ADB2-3B073D1F3FA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C719032D-7D24-4F0F-ADB2-3B073D1F3FA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C719032D-7D24-4F0F-ADB2-3B073D1F3FA5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B12C28F5-835B-4C0E-8035-3F83707A911A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B12C28F5-835B-4C0E-8035-3F83707A911A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B12C28F5-835B-4C0E-8035-3F83707A911A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B12C28F5-835B-4C0E-8035-3F83707A911A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
