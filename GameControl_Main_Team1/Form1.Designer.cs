@@ -28,12 +28,55 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            buttonDisplayHighScore = new Button();
+            buttonStartNewGame = new Button();
+            buttonExit = new Button();
+            SuspendLayout();
+            // 
+            // buttonDisplayHighScore
+            // 
+            buttonDisplayHighScore.Location = new Point(20, 71);
+            buttonDisplayHighScore.Name = "buttonDisplayHighScore";
+            buttonDisplayHighScore.Size = new Size(136, 43);
+            buttonDisplayHighScore.TabIndex = 0;
+            buttonDisplayHighScore.Text = "Display High Score";
+            buttonDisplayHighScore.UseVisualStyleBackColor = true;
+            // 
+            // buttonStartNewGame
+            // 
+            buttonStartNewGame.Location = new Point(20, 12);
+            buttonStartNewGame.Name = "buttonStartNewGame";
+            buttonStartNewGame.Size = new Size(136, 43);
+            buttonStartNewGame.TabIndex = 1;
+            buttonStartNewGame.Text = "Start New Game";
+            buttonStartNewGame.UseVisualStyleBackColor = true;
+            // 
+            // buttonExit
+            // 
+            buttonExit.Location = new Point(20, 133);
+            buttonExit.Name = "buttonExit";
+            buttonExit.Size = new Size(136, 43);
+            buttonExit.TabIndex = 2;
+            buttonExit.Text = "Exit";
+            buttonExit.UseVisualStyleBackColor = true;
+            // 
+            // Form1
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 450);
+            Controls.Add(buttonExit);
+            Controls.Add(buttonStartNewGame);
+            Controls.Add(buttonDisplayHighScore);
+            Name = "Form1";
+            Text = "Form1";
+            ResumeLayout(false);
         }
 
         #endregion
+
+        private Button buttonDisplayHighScore;
+        private Button buttonStartNewGame;
+        private Button buttonExit;
     }
 }
