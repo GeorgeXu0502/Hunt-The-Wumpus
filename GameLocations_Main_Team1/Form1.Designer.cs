@@ -1,4 +1,4 @@
-﻿namespace GameControl_Main_Team1
+﻿namespace GameLocations_Main_Team1
 {
     partial class Form1
     {
@@ -37,3 +37,4 @@
         #endregion
     }
 }
+
