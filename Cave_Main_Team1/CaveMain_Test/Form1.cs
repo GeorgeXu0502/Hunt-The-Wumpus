@@ -4,6 +4,8 @@ namespace CaveMain_Test
 {
     public partial class Form1 : Form
     {
+        // information about each room in Version 1 of the cave
+        // if room has bats, if room has wumpus, if room has a pit, what rooms player can move to next
         Room Room1V1 = new Room(false, false, false, [2, 6, 7, 25, 26, 30]);
         Room Room2V1 = new Room(false, false, false, [1, 3, 7, 8, 9, 26]);
         Room Room3V1 = new Room(false, false, true, [2, 4, 9, 26, 27, 28]);
@@ -35,6 +37,9 @@ namespace CaveMain_Test
         Room Room29V1 = new Room(false, false, false, [5, 22, 23, 24, 28, 30]);
         Room Room30V1 = new Room(false, false, false, [1, 5, 6, 24, 25, 29]);
 
+
+        // information about each room in Version 2 of the cave
+        // if room has bats, if room has wumpus, if room has a pit, what rooms player can move to next
         Room Room1V2 = new Room(false, false, false, [2, 6, 7, 25, 26, 30]);
         Room Room2V2 = new Room(false, false, false, [1, 3, 7, 8, 9, 26]);
         Room Room3V2 = new Room(false, false, false, [2, 4, 9, 26, 27, 28]);
@@ -66,6 +71,9 @@ namespace CaveMain_Test
         Room Room29V2 = new Room(false, false, false, [5, 22, 23, 24, 28, 30]);
         Room Room30V2 = new Room(false, false, false, [1, 5, 6, 24, 25, 29]);
 
+
+        // information about each room in Version 3 of the cave
+        // if room has bats, if room has wumpus, if room has a pit, what rooms player can move to next
         Room Room1V3 = new Room(false, false, true, [2, 6, 7, 25, 26, 30]);
         Room Room2V3 = new Room(false, false, false, [1, 3, 7, 8, 9, 26]);
         Room Room3V3 = new Room(false, false, false, [2, 4, 9, 26, 27, 28]);
@@ -97,6 +105,9 @@ namespace CaveMain_Test
         Room Room29V3 = new Room(false, false, false, [5, 22, 23, 24, 28, 30]);
         Room Room30V3 = new Room(false, false, false, [1, 5, 6, 24, 25, 29]);
 
+
+        // information about each room in Version 4 of the cave
+        // if room has bats, if room has wumpus, if room has a pit, what rooms player can move to next
         Room Room1V4 = new Room(false, false, false, [2, 6, 7, 25, 26, 30]);
         Room Room2V4 = new Room(false, false, false, [1, 3, 7, 8, 9, 26]);
         Room Room3V4 = new Room(false, false, false, [2, 4, 9, 26, 27, 28]);
@@ -128,6 +139,9 @@ namespace CaveMain_Test
         Room Room29V4 = new Room(false, false, false, [5, 22, 23, 24, 28, 30]);
         Room Room30V4 = new Room(false, false, true, [1, 5, 6, 24, 25, 29]);
 
+
+        // information about each room in Version 5 of the cave
+        // if room has bats, if room has wumpus, if room has a pit, what rooms player can move to next
         Room Room1V5 = new Room(true, false, false, [2, 6, 7, 25, 26, 30]);
         Room Room2V5 = new Room(false, false, false, [1, 3, 7, 8, 9, 26]);
         Room Room3V5 = new Room(false, false, false, [2, 4, 9, 26, 27, 28]);
