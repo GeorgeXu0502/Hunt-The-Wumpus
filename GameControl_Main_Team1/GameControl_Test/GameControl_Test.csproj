@@ -8,4 +8,8 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\GameControl_Offical\GameControl_Offical.csproj" />
+  </ItemGroup>
+
 </Project>

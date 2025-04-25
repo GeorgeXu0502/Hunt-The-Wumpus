@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("GameControl_Offical")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Northshore School District No.417")]
 [assembly: AssemblyProduct("GameControl_Offical")]
-[assembly: AssemblyCopyright("Copyright ©  2025")]
+[assembly: AssemblyCopyright("Copyright © Northshore School District No.417 2025")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("ff7c1304-a812-4c25-8c73-441012353915")]
+[assembly: Guid("3b1fe509-beef-42e7-942f-44898ee0a264")]
 
 // Version information for an assembly consists of the following four values:
 //
