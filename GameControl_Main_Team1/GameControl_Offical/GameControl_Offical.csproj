@@ -44,5 +44,11 @@
     <Compile Include="Player_GameControl.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\TriviaMachine_Main_Team1\TrivaMachine_Offical\TrivaMachine_Offical.csproj">
+      <Project>{b12c28f5-835b-4c0e-8035-3f83707a911a}</Project>
+      <Name>TrivaMachine_Offical</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

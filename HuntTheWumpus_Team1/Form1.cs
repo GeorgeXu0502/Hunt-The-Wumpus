@@ -4,7 +4,7 @@ namespace HuntTheWumpus_Team1
 {
     public partial class Form1 : Form
     {
-        Player_GameControl Player_GameControl = new GameControl_Offical.Player_GameControl();
+        Player_GameControl GameControlObject = new GameControl_Offical.Player_GameControl();
         public Form1()
         {
             InitializeComponent();
