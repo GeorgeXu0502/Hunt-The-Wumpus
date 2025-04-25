@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GameControl_Offical
 {
-    class Player_GameControl
+    public class Player_GameControl
     {
 
     }
