@@ -45,6 +45,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Cave_Main_Team1\CaveMain_Offical\CaveMain_Offical.csproj">
+      <Project>{2a1190e3-3b45-463a-8287-baff7bc1503f}</Project>
+      <Name>CaveMain_Offical</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\TriviaMachine_Main_Team1\TrivaMachine_Offical\TrivaMachine_Offical.csproj">
       <Project>{b12c28f5-835b-4c0e-8035-3f83707a911a}</Project>
       <Name>TrivaMachine_Offical</Name>
