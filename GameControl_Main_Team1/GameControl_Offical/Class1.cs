@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GameControl_Main_Team1
+namespace GameControl_Offical
 {
-    public class Room
+    public class Class1
     {
-
     }
 }
