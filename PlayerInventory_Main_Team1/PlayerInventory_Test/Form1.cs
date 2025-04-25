@@ -7,7 +7,7 @@ namespace PlayerInventory_Main_Team1
             InitializeComponent();
         }
 
-        private Player_HighScore PlayerHighScore;
+        private Player_HighScore2 PlayerHighScore;
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -54,7 +54,7 @@ namespace PlayerInventory_Main_Team1
 
         private void buttonConstructor_Click(object sender, EventArgs e)
         {
-            PlayerHighScore = new Player_HighScore();
+            PlayerHighScore = new Player_HighScore2();
             textBoxGoldCount.Text = "0";
             textBoxTurns.Text = "0";
             textBoxArrows.Text = "0";
