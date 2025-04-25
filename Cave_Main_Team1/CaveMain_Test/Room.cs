@@ -8,20 +8,22 @@ namespace CaveMain_Test
 {
     public class Room
     {
-        public bool HasBats(int newRoom)
+        public bool HasBats { get; set; }
+        public bool HasWumpus { get; set; }
+        public bool HasPit { get; set; }
+
+        public int[] NextRoomList { get; set; }
+
+        public Room(bool hasBats, bool hasWumpus, bool hasPit, int[] nextRoomList)
         {
-            return false;
-        }
-        public bool HasWumpus(int newRoom)
-        {
-            return false;
-        }
-        public bool HasPit(int newRoom)
-        {
-            return false;
+            HasBats = hasBats;
+            HasWumpus = hasWumpus;
+            HasPit = hasPit;
+            NextRoomList = nextRoomList;
         }
 
-       
+
+
 
 
     }
