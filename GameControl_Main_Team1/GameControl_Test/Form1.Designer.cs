@@ -1,4 +1,4 @@
-﻿namespace Cave_Main_Team1
+﻿namespace GameControl_Test
 {
     partial class Form1
     {
