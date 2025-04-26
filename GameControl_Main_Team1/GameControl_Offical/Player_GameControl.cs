@@ -30,6 +30,13 @@ namespace GameControl_Offical
             return RoomtoReturn;
         }
 
+        public TriviaAnswer SendTriviaAnswer()
+        {
+            TriviaAnswer TriviaAnswertoReturn = TriviaMachineObject.GetTriviaAnswer();
+
+            return TriviaAnswertoReturn;
+        }
+
         
     }
 }

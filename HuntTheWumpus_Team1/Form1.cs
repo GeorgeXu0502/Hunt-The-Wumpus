@@ -1,5 +1,6 @@
 using CaveMain_Offical;
 using GameControl_Offical;
+using TrivaMachine_Offical;
 
 namespace HuntTheWumpus_Team1
 {
@@ -17,6 +18,7 @@ namespace HuntTheWumpus_Team1
         public void UserMovesForward()
         {
             Room RoomUserIn = GameControlObject.GetRoomUserMovingTo(RoomNumber, SelfInitated);
+            TriviaAnswer TriviatoShow = GameControlObject.SendTriviaAnswer();
         }
 
 
