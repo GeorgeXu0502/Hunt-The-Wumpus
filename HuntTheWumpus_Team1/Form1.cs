@@ -7,6 +7,7 @@ namespace HuntTheWumpus_Team1
     {
         Player_GameControl GameControlObject = new GameControl_Offical.Player_GameControl();
         int RoomNumber = 1;
+        bool SelfInitated = true;
         public Form1()
         {
             InitializeComponent();
@@ -15,7 +16,7 @@ namespace HuntTheWumpus_Team1
         
         public void UserMovesForward()
         {
-            Room RoomUserIn = GameControlObject.GetRoomUserMovingTo(RoomNumber);
+            Room RoomUserIn = GameControlObject.GetRoomUserMovingTo(RoomNumber, SelfInitated);
         }
 
 

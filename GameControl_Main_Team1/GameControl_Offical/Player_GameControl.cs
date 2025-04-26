@@ -16,10 +16,20 @@ namespace GameControl_Offical
         Player_CaveMain CaveMainObject = new CaveMain_Offical.Player_CaveMain();
         Player_HighScore PlayerInventoryObject = new PlayerInventory_Offical.Player_HighScore();
 
-        public Room GetRoomUserMovingTo(int RoomNumber)
+        public Room GetRoomUserMovingTo(int RoomNumber, bool SelfIntitated)
         {
             Room RoomtoReturn = CaveMainObject.GetRoomInformation(RoomNumber);
+
+            /*
+            if (SelfIntitated)
+            {
+                PlayerInventoryObject.GoldCoinIndex();
+            }
+            */
+
             return RoomtoReturn;
         }
+
+        
     }
 }
