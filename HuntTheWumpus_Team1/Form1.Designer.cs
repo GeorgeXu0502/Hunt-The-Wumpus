@@ -37,6 +37,8 @@
             ClientSize = new Size(800, 450);
             Name = "Form1";
             Text = "UI: Hunt the Wumpus";
+            Activated += Form1_Activated;
+            Paint += Form1_Paint;
             ResumeLayout(false);
         }
 
