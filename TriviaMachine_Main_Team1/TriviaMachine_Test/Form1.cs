@@ -5,6 +5,8 @@ namespace TriviaMachine_Main_Team1
         public Form1()
         {
             InitializeComponent();
+
+            Console.WriteLine("Hello Trivia!");
         }
     }
 }
