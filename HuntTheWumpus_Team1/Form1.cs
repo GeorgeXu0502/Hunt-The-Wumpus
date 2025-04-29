@@ -47,7 +47,7 @@ namespace HuntTheWumpus_Team1
             // This Room List should be of this form: [RoomUser, RoomtotheTopLeft, .... (Coutnerclockwise), ....]
             List <Room> listofadjacentrooms = GameControlObject.AdjacentRoomInformation();
 
-            int RoomIndex = listofadjacnetrooms[0].RoomNumber;
+            int RoomIndex = listofadjacentrooms[0].RoomNumber;
             pictureBoxGeneralRoomBackground.Image = Image.FromFile(ListofImageLocation[RoomIndex]);
 
             // Change the Button Labels
