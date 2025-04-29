@@ -15,8 +15,8 @@ namespace HuntTheWumpus_Team1
 
 
         // System Specific Image Location:
-
         List<string> ListofImageLocation = new List<string>();
+
         public Form1()
         {
             InitializeComponent();
