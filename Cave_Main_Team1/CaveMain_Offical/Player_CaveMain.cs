@@ -11,7 +11,7 @@ namespace CaveMain_Offical
         public Room GetRoomInformation(int RoomNumber)
         {
             int[] samplearray = { 1, 2, 3, 4, 5, 6 };
-            Room RoomtoReturn = new Room(false, false, false, samplearray);
+            Room RoomtoReturn = new Room(1, false, false, false, samplearray);
 
             return RoomtoReturn;
         }
