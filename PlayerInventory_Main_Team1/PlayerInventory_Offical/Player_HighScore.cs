@@ -11,6 +11,8 @@ namespace PlayerInventory_Offical
 
 
 
+
+
         public int GoldCount { get; set; }
         public int NumberOfTurns { get; set; }
         public int NumberOfArrows { get; set; }
@@ -21,11 +23,11 @@ namespace PlayerInventory_Offical
 
 
         // Constructor
-        public Player_HighScore2()
+        public Player_HighScore()
         {
             GoldCount = 0;
             NumberOfTurns = 0;
-            NumberOfArrows = 0;
+            NumberOfArrows = 3;
             SelfWanted = false;
             Score = 0;
         }
