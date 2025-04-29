@@ -24,7 +24,7 @@ namespace PlayerInventory_Main_Team1
         {
             GoldCount = 0;
             NumberOfTurns = 0;
-            NumberOfArrows = 0;
+            NumberOfArrows = 3;
             SelfWanted = false;
             Score = 0;
         }
