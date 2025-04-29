@@ -32,6 +32,7 @@ namespace HuntTheWumpus_Team1
 
             return ListtoReturn;
         }
+        
         /* Interesting Function to maybe enact later, however this was the original idea.
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
@@ -41,15 +42,27 @@ namespace HuntTheWumpus_Team1
         }
         */
 
+        private void DrawTheRoom()
+        {
+            // This Room List should be of this form: [RoomUser, RoomtotheTopLeft, .... (Coutnerclockwise), ....]
+            List <Room> listofadjacentrooms = GameControlObject.AdjacentRoomInformation();
+
+            int RoomIndex = listofadjacnetrooms[0].RoomNumber;
+            pictureBoxGeneralRoomBackground.Image = Image.FromFile(ListofImageLocation[RoomIndex]);
+
+            // Change the Button Labels
+
+            // Redraw Inventory
+            
+            // Do the Warnings
+        }
         private void Form1_Activated(object sender, EventArgs e)
         {
             // Open the inital Menu. Give the User the oppertunity to login.
             OpeningMenu OpentheMenuObject = new OpeningMenu();
             OpentheMenuObject.ShowDialog();
 
-            int RoomIndex = GameControlObject.WhereIsUser();
-            pictureBoxGeneralRoomBackground.Image = Image.FromFile(ListofImageLocation[RoomIndex]);
-
+            DrawTheRoom();
         }
 
 
