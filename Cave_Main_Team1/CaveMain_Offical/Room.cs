@@ -8,7 +8,7 @@ namespace CaveMain_Offical
 {
     public class Room
     {
-        public bool RoomNumber {get; set;}
+        public int RoomNumber {get; set;}
         public bool HasBats { get; set; }
         public bool HasWumpus { get; set; }
         public bool HasPit { get; set; }
@@ -17,7 +17,7 @@ namespace CaveMain_Offical
 
         public Room(int roomnumber, bool hasBats, bool hasWumpus, bool hasPit, int[] nextRoomList)
         {
-            RoomNumber = roomnumber
+            RoomNumber = roomnumber;
             HasBats = hasBats;
             HasWumpus = hasWumpus;
             HasPit = hasPit;

@@ -16,6 +16,15 @@ namespace GameControl_Offical
         Player_CaveMain CaveMainObject = new CaveMain_Offical.Player_CaveMain();
         Player_HighScore PlayerInventoryObject = new PlayerInventory_Offical.Player_HighScore();
 
+        public List<Room> AdjacentRoomInformation()
+        {
+            List<Room> roomlistotreturn = new List<Room>();
+
+            int[] newintarray = { 1, 2, 3, 4, 5 };
+            Room Room1 = new Room(1, false, false, false, newintarray);
+            roomlistotreturn.Add(Room1);
+            return roomlistotreturn;
+        }
         public int WhereIsUser()
         {
             return 1;
