@@ -33,15 +33,6 @@ namespace HuntTheWumpus_Team1
             return ListtoReturn;
         }
         
-        /* Interesting Function to maybe enact later, however this was the original idea.
-        private void Form1_Paint(object sender, PaintEventArgs e)
-        {
-            Graphics myGraphics = e.Graphics;
-            System.Drawing.Pen myPen = new System.Drawing.Pen(System.Drawing.Color.Blue);
-            myGraphics.DrawPolygon(myPen, PointArray);
-        }
-        */
-
         private void DrawTheRoom()
         {
             // This Room List should be of this form: [RoomUser, RoomtotheTopLeft, .... (Coutnerclockwise), ....]
@@ -50,10 +41,25 @@ namespace HuntTheWumpus_Team1
             int RoomIndex = listofadjacentrooms[0].RoomNumber;
             pictureBoxGeneralRoomBackground.Image = Image.FromFile(ListofImageLocation[RoomIndex]);
 
-            // Change the Button Labels
+            // Change the Button Labels and disable the Buttons in order to stop User from touching them. 
+
+            buttonNextRoom1.Text = "Room: " + listofadjacentrooms[1].RoomNumber.ToString();
+            buttonNextRoom2.Text = "Room: " + listofadjacentrooms[2].RoomNumber.ToString();
+            buttonNextRoom3.Text = "Room: " + listofadjacentrooms[3].RoomNumber.ToString();
+            buttonNextRoom4.Text = "Room: " + listofadjacentrooms[4].RoomNumber.ToString();
+            buttonNextRoom5.Text = "Room: " + listofadjacentrooms[5].RoomNumber.ToString();
+            buttonNextRoom6.Text = "Room: " + listofadjacentrooms[6].RoomNumber.ToString();
+
+            buttonNextRoom1.Enabled = false;
+            buttonNextRoom2.Enabled = false;
+            buttonNextRoom3.Enabled = false;
+            buttonNextRoom4.Enabled = false;
+            buttonNextRoom5.Enabled = false;
+            buttonNextRoom6.Enabled = false;
 
             // Redraw Inventory
-            
+
+
             // Do the Warnings
         }
         private void Form1_Activated(object sender, EventArgs e)
