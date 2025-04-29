@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PlayerInventory_Main_Team1
 {
-    public class Player_HighScore
+    public class Player_HighScore2
     {
 
 
@@ -20,7 +20,7 @@ namespace PlayerInventory_Main_Team1
 
 
         // Constructor
-        public Player_HighScore()
+        public Player_HighScore2()
         {
             GoldCount = 0;
             NumberOfTurns = 0;

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PlayerInventory_Offical
 {
-    public class Class1
+    public class Player_HighScore
     {
 
     }
