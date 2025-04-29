@@ -25,6 +25,15 @@ namespace HuntTheWumpus_Team1
             ListofImageLocation = MakeListofImageLocation();
         }
 
+        private void Form1_Activated(object sender, EventArgs e) // THE MAIN FUNCTION HERE!
+        {
+            // Open the inital Menu. Give the User the oppertunity to login.
+            OpeningMenu OpentheMenuObject = new OpeningMenu();
+            OpentheMenuObject.ShowDialog();
+
+            DrawTheRoom();
+        }
+
         private List<String> MakeListofImageLocation()
         {
             List<string> ListtoReturn = new List<string>();
@@ -59,17 +68,52 @@ namespace HuntTheWumpus_Team1
 
             // Redraw Inventory
 
+            textBoxGoldCoinAmount.Text = GameControlObject.PlayerGoldCoinAmount().ToString();
+            textBoxArrowAmount.Text = GameControlObject.PlayerArrowAmount().ToString();
 
             // Do the Warnings
-        }
-        private void Form1_Activated(object sender, EventArgs e)
-        {
-            // Open the inital Menu. Give the User the oppertunity to login.
-            OpeningMenu OpentheMenuObject = new OpeningMenu();
-            OpentheMenuObject.ShowDialog();
+            bool hasBat = false;
+            bool hasPit = false;
+            bool hasWumpus = false;
 
-            DrawTheRoom();
+            for (int i = 1; i < 7; i++)
+            {
+                Room newroomtoconsider = listofadjacentrooms[i];
+
+                if (newroomtoconsider.HasBats == true)
+                {
+                    hasBat = true;
+                }
+
+                if (newroomtoconsider.HasWumpus == true)
+                {
+                    hasWumpus = true;
+                }
+
+                if (newroomtoconsider.HasPit == true)
+                {
+
+                    hasPit = true;
+                }
+            }
+
+            // Change the Actual Checkboxes
+            if (hasBat == true)
+            {
+                checkBoxbatsnearby.Checked = true;
+            }
+
+            if (hasPit == true)
+            {
+                checkBoxpitnearby.Checked = true;
+            }
+
+            if (hasWumpus == true)
+            {
+                checkBoxwumpusneabry.Checked = true;
+            }
         }
+        
 
 
         public void StartNewGame()

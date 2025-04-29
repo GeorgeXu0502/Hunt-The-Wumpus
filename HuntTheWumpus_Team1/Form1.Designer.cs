@@ -41,15 +41,15 @@
             buttonNextRoom3 = new Button();
             buttonNextRoom4 = new Button();
             groupBoxplayeractions = new GroupBox();
-            groupBoxPlayerInventory = new GroupBox();
-            label2 = new Label();
-            label3 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            buttonMovetoNextRoom = new Button();
-            buttonShootanArrow = new Button();
-            buttonPurchaseArrow = new Button();
             buttonPurchaseSecret = new Button();
+            buttonPurchaseArrow = new Button();
+            buttonShootanArrow = new Button();
+            buttonMovetoNextRoom = new Button();
+            groupBoxPlayerInventory = new GroupBox();
+            textBoxArrowAmount = new TextBox();
+            textBoxGoldCoinAmount = new TextBox();
+            label3 = new Label();
+            label2 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBoxGeneralRoomBackground).BeginInit();
             groupBoxplayeractions.SuspendLayout();
             groupBoxPlayerInventory.SuspendLayout();
@@ -59,7 +59,7 @@
             // 
             pictureBoxGeneralRoomBackground.Image = (Image)resources.GetObject("pictureBoxGeneralRoomBackground.Image");
             pictureBoxGeneralRoomBackground.Location = new Point(67, 102);
-            pictureBoxGeneralRoomBackground.Margin = new Padding(2, 2, 2, 2);
+            pictureBoxGeneralRoomBackground.Margin = new Padding(2);
             pictureBoxGeneralRoomBackground.Name = "pictureBoxGeneralRoomBackground";
             pictureBoxGeneralRoomBackground.Size = new Size(809, 602);
             pictureBoxGeneralRoomBackground.SizeMode = PictureBoxSizeMode.Zoom;
@@ -70,7 +70,7 @@
             // 
             buttonNextRoom5.BackColor = SystemColors.ActiveCaption;
             buttonNextRoom5.Location = new Point(676, 354);
-            buttonNextRoom5.Margin = new Padding(2, 2, 2, 2);
+            buttonNextRoom5.Margin = new Padding(2);
             buttonNextRoom5.Name = "buttonNextRoom5";
             buttonNextRoom5.Size = new Size(200, 83);
             buttonNextRoom5.TabIndex = 5;
@@ -184,74 +184,16 @@
             groupBoxplayeractions.TabStop = false;
             groupBoxplayeractions.Text = "Possible Actions";
             // 
-            // groupBoxPlayerInventory
+            // buttonPurchaseSecret
             // 
-            groupBoxPlayerInventory.Controls.Add(textBox2);
-            groupBoxPlayerInventory.Controls.Add(textBox1);
-            groupBoxPlayerInventory.Controls.Add(label3);
-            groupBoxPlayerInventory.Controls.Add(label2);
-            groupBoxPlayerInventory.Location = new Point(343, -2);
-            groupBoxPlayerInventory.Name = "groupBoxPlayerInventory";
-            groupBoxPlayerInventory.Size = new Size(254, 85);
-            groupBoxPlayerInventory.TabIndex = 17;
-            groupBoxPlayerInventory.TabStop = false;
-            groupBoxPlayerInventory.Text = "Plyaer Inventory";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(10, 31);
-            label2.Name = "label2";
-            label2.Size = new Size(129, 15);
-            label2.TabIndex = 0;
-            label2.Text = "Amount of Gold Coins:";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(10, 56);
-            label3.Name = "label3";
-            label3.Size = new Size(108, 15);
-            label3.TabIndex = 1;
-            label3.Text = "Amount of Arrows:";
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(166, 25);
-            textBox1.Name = "textBox1";
-            textBox1.ReadOnly = true;
-            textBox1.Size = new Size(82, 23);
-            textBox1.TabIndex = 2;
-            // 
-            // textBox2
-            // 
-            textBox2.Location = new Point(166, 53);
-            textBox2.Name = "textBox2";
-            textBox2.ReadOnly = true;
-            textBox2.Size = new Size(82, 23);
-            textBox2.TabIndex = 3;
-            // 
-            // buttonMovetoNextRoom
-            // 
-            buttonMovetoNextRoom.BackColor = SystemColors.ActiveCaption;
-            buttonMovetoNextRoom.Location = new Point(5, 42);
-            buttonMovetoNextRoom.Margin = new Padding(2);
-            buttonMovetoNextRoom.Name = "buttonMovetoNextRoom";
-            buttonMovetoNextRoom.Size = new Size(244, 83);
-            buttonMovetoNextRoom.TabIndex = 18;
-            buttonMovetoNextRoom.Text = "Move to Next Room";
-            buttonMovetoNextRoom.UseVisualStyleBackColor = false;
-            // 
-            // buttonShootanArrow
-            // 
-            buttonShootanArrow.BackColor = SystemColors.ActiveCaption;
-            buttonShootanArrow.Location = new Point(5, 129);
-            buttonShootanArrow.Margin = new Padding(2);
-            buttonShootanArrow.Name = "buttonShootanArrow";
-            buttonShootanArrow.Size = new Size(244, 83);
-            buttonShootanArrow.TabIndex = 19;
-            buttonShootanArrow.Text = "Shoot an Arrow";
-            buttonShootanArrow.UseVisualStyleBackColor = false;
+            buttonPurchaseSecret.BackColor = SystemColors.ActiveCaption;
+            buttonPurchaseSecret.Location = new Point(5, 303);
+            buttonPurchaseSecret.Margin = new Padding(2);
+            buttonPurchaseSecret.Name = "buttonPurchaseSecret";
+            buttonPurchaseSecret.Size = new Size(244, 83);
+            buttonPurchaseSecret.TabIndex = 21;
+            buttonPurchaseSecret.Text = "Purchase Secret";
+            buttonPurchaseSecret.UseVisualStyleBackColor = false;
             // 
             // buttonPurchaseArrow
             // 
@@ -264,16 +206,74 @@
             buttonPurchaseArrow.Text = "Purchase Arrow";
             buttonPurchaseArrow.UseVisualStyleBackColor = false;
             // 
-            // buttonPurchaseSecret
+            // buttonShootanArrow
             // 
-            buttonPurchaseSecret.BackColor = SystemColors.ActiveCaption;
-            buttonPurchaseSecret.Location = new Point(5, 303);
-            buttonPurchaseSecret.Margin = new Padding(2);
-            buttonPurchaseSecret.Name = "buttonPurchaseSecret";
-            buttonPurchaseSecret.Size = new Size(244, 83);
-            buttonPurchaseSecret.TabIndex = 21;
-            buttonPurchaseSecret.Text = "Purchase Secret";
-            buttonPurchaseSecret.UseVisualStyleBackColor = false;
+            buttonShootanArrow.BackColor = SystemColors.ActiveCaption;
+            buttonShootanArrow.Location = new Point(5, 129);
+            buttonShootanArrow.Margin = new Padding(2);
+            buttonShootanArrow.Name = "buttonShootanArrow";
+            buttonShootanArrow.Size = new Size(244, 83);
+            buttonShootanArrow.TabIndex = 19;
+            buttonShootanArrow.Text = "Shoot an Arrow";
+            buttonShootanArrow.UseVisualStyleBackColor = false;
+            // 
+            // buttonMovetoNextRoom
+            // 
+            buttonMovetoNextRoom.BackColor = SystemColors.ActiveCaption;
+            buttonMovetoNextRoom.Location = new Point(5, 42);
+            buttonMovetoNextRoom.Margin = new Padding(2);
+            buttonMovetoNextRoom.Name = "buttonMovetoNextRoom";
+            buttonMovetoNextRoom.Size = new Size(244, 83);
+            buttonMovetoNextRoom.TabIndex = 18;
+            buttonMovetoNextRoom.Text = "Move to Next Room";
+            buttonMovetoNextRoom.UseVisualStyleBackColor = false;
+            // 
+            // groupBoxPlayerInventory
+            // 
+            groupBoxPlayerInventory.Controls.Add(textBoxArrowAmount);
+            groupBoxPlayerInventory.Controls.Add(textBoxGoldCoinAmount);
+            groupBoxPlayerInventory.Controls.Add(label3);
+            groupBoxPlayerInventory.Controls.Add(label2);
+            groupBoxPlayerInventory.Location = new Point(343, -2);
+            groupBoxPlayerInventory.Name = "groupBoxPlayerInventory";
+            groupBoxPlayerInventory.Size = new Size(254, 85);
+            groupBoxPlayerInventory.TabIndex = 17;
+            groupBoxPlayerInventory.TabStop = false;
+            groupBoxPlayerInventory.Text = "Plyaer Inventory";
+            // 
+            // textBoxArrowAmount
+            // 
+            textBoxArrowAmount.Location = new Point(166, 53);
+            textBoxArrowAmount.Name = "textBoxArrowAmount";
+            textBoxArrowAmount.ReadOnly = true;
+            textBoxArrowAmount.Size = new Size(82, 23);
+            textBoxArrowAmount.TabIndex = 3;
+            // 
+            // textBoxGoldCoinAmount
+            // 
+            textBoxGoldCoinAmount.Location = new Point(166, 25);
+            textBoxGoldCoinAmount.Name = "textBoxGoldCoinAmount";
+            textBoxGoldCoinAmount.ReadOnly = true;
+            textBoxGoldCoinAmount.Size = new Size(82, 23);
+            textBoxGoldCoinAmount.TabIndex = 2;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(10, 56);
+            label3.Name = "label3";
+            label3.Size = new Size(108, 15);
+            label3.TabIndex = 1;
+            label3.Text = "Amount of Arrows:";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(10, 31);
+            label2.Name = "label2";
+            label2.Size = new Size(129, 15);
+            label2.TabIndex = 0;
+            label2.Text = "Amount of Gold Coins:";
             // 
             // Form1
             // 
@@ -320,8 +320,8 @@
         private Button buttonNextRoom4;
         private GroupBox groupBoxplayeractions;
         private GroupBox groupBoxPlayerInventory;
-        private TextBox textBox2;
-        private TextBox textBox1;
+        private TextBox textBoxArrowAmount;
+        private TextBox textBoxGoldCoinAmount;
         private Label label3;
         private Label label2;
         private Button buttonPurchaseSecret;
