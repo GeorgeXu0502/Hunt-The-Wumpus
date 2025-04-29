@@ -28,20 +28,116 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            pictureBox1 = new PictureBox();
+            buttonRoom1 = new Button();
+            buttonRoom2 = new Button();
+            buttonRoom3 = new Button();
+            buttonRoom4 = new Button();
+            buttonRoom5 = new Button();
+            buttonRoom6 = new Button();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(71, 61);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(1520, 1342);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 0;
+            pictureBox1.TabStop = false;
+            // 
+            // buttonRoom1
+            // 
+            buttonRoom1.BackColor = SystemColors.ActiveCaption;
+            buttonRoom1.Location = new Point(258, 221);
+            buttonRoom1.Name = "buttonRoom1";
+            buttonRoom1.Size = new Size(324, 138);
+            buttonRoom1.TabIndex = 1;
+            buttonRoom1.Text = "button1";
+            buttonRoom1.UseVisualStyleBackColor = false;
+            // 
+            // buttonRoom2
+            // 
+            buttonRoom2.BackColor = SystemColors.ActiveCaption;
+            buttonRoom2.Location = new Point(50, 651);
+            buttonRoom2.Name = "buttonRoom2";
+            buttonRoom2.Size = new Size(324, 138);
+            buttonRoom2.TabIndex = 2;
+            buttonRoom2.Text = "button1";
+            buttonRoom2.UseVisualStyleBackColor = false;
+            // 
+            // buttonRoom3
+            // 
+            buttonRoom3.BackColor = SystemColors.ActiveCaption;
+            buttonRoom3.Location = new Point(245, 1100);
+            buttonRoom3.Name = "buttonRoom3";
+            buttonRoom3.Size = new Size(324, 138);
+            buttonRoom3.TabIndex = 3;
+            buttonRoom3.Text = "button1";
+            buttonRoom3.UseVisualStyleBackColor = false;
+            // 
+            // buttonRoom4
+            // 
+            buttonRoom4.BackColor = SystemColors.ActiveCaption;
+            buttonRoom4.Location = new Point(1073, 1110);
+            buttonRoom4.Name = "buttonRoom4";
+            buttonRoom4.Size = new Size(324, 138);
+            buttonRoom4.TabIndex = 4;
+            buttonRoom4.Text = "button1";
+            buttonRoom4.UseVisualStyleBackColor = false;
+            // 
+            // buttonRoom5
+            // 
+            buttonRoom5.BackColor = SystemColors.ActiveCaption;
+            buttonRoom5.Location = new Point(1294, 677);
+            buttonRoom5.Name = "buttonRoom5";
+            buttonRoom5.Size = new Size(324, 138);
+            buttonRoom5.TabIndex = 5;
+            buttonRoom5.Text = "button1";
+            buttonRoom5.UseVisualStyleBackColor = false;
+            // 
+            // buttonRoom6
+            // 
+            buttonRoom6.BackColor = SystemColors.ActiveCaption;
+            buttonRoom6.Location = new Point(1117, 221);
+            buttonRoom6.Name = "buttonRoom6";
+            buttonRoom6.Size = new Size(324, 138);
+            buttonRoom6.TabIndex = 6;
+            buttonRoom6.Text = "button1";
+            buttonRoom6.UseVisualStyleBackColor = false;
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            BackColor = Color.FromArgb(98, 127, 149);
+            ClientSize = new Size(1816, 1475);
+            Controls.Add(buttonRoom6);
+            Controls.Add(buttonRoom5);
+            Controls.Add(buttonRoom4);
+            Controls.Add(buttonRoom3);
+            Controls.Add(buttonRoom2);
+            Controls.Add(buttonRoom1);
+            Controls.Add(pictureBox1);
+            Margin = new Padding(4, 5, 4, 5);
             Name = "Form1";
             Text = "UI: Hunt the Wumpus";
             Activated += Form1_Activated;
-            Paint += Form1_Paint;
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
+
+        private PictureBox pictureBox1;
+        private Button buttonRoom1;
+        private Button buttonRoom2;
+        private Button buttonRoom3;
+        private Button buttonRoom4;
+        private Button buttonRoom5;
+        private Button buttonRoom6;
     }
 }

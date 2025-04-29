@@ -21,12 +21,14 @@ namespace HuntTheWumpus_Team1
             InitializeComponent();
         }
 
+        /* Interesting Function to maybe enact later, however this was the original idea.
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
             Graphics myGraphics = e.Graphics;
             System.Drawing.Pen myPen = new System.Drawing.Pen(System.Drawing.Color.Blue);
             myGraphics.DrawPolygon(myPen, PointArray);
         }
+        */
 
         private void Form1_Activated(object sender, EventArgs e)
         {
