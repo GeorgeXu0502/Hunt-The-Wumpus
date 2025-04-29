@@ -16,6 +16,10 @@ namespace GameControl_Offical
         Player_CaveMain CaveMainObject = new CaveMain_Offical.Player_CaveMain();
         Player_HighScore PlayerInventoryObject = new PlayerInventory_Offical.Player_HighScore();
 
+        public int WhereIsUser()
+        {
+            return 1;
+        }
         public Room GetRoomUserMovingTo(int RoomNumber, bool SelfIntitated)
         {
             Room RoomtoReturn = CaveMainObject.GetRoomInformation(RoomNumber);
@@ -36,6 +40,8 @@ namespace GameControl_Offical
 
             return TriviaAnswertoReturn;
         }
+
+        
 
         
     }

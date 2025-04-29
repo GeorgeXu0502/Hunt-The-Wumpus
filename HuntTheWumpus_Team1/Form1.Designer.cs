@@ -29,25 +29,25 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            pictureBox1 = new PictureBox();
+            pictureBoxGeneralRoomBackground = new PictureBox();
             buttonRoom1 = new Button();
             buttonRoom2 = new Button();
             buttonRoom3 = new Button();
             buttonRoom4 = new Button();
             buttonRoom5 = new Button();
             buttonRoom6 = new Button();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxGeneralRoomBackground).BeginInit();
             SuspendLayout();
             // 
-            // pictureBox1
+            // pictureBoxGeneralRoomBackground
             // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(71, 61);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(1520, 1342);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
+            pictureBoxGeneralRoomBackground.Image = (Image)resources.GetObject("pictureBoxGeneralRoomBackground.Image");
+            pictureBoxGeneralRoomBackground.Location = new Point(71, 61);
+            pictureBoxGeneralRoomBackground.Name = "pictureBoxGeneralRoomBackground";
+            pictureBoxGeneralRoomBackground.Size = new Size(1520, 1342);
+            pictureBoxGeneralRoomBackground.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBoxGeneralRoomBackground.TabIndex = 0;
+            pictureBoxGeneralRoomBackground.TabStop = false;
             // 
             // buttonRoom1
             // 
@@ -121,18 +121,18 @@
             Controls.Add(buttonRoom3);
             Controls.Add(buttonRoom2);
             Controls.Add(buttonRoom1);
-            Controls.Add(pictureBox1);
+            Controls.Add(pictureBoxGeneralRoomBackground);
             Margin = new Padding(4, 5, 4, 5);
             Name = "Form1";
             Text = "UI: Hunt the Wumpus";
             Activated += Form1_Activated;
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxGeneralRoomBackground).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private PictureBox pictureBox1;
+        private PictureBox pictureBoxGeneralRoomBackground;
         private Button buttonRoom1;
         private Button buttonRoom2;
         private Button buttonRoom3;
