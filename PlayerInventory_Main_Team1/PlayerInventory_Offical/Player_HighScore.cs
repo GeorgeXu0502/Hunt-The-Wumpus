@@ -27,7 +27,7 @@ namespace PlayerInventory_Offical
         }
 
         // Gold coin method which increases gold count by 1 when the users moves forward (SelfWanted)
-        public int GoldCoinIndex(int numberOfGoldCoins)
+        public int GoldCoinIndex(/*int numberOfGoldCoins*/)
         {
 
             if (SelfWanted)
@@ -74,7 +74,7 @@ namespace PlayerInventory_Offical
             return NumberOfTurns;
         }
 
-        public int NumberOfArrowsIndex(int numberOfArrows, bool isPurchase)
+        public int NumberOfArrowsIndex( bool isPurchase)
         {
 
 

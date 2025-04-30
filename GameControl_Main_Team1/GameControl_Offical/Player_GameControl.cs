@@ -17,6 +17,7 @@ namespace GameControl_Offical
         Player_HighScore PlayerInventoryObject = new PlayerInventory_Offical.Player_HighScore();
 
         int RoomUserIsIn;
+        int goldCoinsCount = 0;
         public List<Room> AdjacentRoomInformation()
         {
             List<Room> roomlistotreturn = new List<Room>();
@@ -48,15 +49,14 @@ namespace GameControl_Offical
         public int PlayerGoldCoinAmount()
         {
             // Write a Function to return the amount of Gold Coin the Player Has. 
-
-            return 0;
+            return PlayerInventoryObject.GoldCoinIndex();
         }
 
         public int PlayerArrowAmount()
         {
-            // Write a Function to return the amount of Arrows the Player Has. 
+            // Write a Function to return the amount of Arrows the Player Has.
 
-            return 0;
+            return PlayerInventoryObject.NumberOfArrowsIndex();
         }
 
         public TriviaQuestion GetQuestion()
@@ -73,6 +73,7 @@ namespace GameControl_Offical
         public void MoveWumpus(int RoomNumberWhereUserIsIn)
         {
             // Given Where the User Is, Have the Cave move the Wumpus From This Room.
+            CaveMainObject.MoveWumpus(RoomNumberWhereUserIsIn);
         }
 
 
