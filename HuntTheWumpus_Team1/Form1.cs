@@ -365,6 +365,11 @@ namespace HuntTheWumpus_Team1
 
         private void UserBuysAnArrow()
         {
+            // Add Code Here.
+        }
+
+        private void UserShootAnArrow()
+        {
             int PlayerArrowAmount = GameControlObject.PlayerArrowAmount();
 
             if (PlayerArrowAmount > 1)
@@ -383,24 +388,14 @@ namespace HuntTheWumpus_Team1
                 }
                 else
                 {
-
+                    DisplayaMessage("You did not get the Wampus");
                 }
 
             }
             else
             {
-                string StringToDisplay = "Sorry. You do not have arrows to shoot. Please buy them if possible, otherwise end the game.";
-
-                MessageBoxCustom MessageBoxDlg = new MessageBoxCustom();
-                MessageBoxDlg.StringToDispaly = StringToDisplay;
-                MessageBoxDlg.ShowDialog();
+                DisplayaMessage("Sorry. You do not have arrows to shoot. Please buy them if possible, otherwise end the game.");
             }
-
-        }
-
-        private void UserShootAnArrow()
-        {
-            // Add in Code Here.
         }
 
         private void UserBuysASecret()
