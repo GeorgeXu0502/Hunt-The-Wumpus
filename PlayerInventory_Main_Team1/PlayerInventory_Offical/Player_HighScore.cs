@@ -33,7 +33,7 @@ namespace PlayerInventory_Offical
         }
 
         // Gold coin method which increases gold count by 1 when the users moves forward (SelfWanted)
-        public int GoldCoinIndex(int numberOfGoldCoins)
+        public int GoldCoinIndex()
         {
 
             if (SelfWanted)
@@ -43,7 +43,7 @@ namespace PlayerInventory_Offical
             return GoldCount;
         }
 
-        public bool EncounterTriviaPitCoins(int numberOfGoldCoins, bool goldCountLessThanZero)
+        public bool EncounterTriviaPitCoins(bool goldCountLessThanZero)
         {
 
 
@@ -57,7 +57,7 @@ namespace PlayerInventory_Offical
             return goldCountLessThanZero;
         }
 
-        public bool EncounterWumpusCoins(int numberOfGoldCoins, bool goldCountLessThanZero)
+        public bool EncounterWumpusCoins(bool goldCountLessThanZero)
         {
 
 
@@ -69,7 +69,7 @@ namespace PlayerInventory_Offical
             return goldCountLessThanZero;
         }
 
-        public int NumberOfTurnsIndex(int numberOfTurns)
+        public int NumberOfTurnsIndex()
         {
 
 
@@ -80,7 +80,7 @@ namespace PlayerInventory_Offical
             return NumberOfTurns;
         }
 
-        public int NumberOfArrowsIndex(int numberOfArrows, bool isPurchase)
+        public int NumberOfArrowsIndex(bool isPurchase)
         {
 
 
@@ -95,7 +95,7 @@ namespace PlayerInventory_Offical
             return NumberOfArrows;
         }
 
-        public int CalculateHighScore(int numberOfTurns, int numberOfCoins, int numberOfArrows, bool wumpusDefeated)
+        public int CalculateHighScore(bool wumpusDefeated)
         {
 
             int wumpusBonus;
@@ -104,10 +104,10 @@ namespace PlayerInventory_Offical
                 wumpusBonus = 50000;
             }
             else wumpusBonus = 0;
-            int HighScore = 100000 - (100 * numberOfTurns) + (500 * numberOfCoins) + (10000 * numberOfArrows) + wumpusBonus;
-            Score = HighScore;
+            Score = 100000 - (100 * NumberOfTurns) + (500 * GoldCount) + (10000 * NumberOfArrows) + wumpusBonus;
             return Score;
         }
 
+        // Add a function that returns error gold amount
     }
 }
