@@ -16,9 +16,10 @@ namespace GameControl_Offical
         Player_CaveMain CaveMainObject = new CaveMain_Offical.Player_CaveMain();
         Player_HighScore PlayerInventoryObject = new PlayerInventory_Offical.Player_HighScore();
 
-        int RoomUserIsIn;
-        public List<Room> AdjacentRoomInformation()
+        int RoomUserIsIn=1; // Please set this variable to what it needs to be at the begining of the game. // For Now we start at Room 1.
+        public List<Room> AdjacentRoomInformation(int RoomNumberForInformation)
         {
+            // Change This Function to return the correct List. 
             List<Room> roomlistotreturn = new List<Room>();
 
             int[] newintarray = { 1, 2, 3, 4, 5 };
@@ -31,11 +32,11 @@ namespace GameControl_Offical
             // This Function should return where the User is. Room Number (int)
             return RoomUserIsIn;
         }
-        public Room GetRoomUserMovingTo(int RoomNumber, bool SelfIntitated)
-        {
-            Room RoomtoReturn = CaveMainObject.GetRoomInformation(RoomNumber);
 
-            return RoomtoReturn;
+        public void UpdateWhereUserIs(int RoomNumberWhereWeAreGoing)
+        {
+            // Already Up To Date. 
+            RoomUserIsIn = RoomNumberWhereWeAreGoing;
         }
 
         public TriviaAnswer SendTriviaAnswer()
@@ -61,7 +62,7 @@ namespace GameControl_Offical
 
         public TriviaQuestion GetQuestion()
         {
-            // Write a Function to return a TriviaQuestion Variable. 
+            // Write a Function to return a TriviaQuestion Variable.  
             List<string> newstringlist = new List<string>();
             newstringlist.Add("Hi");
             TriviaQuestion triviaquestiontoreturn = new TriviaQuestion("Hi", newstringlist, 0);
@@ -75,6 +76,11 @@ namespace GameControl_Offical
             // Given Where the User Is, Have the Cave move the Wumpus From This Room.
         }
 
+        public bool CheckIfWampusInRoom(int RoomToCheck)
+        {
+            // Write Code To Check if Wampus Was In the Room. 
+            return false;
+        }
 
 
     }
