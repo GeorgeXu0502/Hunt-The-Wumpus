@@ -41,6 +41,7 @@
             buttonNextRoom3 = new Button();
             buttonNextRoom4 = new Button();
             groupBoxplayeractions = new GroupBox();
+            buttonEndGameNow = new Button();
             buttonPurchaseSecret = new Button();
             buttonPurchaseArrow = new Button();
             buttonShootanArrow = new Button();
@@ -74,6 +75,7 @@
             buttonNextRoom5.TabIndex = 5;
             buttonNextRoom5.Text = "button1";
             buttonNextRoom5.UseVisualStyleBackColor = false;
+            buttonNextRoom5.Click += buttonNextRoom5_Click;
             // 
             // label1
             // 
@@ -127,6 +129,7 @@
             buttonNextRoom2.TabIndex = 11;
             buttonNextRoom2.Text = "button1";
             buttonNextRoom2.UseVisualStyleBackColor = false;
+            buttonNextRoom2.Click += buttonNextRoom2_Click;
             // 
             // buttonNextRoom1
             // 
@@ -137,6 +140,7 @@
             buttonNextRoom1.TabIndex = 12;
             buttonNextRoom1.Text = "button1";
             buttonNextRoom1.UseVisualStyleBackColor = false;
+            buttonNextRoom1.Click += buttonNextRoom1_Click;
             // 
             // buttonNextRoom6
             // 
@@ -147,6 +151,7 @@
             buttonNextRoom6.TabIndex = 13;
             buttonNextRoom6.Text = "button1";
             buttonNextRoom6.UseVisualStyleBackColor = false;
+            buttonNextRoom6.Click += buttonNextRoom6_Click;
             // 
             // buttonNextRoom3
             // 
@@ -157,6 +162,7 @@
             buttonNextRoom3.TabIndex = 14;
             buttonNextRoom3.Text = "button1";
             buttonNextRoom3.UseVisualStyleBackColor = false;
+            buttonNextRoom3.Click += buttonNextRoom3_Click;
             // 
             // buttonNextRoom4
             // 
@@ -167,9 +173,11 @@
             buttonNextRoom4.TabIndex = 15;
             buttonNextRoom4.Text = "button1";
             buttonNextRoom4.UseVisualStyleBackColor = false;
+            buttonNextRoom4.Click += buttonNextRoom4_Click;
             // 
             // groupBoxplayeractions
             // 
+            groupBoxplayeractions.Controls.Add(buttonEndGameNow);
             groupBoxplayeractions.Controls.Add(buttonPurchaseSecret);
             groupBoxplayeractions.Controls.Add(buttonPurchaseArrow);
             groupBoxplayeractions.Controls.Add(buttonShootanArrow);
@@ -178,10 +186,21 @@
             groupBoxplayeractions.Margin = new Padding(4, 5, 4, 5);
             groupBoxplayeractions.Name = "groupBoxplayeractions";
             groupBoxplayeractions.Padding = new Padding(4, 5, 4, 5);
-            groupBoxplayeractions.Size = new Size(363, 660);
+            groupBoxplayeractions.Size = new Size(363, 809);
             groupBoxplayeractions.TabIndex = 16;
             groupBoxplayeractions.TabStop = false;
             groupBoxplayeractions.Text = "Possible Actions";
+            // 
+            // buttonEndGameNow
+            // 
+            buttonEndGameNow.BackColor = SystemColors.ActiveCaption;
+            buttonEndGameNow.Location = new Point(7, 649);
+            buttonEndGameNow.Name = "buttonEndGameNow";
+            buttonEndGameNow.Size = new Size(349, 138);
+            buttonEndGameNow.TabIndex = 22;
+            buttonEndGameNow.Text = "End Game Now";
+            buttonEndGameNow.UseVisualStyleBackColor = false;
+            buttonEndGameNow.Click += buttonEndGameNow_Click;
             // 
             // buttonPurchaseSecret
             // 
@@ -334,5 +353,6 @@
         private Button buttonPurchaseArrow;
         private Button buttonShootanArrow;
         private Button buttonMovetoNextRoom;
+        private Button buttonEndGameNow;
     }
 }

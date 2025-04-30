@@ -24,6 +24,14 @@ namespace HuntTheWumpus_Team1
         bool ButtonBuyanArrowClicked = false;
         bool ButtonShootanArrowClicked = false;
         bool ButtonBuyaSecretClicked = false;
+        bool ButtonEndGameNowClicked = false;
+
+        bool ButtomRoom1Clicked = false;
+        bool ButtomRoom2Clicked = false;
+        bool ButtomRoom3Clicked = false;
+        bool ButtomRoom4Clicked = false;
+        bool ButtomRoom5Clicked = false;
+        bool ButtomRoom6Clicked = false;
         public Form1()
         {
             InitializeComponent();
@@ -35,7 +43,8 @@ namespace HuntTheWumpus_Team1
         private void Main() // THE MAIN FUNCTION HERE!
         {
             StartTheGame();
-            int ChoiceIndex = GetInput();
+            UserMoving();
+
 
             /* Exmaple Code For Later
             if (DangerInRoom[0] == true)
@@ -64,32 +73,90 @@ namespace HuntTheWumpus_Team1
             bool[] DangerInRoom = DrawTheRoom();
         }
 
+        private void UserMoving()
+        {
+            int ChoiceIndex = GetInput();
+
+            while (ChoiceIndex != 0) // Let User Do WhatEver Till They Choose To Move Rooms
+            {
+                if (ChoiceIndex == 1)
+                {
+                    UserBuysAnArrow();
+                }
+                else if (ChoiceIndex == 2)
+                {
+                    UserShootAnArrow();
+                }
+                else if (ChoiceIndex == 3)
+                {
+                    UserBuyASecret();
+                }
+                else
+                {
+                    EndTheGame();
+                }
+
+                ChoiceIndex = GetInput();
+
+            }
+
+            buttonNextRoom1.Enabled = true;
+            buttonNextRoom2.Enabled = true;
+            buttonNextRoom3.Enabled = true;
+            buttonNextRoom4.Enabled = true;
+            buttonNextRoom5.Enabled = true;
+            buttonNextRoom6.Enabled = true;
+
+            bool StatmentofRooms = (ButtomRoom1Clicked == false && ButtomRoom2Clicked == false && ButtomRoom3Clicked == false && ButtomRoom4Clicked == false && ButtomRoom5Clicked == false && ButtomRoom6Clicked == false);
+
+            while (StatmentofRooms == true)
+            {
+                StatmentofRooms = (ButtomRoom1Clicked == false && ButtomRoom2Clicked == false && ButtomRoom3Clicked == false && ButtomRoom4Clicked == false && ButtomRoom5Clicked == false && ButtomRoom6Clicked == false);
+            }
+
+            // Get the Room We Are Moving to!! This is NEXT!
+        }
+
         private int GetInput()
         {
-            // 0 - Move to Next Room, 1 - Buy an Arrow, 2 - Shoot an Arrow, 3 - Buy a Secret. 
-            bool Statment = (ButtonMoveToNextRoomClicked == false && ButtonBuyanArrowClicked == false && ButtonShootanArrowClicked == false && ButtonBuyaSecretClicked == false);
+            // 0 - Move to Next Room, 1 - Buy an Arrow, 2 - Shoot an Arrow, 3 - Buy a Secret, 4 - End Game Now. 
+            bool Statment = (ButtonMoveToNextRoomClicked == false && ButtonBuyanArrowClicked == false && ButtonShootanArrowClicked == false && ButtonBuyaSecretClicked == false && ButtonEndGameNowClicked == false);
 
+            int toreturn;
             while (Statment == true)
             {
-                Statment = (ButtonMoveToNextRoomClicked == false && ButtonBuyanArrowClicked == false && ButtonShootanArrowClicked == false && ButtonBuyaSecretClicked == false);
+                Statment = (ButtonMoveToNextRoomClicked == false && ButtonBuyanArrowClicked == false && ButtonShootanArrowClicked == false && ButtonBuyaSecretClicked == false && ButtonEndGameNowClicked == false);
             }
 
             if (ButtonMoveToNextRoomClicked == true)
             {
-                return 0;
+
+                toreturn = 0;
             }
             else if (ButtonBuyanArrowClicked == true)
             {
-                return 1;
+                toreturn = 1;
             }
             else if (ButtonShootanArrowClicked == true)
             {
-                return 2;
+                toreturn = 2;
+            }
+            else if (ButtonBuyaSecretClicked == true)
+            {
+                toreturn = 3;
             }
             else
             {
-                return 3;
+                toreturn = 4;
             }
+
+            ButtonMoveToNextRoomClicked = false;
+            ButtonMoveToNextRoomClicked = false;
+            ButtonShootanArrowClicked = false;
+            ButtonMoveToNextRoomClicked = false;
+            ButtonEndGameNowClicked = false;
+            return toreturn;
+
         }
 
         private void Form1_Activated(object sender, EventArgs e)
@@ -261,12 +328,47 @@ namespace HuntTheWumpus_Team1
 
         private void buttonPurchaseArrow_Click(object sender, EventArgs e)
         {
-            ButtonBuyanArrowClicked = true; 
+            ButtonBuyanArrowClicked = true;
         }
 
         private void buttonPurchaseSecret_Click(object sender, EventArgs e)
         {
             ButtonBuyaSecretClicked = true;
+        }
+
+        private void buttonEndGameNow_Click(object sender, EventArgs e)
+        {
+            ButtonEndGameNowClicked = true;
+        }
+
+        private void buttonNextRoom6_Click(object sender, EventArgs e)
+        {
+            ButtomRoom6Clicked = true;
+        }
+
+        private void buttonNextRoom5_Click(object sender, EventArgs e)
+        {
+            ButtomRoom5Clicked = true;
+        }
+
+        private void buttonNextRoom4_Click(object sender, EventArgs e)
+        {
+            ButtomRoom4Clicked = true;
+        }
+
+        private void buttonNextRoom3_Click(object sender, EventArgs e)
+        {
+            ButtomRoom3Clicked = true;
+        }
+
+        private void buttonNextRoom2_Click(object sender, EventArgs e)
+        {
+            ButtomRoom2Clicked = true;
+        }
+
+        private void buttonNextRoom1_Click(object sender, EventArgs e)
+        {
+            ButtomRoom1Clicked = true;
         }
     }
 }
