@@ -23,15 +23,15 @@ namespace HuntTheWumpus_Team1
 
             // Add the Locations
             ListofImageLocation = MakeListofImageLocation();
+            Main();
         }
-
-        private void Form1_Activated(object sender, EventArgs e) // THE MAIN FUNCTION HERE!
+        private void Main() // THE MAIN FUNCTION HERE!
         {
             // Open the inital Menu. Give the User the oppertunity to login.
             OpeningMenu OpentheMenuObject = new OpeningMenu();
             OpentheMenuObject.ShowDialog();
 
-            bool [] DangerInRoom = DrawTheRoom();
+            bool[] DangerInRoom = DrawTheRoom();
 
             if (DangerInRoom[0] == true)
             {
@@ -45,6 +45,10 @@ namespace HuntTheWumpus_Team1
             {
                 PitInRoom();
             }
+        }
+        private void Form1_Activated(object sender, EventArgs e) 
+        {
+            // Auxilerly Function.
         }
 
         private void EndTheGame() // This Function is most important as it will end the game when needed.
@@ -151,6 +155,12 @@ namespace HuntTheWumpus_Team1
 
         public void WampusInRoom()
         {
+            string StringToDisplay = "You encountered a Wumpus! You now have to answer 3 out of 5 Trivia Questions Correctly!";
+
+            MessageBoxCustom MessageBoxDlg = new MessageBoxCustom();
+            MessageBoxDlg.StringToDispaly = StringToDisplay;
+            MessageBoxDlg.ShowDialog();
+
             TriviaQuestionUI triviaDlg = new TriviaQuestionUI();
             triviaDlg.AmountofQuestions = 5;
             triviaDlg.ShowDialog();
@@ -174,6 +184,12 @@ namespace HuntTheWumpus_Team1
 
         public void PitInRoom()
         {
+            string StringToDisplay = "You encountered a Pit! You now have to answer 2 out of 3 Trivia Questions Correctly!";
+
+            MessageBoxCustom MessageBoxDlg = new MessageBoxCustom();
+            MessageBoxDlg.StringToDispaly = StringToDisplay;
+            MessageBoxDlg.ShowDialog();
+
             TriviaQuestionUI triviaDlg = new TriviaQuestionUI();
             triviaDlg.AmountofQuestions = 3;
             triviaDlg.ShowDialog();

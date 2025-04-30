@@ -32,7 +32,7 @@ namespace HuntTheWumpus_Team1
 
         public TriviaQuestionUI()
         {
-            InitializeComponent();
+            InitializeComponent(); // Might need to change this to a Form_Activated Area. 
             buttonMoveOnToTheNextQuestion.Enabled = false;
             buttonMoveOnToTheNextQuestion.Visible = false;
 

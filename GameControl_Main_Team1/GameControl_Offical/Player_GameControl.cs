@@ -62,7 +62,9 @@ namespace GameControl_Offical
         public TriviaQuestion GetQuestion()
         {
             // Write a Function to return a TriviaQuestion Variable. 
-            TriviaQuestion triviaquestiontoreturn = new TriviaQuestion();
+            List<string> newstringlist = new List<string>();
+            newstringlist.Add("Hi");
+            TriviaQuestion triviaquestiontoreturn = new TriviaQuestion("Hi", newstringlist, 0);
 
 
             return triviaquestiontoreturn;
