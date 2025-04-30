@@ -68,7 +68,7 @@ namespace HuntTheWumpus_Team1
             richTextBoxOptionDText.Text = CurrentTriviaQuestion.PossibleAnswers[3];
 
             bool StatmentToCheck = (WasButtonAClicked == false && WasButtonBClicked == false && WasButtonCClicked == false && WasButtonDClicked == false);
-            while (StatmentToCheck == false)
+            while (StatmentToCheck == true)
             {
                 StatmentToCheck = (WasButtonAClicked == false && WasButtonBClicked == false && WasButtonCClicked == false && WasButtonDClicked == false);
             }

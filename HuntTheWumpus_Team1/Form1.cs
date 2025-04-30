@@ -1,3 +1,4 @@
+using System.Data.SqlTypes;
 using System.Net.Http.Headers;
 using CaveMain_Offical;
 using GameControl_Offical;
@@ -17,6 +18,12 @@ namespace HuntTheWumpus_Team1
         // System Specific Image Location:
         List<string> ListofImageLocation = new List<string>();
 
+        // Button Clicking Bool Variables.
+
+        bool ButtonMoveToNextRoomClicked = false;
+        bool ButtonBuyanArrowClicked = false;
+        bool ButtonShootanArrowClicked = false;
+        bool ButtonBuyaSecretClicked = false;
         public Form1()
         {
             InitializeComponent();
@@ -27,12 +34,10 @@ namespace HuntTheWumpus_Team1
         }
         private void Main() // THE MAIN FUNCTION HERE!
         {
-            // Open the inital Menu. Give the User the oppertunity to login.
-            OpeningMenu OpentheMenuObject = new OpeningMenu();
-            OpentheMenuObject.ShowDialog();
+            StartTheGame();
+            int ChoiceIndex = GetInput();
 
-            bool[] DangerInRoom = DrawTheRoom();
-
+            /* Exmaple Code For Later
             if (DangerInRoom[0] == true)
             {
                 WampusInRoom();
@@ -45,8 +50,49 @@ namespace HuntTheWumpus_Team1
             {
                 PitInRoom();
             }
+            */
+
+
         }
-        private void Form1_Activated(object sender, EventArgs e) 
+
+        private void StartTheGame()
+        {
+            // Open the inital Menu. Give the User the oppertunity to login.
+            OpeningMenu OpentheMenuObject = new OpeningMenu();
+            OpentheMenuObject.ShowDialog();
+
+            bool[] DangerInRoom = DrawTheRoom();
+        }
+
+        private int GetInput()
+        {
+            // 0 - Move to Next Room, 1 - Buy an Arrow, 2 - Shoot an Arrow, 3 - Buy a Secret. 
+            bool Statment = (ButtonMoveToNextRoomClicked == false && ButtonBuyanArrowClicked == false && ButtonShootanArrowClicked == false && ButtonBuyaSecretClicked == false);
+
+            while (Statment == true)
+            {
+                Statment = (ButtonMoveToNextRoomClicked == false && ButtonBuyanArrowClicked == false && ButtonShootanArrowClicked == false && ButtonBuyaSecretClicked == false);
+            }
+
+            if (ButtonMoveToNextRoomClicked == true)
+            {
+                return 0;
+            }
+            else if (ButtonBuyanArrowClicked == true)
+            {
+                return 1;
+            }
+            else if (ButtonShootanArrowClicked == true)
+            {
+                return 2;
+            }
+            else
+            {
+                return 3;
+            }
+        }
+
+        private void Form1_Activated(object sender, EventArgs e)
         {
             // Auxilerly Function.
         }
@@ -65,11 +111,11 @@ namespace HuntTheWumpus_Team1
 
             return ListtoReturn;
         }
-        
+
         private bool[] DrawTheRoom()
         {
             // This Room List should be of this form: [RoomUser, RoomtotheTopLeft, .... (Coutnerclockwise), ....]
-            List <Room> listofadjacentrooms = GameControlObject.AdjacentRoomInformation();
+            List<Room> listofadjacentrooms = GameControlObject.AdjacentRoomInformation();
 
             int RoomIndex = listofadjacentrooms[0].RoomNumber;
             pictureBoxGeneralRoomBackground.Image = Image.FromFile(ListofImageLocation[RoomIndex]);
@@ -120,7 +166,7 @@ namespace HuntTheWumpus_Team1
                     hasPit = true;
                 }
 
-             
+
             }
 
             // Change the Actual Checkboxes
@@ -142,7 +188,7 @@ namespace HuntTheWumpus_Team1
             bool[] BoolListToReturn = { listofadjacentrooms[0].HasWumpus, listofadjacentrooms[0].HasBats, listofadjacentrooms[0].HasPit };
             return BoolListToReturn;
         }
-        
+
 
 
         /*
@@ -201,6 +247,26 @@ namespace HuntTheWumpus_Team1
             {
                 EndTheGame();
             }
+        }
+
+        private void buttonMovetoNextRoom_Click(object sender, EventArgs e)
+        {
+            ButtonMoveToNextRoomClicked = true;
+        }
+
+        private void buttonShootanArrow_Click(object sender, EventArgs e)
+        {
+            ButtonShootanArrowClicked = true;
+        }
+
+        private void buttonPurchaseArrow_Click(object sender, EventArgs e)
+        {
+            ButtonBuyanArrowClicked = true; 
+        }
+
+        private void buttonPurchaseSecret_Click(object sender, EventArgs e)
+        {
+            ButtonBuyaSecretClicked = true;
         }
     }
 }

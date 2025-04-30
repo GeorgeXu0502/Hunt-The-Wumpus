@@ -192,6 +192,7 @@
             buttonPurchaseSecret.TabIndex = 21;
             buttonPurchaseSecret.Text = "Purchase Secret";
             buttonPurchaseSecret.UseVisualStyleBackColor = false;
+            buttonPurchaseSecret.Click += buttonPurchaseSecret_Click;
             // 
             // buttonPurchaseArrow
             // 
@@ -202,6 +203,7 @@
             buttonPurchaseArrow.TabIndex = 20;
             buttonPurchaseArrow.Text = "Purchase Arrow";
             buttonPurchaseArrow.UseVisualStyleBackColor = false;
+            buttonPurchaseArrow.Click += buttonPurchaseArrow_Click;
             // 
             // buttonShootanArrow
             // 
@@ -212,6 +214,7 @@
             buttonShootanArrow.TabIndex = 19;
             buttonShootanArrow.Text = "Shoot an Arrow";
             buttonShootanArrow.UseVisualStyleBackColor = false;
+            buttonShootanArrow.Click += buttonShootanArrow_Click;
             // 
             // buttonMovetoNextRoom
             // 
@@ -222,6 +225,7 @@
             buttonMovetoNextRoom.TabIndex = 18;
             buttonMovetoNextRoom.Text = "Move to Next Room";
             buttonMovetoNextRoom.UseVisualStyleBackColor = false;
+            buttonMovetoNextRoom.Click += buttonMovetoNextRoom_Click;
             // 
             // groupBoxPlayerInventory
             // 
