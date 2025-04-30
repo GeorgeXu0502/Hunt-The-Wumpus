@@ -31,18 +31,38 @@ namespace HuntTheWumpus_Team1
             OpeningMenu OpentheMenuObject = new OpeningMenu();
             OpentheMenuObject.ShowDialog();
 
-            DrawTheRoom();
+            bool [] DangerInRoom = DrawTheRoom();
+
+            if (DangerInRoom[0] == true)
+            {
+                WampusInRoom();
+            }
+            else if (DangerInRoom[1] == true)
+            {
+                BatsInRoom();
+            }
+            else if (DangerInRoom[2] == true)
+            {
+                PitInRoom();
+            }
+        }
+
+        private void EndTheGame() // This Function is most important as it will end the game when needed.
+        {
+
         }
 
         private List<String> MakeListofImageLocation()
         {
             List<string> ListtoReturn = new List<string>();
             ListtoReturn.Add("Hi"); //  Change this. 
+            ListtoReturn.Add("Hi");
+            ListtoReturn.Add("Hi");
 
             return ListtoReturn;
         }
         
-        private void DrawTheRoom()
+        private bool[] DrawTheRoom()
         {
             // This Room List should be of this form: [RoomUser, RoomtotheTopLeft, .... (Coutnerclockwise), ....]
             List <Room> listofadjacentrooms = GameControlObject.AdjacentRoomInformation();
@@ -95,6 +115,8 @@ namespace HuntTheWumpus_Team1
 
                     hasPit = true;
                 }
+
+             
             }
 
             // Change the Actual Checkboxes
@@ -112,23 +134,57 @@ namespace HuntTheWumpus_Team1
             {
                 checkBoxwumpusneabry.Checked = true;
             }
+
+            bool[] BoolListToReturn = { listofadjacentrooms[0].HasWumpus, listofadjacentrooms[0].HasBats, listofadjacentrooms[0].HasPit };
+            return BoolListToReturn;
         }
         
 
 
-        public void StartNewGame()
-        {
-            // Start the Game Initiation.
-
-
-        }
-
+        /*
         public void UserMovesForward()
         {
             Room RoomUserIn = GameControlObject.GetRoomUserMovingTo(RoomNumber, SelfInitated);
             TriviaAnswer TriviatoShow = GameControlObject.SendTriviaAnswer();
         }
+        */
+
+        public void WampusInRoom()
+        {
+            TriviaQuestionUI triviaDlg = new TriviaQuestionUI();
+            triviaDlg.AmountofQuestions = 5;
+            triviaDlg.ShowDialog();
+
+            bool DidWeMakeIt = triviaDlg.GotOffSaftley;
+
+            if (DidWeMakeIt == false)
+            {
+                EndTheGame();
+            }
+            else
+            {
+                GameControlObject.MoveWumpus(GameControlObject.WhereIsUser());
+            }
+        }
+
+        public void BatsInRoom()
+        {
+
+        }
+
+        public void PitInRoom()
+        {
+            TriviaQuestionUI triviaDlg = new TriviaQuestionUI();
+            triviaDlg.AmountofQuestions = 3;
+            triviaDlg.ShowDialog();
+
+            bool DidWeMakeIt = triviaDlg.GotOffSaftley;
 
 
+            if (DidWeMakeIt == false)
+            {
+                EndTheGame();
+            }
+        }
     }
 }

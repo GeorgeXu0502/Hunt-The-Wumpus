@@ -9,17 +9,11 @@ namespace PlayerInventory_Offical
     public class Player_HighScore
     {
 
-
-
-
-
         public int GoldCount { get; set; }
         public int NumberOfTurns { get; set; }
         public int NumberOfArrows { get; set; }
         public bool SelfWanted { get; set; }
         public int Score { get; set; }
-
-
 
 
         // Constructor
