@@ -117,7 +117,7 @@ namespace HuntTheWumpus_Team1
             // Get the Room We Are Moving to!! This is NEXT!
         }
 
-        private int GetInput()
+        private int GetInput() // This Function get the input from the original list of options. 
         {
             // 0 - Move to Next Room, 1 - Buy an Arrow, 2 - Shoot an Arrow, 3 - Buy a Secret, 4 - End Game Now. 
             bool Statment = (ButtonMoveToNextRoomClicked == false && ButtonBuyanArrowClicked == false && ButtonShootanArrowClicked == false && ButtonBuyaSecretClicked == false && ButtonEndGameNowClicked == false);
