@@ -57,7 +57,7 @@ namespace PlayerInventory_Main_Team1
             PlayerHighScore = new Player_HighScore2();
             textBoxGoldCount.Text = "0";
             textBoxTurns.Text = "0";
-            textBoxArrows.Text = "0";
+            textBoxArrows.Text = "3";
             textBoxHighScore.Text = "0";
         }
 

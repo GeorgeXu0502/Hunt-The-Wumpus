@@ -12,7 +12,7 @@ namespace TrivaMachine_Offical
 
         public List<String> PossibleAnswers { get; set; }
 
-        public int CorrectAnswerIndex { get; set; }
+        public int CorrectAnswerIndex { get; set; } // The First Answer has index 0.
 
         public TriviaQuestion(string questionTrivia, List<string> possibleAnswers, int correctAnswerIndex)
         {

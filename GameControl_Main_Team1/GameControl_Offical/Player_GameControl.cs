@@ -16,6 +16,7 @@ namespace GameControl_Offical
         Player_CaveMain CaveMainObject = new CaveMain_Offical.Player_CaveMain();
         Player_HighScore PlayerInventoryObject = new PlayerInventory_Offical.Player_HighScore();
 
+        int RoomUserIsIn;
         public List<Room> AdjacentRoomInformation()
         {
             List<Room> roomlistotreturn = new List<Room>();
@@ -27,18 +28,12 @@ namespace GameControl_Offical
         }
         public int WhereIsUser()
         {
-            return 1;
+            // This Function should return where the User is. Room Number (int)
+            return RoomUserIsIn;
         }
         public Room GetRoomUserMovingTo(int RoomNumber, bool SelfIntitated)
         {
             Room RoomtoReturn = CaveMainObject.GetRoomInformation(RoomNumber);
-
-            /*
-            if (SelfIntitated)
-            {
-                PlayerInventoryObject.GoldCoinIndex();
-            }
-            */
 
             return RoomtoReturn;
         }
@@ -50,8 +45,37 @@ namespace GameControl_Offical
             return TriviaAnswertoReturn;
         }
 
-        
+        public int PlayerGoldCoinAmount()
+        {
+            // Write a Function to return the amount of Gold Coin the Player Has. 
 
-        
+            return 0;
+        }
+
+        public int PlayerArrowAmount()
+        {
+            // Write a Function to return the amount of Arrows the Player Has. 
+
+            return 0;
+        }
+
+        public TriviaQuestion GetQuestion()
+        {
+            // Write a Function to return a TriviaQuestion Variable. 
+            List<string> newstringlist = new List<string>();
+            newstringlist.Add("Hi");
+            TriviaQuestion triviaquestiontoreturn = new TriviaQuestion("Hi", newstringlist, 0);
+
+
+            return triviaquestiontoreturn;
+        }
+
+        public void MoveWumpus(int RoomNumberWhereUserIsIn)
+        {
+            // Given Where the User Is, Have the Cave move the Wumpus From This Room.
+        }
+
+
+
     }
 }

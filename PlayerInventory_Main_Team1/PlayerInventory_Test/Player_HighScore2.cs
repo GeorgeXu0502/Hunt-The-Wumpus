@@ -24,7 +24,7 @@ namespace PlayerInventory_Main_Team1
         {
             GoldCount = 0;
             NumberOfTurns = 0;
-            NumberOfArrows = 0;
+            NumberOfArrows = 3;
             SelfWanted = false;
             Score = 0;
         }
@@ -98,10 +98,10 @@ namespace PlayerInventory_Main_Team1
             int wumpusBonus;
             if (wumpusDefeated == true)
             {
-                wumpusBonus = 50;
+                wumpusBonus = 50000;
             }
             else wumpusBonus = 0;
-            int HighScore = 100 - numberOfTurns + numberOfCoins + (5 * numberOfArrows) + wumpusBonus;
+            int HighScore = 100000 - (100 * numberOfTurns) + (500 * numberOfCoins) + (10000 * numberOfArrows) + wumpusBonus;
             Score = HighScore;
             return Score;
         }
