@@ -16,5 +16,9 @@ namespace CaveMain_Offical
             return RoomtoReturn;
         }
 
+        public void MoveWumpus(int roomRoomNumberWhereUserIsIn)
+        {
+            //Move the Wumpus to a different room
+        }
     }
 }
