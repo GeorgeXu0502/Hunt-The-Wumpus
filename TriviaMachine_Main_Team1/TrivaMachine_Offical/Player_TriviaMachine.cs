@@ -8,6 +8,7 @@ namespace TrivaMachine_Offical
 {
     public class Player_TriviaMachine
     {
+        string datafiletouse = "TriviaQuestion.json";
         // List of Trivia Questions and Secrets.
         List<TriviaQuestion> ListofTriviaQuestions = new List<TriviaQuestion>();
         List<string> ListofSecrets = new List<string>();
@@ -18,6 +19,13 @@ namespace TrivaMachine_Offical
         {
             // Use this function to write the Trivia to the File for the First Time.
             // Then this file can be deleted.
+        }
+
+        //IMPLEMENT THIS AND WRITE TO FILE FIRST!
+        public void ReadTriviaFile()
+        {
+            // Use this Function to Read The Trivia From the File.
+            ListofTriviaQuestions = Utility.Readfromfile(datafiletouse);
         }
 
         public TriviaQuestion GetTriviaAnswer()
