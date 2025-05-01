@@ -121,15 +121,23 @@ namespace GameControl_Offical
             // Take a Arrow From the Player.
         }
 
-        public void AddASecretToList()
+        public string AddASecretToList()
         {
             // Get a Secret and Add it To The List defined at the Top. SecretList[]
-            // Get the Secret From Trivia Machine. 
+            // Get the Secret From Trivia Machine, also return the string.
+
+            return string.Empty;
         }
 
         public List<string> ReturnSecretList()
         {
             return SecretList;
+        }
+
+        public bool CanWeBuyAnArrow()
+        {
+            // Write a Function if we can buy a Arrow Still. Rember only 2 per Game. Collaborate with Player Invnetory. 
+            return true;
         }
     }
 }

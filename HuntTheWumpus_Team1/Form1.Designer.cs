@@ -52,6 +52,7 @@
             label3 = new Label();
             label2 = new Label();
             listBoxSecretsList = new ListBox();
+            buttonViewSecret = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBoxGeneralRoomBackground).BeginInit();
             groupBoxplayeractions.SuspendLayout();
             groupBoxPlayerInventory.SuspendLayout();
@@ -178,16 +179,17 @@
             // 
             // groupBoxplayeractions
             // 
+            groupBoxplayeractions.Controls.Add(buttonViewSecret);
             groupBoxplayeractions.Controls.Add(buttonEndGameNow);
             groupBoxplayeractions.Controls.Add(buttonPurchaseSecret);
             groupBoxplayeractions.Controls.Add(buttonPurchaseArrow);
             groupBoxplayeractions.Controls.Add(buttonShootanArrow);
             groupBoxplayeractions.Controls.Add(buttonMovetoNextRoom);
-            groupBoxplayeractions.Location = new Point(1259, 170);
+            groupBoxplayeractions.Location = new Point(1262, 23);
             groupBoxplayeractions.Margin = new Padding(4, 5, 4, 5);
             groupBoxplayeractions.Name = "groupBoxplayeractions";
             groupBoxplayeractions.Padding = new Padding(4, 5, 4, 5);
-            groupBoxplayeractions.Size = new Size(363, 809);
+            groupBoxplayeractions.Size = new Size(363, 935);
             groupBoxplayeractions.TabIndex = 16;
             groupBoxplayeractions.TabStop = false;
             groupBoxplayeractions.Text = "Possible Actions";
@@ -195,7 +197,7 @@
             // buttonEndGameNow
             // 
             buttonEndGameNow.BackColor = SystemColors.ActiveCaption;
-            buttonEndGameNow.Location = new Point(7, 649);
+            buttonEndGameNow.Location = new Point(7, 789);
             buttonEndGameNow.Name = "buttonEndGameNow";
             buttonEndGameNow.Size = new Size(349, 138);
             buttonEndGameNow.TabIndex = 22;
@@ -308,7 +310,16 @@
             listBoxSecretsList.Name = "listBoxSecretsList";
             listBoxSecretsList.Size = new Size(505, 304);
             listBoxSecretsList.TabIndex = 18;
-            listBoxSecretsList.DoubleClick += listBoxSecretsList_DoubleClick;
+            // 
+            // buttonViewSecret
+            // 
+            buttonViewSecret.BackColor = SystemColors.ActiveCaption;
+            buttonViewSecret.Location = new Point(7, 645);
+            buttonViewSecret.Name = "buttonViewSecret";
+            buttonViewSecret.Size = new Size(349, 138);
+            buttonViewSecret.TabIndex = 23;
+            buttonViewSecret.Text = "View A Selected Secret";
+            buttonViewSecret.UseVisualStyleBackColor = false;
             // 
             // Form1
             // 
@@ -367,5 +378,6 @@
         private Button buttonMovetoNextRoom;
         private Button buttonEndGameNow;
         private ListBox listBoxSecretsList;
+        private Button buttonViewSecret;
     }
 }

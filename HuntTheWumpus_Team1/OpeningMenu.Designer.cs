@@ -36,17 +36,20 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(12, 25);
+            label1.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(17, 42);
+            label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(231, 15);
+            label1.Size = new Size(769, 54);
             label1.TabIndex = 0;
             label1.Text = "Welcome to this Hunt the Wumpus Game!";
             // 
             // buttoStarttheGame
             // 
-            buttoStarttheGame.Location = new Point(243, 256);
+            buttoStarttheGame.Location = new Point(347, 427);
+            buttoStarttheGame.Margin = new Padding(4, 5, 4, 5);
             buttoStarttheGame.Name = "buttoStarttheGame";
-            buttoStarttheGame.Size = new Size(303, 75);
+            buttoStarttheGame.Size = new Size(433, 125);
             buttoStarttheGame.TabIndex = 1;
             buttoStarttheGame.Text = "Start Game";
             buttoStarttheGame.UseVisualStyleBackColor = true;
@@ -54,21 +57,24 @@
             // 
             // buttonViewPreviousHighScores
             // 
-            buttonViewPreviousHighScores.Location = new Point(243, 337);
+            buttonViewPreviousHighScores.Location = new Point(347, 562);
+            buttonViewPreviousHighScores.Margin = new Padding(4, 5, 4, 5);
             buttonViewPreviousHighScores.Name = "buttonViewPreviousHighScores";
-            buttonViewPreviousHighScores.Size = new Size(303, 75);
+            buttonViewPreviousHighScores.Size = new Size(433, 125);
             buttonViewPreviousHighScores.TabIndex = 2;
             buttonViewPreviousHighScores.Text = "View Previous High Scores";
             buttonViewPreviousHighScores.UseVisualStyleBackColor = true;
             // 
             // OpeningMenu
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            BackColor = Color.FromArgb(98, 127, 149);
+            ClientSize = new Size(1143, 750);
             Controls.Add(buttonViewPreviousHighScores);
             Controls.Add(buttoStarttheGame);
             Controls.Add(label1);
+            Margin = new Padding(4, 5, 4, 5);
             Name = "OpeningMenu";
             Text = "OpeningMenu";
             ResumeLayout(false);

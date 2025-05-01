@@ -112,6 +112,8 @@ namespace HuntTheWumpus_Team1
 
                 ChoiceIndex = GetInput();
 
+                textBoxGoldCoinAmount.Text = GameControlObject.PlayerGoldCoinAmount().ToString();
+                textBoxArrowAmount.Text = GameControlObject.PlayerArrowAmount().ToString();
             }
 
             int RoomWeAreMovingToIndex = GetRoomInput();
@@ -372,9 +374,45 @@ namespace HuntTheWumpus_Team1
             }
         }
 
+        
         private void UserBuysAnArrow()
         {
-            // Add Code Here.
+            if (GameControlObject.CanWeBuyAnArrow())
+            {
+                string StringtoShow = "This operations costs 3 Coins. You have: " + GameControlObject.PlayerGoldCoinAmount().ToString() + " Coins. Do You want to contiue?";
+                bool DoWeContiueWithAction = DisplayAYesNoMessage(StringtoShow);
+
+                if (DoWeContiueWithAction)
+                {
+                    DisplayaMessage("We Will Contiue. Please Get 2 Questions out of 3 Correct!");
+
+                    TriviaQuestionUI triviaDlg = new TriviaQuestionUI();
+                    triviaDlg.AmountofQuestions = 3;
+                    triviaDlg.ShowDialog();
+
+                    bool DidWeMakeIt = triviaDlg.GotOffSaftley;
+
+
+                    if (DidWeMakeIt == false)
+                    {
+                        EndTheGame();
+                    }
+                    else
+                    {
+                        DisplayaMessage("We have an Extra Arrow!");
+                        GameControlObject.AddArrow();
+                        textBoxArrowAmount.Text = GameControlObject.PlayerArrowAmount().ToString();
+                    }
+                }
+                else
+                {
+                    DisplayaMessage("We will not continue.");
+                }
+            }
+            else
+            {
+                DisplayaMessage("You can no longer buy an arrows! Only 2 per Game.");
+            }
         }
 
         private void UserShootAnArrow()
@@ -408,6 +446,8 @@ namespace HuntTheWumpus_Team1
                     }
                 }
 
+                textBoxArrowAmount.Text = GameControlObject.PlayerArrowAmount().ToString();
+
             }
             else
             {
@@ -415,11 +455,55 @@ namespace HuntTheWumpus_Team1
             }
         }
 
+        
         private void UserBuysASecret()
         {
-            // Add in Code Here.
+            string StringtoShow = "This operations costs 3 Coins. You have: " + GameControlObject.PlayerGoldCoinAmount().ToString() + " Coins. Do You want to contiue?";
+            bool DoWeContiueWithAction = DisplayAYesNoMessage(StringtoShow);
+
+            if (DoWeContiueWithAction)
+            {
+                DisplayaMessage("We Will Contiue. Please Get 2 Questions out of 3 Correct!");
+
+                TriviaQuestionUI triviaDlg = new TriviaQuestionUI();
+                triviaDlg.AmountofQuestions = 3;
+                triviaDlg.ShowDialog();
+
+                bool DidWeMakeIt = triviaDlg.GotOffSaftley;
+
+
+                if (DidWeMakeIt == false)
+                {
+                    EndTheGame();
+                }
+                else
+                {
+                    DisplayaMessage("We have an Extra Secret!");
+                    string SecretToShow = GameControlObject.AddASecretToList();
+                    DisplayaMessage("Secret is: " + SecretToShow);
+                    List<string> ListofSecrets = GameControlObject.ReturnSecretList();
+
+                    for (int i =0; i < ListofSecrets.Count; i++)
+                    {
+                        listBoxSecretsList.Items.Add("Secret " + i.ToString());
+                    }
+                }
+            }
+            else
+            {
+                DisplayaMessage("We will not continue.");
+            }
         }
 
+        private bool DisplayAYesNoMessage(string StringToDisplay)
+        {
+            MessageBoxYesorNoCustom MessageBoxShowDlg = new MessageBoxYesorNoCustom();
+            MessageBoxShowDlg.QuestionToDisplay = StringToDisplay;  
+            MessageBoxShowDlg.ShowDialog();
+
+            bool ResultOfMessageBox = MessageBoxShowDlg.ResultOfQuestion;
+            return ResultOfMessageBox;
+        }
         private void DisplayaMessage(string StringToDisplay)
         {
             MessageBoxCustom MessageBoxDlg = new MessageBoxCustom();
@@ -481,15 +565,7 @@ namespace HuntTheWumpus_Team1
             ButtomRoom1Clicked = true;
         }
 
-        private void listBoxSecretsList_DoubleClick(object sender, EventArgs e)
-        {
-            if (listBoxSecretsList.SelectedIndex != -1)
-            {
-                int index = listBoxSecretsList.SelectedIndex;
-                List<string> listofstring = GameControlObject.ReturnSecretList();
-                string stringtoDisplay = "Secret " + (index + 1).ToString() + " :" + listofstring[index];
-                DisplayaMessage(stringtoDisplay);
-            }
-        }
+
+        
     }
 }
