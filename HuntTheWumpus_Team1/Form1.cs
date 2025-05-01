@@ -12,7 +12,7 @@ namespace HuntTheWumpus_Team1
     {
         Player_GameControl GameControlObject = new GameControl_Offical.Player_GameControl();
         // int RoomNumber = 1;
-        bool SelfInitated = true;
+        // bool SelfInitated = true;
 
 
         // System Specific Image Location:
