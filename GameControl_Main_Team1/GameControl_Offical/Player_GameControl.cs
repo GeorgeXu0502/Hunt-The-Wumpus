@@ -22,12 +22,7 @@ namespace GameControl_Offical
         public List<Room> AdjacentRoomInformation(int RoomToGetInformationFor)
         {
             // Write Function to get a List: // This Room List should be of this form: [RoomUser, RoomtotheTopLeft, .... (Coutnerclockwise), ....]
-            List<Room> roomlistotreturn = new List<Room>();
-
-            int[] newintarray = { 1, 2, 3, 4, 5 };
-            Room Room1 = new Room(1, false, false, false, newintarray);
-            roomlistotreturn.Add(Room1);
-            return roomlistotreturn;
+            return CaveMainObject.GetAdjacentRoomInformation(RoomToGetInformationFor);
         }
 
         public void UpdateWhereUserIs(int RoomNumberWeAreMovingTo)
@@ -70,12 +65,7 @@ namespace GameControl_Offical
         public TriviaQuestion GetQuestion()
         {
             // Write a Function to return a TriviaQuestion Variable. 
-            List<string> newstringlist = new List<string>();
-            newstringlist.Add("Hi");
-            TriviaQuestion triviaquestiontoreturn = new TriviaQuestion("Hi", newstringlist, 0);
-
-
-            return triviaquestiontoreturn;
+           return TriviaMachineObject.GetTriviaAnswer();
         }
 
         public void MoveWumpus(int RoomNumberWhereUserIsIn)
@@ -126,7 +116,10 @@ namespace GameControl_Offical
             // Get a Secret and Add it To The List defined at the Top. SecretList[]
             // Get the Secret From Trivia Machine, also return the string.
 
-            return string.Empty;
+
+            string secret = TriviaMachineObject.GetSecret();
+            SecretList.Add(secret);
+            return secret;
         }
 
         public List<string> ReturnSecretList()

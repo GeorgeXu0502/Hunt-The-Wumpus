@@ -20,5 +20,12 @@ namespace CaveMain_Offical
         {
             //Move the Wumpus to a different room
         }
+
+        public List<Room> GetAdjacentRoomInformation(int RoomNumberForWhichToGetInformation)
+        {
+            // REturn List of Adjacet Rooms with. // This Room List should be of this form: [RoomUser, RoomtotheTopLeft, .... (Coutnerclockwise), ....]
+
+            return new List<Room>();
+        }
     }
 }

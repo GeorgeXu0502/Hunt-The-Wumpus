@@ -26,5 +26,11 @@ namespace TrivaMachine_Offical
             return exmaplefornow;
         }
 
+        public string GetSecret()
+        {
+            //return a secret
+            return "";
+        }
+
     }
 }
