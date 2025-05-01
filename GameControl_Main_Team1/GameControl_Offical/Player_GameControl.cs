@@ -139,5 +139,20 @@ namespace GameControl_Offical
             // Write a Function if we can buy a Arrow Still. Rember only 2 per Game. Collaborate with Player Invnetory. 
             return true;
         }
+
+        public int PlayerScoreFinal()
+        {
+            // Return Player Score. Ask Player Inventory To Do This. 
+
+            return 0;
+        }
+
+        public List<int> GetTopScores()
+        {
+            // Return a List with the Top 5 Scores. Ask Player Inventory To Do This.
+
+            List<int> TopScoresList = new List<int>();
+            return TopScoresList;
+        }
     }
 }

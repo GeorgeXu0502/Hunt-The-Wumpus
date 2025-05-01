@@ -64,6 +64,7 @@
             buttonViewPreviousHighScores.TabIndex = 2;
             buttonViewPreviousHighScores.Text = "View Previous High Scores";
             buttonViewPreviousHighScores.UseVisualStyleBackColor = true;
+            buttonViewPreviousHighScores.Click += buttonViewPreviousHighScores_Click;
             // 
             // OpeningMenu
             // 

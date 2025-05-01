@@ -41,6 +41,7 @@
             buttonNextRoom3 = new Button();
             buttonNextRoom4 = new Button();
             groupBoxplayeractions = new GroupBox();
+            buttonViewSecret = new Button();
             buttonEndGameNow = new Button();
             buttonPurchaseSecret = new Button();
             buttonPurchaseArrow = new Button();
@@ -52,7 +53,6 @@
             label3 = new Label();
             label2 = new Label();
             listBoxSecretsList = new ListBox();
-            buttonViewSecret = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBoxGeneralRoomBackground).BeginInit();
             groupBoxplayeractions.SuspendLayout();
             groupBoxPlayerInventory.SuspendLayout();
@@ -194,6 +194,17 @@
             groupBoxplayeractions.TabStop = false;
             groupBoxplayeractions.Text = "Possible Actions";
             // 
+            // buttonViewSecret
+            // 
+            buttonViewSecret.BackColor = SystemColors.ActiveCaption;
+            buttonViewSecret.Location = new Point(7, 645);
+            buttonViewSecret.Name = "buttonViewSecret";
+            buttonViewSecret.Size = new Size(349, 138);
+            buttonViewSecret.TabIndex = 23;
+            buttonViewSecret.Text = "View A Selected Secret";
+            buttonViewSecret.UseVisualStyleBackColor = false;
+            buttonViewSecret.Click += buttonViewSecret_Click;
+            // 
             // buttonEndGameNow
             // 
             buttonEndGameNow.BackColor = SystemColors.ActiveCaption;
@@ -310,16 +321,6 @@
             listBoxSecretsList.Name = "listBoxSecretsList";
             listBoxSecretsList.Size = new Size(505, 304);
             listBoxSecretsList.TabIndex = 18;
-            // 
-            // buttonViewSecret
-            // 
-            buttonViewSecret.BackColor = SystemColors.ActiveCaption;
-            buttonViewSecret.Location = new Point(7, 645);
-            buttonViewSecret.Name = "buttonViewSecret";
-            buttonViewSecret.Size = new Size(349, 138);
-            buttonViewSecret.TabIndex = 23;
-            buttonViewSecret.Text = "View A Selected Secret";
-            buttonViewSecret.UseVisualStyleBackColor = false;
             // 
             // Form1
             // 

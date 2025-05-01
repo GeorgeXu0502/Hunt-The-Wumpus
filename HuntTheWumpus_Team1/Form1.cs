@@ -24,6 +24,7 @@ namespace HuntTheWumpus_Team1
         bool ButtonBuyanArrowClicked = false;
         bool ButtonShootanArrowClicked = false;
         bool ButtonBuyaSecretClicked = false;
+        bool ButtonSeeaSecretClicked = false;
         bool ButtonEndGameNowClicked = false;
 
         bool ButtomRoom1Clicked = false;
@@ -105,6 +106,10 @@ namespace HuntTheWumpus_Team1
                 {
                     UserBuysASecret();
                 }
+                else if (ChoiceIndex == 4)
+                {
+                    UserViewaSecret();
+                }
                 else
                 {
                     EndTheGame();
@@ -185,12 +190,12 @@ namespace HuntTheWumpus_Team1
         private int GetInput() // This Function get the input from the original list of options. 
         {
             // 0 - Move to Next Room, 1 - Buy an Arrow, 2 - Shoot an Arrow, 3 - Buy a Secret, 4 - End Game Now. 
-            bool Statment = (ButtonMoveToNextRoomClicked == false && ButtonBuyanArrowClicked == false && ButtonShootanArrowClicked == false && ButtonBuyaSecretClicked == false && ButtonEndGameNowClicked == false);
+            bool Statment = (ButtonMoveToNextRoomClicked == false && ButtonBuyanArrowClicked == false && ButtonShootanArrowClicked == false && ButtonBuyaSecretClicked == false && ButtonSeeaSecretClicked == false && ButtonEndGameNowClicked == false);
 
             int toreturn;
             while (Statment == true)
             {
-                Statment = (ButtonMoveToNextRoomClicked == false && ButtonBuyanArrowClicked == false && ButtonShootanArrowClicked == false && ButtonBuyaSecretClicked == false && ButtonEndGameNowClicked == false);
+                Statment = (ButtonMoveToNextRoomClicked == false && ButtonBuyanArrowClicked == false && ButtonShootanArrowClicked == false && ButtonBuyaSecretClicked == false && ButtonSeeaSecretClicked == false && ButtonEndGameNowClicked == false);
             }
 
             if (ButtonMoveToNextRoomClicked == true)
@@ -210,15 +215,20 @@ namespace HuntTheWumpus_Team1
             {
                 toreturn = 3;
             }
-            else
+            else if (ButtonSeeaSecretClicked == true)
             {
                 toreturn = 4;
+            }
+            else
+            {
+                toreturn = 5;
             }
 
             ButtonMoveToNextRoomClicked = false;
             ButtonMoveToNextRoomClicked = false;
             ButtonShootanArrowClicked = false;
             ButtonMoveToNextRoomClicked = false;
+            ButtonSeeaSecretClicked = false;
             ButtonEndGameNowClicked = false;
             return toreturn;
 
@@ -236,7 +246,9 @@ namespace HuntTheWumpus_Team1
 
         private void EndTheGame() // This Function is most important as it will end the game when needed.
         {
-
+            HighScoreUI HighScoreDlg = new HighScoreUI();
+            HighScoreDlg.PlayedGameOrNot = true;
+            HighScoreDlg.ShowDialog();
         }
 
         private List<String> MakeListofImageLocation()
@@ -372,9 +384,13 @@ namespace HuntTheWumpus_Team1
             {
                 EndTheGame();
             }
+            else
+            {
+                MoveToNewRoom(1); // Moving back to Room 1.
+            }
         }
 
-        
+
         private void UserBuysAnArrow()
         {
             if (GameControlObject.CanWeBuyAnArrow())
@@ -455,7 +471,7 @@ namespace HuntTheWumpus_Team1
             }
         }
 
-        
+
         private void UserBuysASecret()
         {
             string StringtoShow = "This operations costs 3 Coins. You have: " + GameControlObject.PlayerGoldCoinAmount().ToString() + " Coins. Do You want to contiue?";
@@ -483,7 +499,7 @@ namespace HuntTheWumpus_Team1
                     DisplayaMessage("Secret is: " + SecretToShow);
                     List<string> ListofSecrets = GameControlObject.ReturnSecretList();
 
-                    for (int i =0; i < ListofSecrets.Count; i++)
+                    for (int i = 0; i < ListofSecrets.Count; i++)
                     {
                         listBoxSecretsList.Items.Add("Secret " + i.ToString());
                     }
@@ -495,10 +511,25 @@ namespace HuntTheWumpus_Team1
             }
         }
 
+        private void UserViewaSecret()
+        {
+            DisplayaMessage("Please select a Secret From Down Below");
+
+            while (listBoxSecretsList.SelectedIndex == -1)
+            {
+                // Do Nothing. Wait for User to select a Index.
+            }
+
+            int index = listBoxSecretsList.SelectedIndex;
+            string SecretToShow = GameControlObject.ReturnSecretList()[index];
+            string StringToShow = "Secret " + index.ToString() + ": " + SecretToShow;
+            DisplayaMessage(StringToShow);
+        }
+
         private bool DisplayAYesNoMessage(string StringToDisplay)
         {
             MessageBoxYesorNoCustom MessageBoxShowDlg = new MessageBoxYesorNoCustom();
-            MessageBoxShowDlg.QuestionToDisplay = StringToDisplay;  
+            MessageBoxShowDlg.QuestionToDisplay = StringToDisplay;
             MessageBoxShowDlg.ShowDialog();
 
             bool ResultOfMessageBox = MessageBoxShowDlg.ResultOfQuestion;
@@ -565,7 +596,9 @@ namespace HuntTheWumpus_Team1
             ButtomRoom1Clicked = true;
         }
 
-
-        
+        private void buttonViewSecret_Click(object sender, EventArgs e)
+        {
+            ButtonSeeaSecretClicked = true;
+        }
     }
 }

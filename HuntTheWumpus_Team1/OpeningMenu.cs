@@ -21,5 +21,12 @@ namespace HuntTheWumpus_Team1
         {
             this.Close();
         }
+
+        private void buttonViewPreviousHighScores_Click(object sender, EventArgs e)
+        {
+            HighScoreUI HighScoreDlg = new HighScoreUI();
+            HighScoreDlg.PlayedGameOrNot = false;
+            HighScoreDlg.ShowDialog();
+        }
     }
 }
