@@ -11,7 +11,7 @@ namespace HuntTheWumpus_Team1
     public partial class Form1 : Form
     {
         Player_GameControl GameControlObject = new GameControl_Offical.Player_GameControl();
-        int RoomNumber = 1;
+        // int RoomNumber = 1;
         bool SelfInitated = true;
 
 
@@ -48,9 +48,11 @@ namespace HuntTheWumpus_Team1
             // The Question that might come up is: Why so few? This is because after the User Selects to Move, We Move to the Function Below. This repeats on Innite till the Game Ends. 
         }
 
-        private void MoveToNewRoom(int RoomNumber, bool SelfInitatedOrNot)
+        private void MoveToNewRoom(int RoomNumber)
         {
             GameControlObject.UpdateWhereUserIs(RoomNumber);
+            ShowTriviaAnswer();
+            GameControlObject.AddGoldCoin();
             bool[] BoolArrayOfWarnings = DrawTheRoom(RoomNumber);
 
             if (BoolArrayOfWarnings[0] == true) // No more than 1 hazard in room. 
@@ -70,7 +72,12 @@ namespace HuntTheWumpus_Team1
 
 
         }
-
+        private void ShowTriviaAnswer()
+        {
+            TriviaAnswerUI TriviaAnswerUIDlg = new TriviaAnswerUI();
+            TriviaAnswerUIDlg.TriviaAnswerToUse = GameControlObject.SendTriviaQuestion();
+            TriviaAnswerUIDlg.Show();
+        }
         private void StartTheGame()
         {
             // Open the inital Menu. Give the User the oppertunity to login.
@@ -109,7 +116,7 @@ namespace HuntTheWumpus_Team1
 
             int RoomWeAreMovingToIndex = GetRoomInput();
 
-            MoveToNewRoom(RoomWeAreMovingToIndex, true);
+            MoveToNewRoom(RoomWeAreMovingToIndex);
         }
 
         private int GetRoomInput()
@@ -215,7 +222,7 @@ namespace HuntTheWumpus_Team1
 
         }
 
-        private void Form1_Activated(object sender, EventArgs e) 
+        private void Form1_Activated(object sender, EventArgs e)
         {
             buttonNextRoom1.Enabled = false;
             buttonNextRoom2.Enabled = false;
@@ -246,8 +253,6 @@ namespace HuntTheWumpus_Team1
             return ListtoReturn;
         }
 
-        
-
         private bool[] DrawTheRoom(int RoomNumberToDraw)
         {
             // This Room List should be of this form: [RoomUser, RoomtotheTopLeft, .... (Coutnerclockwise), ....]
@@ -266,7 +271,7 @@ namespace HuntTheWumpus_Team1
             buttonNextRoom5.Text = "Room: " + listofadjacentrooms[5].RoomNumber.ToString();
             buttonNextRoom6.Text = "Room: " + listofadjacentrooms[6].RoomNumber.ToString();
 
-           
+
 
             // Redraw Inventory
 
@@ -343,7 +348,11 @@ namespace HuntTheWumpus_Team1
 
         public void BatsInRoom()
         {
-            // Add Code to Move the User to a new Room. Also Move the Bats to a new room. 
+            DisplayaMessage("You encountered a Bat! You will now be moved to a new room at random!");
+
+            int RoomToUseTo = GameControlObject.GetNewUserRoom();
+            GameControlObject.MoveBatsFromRoom();
+            MoveToNewRoom(RoomToUseTo);
         }
 
         public void PitInRoom()
@@ -374,6 +383,7 @@ namespace HuntTheWumpus_Team1
 
             if (PlayerArrowAmount > 1)
             {
+                GameControlObject.RemoveArrowPlayerInventory();
                 DisplayaMessage("Please select the Room into which you want to shoot an arrow.");
 
                 int RoomToWhichWeShoot = GetRoomInput();
@@ -384,11 +394,18 @@ namespace HuntTheWumpus_Team1
 
                 if (GotWampus)
                 {
-                    DisplayaMessage("You got the Wampus");
+                    DisplayaMessage("You got the Wampus! Ending the Game");
+                    EndTheGame();
                 }
                 else
                 {
                     DisplayaMessage("You did not get the Wampus");
+                    Random randomvariable = new Random();
+
+                    if (randomvariable.Next(1, 2) == 1) // Randomly move Wampus.
+                    {
+                        GameControlObject.MoveWumpus(GameControlObject.WhereIsUser());
+                    }
                 }
 
             }
@@ -462,6 +479,17 @@ namespace HuntTheWumpus_Team1
         private void buttonNextRoom1_Click(object sender, EventArgs e)
         {
             ButtomRoom1Clicked = true;
+        }
+
+        private void listBoxSecretsList_DoubleClick(object sender, EventArgs e)
+        {
+            if (listBoxSecretsList.SelectedIndex != -1)
+            {
+                int index = listBoxSecretsList.SelectedIndex;
+                List<string> listofstring = GameControlObject.ReturnSecretList();
+                string stringtoDisplay = "Secret " + (index + 1).ToString() + " :" + listofstring[index];
+                DisplayaMessage(stringtoDisplay);
+            }
         }
     }
 }

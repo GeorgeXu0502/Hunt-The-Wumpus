@@ -12,7 +12,7 @@ namespace HuntTheWumpus_Team1
 {
     public partial class MessageBoxCustom : Form
     {
-        public string StringToDispaly { get; set; }
+        public string StringToDispaly { get; set; } = string.Empty; // This get rid of the Warning for Non-Null Value.
         public MessageBoxCustom()
         {
             InitializeComponent();

@@ -43,7 +43,6 @@
   <ItemGroup>
     <Compile Include="Player_TriviaMachine.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TriviaAnswer.cs" />
     <Compile Include="TriviaQuestion.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -39,9 +39,10 @@ namespace HuntTheWumpus_Team1
             for (int i = 0; i < AmountofQuestions; i++)
             {
                 AskQuestion();
+                GameControlObject.RemoveGoldCoin();
             }
 
-            if (GameControlObject.PlayerGoldCoinAmount() < AmountofQuestions)
+            if (GameControlObject.PlayerGoldCoinAmount() < 0)
             {
                 GotOffSaftley = false;
             }

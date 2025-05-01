@@ -33,21 +33,18 @@ namespace PlayerInventory_Offical
         }
 
         // Gold coin method which increases gold count by 1 when the users moves forward (SelfWanted)
-        public int GoldCoinIndex()
+        public int NumberofGoldCoinIndex()
         {
-
-            if (SelfWanted)
-            {
-                GoldCount += 1;
-            }
             return GoldCount;
+        }
+
+        public int NumberOfArrowsIndex()
+        {
+            return NumberOfArrows;
         }
 
         public bool EncounterTriviaPitCoins(bool goldCountLessThanZero)
         {
-
-
-
             for (int i = 0; i < 3; i++)
             {
                 GoldCount -= 1;
@@ -59,8 +56,6 @@ namespace PlayerInventory_Offical
 
         public bool EncounterWumpusCoins(bool goldCountLessThanZero)
         {
-
-
             for (int i = 0; i < 5; i++)
             {
                 GoldCount -= 1;
@@ -71,8 +66,6 @@ namespace PlayerInventory_Offical
 
         public int NumberOfTurnsIndex()
         {
-
-
             if (SelfWanted)
             {
                 NumberOfTurns += 1;
@@ -82,8 +75,6 @@ namespace PlayerInventory_Offical
 
         public int NumberOfArrowsIndex(bool isPurchase)
         {
-
-
             if (isPurchase)
             {
                 NumberOfArrows += 1;
@@ -97,7 +88,6 @@ namespace PlayerInventory_Offical
 
         public int CalculateHighScore(bool wumpusDefeated)
         {
-
             int wumpusBonus;
             if (wumpusDefeated == true)
             {

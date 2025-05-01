@@ -8,14 +8,21 @@ namespace TrivaMachine_Offical
 {
     public class Player_TriviaMachine
     {
-        TriviaAnswer exmaplefornow = new TriviaAnswer("What is the radius of Mars?", "1000 miles"); // This will need to be changed.
+        
         public bool GetResult()
         {
             return true;
         }
 
-        public TriviaAnswer GetTriviaAnswer()
+        public TriviaQuestion GetTriviaAnswer()
         {
+            List<string> possiblestringlist = new List<string>();
+            possiblestringlist.Add("Hi");
+            possiblestringlist.Add("Hi");
+            possiblestringlist.Add("Hi");
+            possiblestringlist.Add("Hi");
+
+            TriviaQuestion exmaplefornow = new TriviaQuestion("What is the radius of Mars.", possiblestringlist, 1); // This will need to be changed.
             return exmaplefornow;
         }
 

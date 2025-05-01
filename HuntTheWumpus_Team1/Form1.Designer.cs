@@ -51,6 +51,7 @@
             textBoxGoldCoinAmount = new TextBox();
             label3 = new Label();
             label2 = new Label();
+            listBoxSecretsList = new ListBox();
             ((System.ComponentModel.ISupportInitialize)pictureBoxGeneralRoomBackground).BeginInit();
             groupBoxplayeractions.SuspendLayout();
             groupBoxPlayerInventory.SuspendLayout();
@@ -299,12 +300,23 @@
             label2.TabIndex = 0;
             label2.Text = "Amount of Gold Coins:";
             // 
+            // listBoxSecretsList
+            // 
+            listBoxSecretsList.FormattingEnabled = true;
+            listBoxSecretsList.ItemHeight = 25;
+            listBoxSecretsList.Location = new Point(1262, 996);
+            listBoxSecretsList.Name = "listBoxSecretsList";
+            listBoxSecretsList.Size = new Size(505, 304);
+            listBoxSecretsList.TabIndex = 18;
+            listBoxSecretsList.DoubleClick += listBoxSecretsList_DoubleClick;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(98, 127, 149);
             ClientSize = new Size(1790, 1323);
+            Controls.Add(listBoxSecretsList);
             Controls.Add(groupBoxPlayerInventory);
             Controls.Add(groupBoxplayeractions);
             Controls.Add(buttonNextRoom4);
@@ -354,5 +366,6 @@
         private Button buttonShootanArrow;
         private Button buttonMovetoNextRoom;
         private Button buttonEndGameNow;
+        private ListBox listBoxSecretsList;
     }
 }
