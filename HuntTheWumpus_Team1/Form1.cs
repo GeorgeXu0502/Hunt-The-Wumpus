@@ -353,6 +353,7 @@ namespace HuntTheWumpus_Team1
 
             if (DidWeMakeIt == false)
             {
+                // Change this to pass into the Wampus deafeted. YOU DID THIS WRONG!
                 EndTheGame();
             }
             else
