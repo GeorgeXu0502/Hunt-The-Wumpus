@@ -99,5 +99,21 @@ namespace PlayerInventory_Offical
         }
 
         // Add a function that returns error gold amount
+
+        public void AddGoldCoin()
+        {
+            GoldCount += 1;
+        }
+
+        public void RemoveGoldCoin()
+        {
+            GoldCount -= 1;
+        }   
+
+        public List<int> GetTopScores()
+        {
+            //return a list of the top 5 scores
+            return new List<int>();
+        }
     }
 }

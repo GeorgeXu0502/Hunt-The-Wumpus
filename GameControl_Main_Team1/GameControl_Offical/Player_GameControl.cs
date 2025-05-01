@@ -19,10 +19,17 @@ namespace GameControl_Offical
         int RoomUserIsIn = 1; // This is where the User Starts
         int goldCoinsCount = 0;
         List<string> SecretList = new List<string>();
+
+        bool wumpusDefeated = false;
         public List<Room> AdjacentRoomInformation(int RoomToGetInformationFor)
         {
             // Write Function to get a List: // This Room List should be of this form: [RoomUser, RoomtotheTopLeft, .... (Coutnerclockwise), ....]
             return CaveMainObject.GetAdjacentRoomInformation(RoomToGetInformationFor);
+        }
+
+        public void changestatus()
+        {
+            wumpusDefeated = true;
         }
 
         public void UpdateWhereUserIs(int RoomNumberWeAreMovingTo)
@@ -78,37 +85,42 @@ namespace GameControl_Offical
         {
             // Write Code To Check If Wampus is in the Room.
 
-            return false;
+            return CaveMainObject.IsWumpusInRoom(RoomToCheck);
         }
 
         public int GetNewUserRoom()
         {
             // Return a new room with no hazards. Ask Cave to do this. 
-            return 0;
+            return CaveMainObject.GetNewRoom();
         }
 
         public void MoveBatsFromRoom()
         {
             // Move Bats from the Room the User is In, to a new Room. Ask Cave to do this.
+            CaveMainObject.MoveBatsToDifferentRoom(RoomUserIsIn);
         }
 
         public void AddGoldCoin()
         {
             // Add a Gold Coin to the Player Inventory. 
+            PlayerInventoryObject.AddGoldCoin();
         }
 
         public void AddArrow()
         {
             // Add a Arrow to the Player Invnetory. 
+            PlayerInventoryObject.NumberOfArrowsIndex(true);
         }
 
         public void RemoveGoldCoin()
         {
             // Remove a Gold Coin From the Player. 
+            PlayerInventoryObject.RemoveGoldCoin();
         }
         public void RemoveArrowPlayerInventory()
         {
             // Take a Arrow From the Player.
+            PlayerInventoryObject.NumberOfArrowsIndex(false);
         }
 
         public string AddASecretToList()
@@ -130,6 +142,7 @@ namespace GameControl_Offical
         public bool CanWeBuyAnArrow()
         {
             // Write a Function if we can buy a Arrow Still. Rember only 2 per Game. Collaborate with Player Invnetory. 
+
             return true;
         }
 
@@ -137,15 +150,14 @@ namespace GameControl_Offical
         {
             // Return Player Score. Ask Player Inventory To Do This. 
 
-            return 0;
+            return PlayerInventoryObject.CalculateHighScore(wumpusDefeated);
         }
 
         public List<int> GetTopScores()
         {
             // Return a List with the Top 5 Scores. Ask Player Inventory To Do This.
 
-            List<int> TopScoresList = new List<int>();
-            return TopScoresList;
+            return PlayerInventoryObject.GetTopScores();
         }
     }
 }

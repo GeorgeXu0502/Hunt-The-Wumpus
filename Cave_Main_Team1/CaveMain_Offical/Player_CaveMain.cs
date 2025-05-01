@@ -27,5 +27,22 @@ namespace CaveMain_Offical
 
             return new List<Room>();
         }
+
+        public bool IsWumpusInRoom(int RoomNumber)
+        {
+            // Check if Wumpus is in the room
+            return false;
+        }
+
+        public int GetNewRoom()
+        {
+            //Return a new room with no hazards
+            return 0;
+        }
+
+        public void MoveBatsToDifferentRoom(int roomNumber)
+        {
+            // Move the bats to a different room than the user
+        }
     }
 }
