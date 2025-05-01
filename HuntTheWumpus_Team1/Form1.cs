@@ -14,7 +14,7 @@ namespace HuntTheWumpus_Team1
         // int RoomNumber = 1;
         // bool SelfInitated = true;
 
-
+        string UserUsername;
         // System Specific Image Location:
         List<string> ListofImageLocation = new List<string>();
 
@@ -84,6 +84,7 @@ namespace HuntTheWumpus_Team1
             // Open the inital Menu. Give the User the oppertunity to login.
             OpeningMenu OpentheMenuObject = new OpeningMenu();
             OpentheMenuObject.ShowDialog();
+            UserUsername = OpentheMenuObject.UsernameToReturn;
 
             bool[] DangerInRoom = DrawTheRoom(GameControlObject.WhereIsUser());
         }
@@ -352,6 +353,7 @@ namespace HuntTheWumpus_Team1
 
             if (DidWeMakeIt == false)
             {
+                // Change this to pass into the Wampus deafeted. YOU DID THIS WRONG!
                 EndTheGame();
             }
             else
