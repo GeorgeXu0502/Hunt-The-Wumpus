@@ -21,6 +21,12 @@ namespace GameControl_Offical
         List<string> SecretList = new List<string>();
 
         bool WumpusDefeated = false;
+
+        public void AddATriviaFile()
+        {
+            TriviaMachineObject.WriteTriviaToFile();
+        }
+
         public List<Room> AdjacentRoomInformation(int RoomToGetInformationFor)
         {
             // Write Function to get a List: // This Room List should be of this form: [RoomUser, RoomtotheTopLeft, .... (Coutnerclockwise), ....]
