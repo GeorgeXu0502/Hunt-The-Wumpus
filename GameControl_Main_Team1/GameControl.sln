@@ -5,7 +5,7 @@ VisualStudioVersion = 17.12.35707.178
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameControl_Test", "GameControl_Test\GameControl_Test.csproj", "{05F64D55-21D3-408B-8A5A-4551A9A997B1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameControl_Offical", "GameControl_Offical\GameControl_Offical.csproj", "{3B1FE509-BEEF-42E7-942F-44898EE0A264}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameControl_Offical2", "GameControl_Offical2\GameControl_Offical2.csproj", "{AF499108-7253-4912-9B17-AEBDACED2B03}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{05F64D55-21D3-408B-8A5A-4551A9A997B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{05F64D55-21D3-408B-8A5A-4551A9A997B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{05F64D55-21D3-408B-8A5A-4551A9A997B1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3B1FE509-BEEF-42E7-942F-44898EE0A264}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3B1FE509-BEEF-42E7-942F-44898EE0A264}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3B1FE509-BEEF-42E7-942F-44898EE0A264}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3B1FE509-BEEF-42E7-942F-44898EE0A264}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF499108-7253-4912-9B17-AEBDACED2B03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF499108-7253-4912-9B17-AEBDACED2B03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF499108-7253-4912-9B17-AEBDACED2B03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF499108-7253-4912-9B17-AEBDACED2B03}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
