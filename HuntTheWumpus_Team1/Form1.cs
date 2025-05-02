@@ -349,8 +349,10 @@ namespace HuntTheWumpus_Team1
             triviaDlg.AmountofQuestions = 5;
             triviaDlg.ShowDialog();
 
-            bool DidWeMakeIt = triviaDlg.GotOffSaftley;
+            bool DidWeMakeItWithCoins = triviaDlg.GotOffWithCoins;
+            bool DidWeMakeItWithQuestions = triviaDlg.GotOffWithQuestions;
 
+            bool DidWeMakeIt = (DidWeMakeItWithCoins == true && DidWeMakeItWithQuestions == true);
             if (DidWeMakeIt == false)
             {
                 // Change this to pass into the Wampus deafeted. YOU DID THIS WRONG!
@@ -358,6 +360,7 @@ namespace HuntTheWumpus_Team1
             }
             else
             {
+                DisplayaMessage("We narowly avoided the Wampus! It will now move to a different room!");
                 GameControlObject.MoveWumpus(GameControlObject.WhereIsUser());
             }
         }
@@ -367,7 +370,7 @@ namespace HuntTheWumpus_Team1
             DisplayaMessage("You encountered a Bat! You will now be moved to a new room at random!");
 
             int RoomToUseTo = GameControlObject.GetNewUserRoom();
-            GameControlObject.MoveBatsFromRoom();
+            GameControlObject.MoveBatsFromRoom(RoomToUseTo);
             MoveToNewRoom(RoomToUseTo);
         }
 
@@ -379,9 +382,10 @@ namespace HuntTheWumpus_Team1
             triviaDlg.AmountofQuestions = 3;
             triviaDlg.ShowDialog();
 
-            bool DidWeMakeIt = triviaDlg.GotOffSaftley;
+            bool DidWeMakeItWithCoins = triviaDlg.GotOffWithCoins;
+            bool DidWeMakeItWithQuestions = triviaDlg.GotOffWithQuestions;
 
-
+            bool DidWeMakeIt = (DidWeMakeItWithCoins == true && DidWeMakeItWithQuestions == true);
             if (DidWeMakeIt == false)
             {
                 EndTheGame();
@@ -408,18 +412,25 @@ namespace HuntTheWumpus_Team1
                     triviaDlg.AmountofQuestions = 3;
                     triviaDlg.ShowDialog();
 
-                    bool DidWeMakeIt = triviaDlg.GotOffSaftley;
+                    bool DidWeMakeItWithCoins = triviaDlg.GotOffWithCoins;
+                    bool DidWeMakeItWithQuestions = triviaDlg.GotOffWithQuestions;
 
-
-                    if (DidWeMakeIt == false)
+                    if (DidWeMakeItWithCoins == false)
                     {
                         EndTheGame();
                     }
                     else
                     {
-                        DisplayaMessage("We have an Extra Arrow!");
-                        GameControlObject.AddArrow();
-                        textBoxArrowAmount.Text = GameControlObject.PlayerArrowAmount().ToString();
+                        if (DidWeMakeItWithQuestions)
+                        {
+                            DisplayaMessage("We have an Extra Arrow!");
+                            GameControlObject.AddArrow();
+                            textBoxArrowAmount.Text = GameControlObject.PlayerArrowAmount().ToString();
+                        }
+                        else
+                        {
+                            DisplayaMessage("We did not get an extra Extra Arrow!");
+                        }
                     }
                 }
                 else
@@ -451,6 +462,7 @@ namespace HuntTheWumpus_Team1
                 if (GotWampus)
                 {
                     DisplayaMessage("You got the Wampus! Ending the Game");
+                    GameControlObject.ChangeWumpusDefetedStatus();
                     EndTheGame();
                 }
                 else
@@ -487,24 +499,32 @@ namespace HuntTheWumpus_Team1
                 triviaDlg.AmountofQuestions = 3;
                 triviaDlg.ShowDialog();
 
-                bool DidWeMakeIt = triviaDlg.GotOffSaftley;
+                bool DidWeMakeItWithCoins = triviaDlg.GotOffWithCoins;
+                bool DidWeMakeItWithQuestions = triviaDlg.GotOffWithQuestions;
 
-
-                if (DidWeMakeIt == false)
+                if (DidWeMakeItWithCoins == false)
                 {
                     EndTheGame();
                 }
                 else
                 {
-                    DisplayaMessage("We have an Extra Secret!");
-                    string SecretToShow = GameControlObject.AddASecretToList();
-                    DisplayaMessage("Secret is: " + SecretToShow);
-                    List<string> ListofSecrets = GameControlObject.ReturnSecretList();
-
-                    for (int i = 0; i < ListofSecrets.Count; i++)
+                    if (DidWeMakeItWithQuestions)
                     {
-                        listBoxSecretsList.Items.Add("Secret " + i.ToString());
+                        DisplayaMessage("We have an Extra Secret!");
+                        string SecretToShow = GameControlObject.AddASecretToList();
+                        DisplayaMessage("Secret is: " + SecretToShow);
+                        List<string> ListofSecrets = GameControlObject.ReturnSecretList();
+
+                        for (int i = 0; i < ListofSecrets.Count; i++)
+                        {
+                            listBoxSecretsList.Items.Add("Secret " + i.ToString());
+                        }
                     }
+                    else
+                    {
+                        DisplayaMessage("We do not have an Extra Secret");
+                    }
+                    
                 }
             }
             else

@@ -19,7 +19,15 @@ namespace HuntTheWumpus_Team1
         public HighScoreUI()
         {
             InitializeComponent();
+        }
 
+        private void buttonExitTheGame_Click(object sender, EventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
+        }
+
+        private void HighScoreUI_Load(object sender, EventArgs e)
+        {
             if (PlayedGameOrNot)
             {
                 textBoxPlayerScore.Text = GameControlObject.PlayerScoreFinal().ToString();
@@ -40,12 +48,6 @@ namespace HuntTheWumpus_Team1
                 textBoxTopScore4.Text = TopScores[3].ToString();
                 textBoxTopScore5.Text = TopScores[4].ToString();
             }
-
-        }
-
-        private void buttonExitTheGame_Click(object sender, EventArgs e)
-        {
-            System.Windows.Forms.Application.Exit();
         }
     }
 }

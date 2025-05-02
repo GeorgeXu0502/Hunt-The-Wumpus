@@ -20,16 +20,16 @@ namespace GameControl_Offical
         int goldCoinsCount = 0;
         List<string> SecretList = new List<string>();
 
-        bool wumpusDefeated = false;
+        bool WumpusDefeated = false;
         public List<Room> AdjacentRoomInformation(int RoomToGetInformationFor)
         {
             // Write Function to get a List: // This Room List should be of this form: [RoomUser, RoomtotheTopLeft, .... (Coutnerclockwise), ....]
             return CaveMainObject.GetAdjacentRoomInformation(RoomToGetInformationFor);
         }
 
-        public void changestatus()
+        public void ChangeWumpusDefetedStatus()
         {
-            wumpusDefeated = true;
+            WumpusDefeated = true;
         }
 
         public void UpdateWhereUserIs(int RoomNumberWeAreMovingTo)
@@ -41,12 +41,6 @@ namespace GameControl_Offical
         {
             // This Function should return where the User is. Room Number (int)
             return RoomUserIsIn;
-        }
-        public Room GetRoomUserMovingTo(int RoomNumber, bool SelfIntitated)
-        {
-            Room RoomtoReturn = CaveMainObject.GetRoomInformation(RoomNumber);
-
-            return RoomtoReturn;
         }
 
         public TriviaQuestion SendTriviaQuestion()
@@ -94,10 +88,10 @@ namespace GameControl_Offical
             return CaveMainObject.GetNewRoom();
         }
 
-        public void MoveBatsFromRoom()
+        public void MoveBatsFromRoom(int RoomWhereUserIsMoved)
         {
             // Move Bats from the Room the User is In, to a new Room. Ask Cave to do this.
-            CaveMainObject.MoveBatsToDifferentRoom(RoomUserIsIn);
+            CaveMainObject.MoveBatsToDifferentRoom(RoomUserIsIn, RoomWhereUserIsMoved);
         }
 
         public void AddGoldCoin()
@@ -142,15 +136,14 @@ namespace GameControl_Offical
         public bool CanWeBuyAnArrow()
         {
             // Write a Function if we can buy a Arrow Still. Rember only 2 per Game. Collaborate with Player Invnetory. 
-
-            return true;
+            return PlayerInventoryObject.CanWeBuyAnArrow();
         }
 
         public int PlayerScoreFinal()
         {
             // Return Player Score. Ask Player Inventory To Do This. 
 
-            return PlayerInventoryObject.CalculateHighScore(wumpusDefeated);
+            return PlayerInventoryObject.CalculateHighScore(WumpusDefeated);
         }
 
         public List<int> GetTopScores()

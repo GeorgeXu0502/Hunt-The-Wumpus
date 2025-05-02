@@ -19,8 +19,12 @@ namespace HuntTheWumpus_Team1
         {
             InitializeComponent();
         }
+        private void buttonContiue_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
 
-        private void TriviaAnswerUI_Activated(object sender, EventArgs e)
+        private void TriviaAnswerUI_Load(object sender, EventArgs e)
         {
             richTextBoxMainQuestion.Text = TriviaAnswerToUse.QuestionTrivia;
 
@@ -45,11 +49,6 @@ namespace HuntTheWumpus_Team1
             {
                 buttonOptionD.BackColor = Color.DarkGreen;
             }
-        }
-
-        private void buttonContiue_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }

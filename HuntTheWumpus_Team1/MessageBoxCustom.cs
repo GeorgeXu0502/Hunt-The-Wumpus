@@ -17,13 +17,17 @@ namespace HuntTheWumpus_Team1
         {
             InitializeComponent();
 
-            richTextBoxDispaly.Text = StringToDispaly;
 
         }
 
         private void buttonContinue_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void MessageBoxCustom_Load(object sender, EventArgs e)
+        {
+            richTextBoxDispaly.Text = StringToDispaly;
         }
     }
 }

@@ -168,7 +168,7 @@
             Controls.Add(label1);
             Name = "TriviaAnswerUI";
             Text = "TriviaAnswerUI";
-            Activated += TriviaAnswerUI_Activated;
+            Load += TriviaAnswerUI_Load;
             ResumeLayout(false);
             PerformLayout();
         }

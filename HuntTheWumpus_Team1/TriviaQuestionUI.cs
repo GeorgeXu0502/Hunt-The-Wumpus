@@ -16,7 +16,9 @@ namespace HuntTheWumpus_Team1
     {
         public int AmountofQuestions { get; set; }
 
-        public bool GotOffSaftley;
+        public bool GotOffWithQuestions;
+
+        public bool GotOffWithCoins;
 
         Player_GameControl GameControlObject = new GameControl_Offical.Player_GameControl();
 
@@ -44,17 +46,21 @@ namespace HuntTheWumpus_Team1
 
             if (GameControlObject.PlayerGoldCoinAmount() < 0)
             {
-                GotOffSaftley = false;
+                GotOffWithCoins = false;
+            }
+            else
+            {
+                GotOffWithCoins = true;
             }
 
             if (AmountofQuestions == 5 && AmountofCorrectQuestions < 3)
             {
-                GotOffSaftley = false;
+                GotOffWithQuestions = false;
             }
 
             if (AmountofQuestions == 3 && AmountofCorrectQuestions < 2)
             {
-                GotOffSaftley = false;
+                GotOffWithQuestions = false;
             }
         }
 

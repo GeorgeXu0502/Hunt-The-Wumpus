@@ -8,17 +8,9 @@ namespace CaveMain_Offical
 {
     public class Player_CaveMain
     {
-        public Room GetRoomInformation(int RoomNumber)
-        {
-            int[] samplearray = { 1, 2, 3, 4, 5, 6 };
-            Room RoomtoReturn = new Room(1, false, false, false, samplearray);
-
-            return RoomtoReturn;
-        }
-
         public void MoveWumpus(int roomRoomNumberWhereUserIsIn)
         {
-            //Move the Wumpus to a different room
+            //Move the Wumpus to a different room, not where the User is. Please check guide for this.
         }
 
         public List<Room> GetAdjacentRoomInformation(int RoomNumberForWhichToGetInformation)
@@ -28,21 +20,22 @@ namespace CaveMain_Offical
             return new List<Room>();
         }
 
-        public bool IsWumpusInRoom(int RoomNumber)
+        public bool IsWumpusInRoom(int RoomNumberToCheck)
         {
-            // Check if Wumpus is in the room
+            // Check if Wumpus is in the room.
             return false;
         }
 
         public int GetNewRoom()
         {
-            //Return a new room with no hazards
+            //Return a new room with no hazards. Just an Integer.
             return 0;
         }
 
-        public void MoveBatsToDifferentRoom(int roomNumber)
+        public void MoveBatsToDifferentRoom(int RoomNumberWhereUserIs, int RoomWhereUserIsMoved)
         {
-            // Move the bats to a different room than the user
+            // Move the bats to a different room than the user. The room where the User was (and meet Bats), where the User is to be moved to.
+            // Move bats to any other room bu thits.
         }
     }
 }

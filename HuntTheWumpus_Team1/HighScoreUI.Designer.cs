@@ -194,6 +194,7 @@
             Controls.Add(label1);
             Name = "HighScoreUI";
             Text = "HighScoreUI";
+            Load += HighScoreUI_Load;
             ResumeLayout(false);
             PerformLayout();
         }

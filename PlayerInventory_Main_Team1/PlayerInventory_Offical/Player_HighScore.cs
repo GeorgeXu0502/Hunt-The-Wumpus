@@ -19,7 +19,7 @@ namespace PlayerInventory_Offical
         public bool SelfWanted { get; set; }
         public int Score { get; set; }
 
-
+        public int AmoutofArrowsBoughtAlready { get; set; }
 
 
         // Constructor
@@ -30,6 +30,7 @@ namespace PlayerInventory_Offical
             NumberOfArrows = 3;
             SelfWanted = false;
             Score = 0;
+            AmoutofArrowsBoughtAlready = 0;
         }
 
         // Gold coin method which increases gold count by 1 when the users moves forward (SelfWanted)
@@ -78,6 +79,7 @@ namespace PlayerInventory_Offical
             if (isPurchase)
             {
                 NumberOfArrows += 1;
+                AmoutofArrowsBoughtAlready += 1;
             }
             else
             {
@@ -114,6 +116,18 @@ namespace PlayerInventory_Offical
         {
             //return a list of the top 5 scores
             return new List<int>();
+        }
+
+        public bool CanWeBuyAnArrow()
+        {
+            if (AmoutofArrowsBoughtAlready >= 2)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
         }
     }
 }
