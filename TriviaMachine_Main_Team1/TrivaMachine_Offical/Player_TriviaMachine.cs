@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace TrivaMachine_Offical
 {
@@ -29,14 +30,13 @@ namespace TrivaMachine_Offical
             TriviaQuestionAnswerOptions.Add("8.3 billion years.");
             TriviaQuestionAnswerOptions.Add("13.7 million years");
             TriviaQuestionAnswerOptions.Add("8.3 million years");
-            TriviaQuestion TriviaQuestionToAdd = new TriviaQuestion("What is the approximate age of the universe?
-", TriviaQuestionAnswerOptions, 0);
-            ListofTriviaToWrite.Append(TriviaQuestionToAdd);
+            TriviaQuestion TriviaQuestionToAdd = new TriviaQuestion("What is the approximate age of the universe?", TriviaQuestionAnswerOptions, 0);
+            ListofTriviaToWrite.Add(TriviaQuestionToAdd);
 
 
 
             // Function to Write it To File. 
-            Utility.WriteTriviaToFile(List<TriviaQuestion> ListofTriviaToWrite, Triviadatafiletouse);
+            Utility.WriteTriviaToFile(ListofTriviaToWrite, Triviadatafiletouse);
         }
 
         public void WriteSecretToFile()

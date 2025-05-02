@@ -39,6 +39,7 @@ namespace HuntTheWumpus_Team1
 
             // Add the Locations
             ListofImageLocation = MakeListofImageLocation();
+            GameControlObject.AddATriviaFile();
             Main();
         }
         private void Main() // THE MAIN FUNCTION HERE!
