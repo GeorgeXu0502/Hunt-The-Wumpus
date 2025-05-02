@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CaveMain_Test
+namespace CaveMain_Official2
 {
     public class Room
     {
@@ -24,10 +24,5 @@ namespace CaveMain_Test
             HasPit = hasPit;
             NextRoomList = nextRoomList;
         }
-
-
-
-
-
     }
 }
