@@ -26,7 +26,7 @@ namespace GameControl_Offical
 
         public void AddATriviaFile()
         {
-            TriviaMachineObject.WriteTriviaToFile();
+            TriviaMachineObject.WriteTriviaToFile(); // This function is to be used only with the greatest care!
         }
 
         public List<Room> AdjacentRoomInformation(int RoomToGetInformationFor)
