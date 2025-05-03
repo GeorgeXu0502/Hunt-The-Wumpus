@@ -18,14 +18,13 @@ namespace TrivaMachine_Offical
         int ListTriviaQuestionIndex = 0; // This Index is Used to Monitor The Questions.
         int ListSecretIndex = 0; //This Index is Used to Monitor the Secrets.
 
-        
-        public void WriteSecretToFile()
+        // The Construcutor for the File. 
+        public Player_TriviaMachine()
         {
-            // Use this function to write the Secret to the File for the First Time.
-            // Then this file can be deleted.
+            ReadTriviaFile();
+            // ReadSecretFile(); 
         }
 
-        //IMPLEMENT THIS AND WRITE TO FILE FIRST!
         public void ReadTriviaFile()
         {
             // Use this Function to Read The Trivia From the File.
@@ -35,10 +34,17 @@ namespace TrivaMachine_Offical
         public void ReadSecretFile()
         {
             ListofSecrets = Utility.ReadSecretsFromFile(Secretdatafiletouse);
-
         }
+        
+        // Returns both the Trivia Answer and Question, contrary to the Name. 
         public TriviaQuestion GetTriviaAnswer()
         {
+            // Might want to fix this in anyway possible. This just cycles the questions, could implement anything else? Like a random function, only give questions to which we have given an answer.
+            if (ListTriviaQuestionIndex == ListofTriviaQuestions.Count)
+            {
+                ListTriviaQuestionIndex = 0;
+            }
+
             TriviaQuestion TriviaQuestionToReturn = ListofTriviaQuestions[ListTriviaQuestionIndex];
             ListTriviaQuestionIndex++;
             return TriviaQuestionToReturn;
@@ -46,6 +52,12 @@ namespace TrivaMachine_Offical
 
         public string GetSecret()
         {
+            // Might want to fix this in anyway possible. This just cycles the questions, could implement anything else? Like a random function, only give questions to which we have given an answer.
+            if (ListSecretIndex == ListofSecrets.Count)
+            {
+                ListSecretIndex = 0;
+            }
+
             string SecretToReturn = ListofSecrets[ListSecretIndex];
             ListSecretIndex++;
             return SecretToReturn;
