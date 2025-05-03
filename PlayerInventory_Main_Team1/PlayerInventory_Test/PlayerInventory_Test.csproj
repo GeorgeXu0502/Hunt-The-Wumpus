@@ -9,7 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\PlayerInventory_Offical\PlayerInventory_Offical.csproj" />
+    <ProjectReference Include="..\PlayerInventory_Offical2\PlayerInventory_Offical2.csproj" />
   </ItemGroup>
 
 </Project>
