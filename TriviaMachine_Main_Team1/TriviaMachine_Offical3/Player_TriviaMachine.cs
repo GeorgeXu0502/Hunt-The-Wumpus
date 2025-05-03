@@ -17,6 +17,7 @@ namespace TrivaMachine_Offical
 
         int ListTriviaQuestionIndex = 0; // This Index is Used to Monitor The Questions.
         int ListSecretIndex = 0; //This Index is Used to Monitor the Secrets.
+
         
         public void WriteSecretToFile()
         {

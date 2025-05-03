@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using CaveMain_Official2;
 using TrivaMachine_Offical;
 using PlayerInventory_Offical;
-using TriviaMachine_Offical3;
+using TriviaMachine_Offical;
 
 namespace GameControl_Offical
 {
@@ -15,7 +15,7 @@ namespace GameControl_Offical
     {
         
         Player_TriviaMachine TriviaMachineObject = new TrivaMachine_Offical.Player_TriviaMachine();
-        WritingNewTriviaToFile FileWritingObject = new TriviaMachine_Offical3.WritingNewTriviaToFile();
+        WritingNewTriviaToFile FileWritingObject = new TriviaMachine_Offical.WritingNewTriviaToFile();
         Player_CaveMain CaveMainObject = new CaveMain_Official2.Player_CaveMain();
         Player_HighScore PlayerInventoryObject = new PlayerInventory_Offical.Player_HighScore();
         
@@ -26,11 +26,12 @@ namespace GameControl_Offical
 
         bool WumpusDefeated = false;
 
-        
-        public void AddATriviaFile()
+        /*
+        public void AddOriginalTriviaFile()
         {
-            FileWritingObject.WriteTriviaToFile(); // This function is to be used only with the greatest care!
+            FileWritingObject.WriteTriviaToFile(); // This function is to be used only with the greatest care! This is the oringinal Trivia File. 
         }
+        */
         
 
         public List<Room> AdjacentRoomInformation(int RoomToGetInformationFor)
