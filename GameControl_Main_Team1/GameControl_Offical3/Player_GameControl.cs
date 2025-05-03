@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CaveMain_Official2;
 using TrivaMachine_Offical;
-using CaveMain_Offical;
 using PlayerInventory_Offical;
 
 namespace GameControl_Offical
@@ -12,9 +12,11 @@ namespace GameControl_Offical
     
     public class Player_GameControl
     {
+        
         Player_TriviaMachine TriviaMachineObject = new TrivaMachine_Offical.Player_TriviaMachine();
-        Player_CaveMain CaveMainObject = new CaveMain_Offical.Player_CaveMain();
+        Player_CaveMain CaveMainObject = new CaveMain_Official2.Player_CaveMain();
         Player_HighScore PlayerInventoryObject = new PlayerInventory_Offical.Player_HighScore();
+        
 
         int RoomUserIsIn = 1; // This is where the User Starts
         int goldCoinsCount = 0;

@@ -9,7 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\GameControl_Offical2\GameControl_Offical2.csproj" />
+    <ProjectReference Include="..\GameControl_Offical3\GameControl_Offical3.csproj" />
   </ItemGroup>
 
 </Project>
