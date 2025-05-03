@@ -4,6 +4,7 @@ namespace CaveMain_Test
 {
     public partial class Form1 : Form
     {
+        List<Room> Version1Map = new List<Room>();
         // information about each room in Version 1 of the cave
         // if room has bats, if room has wumpus, if room has a pit, what rooms player can move to next
         Room Room1V1 = new Room(1, false, false, false, [2, 6, 7, 25, 26, 30]);
@@ -178,7 +179,7 @@ namespace CaveMain_Test
         {
             InitializeComponent();
 
-            List<Room> Version1Map = new List<Room>();
+            
             Version1Map.Add(Room1V1);
             Version1Map.Add(Room2V1);
             Version1Map.Add(Room3V1);
@@ -347,13 +348,28 @@ namespace CaveMain_Test
 
         public void MoveWumpus(int roomRoomNumberWhereUserIsIn)
         {
+            foreach(Room roomToCheck in Version1Map)
+            {
+                if (roomToCheck.HasWumpus == true)
+                {
+                    int wumpusRoom = roomToCheck.RoomNumber;
+                    break;
+                }
+            }
+
             Random rnd = new Random();
             int newWumpusRoom = rnd.Next(1, 30);
 
-            //foreach(Room roomToCheck in Room)
-            //{
+            while (Version1Map[newWumpusRoom - 1].HasWumpus == true || Version1Map[newWumpusRoom - 1].HasBats == true || Version1Map[newWumpusRoom - 1].HasPit == true)
+            {
+                newWumpusRoom++;
+            }
 
-            //}
+            Version1Map[newWumpusRoom - 1].HasWumpus = true;
+
+
+
+           
 
 
 
@@ -369,22 +385,51 @@ namespace CaveMain_Test
 
         public bool IsWumpusInRoom(int RoomNumberToCheck)
         {
-            // Check if Wumpus is in the room.
-
-
-            return false;
+            if (Version1Map[RoomNumberToCheck - 1].HasWumpus == true)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         public int GetNewRoom()
         {
-            //Return a new room with no hazards. Just an Integer.
-            return 0;
+            Random rnd = new Random();
+            int newRoom = rnd.Next(1, 30);
+
+            while(Version1Map[newRoom - 1].HasWumpus == true || Version1Map[newRoom - 1].HasBats == true || Version1Map[newRoom - 1].HasPit == true)
+            {
+                newRoom++;
+            }
+
+            return newRoom;
         }
 
         public void MoveBatsToDifferentRoom(int RoomNumberWhereUserIs, int RoomWhereUserIsMoved)
         {
-            // Move the bats to a different room than the user. The room where the User was (and meet Bats), where the User is to be moved to.
-            // Move bats to any other room bu thits.
+            /*
+            foreach(Room roomToCheck in Version1Map)
+            {
+                if (roomToCheck.HasBats == true)
+                {
+                    int wumpusRoom = roomToCheck.RoomNumber;
+                    break;
+                }
+            }
+
+            Random rnd = new Random();
+            int newWumpusRoom = rnd.Next(1, 30);
+
+            while (Version1Map[newWumpusRoom - 1].HasWumpus == true || Version1Map[newWumpusRoom - 1].HasBats == true || Version1Map[newWumpusRoom - 1].HasPit == true)
+            {
+                newWumpusRoom++;
+            }
+
+            Version1Map[newWumpusRoom - 1].HasWumpus = true;
+            */
         }
 
         
