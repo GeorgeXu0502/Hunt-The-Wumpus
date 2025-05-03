@@ -17,28 +17,7 @@ namespace TrivaMachine_Offical
 
         int ListTriviaQuestionIndex = 0; // This Index is Used to Monitor The Questions.
         int ListSecretIndex = 0; //This Index is Used to Monitor the Secrets.
-
-        public void WriteTriviaToFile()
-        {
-            // Use this function to write the Trivia to the File for the First Time.
-            // Then this file can be deleted.
-
-            // This is the list of current trivia:
-            List<TriviaQuestion> ListofTriviaToWrite = new List<TriviaQuestion>();
-            List<string> TriviaQuestionAnswerOptions = new List<string>();
-            TriviaQuestionAnswerOptions.Add("13.7 billion years.");
-            TriviaQuestionAnswerOptions.Add("8.3 billion years.");
-            TriviaQuestionAnswerOptions.Add("13.7 million years");
-            TriviaQuestionAnswerOptions.Add("8.3 million years");
-            TriviaQuestion TriviaQuestionToAdd = new TriviaQuestion("What is the approximate age of the universe?", TriviaQuestionAnswerOptions, 0);
-            ListofTriviaToWrite.Add(TriviaQuestionToAdd);
-
-
-
-            // Function to Write it To File. 
-            Utility.WriteTriviaToFile(ListofTriviaToWrite, Triviadatafiletouse);
-        }
-
+        
         public void WriteSecretToFile()
         {
             // Use this function to write the Secret to the File for the First Time.

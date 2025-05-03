@@ -39,7 +39,7 @@ namespace HuntTheWumpus_Team1
 
             // Add the Locations
             ListofImageLocation = MakeListofImageLocation();
-            // GameControlObject.AddATriviaFile(); Only Active This if you need to write Trivia to File. Please talk to Sergei before doing this!
+            GameControlObject.AddATriviaFile(); // Only Active This if you need to write Trivia to File. Please talk to Sergei before doing this!
             Main();
         }
         private void Main() // THE MAIN FUNCTION HERE!
