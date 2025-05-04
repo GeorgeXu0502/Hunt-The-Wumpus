@@ -259,11 +259,12 @@ namespace HuntTheWumpus_Team1
             // Change the Location of the Pictures to the Image System - Specific Location. 
             ListtoReturn.Add("Blank String"); // Room Index starts at 1, not the reuglar 0.
 
-            string stringAddress = "\"C:\\Users\\1117057\\\\source\\repos\\SergeiMakarevich_HuntTheWumpusLocal\\HuntTheWumpus_Team1\\PictureforRoomBackground\\";
+            string stringAddress = "\"C:\\Users\\1117057\\source\\repos\\SergeiMakarevich_HuntTheWumpusLocal\\HuntTheWumpus_Team1\\PictureforRoomBackground\\";
+            // string stringAddress = "\"C:\\Users\\Sergei\\source\\repos\\HuntTheWumpus-Team1\\HuntTheWumpus_Team1\\PictureforRoomBackground\\HuntheWumpusRoom1.png\"";
 
             for (int i = 1; i < 31; i++)
             {
-                string newString = stringAddress + "HuntheWumpusRoom" + i.ToString() + ".png"; // Notice the one t, in the string. 
+                string newString = stringAddress + "HuntheWumpusRoom" + i.ToString() + ".png\\"; // Notice the one t, in the string. 
                 ListtoReturn.Add(newString);
             }
             return ListtoReturn;
