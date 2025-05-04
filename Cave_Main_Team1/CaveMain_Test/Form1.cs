@@ -360,6 +360,8 @@ namespace CaveMain_Test
             Random rnd = new Random();
             int newWumpusRoom = rnd.Next(1, 30);
 
+
+            // doesn't check is user is in that room already, or if it ois the old wumpus room
             while (Version1Map[newWumpusRoom - 1].HasWumpus == true || Version1Map[newWumpusRoom - 1].HasBats == true || Version1Map[newWumpusRoom - 1].HasPit == true)
             {
                 newWumpusRoom++;
