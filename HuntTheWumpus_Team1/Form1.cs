@@ -130,6 +130,17 @@ namespace HuntTheWumpus_Team1
             MoveToNewRoom(RoomWeAreMovingToIndex);
         }
 
+        async void WaitForUserToClick()
+        {
+            bool Statment = (ButtonMoveToNextRoomClicked == false && ButtonBuyanArrowClicked == false && ButtonShootanArrowClicked == false && ButtonBuyaSecretClicked == false && ButtonSeeaSecretClicked == false && ButtonEndGameNowClicked == false);
+
+            while (Statment == true)
+            {
+                await Task.Delay(100)
+                Statment = (ButtonMoveToNextRoomClicked == false && ButtonBuyanArrowClicked == false && ButtonShootanArrowClicked == false && ButtonBuyaSecretClicked == false && ButtonSeeaSecretClicked == false && ButtonEndGameNowClicked == false);
+            }
+        }
+
         private int GetRoomInput()
         {
 
@@ -194,17 +205,13 @@ namespace HuntTheWumpus_Team1
         private int GetInput() // This Function get the input from the original list of options. 
         {
             // 0 - Move to Next Room, 1 - Buy an Arrow, 2 - Shoot an Arrow, 3 - Buy a Secret, 4 - End Game Now. 
-            bool Statment = (ButtonMoveToNextRoomClicked == false && ButtonBuyanArrowClicked == false && ButtonShootanArrowClicked == false && ButtonBuyaSecretClicked == false && ButtonSeeaSecretClicked == false && ButtonEndGameNowClicked == false);
+            // bool Statment = (ButtonMoveToNextRoomClicked == false && ButtonBuyanArrowClicked == false && ButtonShootanArrowClicked == false && ButtonBuyaSecretClicked == false && ButtonSeeaSecretClicked == false && ButtonEndGameNowClicked == false);
 
             int toreturn;
-            while (Statment == true)
-            {
-                Statment = (ButtonMoveToNextRoomClicked == false && ButtonBuyanArrowClicked == false && ButtonShootanArrowClicked == false && ButtonBuyaSecretClicked == false && ButtonSeeaSecretClicked == false && ButtonEndGameNowClicked == false);
-            }
+            WaitForUserToClick();
 
             if (ButtonMoveToNextRoomClicked == true)
             {
-
                 toreturn = 0;
             }
             else if (ButtonBuyanArrowClicked == true)
