@@ -19,9 +19,6 @@ namespace HuntTheWumpus_Team1
         public HighScoreUI()
         {
             InitializeComponent();
-
-            // Adding in this comment to test and see some stuff. 
-            List<int> list = new List<int>();
         }
 
         private void buttonExitTheGame_Click(object sender, EventArgs e)
@@ -53,13 +50,5 @@ namespace HuntTheWumpus_Team1
             }
         }
 
-        private void ExamleFunctionForMerge()
-        {
-            // Lets add this method in.
-
-            List<int> TopScoresForThisScope = GameControlObject.GetTopScores();
-            textBoxPlayerScore.Text = "25999";
-            textBoxPlayerScore.Text = TopScoresForThisScope[2].ToString();
-        }
     }
 }
