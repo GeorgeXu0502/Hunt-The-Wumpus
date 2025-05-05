@@ -83,9 +83,11 @@ namespace HuntTheWumpus_Team1
         private void StartTheGame()
         {
             // Open the inital Menu. Give the User the oppertunity to login.
+            
             OpeningMenu OpentheMenuObject = new OpeningMenu();
             OpentheMenuObject.ShowDialog();
             UserUsername = OpentheMenuObject.UsernameToReturn;
+            
 
             bool[] DangerInRoom = DrawTheRoom(GameControlObject.WhereIsUser());
         }
@@ -236,16 +238,6 @@ namespace HuntTheWumpus_Team1
 
         }
 
-        private void Form1_Activated(object sender, EventArgs e)
-        {
-            buttonNextRoom1.Enabled = false;
-            buttonNextRoom2.Enabled = false;
-            buttonNextRoom3.Enabled = false;
-            buttonNextRoom4.Enabled = false;
-            buttonNextRoom5.Enabled = false;
-            buttonNextRoom6.Enabled = false;
-        }
-
         private void EndTheGame() // This Function is most important as it will end the game when needed.
         {
             HighScoreUI HighScoreDlg = new HighScoreUI();
@@ -285,10 +277,11 @@ namespace HuntTheWumpus_Team1
             List<Room> listofadjacentrooms = GameControlObject.AdjacentRoomInformation(RoomNumberToDraw);
 
             int RoomIndex = listofadjacentrooms[0].RoomNumber;
-            // pictureBoxGeneralRoomBackground.Image = Properties.Resources.ListofImageLocations[]
-            pictureBoxGeneralRoomBackground.Image = Image.FromFile(ListofImageLocation[RoomIndex]);
+            // The Following are some other ways to get the Background Image to be correct. 
+            // pictureBoxGeneralRoomBackground.Image = Properties.Resources.ListofImageLocations[] 
+            // pictureBoxGeneralRoomBackground.Image = Image.FromFile(ListofImageLocation[RoomIndex]);
             // "\"C:\\Users\\1117057\\source\\repos\\SergeiMakarevich_HuntTheWumpusLocal\\HuntTheWumpus_Team1\\PictureforRoomBackground\\HuntheWumpusRoom1.png\""
-
+            GetCorrectRoomBackground(RoomIndex);
             // Change the Button Labels and disable the Buttons in order to stop User from touching them. 
 
             buttonNextRoom1.Text = "Room: " + listofadjacentrooms[1].RoomNumber.ToString();
@@ -633,6 +626,130 @@ namespace HuntTheWumpus_Team1
         private void buttonViewSecret_Click(object sender, EventArgs e)
         {
             ButtonSeeaSecretClicked = true;
+        }
+
+        private void GetCorrectRoomBackground(int RoomNumberToGetBackgroundFor)
+        {
+            if (RoomNumberToGetBackgroundFor == 1)
+            {
+                pictureBoxGeneralRoomBackground.Image = Properties.Resources.HuntheWumpusRoom1;
+            }
+            else if (RoomNumberToGetBackgroundFor == 2)
+            {
+                pictureBoxGeneralRoomBackground.Image = Properties.Resources.HuntheWumpusRoom2;
+            }
+            else if (RoomNumberToGetBackgroundFor == 3)
+            {
+                pictureBoxGeneralRoomBackground.Image = Properties.Resources.HuntheWumpusRoom3;
+            }
+            else if (RoomNumberToGetBackgroundFor == 4)
+            {
+                pictureBoxGeneralRoomBackground.Image = Properties.Resources.HuntheWumpusRoom4;
+            }
+            else if (RoomNumberToGetBackgroundFor == 5)
+            {
+                pictureBoxGeneralRoomBackground.Image = Properties.Resources.HuntheWumpusRoom5;
+            }
+            else if (RoomNumberToGetBackgroundFor == 6)
+            {
+                pictureBoxGeneralRoomBackground.Image = Properties.Resources.HuntheWumpusRoom6;
+            }
+            else if (RoomNumberToGetBackgroundFor == 7)
+            {
+                pictureBoxGeneralRoomBackground.Image = Properties.Resources.HuntheWumpusRoom7;
+            }
+            else if (RoomNumberToGetBackgroundFor == 8)
+            {
+                pictureBoxGeneralRoomBackground.Image = Properties.Resources.HuntheWumpusRoom8;
+            }
+            else if (RoomNumberToGetBackgroundFor == 9)
+            {
+                pictureBoxGeneralRoomBackground.Image = Properties.Resources.HuntheWumpusRoom9;
+            }
+            else if (RoomNumberToGetBackgroundFor == 10)
+            {
+                pictureBoxGeneralRoomBackground.Image = Properties.Resources.HuntheWumpusRoom10;
+            }
+            else if (RoomNumberToGetBackgroundFor == 11)
+            {
+                pictureBoxGeneralRoomBackground.Image = Properties.Resources.HuntheWumpusRoom11;
+            }
+            else if (RoomNumberToGetBackgroundFor == 12)
+            {
+                pictureBoxGeneralRoomBackground.Image = Properties.Resources.HuntheWumpusRoom12;
+            }
+            else if (RoomNumberToGetBackgroundFor == 13)
+            {
+                pictureBoxGeneralRoomBackground.Image = Properties.Resources.HuntheWumpusRoom13;
+            }
+            else if (RoomNumberToGetBackgroundFor == 14)
+            {
+                pictureBoxGeneralRoomBackground.Image = Properties.Resources.HuntheWumpusRoom14;
+            }
+            else if (RoomNumberToGetBackgroundFor == 15)
+            {
+                pictureBoxGeneralRoomBackground.Image = Properties.Resources.HuntheWumpusRoom15;
+            }
+            else if (RoomNumberToGetBackgroundFor == 16)
+            {
+                pictureBoxGeneralRoomBackground.Image = Properties.Resources.HuntheWumpusRoom16;
+            }
+            else if (RoomNumberToGetBackgroundFor == 17)
+            {
+                pictureBoxGeneralRoomBackground.Image = Properties.Resources.HuntheWumpusRoom17;
+            }
+            else if (RoomNumberToGetBackgroundFor == 18)
+            {
+                pictureBoxGeneralRoomBackground.Image = Properties.Resources.HuntheWumpusRoom18;
+            }
+            else if (RoomNumberToGetBackgroundFor == 19)
+            {
+                pictureBoxGeneralRoomBackground.Image = Properties.Resources.HuntheWumpusRoom19;
+            }
+            else if (RoomNumberToGetBackgroundFor == 20)
+            {
+                pictureBoxGeneralRoomBackground.Image = Properties.Resources.HuntheWumpusRoom20;
+            }
+            else if (RoomNumberToGetBackgroundFor == 21)
+            {
+                pictureBoxGeneralRoomBackground.Image = Properties.Resources.HuntheWumpusRoom21;
+            }
+            else if (RoomNumberToGetBackgroundFor == 22)
+            {
+                pictureBoxGeneralRoomBackground.Image = Properties.Resources.HuntheWumpusRoom22;
+            }
+            else if (RoomNumberToGetBackgroundFor == 23)
+            {
+                pictureBoxGeneralRoomBackground.Image = Properties.Resources.HuntheWumpusRoom23;
+            }
+            else if (RoomNumberToGetBackgroundFor == 24)
+            {
+                pictureBoxGeneralRoomBackground.Image = Properties.Resources.HuntheWumpusRoom24;
+            }
+            else if (RoomNumberToGetBackgroundFor == 25)
+            {
+                pictureBoxGeneralRoomBackground.Image = Properties.Resources.HuntheWumpusRoom25;
+            }
+            else if (RoomNumberToGetBackgroundFor == 26)
+            {
+                pictureBoxGeneralRoomBackground.Image = Properties.Resources.HuntheWumpusRoom26;
+            }
+            else if (RoomNumberToGetBackgroundFor == 27)
+            {
+                pictureBoxGeneralRoomBackground.Image = Properties.Resources.HuntheWumpusRoom27;
+            }
+            else if (RoomNumberToGetBackgroundFor == 28)
+            {
+                pictureBoxGeneralRoomBackground.Image = Properties.Resources.HuntheWumpusRoom28;
+            }
+            else if (RoomNumberToGetBackgroundFor == 29)
+            {
+                pictureBoxGeneralRoomBackground.Image = Properties.Resources.HuntheWumpusRoom29;
+            }
+            else
+            {
+                pictureBoxGeneralRoomBackground.Image = Properties.Resources.HuntheWumpusRoom30;
+            }
         }
     }
 }

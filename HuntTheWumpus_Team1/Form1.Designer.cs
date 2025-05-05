@@ -344,7 +344,6 @@
             Margin = new Padding(4, 5, 4, 5);
             Name = "Form1";
             Text = "UI: Hunt the Wumpus";
-            Activated += Form1_Activated;
             ((System.ComponentModel.ISupportInitialize)pictureBoxGeneralRoomBackground).EndInit();
             groupBoxplayeractions.ResumeLayout(false);
             groupBoxPlayerInventory.ResumeLayout(false);
