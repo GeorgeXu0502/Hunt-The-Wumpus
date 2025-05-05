@@ -64,6 +64,17 @@ namespace HuntTheWumpus_Team1
             }
         }
 
+        async void WaitForUserToClick()
+        {
+            bool Statment = (WasButtonAClicked == false && WasButtonBClicked == false && WasButtonCClicked == false && WasButtonDClicked == false);
+
+            while (Statment == true)
+            {
+                await Task.Delay(100)
+                Statment = (WasButtonAClicked == false && WasButtonBClicked == false && WasButtonCClicked == false && WasButtonDClicked == false);
+            }
+        }
+        
         private void AskQuestion()
         {
             TriviaQuestion CurrentTriviaQuestion = GameControlObject.GetQuestion();
@@ -74,12 +85,7 @@ namespace HuntTheWumpus_Team1
             richTextBoxOptionCText.Text = CurrentTriviaQuestion.PossibleAnswers[2];
             richTextBoxOptionDText.Text = CurrentTriviaQuestion.PossibleAnswers[3];
 
-            bool StatmentToCheck = (WasButtonAClicked == false && WasButtonBClicked == false && WasButtonCClicked == false && WasButtonDClicked == false);
-            while (StatmentToCheck == true)
-            {
-                StatmentToCheck = (WasButtonAClicked == false && WasButtonBClicked == false && WasButtonCClicked == false && WasButtonDClicked == false);
-            }
-
+            WaitForUserToClick();
             if (WasButtonAClicked)
             {
                 if (CurrentTriviaQuestion.CorrectAnswerIndex == 0)
