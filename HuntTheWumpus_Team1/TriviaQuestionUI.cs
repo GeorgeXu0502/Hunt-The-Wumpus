@@ -80,10 +80,10 @@ namespace HuntTheWumpus_Team1
             TriviaQuestion CurrentTriviaQuestion = GameControlObject.GetQuestion();
 
             richTextBoxMainQuestion.Text = CurrentTriviaQuestion.QuestionTrivia;
-            richTextBoxOptionAText.Text = CurrentTriviaQuestion.PossibleIncorrectAnswers[0];
-            richTextBoxOptionBText.Text = CurrentTriviaQuestion.PossibleIncorrectAnswers[1];
-            richTextBoxOptionCText.Text = CurrentTriviaQuestion.PossibleIncorrectAnswers[2];
-            richTextBoxOptionDText.Text = CurrentTriviaQuestion.PossibleIncorrectAnswers[3];
+            richTextBoxOptionAText.Text = CurrentTriviaQuestion.PossibleAnswers[0];
+            richTextBoxOptionBText.Text = CurrentTriviaQuestion.PossibleAnswers[1];
+            richTextBoxOptionCText.Text = CurrentTriviaQuestion.PossibleAnswers[2];
+            richTextBoxOptionDText.Text = CurrentTriviaQuestion.PossibleAnswers[3];
 
             WaitForUserToClick();
             if (WasButtonAClicked)
