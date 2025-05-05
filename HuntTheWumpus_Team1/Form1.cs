@@ -92,7 +92,7 @@ namespace HuntTheWumpus_Team1
             bool[] DangerInRoom = DrawTheRoom(GameControlObject.WhereIsUser());
         }
 
-        private void UserMoving()
+        private void UserMoving() // Try this via adding this function to the end. 
         {
             int ChoiceIndex = GetInput();
 
@@ -130,13 +130,13 @@ namespace HuntTheWumpus_Team1
             MoveToNewRoom(RoomWeAreMovingToIndex);
         }
 
-        async void WaitForUserToClick()
+        public async void WaitForUserToClick()
         {
             bool Statment = (ButtonMoveToNextRoomClicked == false && ButtonBuyanArrowClicked == false && ButtonShootanArrowClicked == false && ButtonBuyaSecretClicked == false && ButtonSeeaSecretClicked == false && ButtonEndGameNowClicked == false);
 
             while (Statment == true)
             {
-                await Task.Delay(100);
+                // await Task.Delay(100);
                 Statment = (ButtonMoveToNextRoomClicked == false && ButtonBuyanArrowClicked == false && ButtonShootanArrowClicked == false && ButtonBuyaSecretClicked == false && ButtonSeeaSecretClicked == false && ButtonEndGameNowClicked == false);
             }
         }
