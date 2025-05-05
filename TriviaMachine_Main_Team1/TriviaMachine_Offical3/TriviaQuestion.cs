@@ -12,14 +12,14 @@ namespace TrivaMachine_Offical
         // It might be of reference to in the future, add a Trivia Question Refrence Number. However this would require additional work. 
         public string QuestionTrivia  { get; set; }
 
-        public List<string> PossibleIncorrectAnswers { get;} // Something to change the name. 
+        public List<string> PossibleAnswers { get;} // Something to change the name. 
 
         public int CorrectAnswerIndex { get; set; } // The First Answer has index 0.
 
         public TriviaQuestion(string questionTrivia, List<string> possibleAnswers, int correctAnswerIndex)
         {
             QuestionTrivia = questionTrivia;
-            PossibleIncorrectAnswers = possibleAnswers;
+            PossibleAnswers = possibleAnswers;
             CorrectAnswerIndex = correctAnswerIndex;
         }
     }
