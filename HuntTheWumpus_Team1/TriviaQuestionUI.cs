@@ -70,7 +70,7 @@ namespace HuntTheWumpus_Team1
 
             while (Statment == true)
             {
-                await Task.Delay(100)
+                await Task.Delay(100);
                 Statment = (WasButtonAClicked == false && WasButtonBClicked == false && WasButtonCClicked == false && WasButtonDClicked == false);
             }
         }

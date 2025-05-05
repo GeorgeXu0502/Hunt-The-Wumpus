@@ -136,7 +136,7 @@ namespace HuntTheWumpus_Team1
 
             while (Statment == true)
             {
-                await Task.Delay(100)
+                await Task.Delay(100);
                 Statment = (ButtonMoveToNextRoomClicked == false && ButtonBuyanArrowClicked == false && ButtonShootanArrowClicked == false && ButtonBuyaSecretClicked == false && ButtonSeeaSecretClicked == false && ButtonEndGameNowClicked == false);
             }
         }
