@@ -45,7 +45,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Font = new Font("Segoe UI", 20F);
             label1.Location = new Point(24, 36);
             label1.Name = "label1";
             label1.Size = new Size(193, 54);
@@ -56,6 +56,7 @@
             // 
             richTextBoxMainQuestion.Location = new Point(242, 36);
             richTextBoxMainQuestion.Name = "richTextBoxMainQuestion";
+            richTextBoxMainQuestion.ReadOnly = true;
             richTextBoxMainQuestion.Size = new Size(1254, 164);
             richTextBoxMainQuestion.TabIndex = 1;
             richTextBoxMainQuestion.Text = "";
@@ -73,6 +74,7 @@
             // 
             richTextBoxOptionA.Location = new Point(263, 262);
             richTextBoxOptionA.Name = "richTextBoxOptionA";
+            richTextBoxOptionA.ReadOnly = true;
             richTextBoxOptionA.Size = new Size(1254, 97);
             richTextBoxOptionA.TabIndex = 3;
             richTextBoxOptionA.Text = "";
@@ -81,6 +83,7 @@
             // 
             richTextBoxOptionB.Location = new Point(263, 382);
             richTextBoxOptionB.Name = "richTextBoxOptionB";
+            richTextBoxOptionB.ReadOnly = true;
             richTextBoxOptionB.Size = new Size(1254, 97);
             richTextBoxOptionB.TabIndex = 5;
             richTextBoxOptionB.Text = "";
@@ -98,6 +101,7 @@
             // 
             richTextBoxOptionC.Location = new Point(263, 497);
             richTextBoxOptionC.Name = "richTextBoxOptionC";
+            richTextBoxOptionC.ReadOnly = true;
             richTextBoxOptionC.Size = new Size(1254, 97);
             richTextBoxOptionC.TabIndex = 7;
             richTextBoxOptionC.Text = "";
@@ -115,6 +119,7 @@
             // 
             richTextBoxOptionD.Location = new Point(263, 618);
             richTextBoxOptionD.Name = "richTextBoxOptionD";
+            richTextBoxOptionD.ReadOnly = true;
             richTextBoxOptionD.Size = new Size(1254, 97);
             richTextBoxOptionD.TabIndex = 9;
             richTextBoxOptionD.Text = "";
@@ -141,7 +146,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Font = new Font("Segoe UI", 20F);
             label2.Location = new Point(814, 756);
             label2.Name = "label2";
             label2.Size = new Size(682, 54);

@@ -38,6 +38,7 @@
             richTextBoxMainQuestion.BackColor = SystemColors.Window;
             richTextBoxMainQuestion.Location = new Point(119, 65);
             richTextBoxMainQuestion.Name = "richTextBoxMainQuestion";
+            richTextBoxMainQuestion.ReadOnly = true;
             richTextBoxMainQuestion.Size = new Size(672, 298);
             richTextBoxMainQuestion.TabIndex = 0;
             richTextBoxMainQuestion.Text = "";

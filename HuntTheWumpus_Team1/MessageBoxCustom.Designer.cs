@@ -59,6 +59,7 @@
             ClientSize = new Size(862, 487);
             Controls.Add(buttonContinue);
             Controls.Add(richTextBoxDispaly);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "MessageBoxCustom";
             Text = "MessageBoxCustom";
             Load += MessageBoxCustom_Load;

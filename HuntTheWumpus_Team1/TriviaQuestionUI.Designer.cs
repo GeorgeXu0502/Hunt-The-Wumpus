@@ -44,7 +44,7 @@
             // labelTopBanner
             // 
             labelTopBanner.AutoSize = true;
-            labelTopBanner.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
+            labelTopBanner.Font = new Font("Segoe UI", 20F);
             labelTopBanner.Location = new Point(12, 18);
             labelTopBanner.Name = "labelTopBanner";
             labelTopBanner.Size = new Size(204, 54);
@@ -55,6 +55,7 @@
             // 
             richTextBoxMainQuestion.Location = new Point(313, 18);
             richTextBoxMainQuestion.Name = "richTextBoxMainQuestion";
+            richTextBoxMainQuestion.ReadOnly = true;
             richTextBoxMainQuestion.Size = new Size(1130, 150);
             richTextBoxMainQuestion.TabIndex = 1;
             richTextBoxMainQuestion.Text = "";
@@ -73,6 +74,7 @@
             // 
             richTextBoxOptionAText.Location = new Point(256, 227);
             richTextBoxOptionAText.Name = "richTextBoxOptionAText";
+            richTextBoxOptionAText.ReadOnly = true;
             richTextBoxOptionAText.Size = new Size(1221, 93);
             richTextBoxOptionAText.TabIndex = 3;
             richTextBoxOptionAText.Text = "";
@@ -81,6 +83,7 @@
             // 
             richTextBoxOptionBText.Location = new Point(256, 343);
             richTextBoxOptionBText.Name = "richTextBoxOptionBText";
+            richTextBoxOptionBText.ReadOnly = true;
             richTextBoxOptionBText.Size = new Size(1221, 93);
             richTextBoxOptionBText.TabIndex = 5;
             richTextBoxOptionBText.Text = "";
@@ -99,6 +102,7 @@
             // 
             richTextBoxOptionCText.Location = new Point(256, 458);
             richTextBoxOptionCText.Name = "richTextBoxOptionCText";
+            richTextBoxOptionCText.ReadOnly = true;
             richTextBoxOptionCText.Size = new Size(1221, 93);
             richTextBoxOptionCText.TabIndex = 7;
             richTextBoxOptionCText.Text = "";
@@ -117,6 +121,7 @@
             // 
             richTextBoxOptionDText.Location = new Point(256, 571);
             richTextBoxOptionDText.Name = "richTextBoxOptionDText";
+            richTextBoxOptionDText.ReadOnly = true;
             richTextBoxOptionDText.Size = new Size(1221, 93);
             richTextBoxOptionDText.TabIndex = 9;
             richTextBoxOptionDText.Text = "";

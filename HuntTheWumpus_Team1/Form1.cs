@@ -256,6 +256,7 @@ namespace HuntTheWumpus_Team1
         private List<String> MakeListofImageLocation()
         {
             List<string> ListtoReturn = new List<string>();
+            // List<string> ListtoReturn2 = new List<string>();
             // Change the Location of the Pictures to the Image System - Specific Location. 
             ListtoReturn.Add("Blank String"); // Room Index starts at 1, not the reuglar 0.
 
@@ -267,6 +268,14 @@ namespace HuntTheWumpus_Team1
                 string newString = stringAddress + "HuntheWumpusRoom" + i.ToString() + ".png\\"; // Notice the one t, in the string. 
                 ListtoReturn.Add(newString);
             }
+
+            /*
+            for (int i = 1; i < 31; i++)
+            {
+                string newString = stringAddress + "HuntheWumpusRoom" + i.ToString(); // Notice the one t, in the string. 
+                ListtoReturn2.Add(newString);
+            }
+            */
             return ListtoReturn;
         }
 
@@ -276,6 +285,7 @@ namespace HuntTheWumpus_Team1
             List<Room> listofadjacentrooms = GameControlObject.AdjacentRoomInformation(RoomNumberToDraw);
 
             int RoomIndex = listofadjacentrooms[0].RoomNumber;
+            // pictureBoxGeneralRoomBackground.Image = Properties.Resources.ListofImageLocations[]
             pictureBoxGeneralRoomBackground.Image = Image.FromFile(ListofImageLocation[RoomIndex]);
             // "\"C:\\Users\\1117057\\source\\repos\\SergeiMakarevich_HuntTheWumpusLocal\\HuntTheWumpus_Team1\\PictureforRoomBackground\\HuntheWumpusRoom1.png\""
 

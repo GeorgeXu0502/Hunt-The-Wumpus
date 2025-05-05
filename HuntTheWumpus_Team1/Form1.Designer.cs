@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             pictureBoxGeneralRoomBackground = new PictureBox();
             buttonNextRoom5 = new Button();
             label1 = new Label();
@@ -60,7 +59,7 @@
             // 
             // pictureBoxGeneralRoomBackground
             // 
-            pictureBoxGeneralRoomBackground.Image = (Image)resources.GetObject("pictureBoxGeneralRoomBackground.Image");
+            pictureBoxGeneralRoomBackground.Image = Properties.Resources.HuntheWumpusRoom1;
             pictureBoxGeneralRoomBackground.Location = new Point(96, 170);
             pictureBoxGeneralRoomBackground.Name = "pictureBoxGeneralRoomBackground";
             pictureBoxGeneralRoomBackground.Size = new Size(1156, 1003);
