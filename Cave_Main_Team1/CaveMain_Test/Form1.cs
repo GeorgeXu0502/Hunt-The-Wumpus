@@ -395,18 +395,18 @@ namespace CaveMain_Test
             // REturn List of Adjacet Rooms with. // This Room List should be of this form: [RoomUser, RoomtotheTopLeft, .... (Coutnerclockwise), ....]
 
             Room roomToUse = Version1Map[RoomNumberForWhichToGetInformation];
-            List<Room> listotreturn = new List<Room>();
+            List<Room> listToReturn = new List<Room>();
 
-            listotreturn.Add(roomToUse);
-            listotreturn.Add(Version1Map[roomToUse.NextRoomList[0]]);
-            listotreturn.Add(Version1Map[roomToUse.NextRoomList[1]]);
-            listotreturn.Add(Version1Map[roomToUse.NextRoomList[2]]);
-            listotreturn.Add(Version1Map[roomToUse.NextRoomList[3]]);
-            listotreturn.Add(Version1Map[roomToUse.NextRoomList[4]]);
-            listotreturn.Add(Version1Map[roomToUse.NextRoomList[5]]);
+            listToReturn.Add(roomToUse);
+            listToReturn.Add(Version1Map[roomToUse.NextRoomList[0]]);
+            listToReturn.Add(Version1Map[roomToUse.NextRoomList[1]]);
+            listToReturn.Add(Version1Map[roomToUse.NextRoomList[2]]);
+            listToReturn.Add(Version1Map[roomToUse.NextRoomList[3]]);
+            listToReturn.Add(Version1Map[roomToUse.NextRoomList[4]]);
+            listToReturn.Add(Version1Map[roomToUse.NextRoomList[5]]);
 
 
-            return listotreturn;
+            return listToReturn;
         }
 
         public bool IsWumpusInRoom(int RoomNumberToCheck)
