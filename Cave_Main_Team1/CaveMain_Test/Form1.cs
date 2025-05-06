@@ -448,7 +448,7 @@ namespace CaveMain_Test
             }
 
             Random rnd = new Random();
-            int newWumpusRoom = rnd.Next(1, 30);
+            int newWumpusRoom = rnd.Next(1, 31);
 
 
             while (Version1Map[newWumpusRoom].HasWumpus == true || Version1Map[newWumpusRoom].HasBats == true || Version1Map[newWumpusRoom].HasPit == true || newWumpusRoom == roomRoomNumberWhereUserIsIn || newWumpusRoom == wumpusRoom)
@@ -506,7 +506,7 @@ namespace CaveMain_Test
         public int GetNewRoom()
         {
             Random rnd = new Random();
-            int newRoom = rnd.Next(1, 30);
+            int newRoom = rnd.Next(1, 31);
 
             while (Version1Map[newRoom].HasWumpus == true || Version1Map[newRoom].HasBats == true || Version1Map[newRoom].HasPit == true)
             {
@@ -538,7 +538,7 @@ namespace CaveMain_Test
 
 
             Random rnd = new Random();
-            int newBatRoom = rnd.Next(1, 30);
+            int newBatRoom = rnd.Next(1, 31);
 
 
             while (Version1Map[newBatRoom].HasWumpus == true || Version1Map[newBatRoom].HasBats == true || Version1Map[newBatRoom].HasPit == true || newBatRoom == RoomWhereUserIsMoved)
@@ -559,10 +559,10 @@ namespace CaveMain_Test
         public List<Room> GenerateCave()
         {
             Random rndWumpus = new Random();
-            int wumpusRoom = rndWumpus.Next(1, 30);
+            int wumpusRoom = rndWumpus.Next(1, 31);
 
             Random rndBat1 = new Random();
-            int batRoom1 = rndBat1.Next(1, 30);
+            int batRoom1 = rndBat1.Next(1, 31);
             while (batRoom1 == wumpusRoom)
             {
                 batRoom1++;
@@ -573,7 +573,7 @@ namespace CaveMain_Test
             }
 
             Random rndBat2 = new Random();
-            int batRoom2 = rndBat2.Next(1, 30);
+            int batRoom2 = rndBat2.Next(1, 31);
             while (batRoom2 == wumpusRoom || batRoom1 == batRoom2)
             {
                 batRoom2++;
@@ -584,7 +584,7 @@ namespace CaveMain_Test
             }
 
             Random rndPit = new Random();
-            int pitRoom = rndPit.Next(1, 30);
+            int pitRoom = rndPit.Next(1, 31);
             while (pitRoom == wumpusRoom || pitRoom == batRoom2 || pitRoom == batRoom2)
             {
                 if (pitRoom > 30)
@@ -607,10 +607,10 @@ namespace CaveMain_Test
         {
 
             Random rndWumpus = new Random();
-            int wumpusRoom = rndWumpus.Next(1, 30);
+            int wumpusRoom = rndWumpus.Next(1, 31);
 
             Random rndBat1 = new Random();
-            int batRoom1 = rndBat1.Next(1, 30);
+            int batRoom1 = rndBat1.Next(1, 31);
             while (batRoom1 == wumpusRoom)
             {
                 batRoom1++;
@@ -621,7 +621,7 @@ namespace CaveMain_Test
             }
 
             Random rndBat2 = new Random();
-            int batRoom2 = rndBat2.Next(1, 30);
+            int batRoom2 = rndBat2.Next(1, 31);
             while (batRoom2 == wumpusRoom || batRoom1 == batRoom2)
             {
                 batRoom2++;
@@ -632,7 +632,7 @@ namespace CaveMain_Test
             }
 
             Random rndPit = new Random();
-            int pitRoom = rndPit.Next(1, 30);
+            int pitRoom = rndPit.Next(1, 31);
             while (pitRoom == wumpusRoom || pitRoom == batRoom2 || pitRoom == batRoom2)
             {
                 if (pitRoom > 30)
