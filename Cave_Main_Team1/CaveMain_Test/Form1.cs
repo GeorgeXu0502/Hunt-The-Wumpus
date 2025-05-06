@@ -4,18 +4,24 @@ namespace CaveMain_Test
 {
     public partial class Form1 : Form
     {
+        // as long as the random map works, ignore these
         List<Room> Version1Map = new List<Room>();
         List<Room> Version2Map = new List<Room>();
         List<Room> Version3Map = new List<Room>();
         List<Room> Version4Map = new List<Room>();
         List<Room> Version5Map = new List<Room>();
 
+        // this is the random map
         List<Room> RandomMap = new List<Room>();
-        // information about each room in Version 1 of the cave
-        // if room has bats, if room has wumpus, if room has a pit, what rooms player can move to next
+
+
+        // created an empty room for the making indexing easier
         Room EmptyRoom = new Room(0, false, false, false, [0, 0, 0, 0, 0, 0]);
 
+        // information about each room in Version 1 of the cave
+        // if room has bats, if room has wumpus, if room has a pit, what rooms player can move to next
 
+        // as long as the random map works, can ignore all
         Room Room1V1 = new Room(1, false, false, false, [30, 6, 7, 2, 26, 25]);
         Room Room2V1 = new Room(2, false, false, false, [1, 7, 8, 9, 3, 26]);
         Room Room3V1 = new Room(3, false, false, true, [26, 2, 9, 4, 28, 27]);
@@ -222,6 +228,7 @@ namespace CaveMain_Test
         {
             InitializeComponent();
 
+            // as long as random map works, can ignore all
             Version1Map.Add(EmptyRoom);
             Version1Map.Add(Room1V1);
             Version1Map.Add(Room2V1);
@@ -383,6 +390,7 @@ namespace CaveMain_Test
             Version5Map.Add(Room29V5);
             Version5Map.Add(Room30V5);
 
+            // don't ignore this
             RandomMap.Add(EmptyRoom);
             RandomMap.Add(Room1);
             RandomMap.Add(Room2);
@@ -446,6 +454,10 @@ namespace CaveMain_Test
             while (Version1Map[newWumpusRoom].HasWumpus == true || Version1Map[newWumpusRoom].HasBats == true || Version1Map[newWumpusRoom].HasPit == true || newWumpusRoom == roomRoomNumberWhereUserIsIn || newWumpusRoom == wumpusRoom)
             {
                 newWumpusRoom++;
+                if (newWumpusRoom > 30)
+                {
+                    newWumpusRoom -= 30;
+                }
             }
 
             Version1Map[newWumpusRoom].HasWumpus = true;
@@ -499,6 +511,11 @@ namespace CaveMain_Test
             while (Version1Map[newRoom].HasWumpus == true || Version1Map[newRoom].HasBats == true || Version1Map[newRoom].HasPit == true)
             {
                 newRoom++;
+                if (newRoom > 30)
+                {
+                    newRoom -= 30;
+                }
+
             }
 
             return newRoom;
@@ -527,6 +544,10 @@ namespace CaveMain_Test
             while (Version1Map[newBatRoom].HasWumpus == true || Version1Map[newBatRoom].HasBats == true || Version1Map[newBatRoom].HasPit == true || newBatRoom == RoomWhereUserIsMoved)
             {
                 newBatRoom++;
+                if (newBatRoom > 30)
+                {
+                    newBatRoom -= 30;
+                }
             }
 
             Version1Map[newBatRoom].HasBats = true;
@@ -534,6 +555,7 @@ namespace CaveMain_Test
 
         }
 
+        //method to generate random rooms
         public List<Room> GenerateCave()
         {
             Random rndWumpus = new Random();
@@ -580,6 +602,7 @@ namespace CaveMain_Test
 
         }
 
+        //tests the random room generator
         private void button_Generate_Click(object sender, EventArgs e)
         {
 

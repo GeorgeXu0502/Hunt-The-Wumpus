@@ -17,22 +17,10 @@ namespace HuntTheWumpus_Team1
         string UserUsername;
         // System Specific Image Location:
         List<string> ListofImageLocation = new List<string>();
-
+        List<Room> listofadjacentrooms = new List<Room>();
         // Button Clicking Bool Variables.
 
-        bool ButtonMoveToNextRoomClicked = false;
-        bool ButtonBuyanArrowClicked = false;
-        bool ButtonShootanArrowClicked = false;
-        bool ButtonBuyaSecretClicked = false;
-        bool ButtonSeeaSecretClicked = false;
-        bool ButtonEndGameNowClicked = false;
-
-        bool ButtomRoom1Clicked = false;
-        bool ButtomRoom2Clicked = false;
-        bool ButtomRoom3Clicked = false;
-        bool ButtomRoom4Clicked = false;
-        bool ButtomRoom5Clicked = false;
-        bool ButtomRoom6Clicked = false;
+        int WhatAreWeChoosingMove0orWampus1;
         public Form1()
         {
             InitializeComponent();
@@ -45,35 +33,47 @@ namespace HuntTheWumpus_Team1
         private void Main() // THE MAIN FUNCTION HERE!
         {
             StartTheGame();
-            UserMoving();
+            // UserMoving();
 
             // The Question that might come up is: Why so few? This is because after the User Selects to Move, We Move to the Function Below. This repeats on Innite till the Game Ends. 
         }
 
-        private void MoveToNewRoom(int RoomNumber)
+        private void MoveToNewRoomOrshootWampus(int RoomNumber, int MovingForWhat)
         {
-            GameControlObject.UpdateWhereUserIs(RoomNumber);
-            ShowTriviaAnswer();
-            GameControlObject.AddGoldCoin();
-            bool[] BoolArrayOfWarnings = DrawTheRoom(RoomNumber);
-
-            if (BoolArrayOfWarnings[0] == true) // No more than 1 hazard in room. 
+            if (MovingForWhat == 0) // This means that we are moving for actual moving. 
             {
-                WampusInRoom();
+                GameControlObject.UpdateWhereUserIs(RoomNumber);
+                ShowTriviaAnswer();
+                GameControlObject.AddGoldCoin();
+                bool[] BoolArrayOfWarnings = DrawTheRoom(RoomNumber);
+
+                if (BoolArrayOfWarnings[0] == true) // No more than 1 hazard in room. 
+                {
+                    WampusInRoom();
+                }
+                else if (BoolArrayOfWarnings[1] == true)
+                {
+                    BatsInRoom();
+                }
+                else if (BoolArrayOfWarnings[2] == true)
+                {
+                    PitInRoom();
+                }
             }
-            else if (BoolArrayOfWarnings[1] == true)
+            else
             {
-                BatsInRoom();
-            }
-            else if (BoolArrayOfWarnings[2] == true)
-            {
-                PitInRoom();
+                UserShootAnArrow(RoomNumber);
             }
 
-            UserMoving(); // This Function will eventually return to this function. Then repeat for infinite. 
-
-
+            EnableAllButtonsForRoomInput();
+            buttonNextRoom1.Enabled = false;
+            buttonNextRoom2.Enabled = false;
+            buttonNextRoom3.Enabled = false;
+            buttonNextRoom4.Enabled = false;
+            buttonNextRoom5.Enabled = false;
+            buttonNextRoom6.Enabled = false;
         }
+
         private void ShowTriviaAnswer()
         {
             TriviaAnswerUI TriviaAnswerUIDlg = new TriviaAnswerUI();
@@ -92,158 +92,76 @@ namespace HuntTheWumpus_Team1
             bool[] DangerInRoom = DrawTheRoom(GameControlObject.WhereIsUser());
         }
 
-        private void UserMoving() // Try this via adding this function to the end. 
+        private void UserMoving(int ChoiceIndex)
         {
-            int ChoiceIndex = GetInput();
-
-            while (ChoiceIndex != 0) // Let User Do WhatEver Till They Choose To Move Rooms
+            if (ChoiceIndex == 1)
             {
-                if (ChoiceIndex == 1)
-                {
-                    UserBuysAnArrow();
-                }
-                else if (ChoiceIndex == 2)
-                {
-                    UserShootAnArrow();
-                }
-                else if (ChoiceIndex == 3)
-                {
-                    UserBuysASecret();
-                }
-                else if (ChoiceIndex == 4)
-                {
-                    UserViewaSecret();
-                }
-                else
-                {
-                    EndTheGame();
-                }
-
-                ChoiceIndex = GetInput();
-
-                textBoxGoldCoinAmount.Text = GameControlObject.PlayerGoldCoinAmount().ToString();
-                textBoxArrowAmount.Text = GameControlObject.PlayerArrowAmount().ToString();
+                UserBuysAnArrow();
             }
-
-            int RoomWeAreMovingToIndex = GetRoomInput();
-
-            MoveToNewRoom(RoomWeAreMovingToIndex);
-        }
-
-        public async void WaitForUserToClick()
-        {
-            bool Statment = (ButtonMoveToNextRoomClicked == false && ButtonBuyanArrowClicked == false && ButtonShootanArrowClicked == false && ButtonBuyaSecretClicked == false && ButtonSeeaSecretClicked == false && ButtonEndGameNowClicked == false);
-
-            while (Statment == true)
+            else if (ChoiceIndex == 2)
             {
-                // await Task.Delay(100);
-                Statment = (ButtonMoveToNextRoomClicked == false && ButtonBuyanArrowClicked == false && ButtonShootanArrowClicked == false && ButtonBuyaSecretClicked == false && ButtonSeeaSecretClicked == false && ButtonEndGameNowClicked == false);
+                WhatAreWeChoosingMove0orWampus1 = 1;
+                DisplayaMessage("Please choose a room into which to shoot the arrow");
+                buttonNextRoom1.Enabled = true;
+                buttonNextRoom2.Enabled = true;
+                buttonNextRoom3.Enabled = true;
+                buttonNextRoom4.Enabled = true;
+                buttonNextRoom5.Enabled = true;
+                buttonNextRoom6.Enabled = true;
+
+                // Just Diables all the other buttons the other can press. 
+                DisableAllButtonsForRoomInput();
             }
-        }
-
-        private int GetRoomInput()
-        {
-
-            buttonNextRoom1.Enabled = true;
-            buttonNextRoom2.Enabled = true;
-            buttonNextRoom3.Enabled = true;
-            buttonNextRoom4.Enabled = true;
-            buttonNextRoom5.Enabled = true;
-            buttonNextRoom6.Enabled = true;
-
-            bool StatmentofRooms = (ButtomRoom1Clicked == false && ButtomRoom2Clicked == false && ButtomRoom3Clicked == false && ButtomRoom4Clicked == false && ButtomRoom5Clicked == false && ButtomRoom6Clicked == false);
-
-            while (StatmentofRooms == true)
+            else if (ChoiceIndex == 3)
             {
-                StatmentofRooms = (ButtomRoom1Clicked == false && ButtomRoom2Clicked == false && ButtomRoom3Clicked == false && ButtomRoom4Clicked == false && ButtomRoom5Clicked == false && ButtomRoom6Clicked == false);
+                UserBuysASecret();
             }
+            else if (ChoiceIndex == 4)
+            {
+                UserViewaSecret();
+            }
+            else if (ChoiceIndex == 5)
+            {
+                buttonNextRoom1.Enabled = true;
+                buttonNextRoom2.Enabled = true;
+                buttonNextRoom3.Enabled = true;
+                buttonNextRoom4.Enabled = true;
+                buttonNextRoom5.Enabled = true;
+                buttonNextRoom6.Enabled = true;
 
-            int RoomWeAreMovingToIndex;
+                // Just Diables all the other buttons the other can press. 
+                DisableAllButtonsForRoomInput();
 
-            if (ButtomRoom1Clicked)
-            {
-                RoomWeAreMovingToIndex = 1;
-            }
-            else if (ButtomRoom2Clicked)
-            {
-                RoomWeAreMovingToIndex = 2;
-            }
-            else if (ButtomRoom3Clicked)
-            {
-                RoomWeAreMovingToIndex = 3;
-            }
-            else if (ButtomRoom4Clicked)
-            {
-                RoomWeAreMovingToIndex = 4;
-            }
-            else if (ButtomRoom5Clicked)
-            {
-                RoomWeAreMovingToIndex = 5;
+                WhatAreWeChoosingMove0orWampus1 = 0;
             }
             else
             {
-                RoomWeAreMovingToIndex = 6;
+                EndTheGame();
             }
-
-            ButtomRoom1Clicked = false;
-            ButtomRoom2Clicked = false;
-            ButtomRoom3Clicked = false;
-            ButtomRoom4Clicked = false;
-            ButtomRoom5Clicked = false;
-            ButtomRoom6Clicked = false;
-
-            buttonNextRoom1.Enabled = false;
-            buttonNextRoom2.Enabled = false;
-            buttonNextRoom3.Enabled = false;
-            buttonNextRoom4.Enabled = false;
-            buttonNextRoom5.Enabled = false;
-            buttonNextRoom6.Enabled = false;
-
-            return RoomWeAreMovingToIndex;
+           textBoxGoldCoinAmount.Text = GameControlObject.PlayerGoldCoinAmount().ToString();
+           textBoxArrowAmount.Text = GameControlObject.PlayerArrowAmount().ToString();
         }
 
-        private int GetInput() // This Function get the input from the original list of options. 
+        public void DisableAllButtonsForRoomInput()
         {
-            // 0 - Move to Next Room, 1 - Buy an Arrow, 2 - Shoot an Arrow, 3 - Buy a Secret, 4 - End Game Now. 
-            // bool Statment = (ButtonMoveToNextRoomClicked == false && ButtonBuyanArrowClicked == false && ButtonShootanArrowClicked == false && ButtonBuyaSecretClicked == false && ButtonSeeaSecretClicked == false && ButtonEndGameNowClicked == false);
-
-            int toreturn;
-            WaitForUserToClick();
-
-            if (ButtonMoveToNextRoomClicked == true)
-            {
-                toreturn = 0;
-            }
-            else if (ButtonBuyanArrowClicked == true)
-            {
-                toreturn = 1;
-            }
-            else if (ButtonShootanArrowClicked == true)
-            {
-                toreturn = 2;
-            }
-            else if (ButtonBuyaSecretClicked == true)
-            {
-                toreturn = 3;
-            }
-            else if (ButtonSeeaSecretClicked == true)
-            {
-                toreturn = 4;
-            }
-            else
-            {
-                toreturn = 5;
-            }
-
-            ButtonMoveToNextRoomClicked = false;
-            ButtonMoveToNextRoomClicked = false;
-            ButtonShootanArrowClicked = false;
-            ButtonMoveToNextRoomClicked = false;
-            ButtonSeeaSecretClicked = false;
-            ButtonEndGameNowClicked = false;
-            return toreturn;
-
+            buttonMovetoNextRoom.Enabled = false;
+            buttonShootanArrow.Enabled = false;
+            buttonPurchaseArrow.Enabled = false;
+            buttonPurchaseSecret.Enabled = false;
+            buttonViewSecret.Enabled = false;
+            buttonEndGameNow.Enabled = false;
         }
+
+        public void EnableAllButtonsForRoomInput()
+        {
+            buttonMovetoNextRoom.Enabled = true;
+            buttonShootanArrow.Enabled = true;
+            buttonPurchaseArrow.Enabled = true;
+            buttonPurchaseSecret.Enabled = true;
+            buttonViewSecret.Enabled = true;
+            buttonEndGameNow.Enabled = true;
+        }
+
 
         private void EndTheGame() // This Function is most important as it will end the game when needed.
         {
@@ -281,7 +199,7 @@ namespace HuntTheWumpus_Team1
         private bool[] DrawTheRoom(int RoomNumberToDraw)
         {
             // This Room List should be of this form: [RoomUser, RoomtotheTopLeft, .... (Coutnerclockwise), ....]
-            List<Room> listofadjacentrooms = GameControlObject.AdjacentRoomInformation(RoomNumberToDraw);
+            listofadjacentrooms = GameControlObject.AdjacentRoomInformation(RoomNumberToDraw);
 
             int RoomIndex = listofadjacentrooms[0].RoomNumber;
             // The Following are some other ways to get the Background Image to be correct. 
@@ -298,7 +216,14 @@ namespace HuntTheWumpus_Team1
             buttonNextRoom5.Text = "Room: " + listofadjacentrooms[5].RoomNumber.ToString();
             buttonNextRoom6.Text = "Room: " + listofadjacentrooms[6].RoomNumber.ToString();
 
+            buttonNextRoom1.Enabled = false;
+            buttonNextRoom2.Enabled = false;
+            buttonNextRoom3.Enabled = false;
+            buttonNextRoom4.Enabled = false;
+            buttonNextRoom5.Enabled = false;
+            buttonNextRoom6.Enabled = false;
 
+            EnableAllButtonsForRoomInput();
 
             // Redraw Inventory
 
@@ -383,7 +308,7 @@ namespace HuntTheWumpus_Team1
 
             int RoomToUseTo = GameControlObject.GetNewUserRoom();
             GameControlObject.MoveBatsFromRoom(RoomToUseTo);
-            MoveToNewRoom(RoomToUseTo);
+            MoveToNewRoomOrshootWampus(RoomToUseTo, 0);
         }
 
         public void PitInRoom()
@@ -404,7 +329,7 @@ namespace HuntTheWumpus_Team1
             }
             else
             {
-                MoveToNewRoom(1); // Moving back to Room 1.
+                MoveToNewRoomOrshootWampus(1, 0); // Moving back to Room 1.
             }
         }
 
@@ -456,16 +381,16 @@ namespace HuntTheWumpus_Team1
             }
         }
 
-        private void UserShootAnArrow()
+        private void UserShootAnArrow(int RoomToWhichWeShoot)
         {
             int PlayerArrowAmount = GameControlObject.PlayerArrowAmount();
 
-            if (PlayerArrowAmount > 1)
+            if (PlayerArrowAmount > 0)
             {
                 GameControlObject.RemoveArrowPlayerInventory();
-                DisplayaMessage("Please select the Room into which you want to shoot an arrow.");
+                // DisplayaMessage("Please select the Room into which you want to shoot an arrow.");
 
-                int RoomToWhichWeShoot = GetRoomInput();
+                // int RoomToWhichWeShoot = GetRoomInput();
 
                 // Check if Wampus Was in that Room.
 
@@ -479,7 +404,7 @@ namespace HuntTheWumpus_Team1
                 }
                 else
                 {
-                    DisplayaMessage("You did not get the Wampus");
+                    DisplayaMessage("You did not get the Wampus. We will now move the Wumpus.");
                     Random randomvariable = new Random();
 
                     if (randomvariable.Next(1, 2) == 1) // Randomly move Wampus.
@@ -568,71 +493,71 @@ namespace HuntTheWumpus_Team1
 
             bool ResultOfMessageBox = MessageBoxShowDlg.ResultOfQuestion;
             return ResultOfMessageBox;
-        }
+        } // This Function is fine. 
         private void DisplayaMessage(string StringToDisplay)
         {
             MessageBoxCustom MessageBoxDlg = new MessageBoxCustom();
             MessageBoxDlg.StringToDispaly = StringToDisplay;
             MessageBoxDlg.ShowDialog();
-        }
+        } // This Function is fine.
         private void buttonMovetoNextRoom_Click(object sender, EventArgs e)
         {
-            ButtonMoveToNextRoomClicked = true;
+            UserMoving(5);
         }
 
         private void buttonShootanArrow_Click(object sender, EventArgs e)
         {
-            ButtonShootanArrowClicked = true;
+            UserMoving(2);
         }
 
         private void buttonPurchaseArrow_Click(object sender, EventArgs e)
         {
-            ButtonBuyanArrowClicked = true;
+            UserMoving(1);
         }
 
         private void buttonPurchaseSecret_Click(object sender, EventArgs e)
         {
-            ButtonBuyaSecretClicked = true;
+            UserMoving(3);
         }
 
         private void buttonEndGameNow_Click(object sender, EventArgs e)
         {
-            ButtonEndGameNowClicked = true;
+            UserMoving(6);
         }
 
         private void buttonNextRoom6_Click(object sender, EventArgs e)
         {
-            ButtomRoom6Clicked = true;
+            MoveToNewRoomOrshootWampus(listofadjacentrooms[6].RoomNumber, WhatAreWeChoosingMove0orWampus1);
         }
 
         private void buttonNextRoom5_Click(object sender, EventArgs e)
         {
-            ButtomRoom5Clicked = true;
+            MoveToNewRoomOrshootWampus(listofadjacentrooms[5].RoomNumber, WhatAreWeChoosingMove0orWampus1);
         }
 
         private void buttonNextRoom4_Click(object sender, EventArgs e)
         {
-            ButtomRoom4Clicked = true;
+            MoveToNewRoomOrshootWampus(listofadjacentrooms[4].RoomNumber, WhatAreWeChoosingMove0orWampus1);
         }
 
         private void buttonNextRoom3_Click(object sender, EventArgs e)
         {
-            ButtomRoom3Clicked = true;
+            MoveToNewRoomOrshootWampus(listofadjacentrooms[3].RoomNumber, WhatAreWeChoosingMove0orWampus1);
         }
 
         private void buttonNextRoom2_Click(object sender, EventArgs e)
         {
-            ButtomRoom2Clicked = true;
+            MoveToNewRoomOrshootWampus(listofadjacentrooms[2].RoomNumber, WhatAreWeChoosingMove0orWampus1);
         }
 
         private void buttonNextRoom1_Click(object sender, EventArgs e)
         {
-            ButtomRoom1Clicked = true;
+            MoveToNewRoomOrshootWampus(listofadjacentrooms[1].RoomNumber, WhatAreWeChoosingMove0orWampus1);
         }
 
         private void buttonViewSecret_Click(object sender, EventArgs e)
         {
-            ButtonSeeaSecretClicked = true;
+            UserMoving(4);
         }
 
         private void GetCorrectRoomBackground(int RoomNumberToGetBackgroundFor)
