@@ -26,12 +26,12 @@ namespace GameControl_Offical
 
         bool WumpusDefeated = false;
 
-        /*
+        
         public void AddOriginalTriviaFile()
         {
             FileWritingObject.WriteTriviaToFile(); // This function is to be used only with the greatest care! This is the oringinal Trivia File. 
         }
-        */
+        
         
         
 
