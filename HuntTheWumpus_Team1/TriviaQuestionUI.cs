@@ -79,13 +79,30 @@ namespace HuntTheWumpus_Team1
 
         public void ProcessAnswer(int ButtonPrececd)
         {
+            if (CurrentTriviaQuestion.CorrectAnswerIndex == 0)
+            {
+                buttonOptionA.BackColor = Color.DarkGreen;
+            }
+            else if (CurrentTriviaQuestion.CorrectAnswerIndex == 1)
+            {
+                buttonOptionB.BackColor = Color.DarkGreen;
+            }
+            else if (CurrentTriviaQuestion.CorrectAnswerIndex == 2)
+            {
+                buttonOptionC.BackColor = Color.DarkGreen;
+            }
+            else
+            {
+                buttonOptionD.BackColor = Color.DarkGreen;
+            }
+
             if (ButtonPrececd == 0)
             {
                 if (CurrentTriviaQuestion.CorrectAnswerIndex == 0)
                 {
                     AmountofCorrectQuestions += 1;
                 }
-                buttonOptionA.BackColor = Color.DarkGreen;
+
                 MovetoTheMidScreen();
             }
             else if (ButtonPrececd == 1)
@@ -94,7 +111,7 @@ namespace HuntTheWumpus_Team1
                 {
                     AmountofCorrectQuestions += 1;
                 }
-                buttonOptionB.BackColor = Color.DarkGreen;
+                
                 MovetoTheMidScreen();
             }
             else if (ButtonPrececd == 2)
@@ -103,7 +120,7 @@ namespace HuntTheWumpus_Team1
                 {
                     AmountofCorrectQuestions += 1;
                 }
-                buttonOptionC.BackColor = Color.DarkGreen;
+
                 MovetoTheMidScreen();
             }
             else if (ButtonPrececd == 3)
@@ -112,7 +129,6 @@ namespace HuntTheWumpus_Team1
                 {
                     AmountofCorrectQuestions += 1;
                 }
-                buttonOptionD.BackColor = Color.DarkGreen;
                 MovetoTheMidScreen();
             }
         }
