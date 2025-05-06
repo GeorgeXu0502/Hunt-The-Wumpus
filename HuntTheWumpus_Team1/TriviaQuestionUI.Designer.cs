@@ -39,32 +39,37 @@
             richTextBoxOptionDText = new RichTextBox();
             buttonOptionD = new Button();
             buttonMoveOnToTheNextQuestion = new Button();
+            label1 = new Label();
+            textBoxAmoutOfQuestionsCorrect = new TextBox();
             SuspendLayout();
             // 
             // labelTopBanner
             // 
             labelTopBanner.AutoSize = true;
             labelTopBanner.Font = new Font("Segoe UI", 20F);
-            labelTopBanner.Location = new Point(12, 18);
+            labelTopBanner.Location = new Point(8, 11);
+            labelTopBanner.Margin = new Padding(2, 0, 2, 0);
             labelTopBanner.Name = "labelTopBanner";
-            labelTopBanner.Size = new Size(204, 54);
+            labelTopBanner.Size = new Size(137, 37);
             labelTopBanner.TabIndex = 0;
             labelTopBanner.Text = "Question: ";
             // 
             // richTextBoxMainQuestion
             // 
-            richTextBoxMainQuestion.Location = new Point(313, 18);
+            richTextBoxMainQuestion.Location = new Point(219, 11);
+            richTextBoxMainQuestion.Margin = new Padding(2);
             richTextBoxMainQuestion.Name = "richTextBoxMainQuestion";
             richTextBoxMainQuestion.ReadOnly = true;
-            richTextBoxMainQuestion.Size = new Size(1130, 150);
+            richTextBoxMainQuestion.Size = new Size(792, 92);
             richTextBoxMainQuestion.TabIndex = 1;
             richTextBoxMainQuestion.Text = "";
             // 
             // buttonOptionA
             // 
-            buttonOptionA.Location = new Point(37, 227);
+            buttonOptionA.Location = new Point(26, 136);
+            buttonOptionA.Margin = new Padding(2);
             buttonOptionA.Name = "buttonOptionA";
-            buttonOptionA.Size = new Size(183, 93);
+            buttonOptionA.Size = new Size(128, 56);
             buttonOptionA.TabIndex = 2;
             buttonOptionA.Text = "Option A:";
             buttonOptionA.UseVisualStyleBackColor = true;
@@ -72,27 +77,30 @@
             // 
             // richTextBoxOptionAText
             // 
-            richTextBoxOptionAText.Location = new Point(256, 227);
+            richTextBoxOptionAText.Location = new Point(179, 136);
+            richTextBoxOptionAText.Margin = new Padding(2);
             richTextBoxOptionAText.Name = "richTextBoxOptionAText";
             richTextBoxOptionAText.ReadOnly = true;
-            richTextBoxOptionAText.Size = new Size(1221, 93);
+            richTextBoxOptionAText.Size = new Size(856, 57);
             richTextBoxOptionAText.TabIndex = 3;
             richTextBoxOptionAText.Text = "";
             // 
             // richTextBoxOptionBText
             // 
-            richTextBoxOptionBText.Location = new Point(256, 343);
+            richTextBoxOptionBText.Location = new Point(179, 206);
+            richTextBoxOptionBText.Margin = new Padding(2);
             richTextBoxOptionBText.Name = "richTextBoxOptionBText";
             richTextBoxOptionBText.ReadOnly = true;
-            richTextBoxOptionBText.Size = new Size(1221, 93);
+            richTextBoxOptionBText.Size = new Size(856, 57);
             richTextBoxOptionBText.TabIndex = 5;
             richTextBoxOptionBText.Text = "";
             // 
             // buttonOptionB
             // 
-            buttonOptionB.Location = new Point(37, 343);
+            buttonOptionB.Location = new Point(26, 206);
+            buttonOptionB.Margin = new Padding(2);
             buttonOptionB.Name = "buttonOptionB";
-            buttonOptionB.Size = new Size(183, 93);
+            buttonOptionB.Size = new Size(128, 56);
             buttonOptionB.TabIndex = 4;
             buttonOptionB.Text = "Option B:";
             buttonOptionB.UseVisualStyleBackColor = true;
@@ -100,18 +108,20 @@
             // 
             // richTextBoxOptionCText
             // 
-            richTextBoxOptionCText.Location = new Point(256, 458);
+            richTextBoxOptionCText.Location = new Point(179, 275);
+            richTextBoxOptionCText.Margin = new Padding(2);
             richTextBoxOptionCText.Name = "richTextBoxOptionCText";
             richTextBoxOptionCText.ReadOnly = true;
-            richTextBoxOptionCText.Size = new Size(1221, 93);
+            richTextBoxOptionCText.Size = new Size(856, 57);
             richTextBoxOptionCText.TabIndex = 7;
             richTextBoxOptionCText.Text = "";
             // 
             // buttonOptionC
             // 
-            buttonOptionC.Location = new Point(37, 458);
+            buttonOptionC.Location = new Point(26, 275);
+            buttonOptionC.Margin = new Padding(2);
             buttonOptionC.Name = "buttonOptionC";
-            buttonOptionC.Size = new Size(183, 93);
+            buttonOptionC.Size = new Size(128, 56);
             buttonOptionC.TabIndex = 6;
             buttonOptionC.Text = "Opion C:";
             buttonOptionC.UseVisualStyleBackColor = true;
@@ -119,18 +129,20 @@
             // 
             // richTextBoxOptionDText
             // 
-            richTextBoxOptionDText.Location = new Point(256, 571);
+            richTextBoxOptionDText.Location = new Point(179, 343);
+            richTextBoxOptionDText.Margin = new Padding(2);
             richTextBoxOptionDText.Name = "richTextBoxOptionDText";
             richTextBoxOptionDText.ReadOnly = true;
-            richTextBoxOptionDText.Size = new Size(1221, 93);
+            richTextBoxOptionDText.Size = new Size(856, 57);
             richTextBoxOptionDText.TabIndex = 9;
             richTextBoxOptionDText.Text = "";
             // 
             // buttonOptionD
             // 
-            buttonOptionD.Location = new Point(37, 571);
+            buttonOptionD.Location = new Point(26, 343);
+            buttonOptionD.Margin = new Padding(2);
             buttonOptionD.Name = "buttonOptionD";
-            buttonOptionD.Size = new Size(183, 93);
+            buttonOptionD.Size = new Size(128, 56);
             buttonOptionD.TabIndex = 8;
             buttonOptionD.Text = "Option D:";
             buttonOptionD.UseVisualStyleBackColor = true;
@@ -138,20 +150,40 @@
             // 
             // buttonMoveOnToTheNextQuestion
             // 
-            buttonMoveOnToTheNextQuestion.Location = new Point(37, 707);
+            buttonMoveOnToTheNextQuestion.Location = new Point(26, 424);
+            buttonMoveOnToTheNextQuestion.Margin = new Padding(2);
             buttonMoveOnToTheNextQuestion.Name = "buttonMoveOnToTheNextQuestion";
-            buttonMoveOnToTheNextQuestion.Size = new Size(183, 93);
+            buttonMoveOnToTheNextQuestion.Size = new Size(128, 56);
             buttonMoveOnToTheNextQuestion.TabIndex = 10;
             buttonMoveOnToTheNextQuestion.Text = "Move On To The Next Question";
             buttonMoveOnToTheNextQuestion.UseVisualStyleBackColor = true;
             buttonMoveOnToTheNextQuestion.Click += buttonMoveOnToTheNextQuestion_Click;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(202, 424);
+            label1.Name = "label1";
+            label1.Size = new Size(159, 15);
+            label1.TabIndex = 11;
+            label1.Text = "Amout of Questions Correct:";
+            // 
+            // textBoxAmoutOfQuestionsCorrect
+            // 
+            textBoxAmoutOfQuestionsCorrect.Location = new Point(367, 416);
+            textBoxAmoutOfQuestionsCorrect.Name = "textBoxAmoutOfQuestionsCorrect";
+            textBoxAmoutOfQuestionsCorrect.ReadOnly = true;
+            textBoxAmoutOfQuestionsCorrect.Size = new Size(191, 23);
+            textBoxAmoutOfQuestionsCorrect.TabIndex = 12;
+            // 
             // TriviaQuestionUI
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(98, 127, 149);
-            ClientSize = new Size(1498, 812);
+            ClientSize = new Size(1049, 487);
+            Controls.Add(textBoxAmoutOfQuestionsCorrect);
+            Controls.Add(label1);
             Controls.Add(buttonMoveOnToTheNextQuestion);
             Controls.Add(richTextBoxOptionDText);
             Controls.Add(buttonOptionD);
@@ -163,6 +195,7 @@
             Controls.Add(buttonOptionA);
             Controls.Add(richTextBoxMainQuestion);
             Controls.Add(labelTopBanner);
+            Margin = new Padding(2);
             Name = "TriviaQuestionUI";
             Text = "TriviaQuestionUI";
             Load += TriviaQuestionUI_Load;
@@ -183,5 +216,7 @@
         private RichTextBox richTextBoxOptionDText;
         private Button buttonOptionD;
         private Button buttonMoveOnToTheNextQuestion;
+        private Label label1;
+        private TextBox textBoxAmoutOfQuestionsCorrect;
     }
 }
