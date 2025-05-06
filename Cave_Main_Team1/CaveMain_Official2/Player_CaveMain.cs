@@ -171,6 +171,38 @@ namespace CaveMain_Official2
             Version5Map.Add(Room28V5);
             Version5Map.Add(Room29V5);
             Version5Map.Add(Room30V5);
+
+            RandomMap.Add(EmptyRoom);
+            RandomMap.Add(Room1);
+            RandomMap.Add(Room2);
+            RandomMap.Add(Room3);
+            RandomMap.Add(Room4);
+            RandomMap.Add(Room5);
+            RandomMap.Add(Room6);
+            RandomMap.Add(Room7);
+            RandomMap.Add(Room8);
+            RandomMap.Add(Room9);
+            RandomMap.Add(Room10);
+            RandomMap.Add(Room11);
+            RandomMap.Add(Room12);
+            RandomMap.Add(Room13);
+            RandomMap.Add(Room14);
+            RandomMap.Add(Room15);
+            RandomMap.Add(Room16);
+            RandomMap.Add(Room17);
+            RandomMap.Add(Room18);
+            RandomMap.Add(Room19);
+            RandomMap.Add(Room20);
+            RandomMap.Add(Room21);
+            RandomMap.Add(Room22);
+            RandomMap.Add(Room23);
+            RandomMap.Add(Room24);
+            RandomMap.Add(Room25);
+            RandomMap.Add(Room26);
+            RandomMap.Add(Room27);
+            RandomMap.Add(Room28);
+            RandomMap.Add(Room29);
+            RandomMap.Add(Room30);
         }
 
         List<Room> Version1Map = new List<Room>();
@@ -178,6 +210,9 @@ namespace CaveMain_Official2
         List<Room> Version3Map = new List<Room>();
         List<Room> Version4Map = new List<Room>();
         List<Room> Version5Map = new List<Room>();
+
+        List<Room> RandomMap = new List<Room>();
+
         // information about each room in Version 1 of the cave
         // if room has bats, if room has wumpus, if room has a pit, what rooms player can move to next
         Room EmptyRoom = new Room(0, false, false, false, [0, 0, 0, 0, 0, 0]);
@@ -351,11 +386,39 @@ namespace CaveMain_Official2
         Room Room29V5 = new Room(29, true, false, false, [22, 28, 5, 30, 24, 23]);
         Room Room30V5 = new Room(30, false, false, false, [29, 5, 6, 1, 25, 24]);
 
+        Room Room1 = new Room(1, false, false, false, [30, 6, 7, 2, 26, 25]);
+        Room Room2 = new Room(2, false, false, false, [1, 7, 8, 9, 3, 26]);
+        Room Room3 = new Room(3, false, false, false, [26, 2, 9, 4, 28, 27]);
+        Room Room4 = new Room(4, false, false, false, [3, 9, 10, 11, 5, 28]);
+        Room Room5 = new Room(5, false, false, false, [28, 4, 11, 6, 30, 29]);
+        Room Room6 = new Room(6, false, false, false, [5, 11, 12, 7, 1, 30]);
+        Room Room7 = new Room(7, false, false, false, [6, 12, 13, 8, 2, 1]);
+        Room Room8 = new Room(8, false, false, false, [7, 13, 14, 15, 9, 2]);
+        Room Room9 = new Room(9, false, false, false, [2, 8, 15, 10, 4, 3]);
+        Room Room10 = new Room(10, false, false, false, [9, 15, 16, 17, 11, 4]);
+        Room Room11 = new Room(11, false, false, false, [4, 10, 17, 12, 6, 5]);
+        Room Room12 = new Room(12, false, false, false, [11, 17, 18, 13, 7, 6]);
+        Room Room13 = new Room(13, false, false, false, [12, 18, 19, 14, 8, 7]);
+        Room Room14 = new Room(14, false, false, false, [13, 19, 20, 21, 15, 8]);
+        Room Room15 = new Room(15, false, false, false, [8, 14, 21, 16, 10, 9]);
+        Room Room16 = new Room(16, false, false, false, [15, 21, 22, 23, 17, 10]);
+        Room Room17 = new Room(17, false, false, false, [10, 16, 23, 18, 12, 11]);
+        Room Room18 = new Room(18, false, false, false, [17, 23, 24, 19, 13, 12]);
+        Room Room19 = new Room(19, false, false, false, [18, 24, 25, 20, 14, 13]);
+        Room Room20 = new Room(20, false, false, false, [19, 25, 26, 27, 21, 14]);
+        Room Room21 = new Room(21, false, false, false, [14, 20, 27, 22, 16, 15]);
+        Room Room22 = new Room(22, false, false, false, [21, 27, 28, 29, 23, 16]);
+        Room Room23 = new Room(23, false, false, false, [16, 22, 29, 24, 18, 17]);
+        Room Room24 = new Room(24, false, false, false, [23, 29, 30, 25, 19, 18]);
+        Room Room25 = new Room(25, false, false, false, [24, 30, 1, 26, 20, 19]);
+        Room Room26 = new Room(26, false, false, false, [125, 1, 2, 3, 27, 20]);
+        Room Room27 = new Room(27, false, false, false, [20, 26, 3, 28, 22, 21]);
+        Room Room28 = new Room(28, false, false, false, [27, 3, 4, 5, 29, 22]);
+        Room Room29 = new Room(29, false, false, false, [22, 28, 5, 30, 24, 23]);
+        Room Room30 = new Room(30, false, false, false, [29, 5, 6, 1, 25, 24]);
+
         public void MoveWumpus(int roomRoomNumberWhereUserIsIn)
         {
-            //Move the Wumpus to a different room, not where the User is. Please check guide for this.
-
-
             int wumpusRoom = 0;
             foreach (Room roomToCheck in Version1Map)
             {
@@ -370,16 +433,23 @@ namespace CaveMain_Official2
             }
 
             Random rnd = new Random();
-            int newWumpusRoom = rnd.Next(1, 30);
+            int newWumpusRoom = rnd.Next(1, 31);
 
 
             while (Version1Map[newWumpusRoom].HasWumpus == true || Version1Map[newWumpusRoom].HasBats == true || Version1Map[newWumpusRoom].HasPit == true || newWumpusRoom == roomRoomNumberWhereUserIsIn || newWumpusRoom == wumpusRoom)
             {
                 newWumpusRoom++;
+                if (newWumpusRoom > 30)
+                {
+                    newWumpusRoom -= 30;
+                }
             }
 
             Version1Map[newWumpusRoom].HasWumpus = true;
             Version1Map[wumpusRoom].HasWumpus = false;
+
+
+
         }
 
         public List<Room> GetAdjacentRoomInformation(int RoomNumberForWhichToGetInformation)
@@ -420,11 +490,16 @@ namespace CaveMain_Official2
             //Return a new room with no hazards. Just an Integer.
 
             Random rnd = new Random();
-            int newRoom = rnd.Next(1, 30);
+            int newRoom = rnd.Next(1, 31);
 
             while (Version1Map[newRoom].HasWumpus == true || Version1Map[newRoom].HasBats == true || Version1Map[newRoom].HasPit == true)
             {
                 newRoom++;
+                if (newRoom > 30)
+                {
+                    newRoom -= 30;
+                }
+
             }
 
             return newRoom;
@@ -436,18 +511,67 @@ namespace CaveMain_Official2
             // Move bats to any other room bu thits.
 
             Random rnd = new Random();
-            int newBatRoom = rnd.Next(1, 30);
+            int newBatRoom = rnd.Next(1, 31);
 
 
             while (Version1Map[newBatRoom].HasWumpus == true || Version1Map[newBatRoom].HasBats == true || Version1Map[newBatRoom].HasPit == true || newBatRoom == RoomWhereUserIsMoved)
             {
                 newBatRoom++;
+                if (newBatRoom > 30)
+                {
+                    newBatRoom -= 30;
+                }
             }
 
             Version1Map[newBatRoom].HasBats = true;
             Version1Map[RoomNumberWhereUserIs].HasBats = false;
+
         }
 
+        public List<Room> GenerateCave()
+        {
+            Random rndWumpus = new Random();
+            int wumpusRoom = rndWumpus.Next(1, 31);
 
+            Random rndBat1 = new Random();
+            int batRoom1 = rndBat1.Next(1, 31);
+            while (batRoom1 == wumpusRoom)
+            {
+                batRoom1++;
+                if (batRoom1 > 30)
+                {
+                    batRoom1 -= 30;
+                }
+            }
+
+            Random rndBat2 = new Random();
+            int batRoom2 = rndBat2.Next(1, 31);
+            while (batRoom2 == wumpusRoom || batRoom1 == batRoom2)
+            {
+                batRoom2++;
+                if (batRoom2 > 30)
+                {
+                    batRoom2 -= 30;
+                }
+            }
+
+            Random rndPit = new Random();
+            int pitRoom = rndPit.Next(1, 31);
+            while (pitRoom == wumpusRoom || pitRoom == batRoom2 || pitRoom == batRoom2)
+            {
+                if (pitRoom > 30)
+                {
+                    pitRoom -= 30;
+                }
+            }
+
+            RandomMap[wumpusRoom].HasWumpus = true;
+            RandomMap[batRoom1].HasBats = true;
+            RandomMap[batRoom2].HasBats = true;
+            RandomMap[pitRoom].HasPit = true;
+
+            return RandomMap;
+
+        }
     }
 }
