@@ -45,6 +45,10 @@
             buttonShootArrows = new Button();
             buttonCalculateHighScore = new Button();
             buttonConstructor = new Button();
+            label3 = new Label();
+            textBoxUsername = new TextBox();
+            buttonSaveHighScore = new Button();
+            listBoxHighScores = new ListBox();
             SuspendLayout();
             // 
             // checkBoxSelfWanted
@@ -81,7 +85,7 @@
             label2.AutoSize = true;
             label2.Location = new Point(41, 103);
             label2.Name = "label2";
-            label2.Size = new Size(37, 15);
+            label2.Size = new Size(36, 15);
             label2.TabIndex = 4;
             label2.Text = "Turns";
             // 
@@ -137,9 +141,9 @@
             // 
             // buttonMoveForward
             // 
-            buttonMoveForward.Location = new Point(305, 60);
+            buttonMoveForward.Location = new Point(41, 253);
             buttonMoveForward.Name = "buttonMoveForward";
-            buttonMoveForward.Size = new Size(209, 58);
+            buttonMoveForward.Size = new Size(177, 28);
             buttonMoveForward.TabIndex = 18;
             buttonMoveForward.Text = "Move Forward";
             buttonMoveForward.UseVisualStyleBackColor = true;
@@ -147,7 +151,7 @@
             // 
             // buttonPitEncounter
             // 
-            buttonPitEncounter.Location = new Point(325, 130);
+            buttonPitEncounter.Location = new Point(41, 287);
             buttonPitEncounter.Name = "buttonPitEncounter";
             buttonPitEncounter.Size = new Size(177, 23);
             buttonPitEncounter.TabIndex = 19;
@@ -157,7 +161,7 @@
             // 
             // buttonWumpusEncounter
             // 
-            buttonWumpusEncounter.Location = new Point(325, 165);
+            buttonWumpusEncounter.Location = new Point(41, 318);
             buttonWumpusEncounter.Name = "buttonWumpusEncounter";
             buttonWumpusEncounter.Size = new Size(177, 23);
             buttonWumpusEncounter.TabIndex = 20;
@@ -167,7 +171,7 @@
             // 
             // buttonBuyArrows
             // 
-            buttonBuyArrows.Location = new Point(325, 195);
+            buttonBuyArrows.Location = new Point(41, 347);
             buttonBuyArrows.Name = "buttonBuyArrows";
             buttonBuyArrows.Size = new Size(177, 23);
             buttonBuyArrows.TabIndex = 21;
@@ -177,7 +181,7 @@
             // 
             // buttonShootArrows
             // 
-            buttonShootArrows.Location = new Point(325, 233);
+            buttonShootArrows.Location = new Point(41, 376);
             buttonShootArrows.Name = "buttonShootArrows";
             buttonShootArrows.Size = new Size(177, 23);
             buttonShootArrows.TabIndex = 22;
@@ -187,7 +191,7 @@
             // 
             // buttonCalculateHighScore
             // 
-            buttonCalculateHighScore.Location = new Point(325, 264);
+            buttonCalculateHighScore.Location = new Point(41, 405);
             buttonCalculateHighScore.Name = "buttonCalculateHighScore";
             buttonCalculateHighScore.Size = new Size(177, 23);
             buttonCalculateHighScore.TabIndex = 23;
@@ -197,19 +201,58 @@
             // 
             // buttonConstructor
             // 
-            buttonConstructor.Location = new Point(557, 60);
+            buttonConstructor.Location = new Point(330, 16);
             buttonConstructor.Name = "buttonConstructor";
-            buttonConstructor.Size = new Size(148, 58);
+            buttonConstructor.Size = new Size(174, 40);
             buttonConstructor.TabIndex = 24;
             buttonConstructor.Text = "Constructor Button";
             buttonConstructor.UseVisualStyleBackColor = true;
             buttonConstructor.Click += buttonConstructor_Click;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(41, 211);
+            label3.Name = "label3";
+            label3.Size = new Size(60, 15);
+            label3.TabIndex = 25;
+            label3.Text = "Username";
+            // 
+            // textBoxUsername
+            // 
+            textBoxUsername.Location = new Point(199, 203);
+            textBoxUsername.Name = "textBoxUsername";
+            textBoxUsername.Size = new Size(100, 23);
+            textBoxUsername.TabIndex = 26;
+            // 
+            // buttonSaveHighScore
+            // 
+            buttonSaveHighScore.Location = new Point(330, 69);
+            buttonSaveHighScore.Name = "buttonSaveHighScore";
+            buttonSaveHighScore.Size = new Size(174, 42);
+            buttonSaveHighScore.TabIndex = 27;
+            buttonSaveHighScore.Text = "Save High Score";
+            buttonSaveHighScore.UseVisualStyleBackColor = true;
+            buttonSaveHighScore.Click += buttonSaveHighScore_Click;
+            // 
+            // listBoxHighScores
+            // 
+            listBoxHighScores.FormattingEnabled = true;
+            listBoxHighScores.ItemHeight = 15;
+            listBoxHighScores.Location = new Point(330, 132);
+            listBoxHighScores.Name = "listBoxHighScores";
+            listBoxHighScores.Size = new Size(311, 274);
+            listBoxHighScores.TabIndex = 28;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(listBoxHighScores);
+            Controls.Add(buttonSaveHighScore);
+            Controls.Add(textBoxUsername);
+            Controls.Add(label3);
             Controls.Add(buttonConstructor);
             Controls.Add(buttonCalculateHighScore);
             Controls.Add(buttonShootArrows);
@@ -252,5 +295,9 @@
         private Button buttonShootArrows;
         private Button buttonCalculateHighScore;
         private Button buttonConstructor;
+        private Label label3;
+        private TextBox textBoxUsername;
+        private Button buttonSaveHighScore;
+        private ListBox listBoxHighScores;
     }
 }
