@@ -20,5 +20,5 @@ namespace TriviaMachine_Test
                 PossibleAnswers = possibleAnswers;
                 CorrectAnswerIndex = correctAnswerIndex;
             }
-        }
+    }
 }

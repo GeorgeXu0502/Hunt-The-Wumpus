@@ -193,8 +193,16 @@ namespace TriviaMachine_Offical
             TriviaQuestion TriviaQuestionToAdd20 = new TriviaQuestion("Which of the following is not the name of a telescope?", TriviaQuestionAnswerOptions20, 0);
             ListofTriviaToWrite.Add(TriviaQuestionToAdd20);
 
+            List<string> TriviaQuestionAnswerOptions21 = new List<string>();
+            TriviaQuestionAnswerOptions21.Add("Overwhelmingly Large Telescope.");
+            TriviaQuestionAnswerOptions21.Add("100-Meter Aperture Space Telescope.");
+            TriviaQuestionAnswerOptions21.Add("Thirty Meter Hale Telescope.");
+            TriviaQuestionAnswerOptions21.Add("Gemini Lens X-Ray Telescope.");
+            TriviaQuestion TriviaQuestionToAdd21 = new TriviaQuestion("What is the name of the conceptual telescope design created by the European Southern Observatory in 1998?", TriviaQuestionAnswerOptions21, 0);
+            ListofTriviaToWrite.Add(TriviaQuestionToAdd21);
 
-             Utility.WriteTriviaToFile(ListofTriviaToWrite, Triviadatafiletouse);
+
+            Utility.WriteTriviaToFile(ListofTriviaToWrite, Triviadatafiletouse);
         }
     }
 }
