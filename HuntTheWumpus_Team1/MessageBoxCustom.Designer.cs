@@ -36,6 +36,7 @@
             // 
             richTextBoxDispaly.Location = new Point(93, 40);
             richTextBoxDispaly.Name = "richTextBoxDispaly";
+            richTextBoxDispaly.ReadOnly = true;
             richTextBoxDispaly.Size = new Size(612, 285);
             richTextBoxDispaly.TabIndex = 0;
             richTextBoxDispaly.Text = "";
@@ -58,8 +59,10 @@
             ClientSize = new Size(862, 487);
             Controls.Add(buttonContinue);
             Controls.Add(richTextBoxDispaly);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "MessageBoxCustom";
             Text = "MessageBoxCustom";
+            Load += MessageBoxCustom_Load;
             ResumeLayout(false);
         }
 

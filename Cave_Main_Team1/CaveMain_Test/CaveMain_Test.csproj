@@ -9,7 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CaveMain_Offical\CaveMain_Offical.csproj" />
+    <ProjectReference Include="..\CaveMain_Official2\CaveMain_Official2.csproj" />
   </ItemGroup>
 
 </Project>

@@ -2,17 +2,17 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net6.0-windows</TargetFramework>
+    <TargetFramework>net8.0-windows7.0</TargetFramework>
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Cave_Main_Team1\CaveMain_Offical\CaveMain_Offical.csproj" />
-    <ProjectReference Include="..\GameControl_Main_Team1\GameControl_Offical\GameControl_Offical.csproj" />
-    <ProjectReference Include="..\PlayerInventory_Main_Team1\PlayerInventory_Offical\PlayerInventory_Offical.csproj" />
-    <ProjectReference Include="..\TriviaMachine_Main_Team1\TrivaMachine_Offical\TrivaMachine_Offical.csproj" />
+    <ProjectReference Include="..\Cave_Main_Team1\CaveMain_Official2\CaveMain_Official2.csproj" />
+    <ProjectReference Include="..\GameControl_Main_Team1\GameControl_Offical3\GameControl_Offical3.csproj" />
+    <ProjectReference Include="..\PlayerInventory_Main_Team1\PlayerInventory_Offical2\PlayerInventory_Offical2.csproj" />
+    <ProjectReference Include="..\TriviaMachine_Main_Team1\TriviaMachine_Offical3\TriviaMachine_Offical3.csproj" />
   </ItemGroup>
 
   <ItemGroup>

@@ -19,7 +19,7 @@ namespace PlayerInventory_Offical
         public bool SelfWanted { get; set; }
         public int Score { get; set; }
 
-
+        public int AmoutofArrowsBoughtAlready { get; set; }
 
 
         // Constructor
@@ -30,24 +30,22 @@ namespace PlayerInventory_Offical
             NumberOfArrows = 3;
             SelfWanted = false;
             Score = 0;
+            AmoutofArrowsBoughtAlready = 0;
         }
 
         // Gold coin method which increases gold count by 1 when the users moves forward (SelfWanted)
-        public int GoldCoinIndex()
+        public int NumberofGoldCoinIndex()
         {
-
-            if (SelfWanted)
-            {
-                GoldCount += 1;
-            }
             return GoldCount;
+        }
+
+        public int NumberOfArrowsIndex()
+        {
+            return NumberOfArrows;
         }
 
         public bool EncounterTriviaPitCoins(bool goldCountLessThanZero)
         {
-
-
-
             for (int i = 0; i < 3; i++)
             {
                 GoldCount -= 1;
@@ -59,8 +57,6 @@ namespace PlayerInventory_Offical
 
         public bool EncounterWumpusCoins(bool goldCountLessThanZero)
         {
-
-
             for (int i = 0; i < 5; i++)
             {
                 GoldCount -= 1;
@@ -71,8 +67,6 @@ namespace PlayerInventory_Offical
 
         public int NumberOfTurnsIndex()
         {
-
-
             if (SelfWanted)
             {
                 NumberOfTurns += 1;
@@ -82,11 +76,10 @@ namespace PlayerInventory_Offical
 
         public int NumberOfArrowsIndex(bool isPurchase)
         {
-
-
             if (isPurchase)
             {
                 NumberOfArrows += 1;
+                AmoutofArrowsBoughtAlready += 1;
             }
             else
             {
@@ -97,7 +90,6 @@ namespace PlayerInventory_Offical
 
         public int CalculateHighScore(bool wumpusDefeated)
         {
-
             int wumpusBonus;
             if (wumpusDefeated == true)
             {
@@ -109,5 +101,33 @@ namespace PlayerInventory_Offical
         }
 
         // Add a function that returns error gold amount
+
+        public void AddGoldCoin()
+        {
+            GoldCount += 1;
+        }
+
+        public void RemoveGoldCoin()
+        {
+            GoldCount -= 1;
+        }   
+
+        public List<int> GetTopScores()
+        {
+            //return a list of the top 5 scores
+            return new List<int>();
+        }
+
+        public bool CanWeBuyAnArrow()
+        {
+            if (AmoutofArrowsBoughtAlready >= 2)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
     }
 }

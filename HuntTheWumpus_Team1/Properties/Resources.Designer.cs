@@ -59,5 +59,305 @@ namespace HuntTheWumpus_Team1.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap HuntheWumpusRoom1 {
+            get {
+                object obj = ResourceManager.GetObject("HuntheWumpusRoom1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap HuntheWumpusRoom10 {
+            get {
+                object obj = ResourceManager.GetObject("HuntheWumpusRoom10", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap HuntheWumpusRoom11 {
+            get {
+                object obj = ResourceManager.GetObject("HuntheWumpusRoom11", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap HuntheWumpusRoom12 {
+            get {
+                object obj = ResourceManager.GetObject("HuntheWumpusRoom12", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap HuntheWumpusRoom13 {
+            get {
+                object obj = ResourceManager.GetObject("HuntheWumpusRoom13", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap HuntheWumpusRoom14 {
+            get {
+                object obj = ResourceManager.GetObject("HuntheWumpusRoom14", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap HuntheWumpusRoom15 {
+            get {
+                object obj = ResourceManager.GetObject("HuntheWumpusRoom15", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap HuntheWumpusRoom16 {
+            get {
+                object obj = ResourceManager.GetObject("HuntheWumpusRoom16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap HuntheWumpusRoom17 {
+            get {
+                object obj = ResourceManager.GetObject("HuntheWumpusRoom17", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap HuntheWumpusRoom18 {
+            get {
+                object obj = ResourceManager.GetObject("HuntheWumpusRoom18", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap HuntheWumpusRoom19 {
+            get {
+                object obj = ResourceManager.GetObject("HuntheWumpusRoom19", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap HuntheWumpusRoom2 {
+            get {
+                object obj = ResourceManager.GetObject("HuntheWumpusRoom2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap HuntheWumpusRoom20 {
+            get {
+                object obj = ResourceManager.GetObject("HuntheWumpusRoom20", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap HuntheWumpusRoom21 {
+            get {
+                object obj = ResourceManager.GetObject("HuntheWumpusRoom21", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap HuntheWumpusRoom22 {
+            get {
+                object obj = ResourceManager.GetObject("HuntheWumpusRoom22", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap HuntheWumpusRoom23 {
+            get {
+                object obj = ResourceManager.GetObject("HuntheWumpusRoom23", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap HuntheWumpusRoom24 {
+            get {
+                object obj = ResourceManager.GetObject("HuntheWumpusRoom24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap HuntheWumpusRoom25 {
+            get {
+                object obj = ResourceManager.GetObject("HuntheWumpusRoom25", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap HuntheWumpusRoom26 {
+            get {
+                object obj = ResourceManager.GetObject("HuntheWumpusRoom26", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap HuntheWumpusRoom27 {
+            get {
+                object obj = ResourceManager.GetObject("HuntheWumpusRoom27", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap HuntheWumpusRoom28 {
+            get {
+                object obj = ResourceManager.GetObject("HuntheWumpusRoom28", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap HuntheWumpusRoom29 {
+            get {
+                object obj = ResourceManager.GetObject("HuntheWumpusRoom29", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap HuntheWumpusRoom3 {
+            get {
+                object obj = ResourceManager.GetObject("HuntheWumpusRoom3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap HuntheWumpusRoom30 {
+            get {
+                object obj = ResourceManager.GetObject("HuntheWumpusRoom30", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap HuntheWumpusRoom4 {
+            get {
+                object obj = ResourceManager.GetObject("HuntheWumpusRoom4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap HuntheWumpusRoom5 {
+            get {
+                object obj = ResourceManager.GetObject("HuntheWumpusRoom5", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap HuntheWumpusRoom6 {
+            get {
+                object obj = ResourceManager.GetObject("HuntheWumpusRoom6", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap HuntheWumpusRoom7 {
+            get {
+                object obj = ResourceManager.GetObject("HuntheWumpusRoom7", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap HuntheWumpusRoom8 {
+            get {
+                object obj = ResourceManager.GetObject("HuntheWumpusRoom8", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap HuntheWumpusRoom9 {
+            get {
+                object obj = ResourceManager.GetObject("HuntheWumpusRoom9", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

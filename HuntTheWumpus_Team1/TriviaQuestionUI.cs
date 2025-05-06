@@ -16,101 +16,53 @@ namespace HuntTheWumpus_Team1
     {
         public int AmountofQuestions { get; set; }
 
-        public bool GotOffSaftley;
+        public bool GotOffWithQuestions;
+
+        public bool GotOffWithCoins;
 
         Player_GameControl GameControlObject = new GameControl_Offical.Player_GameControl();
 
         int AmountofCorrectQuestions = 0;
-         
-        // Button Click Event Checkers:
 
-        bool WasButtonAClicked = false;
-        bool WasButtonBClicked = false;
-        bool WasButtonCClicked = false;
-        bool WasButtonDClicked = false;
-        bool WasButtonNextClicked = false;
+        TriviaQuestion CurrentTriviaQuestion;
 
         public TriviaQuestionUI()
         {
-            InitializeComponent(); // Might need to change this to a Form_Activated Area. 
-            buttonMoveOnToTheNextQuestion.Enabled = false;
-            buttonMoveOnToTheNextQuestion.Visible = false;
-
-            for (int i = 0; i < AmountofQuestions; i++)
-            {
-                AskQuestion();
-            }
-
-            if (GameControlObject.PlayerGoldCoinAmount() < AmountofQuestions)
-            {
-                GotOffSaftley = false;
-            }
-
-            if (AmountofQuestions == 5 && AmountofCorrectQuestions < 3)
-            {
-                GotOffSaftley = false;
-            }
-
-            if (AmountofQuestions == 3 && AmountofCorrectQuestions < 2)
-            {
-                GotOffSaftley = false;
-            }
+            InitializeComponent(); 
         }
 
-        private void AskQuestion()
+        /*
+        async void WaitForUserToClick()
         {
-            TriviaQuestion CurrentTriviaQuestion = GameControlObject.GetQuestion();
+            bool Statment = (WasButtonAClicked == false && WasButtonBClicked == false && WasButtonCClicked == false && WasButtonDClicked == false);
+
+            while (Statment == true)
+            {
+                await Task.Delay(100);
+                Statment = (WasButtonAClicked == false && WasButtonBClicked == false && WasButtonCClicked == false && WasButtonDClicked == false);
+            }
+        }
+        */
+
+        private void PrintQuestion()
+        {
+            CurrentTriviaQuestion = GameControlObject.GetQuestion();
 
             richTextBoxMainQuestion.Text = CurrentTriviaQuestion.QuestionTrivia;
             richTextBoxOptionAText.Text = CurrentTriviaQuestion.PossibleAnswers[0];
             richTextBoxOptionBText.Text = CurrentTriviaQuestion.PossibleAnswers[1];
             richTextBoxOptionCText.Text = CurrentTriviaQuestion.PossibleAnswers[2];
             richTextBoxOptionDText.Text = CurrentTriviaQuestion.PossibleAnswers[3];
+        }
 
-            bool StatmentToCheck = (WasButtonAClicked == false && WasButtonBClicked == false && WasButtonCClicked == false && WasButtonDClicked == false);
-            while (StatmentToCheck == true)
-            {
-                StatmentToCheck = (WasButtonAClicked == false && WasButtonBClicked == false && WasButtonCClicked == false && WasButtonDClicked == false);
-            }
-
-            if (WasButtonAClicked)
-            {
-                if (CurrentTriviaQuestion.CorrectAnswerIndex == 0)
-                {
-                    AmountofCorrectQuestions += 1;
-                }
-            }
-            else if (WasButtonBClicked)
-            {
-                if (CurrentTriviaQuestion.CorrectAnswerIndex == 1)
-                {
-                    AmountofCorrectQuestions += 1;
-                }
-            }
-            else if (WasButtonCClicked)
-            {
-                if (CurrentTriviaQuestion.CorrectAnswerIndex == 2)
-                {
-                    AmountofCorrectQuestions += 1;
-                }
-            }
-            else
-            {
-                if (CurrentTriviaQuestion.CorrectAnswerIndex == 3)
-                {
-                    AmountofCorrectQuestions += 1;
-                }
-            }
-
-            WasButtonAClicked = false;
-            WasButtonAClicked = false;
-            WasButtonAClicked = false;
-            WasButtonAClicked = false;
-
-            labelTopBanner.Text = "Correct Answer:";
-            richTextBoxMainQuestion.Visible = false;
+        public void DisableQuestionButtonAnswers(TriviaQuestion CurrentTriviaQuestion)
+        {
             buttonMoveOnToTheNextQuestion.Enabled = true;
             buttonMoveOnToTheNextQuestion.Visible = true;
+            buttonOptionA.Enabled = false;
+            buttonOptionB.Enabled = false;
+            buttonOptionC.Enabled = false;
+            buttonOptionD.Enabled = false;
 
             if (CurrentTriviaQuestion.CorrectAnswerIndex == 0)
             {
@@ -128,8 +80,43 @@ namespace HuntTheWumpus_Team1
             {
                 buttonOptionD.BackColor = Color.DarkGreen;
             }
+        }
+        private void ProcessAnswer(int QuestionClicked, TriviaQuestion CurrentTriviaQuestion)
+        {
 
-            if (WasButtonNextClicked == true)
+            if (QuestionClicked == 0)
+            {
+                if (CurrentTriviaQuestion.CorrectAnswerIndex == 0)
+                {
+                    AmountofCorrectQuestions += 1;
+                }
+                DisableQuestionButtonAnswers(CurrentTriviaQuestion);
+            }
+            else if (QuestionClicked == 1)
+            {
+                if (CurrentTriviaQuestion.CorrectAnswerIndex == 1)
+                {
+                    AmountofCorrectQuestions += 1;
+                }
+                DisableQuestionButtonAnswers(CurrentTriviaQuestion);
+            }
+            else if (QuestionClicked == 2)
+            {
+                if (CurrentTriviaQuestion.CorrectAnswerIndex == 2)
+                {
+                    AmountofCorrectQuestions += 1;
+                }
+                DisableQuestionButtonAnswers(CurrentTriviaQuestion);
+            }
+            else if (QuestionClicked == 3)
+            {
+                if (CurrentTriviaQuestion.CorrectAnswerIndex == 3)
+                {
+                    AmountofCorrectQuestions += 1;
+                }
+                DisableQuestionButtonAnswers(CurrentTriviaQuestion);
+            }
+            else
             {
                 labelTopBanner.Text = "Question:";
                 richTextBoxMainQuestion.Visible = true;
@@ -137,38 +124,65 @@ namespace HuntTheWumpus_Team1
                 buttonOptionB.BackColor = Color.White;
                 buttonOptionC.BackColor = Color.White;
                 buttonOptionD.BackColor = Color.White;
-                WasButtonNextClicked = false;
                 buttonMoveOnToTheNextQuestion.Enabled = false;
                 buttonMoveOnToTheNextQuestion.Visible = false;
             }
-
-            return;
-
         }
 
         private void buttonOptionA_Click(object sender, EventArgs e)
         {
-            WasButtonAClicked = true;
+            ProcessAnswer(0, CurrentTriviaQuestion);
         }
 
         private void buttonOptionB_Click(object sender, EventArgs e)
         {
-            WasButtonBClicked = true;
+            ProcessAnswer(1, CurrentTriviaQuestion);
         }
 
         private void buttonOptionC_Click(object sender, EventArgs e)
         {
-            WasButtonCClicked = true;
+            ProcessAnswer(2, CurrentTriviaQuestion);
         }
 
         private void buttonOptionD_Click(object sender, EventArgs e)
         {
-            WasButtonDClicked = true;
+            ProcessAnswer(3, CurrentTriviaQuestion);
         }
 
         private void buttonMoveOnToTheNextQuestion_Click(object sender, EventArgs e)
         {
-            WasButtonNextClicked = true;
+            ProcessAnswer(4, CurrentTriviaQuestion);
+        }
+
+        private void TriviaQuestionUI_Load(object sender, EventArgs e)
+        {
+            buttonMoveOnToTheNextQuestion.Enabled = false;
+            buttonMoveOnToTheNextQuestion.Visible = false;
+
+            for (int i = 0; i < AmountofQuestions; i++)
+            {
+                PrintQuestion();
+                GameControlObject.RemoveGoldCoin();
+            }
+
+            if (GameControlObject.PlayerGoldCoinAmount() < 0)
+            {
+                GotOffWithCoins = false;
+            }
+            else
+            {
+                GotOffWithCoins = true;
+            }
+
+            if (AmountofQuestions == 5 && AmountofCorrectQuestions < 3)
+            {
+                GotOffWithQuestions = false;
+            }
+
+            if (AmountofQuestions == 3 && AmountofCorrectQuestions < 2)
+            {
+                GotOffWithQuestions = false;
+            }
         }
     }
 }

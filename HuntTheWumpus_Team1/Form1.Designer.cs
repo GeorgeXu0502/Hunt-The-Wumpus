@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             pictureBoxGeneralRoomBackground = new PictureBox();
             buttonNextRoom5 = new Button();
             label1 = new Label();
@@ -41,6 +40,7 @@
             buttonNextRoom3 = new Button();
             buttonNextRoom4 = new Button();
             groupBoxplayeractions = new GroupBox();
+            buttonViewSecret = new Button();
             buttonEndGameNow = new Button();
             buttonPurchaseSecret = new Button();
             buttonPurchaseArrow = new Button();
@@ -51,6 +51,7 @@
             textBoxGoldCoinAmount = new TextBox();
             label3 = new Label();
             label2 = new Label();
+            listBoxSecretsList = new ListBox();
             ((System.ComponentModel.ISupportInitialize)pictureBoxGeneralRoomBackground).BeginInit();
             groupBoxplayeractions.SuspendLayout();
             groupBoxPlayerInventory.SuspendLayout();
@@ -58,7 +59,7 @@
             // 
             // pictureBoxGeneralRoomBackground
             // 
-            pictureBoxGeneralRoomBackground.Image = (Image)resources.GetObject("pictureBoxGeneralRoomBackground.Image");
+            pictureBoxGeneralRoomBackground.Image = Properties.Resources.HuntheWumpusRoom1;
             pictureBoxGeneralRoomBackground.Location = new Point(96, 170);
             pictureBoxGeneralRoomBackground.Name = "pictureBoxGeneralRoomBackground";
             pictureBoxGeneralRoomBackground.Size = new Size(1156, 1003);
@@ -177,24 +178,36 @@
             // 
             // groupBoxplayeractions
             // 
+            groupBoxplayeractions.Controls.Add(buttonViewSecret);
             groupBoxplayeractions.Controls.Add(buttonEndGameNow);
             groupBoxplayeractions.Controls.Add(buttonPurchaseSecret);
             groupBoxplayeractions.Controls.Add(buttonPurchaseArrow);
             groupBoxplayeractions.Controls.Add(buttonShootanArrow);
             groupBoxplayeractions.Controls.Add(buttonMovetoNextRoom);
-            groupBoxplayeractions.Location = new Point(1259, 170);
+            groupBoxplayeractions.Location = new Point(1262, 23);
             groupBoxplayeractions.Margin = new Padding(4, 5, 4, 5);
             groupBoxplayeractions.Name = "groupBoxplayeractions";
             groupBoxplayeractions.Padding = new Padding(4, 5, 4, 5);
-            groupBoxplayeractions.Size = new Size(363, 809);
+            groupBoxplayeractions.Size = new Size(363, 935);
             groupBoxplayeractions.TabIndex = 16;
             groupBoxplayeractions.TabStop = false;
             groupBoxplayeractions.Text = "Possible Actions";
             // 
+            // buttonViewSecret
+            // 
+            buttonViewSecret.BackColor = SystemColors.ActiveCaption;
+            buttonViewSecret.Location = new Point(7, 645);
+            buttonViewSecret.Name = "buttonViewSecret";
+            buttonViewSecret.Size = new Size(349, 138);
+            buttonViewSecret.TabIndex = 23;
+            buttonViewSecret.Text = "View A Selected Secret";
+            buttonViewSecret.UseVisualStyleBackColor = false;
+            buttonViewSecret.Click += buttonViewSecret_Click;
+            // 
             // buttonEndGameNow
             // 
             buttonEndGameNow.BackColor = SystemColors.ActiveCaption;
-            buttonEndGameNow.Location = new Point(7, 649);
+            buttonEndGameNow.Location = new Point(7, 789);
             buttonEndGameNow.Name = "buttonEndGameNow";
             buttonEndGameNow.Size = new Size(349, 138);
             buttonEndGameNow.TabIndex = 22;
@@ -299,12 +312,22 @@
             label2.TabIndex = 0;
             label2.Text = "Amount of Gold Coins:";
             // 
+            // listBoxSecretsList
+            // 
+            listBoxSecretsList.FormattingEnabled = true;
+            listBoxSecretsList.ItemHeight = 25;
+            listBoxSecretsList.Location = new Point(1262, 996);
+            listBoxSecretsList.Name = "listBoxSecretsList";
+            listBoxSecretsList.Size = new Size(505, 304);
+            listBoxSecretsList.TabIndex = 18;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(98, 127, 149);
             ClientSize = new Size(1790, 1323);
+            Controls.Add(listBoxSecretsList);
             Controls.Add(groupBoxPlayerInventory);
             Controls.Add(groupBoxplayeractions);
             Controls.Add(buttonNextRoom4);
@@ -321,7 +344,6 @@
             Margin = new Padding(4, 5, 4, 5);
             Name = "Form1";
             Text = "UI: Hunt the Wumpus";
-            Activated += Form1_Activated;
             ((System.ComponentModel.ISupportInitialize)pictureBoxGeneralRoomBackground).EndInit();
             groupBoxplayeractions.ResumeLayout(false);
             groupBoxPlayerInventory.ResumeLayout(false);
@@ -354,5 +376,7 @@
         private Button buttonShootanArrow;
         private Button buttonMovetoNextRoom;
         private Button buttonEndGameNow;
+        private ListBox listBoxSecretsList;
+        private Button buttonViewSecret;
     }
 }
