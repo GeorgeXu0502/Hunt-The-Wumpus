@@ -165,6 +165,7 @@
             Controls.Add(labelTopBanner);
             Name = "TriviaQuestionUI";
             Text = "TriviaQuestionUI";
+            Load += TriviaQuestionUI_Load;
             ResumeLayout(false);
             PerformLayout();
         }

@@ -15,22 +15,24 @@ namespace PlayerInventory_Main_Team1
         public int NumberOfArrows { get; set; }
         public bool SelfWanted { get; set; }
         public int Score { get; set; }
+        public string Username { get; set; }
 
 
 
 
         // Constructor
-        public Player_HighScore2()
+        public Player_HighScore2(int goldcount, int numberofturns, int numberofarrows, bool selfwanted, int score, string username)
         {
-            GoldCount = 0;
-            NumberOfTurns = 0;
-            NumberOfArrows = 3;
-            SelfWanted = false;
-            Score = 0;
+            GoldCount = goldcount;
+            NumberOfTurns = numberofturns;
+            NumberOfArrows = numberofarrows;
+            SelfWanted = selfwanted;
+            Score = score;
+            Username = username;
         }
 
         // Gold coin method which increases gold count by 1 when the users moves forward (SelfWanted)
-        public int GoldCoinIndex(int numberOfGoldCoins)
+        public int GoldCoinIndex()
         {
             
             if (SelfWanted)
@@ -40,7 +42,7 @@ namespace PlayerInventory_Main_Team1
             return GoldCount;
         }
 
-        public bool EncounterTriviaPitCoins(int numberOfGoldCoins, bool goldCountLessThanZero)
+        public bool EncounterTriviaPitCoins(bool goldCountLessThanZero)
         {
 
             
@@ -51,10 +53,14 @@ namespace PlayerInventory_Main_Team1
             }
 
             goldCountLessThanZero = GoldCount < 0;
-            return goldCountLessThanZero;
+            if (goldCountLessThanZero == true)
+            {
+                return true;
+            }
+            else return false;
         }
 
-        public bool EncounterWumpusCoins(int numberOfGoldCoins, bool goldCountLessThanZero)
+        public bool EncounterWumpusCoins(bool goldCountLessThanZero)
         {
             
 
@@ -63,10 +69,14 @@ namespace PlayerInventory_Main_Team1
                 GoldCount -= 1;
             }
             goldCountLessThanZero = GoldCount < 0;
-            return goldCountLessThanZero;
+            if (goldCountLessThanZero == true)
+            {
+                return true;
+            }
+            else return false;
         }
 
-        public int NumberOfTurnsIndex(int numberOfTurns)
+        public int NumberOfTurnsIndex()
         {
             
 
@@ -77,7 +87,7 @@ namespace PlayerInventory_Main_Team1
             return NumberOfTurns;
         }
 
-        public int NumberOfArrowsIndex(int numberOfArrows, bool isPurchase)
+        public int NumberOfArrowsIndex(bool isPurchase)
         {
             
 
