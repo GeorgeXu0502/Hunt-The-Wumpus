@@ -193,8 +193,89 @@ namespace TriviaMachine_Offical
             TriviaQuestion TriviaQuestionToAdd20 = new TriviaQuestion("Which of the following is not the name of a telescope?", TriviaQuestionAnswerOptions20, 0);
             ListofTriviaToWrite.Add(TriviaQuestionToAdd20);
 
+            List<string> TriviaQuestionAnswerOptions21 = new List<string>();
+            TriviaQuestionAnswerOptions21.Add("Overwhelmingly Large Telescope.");
+            TriviaQuestionAnswerOptions21.Add("100-Meter Aperture Space Telescope.");
+            TriviaQuestionAnswerOptions21.Add("Thirty Meter Hale Telescope.");
+            TriviaQuestionAnswerOptions21.Add("Gemini Lens X-Ray Telescope.");
+            TriviaQuestion TriviaQuestionToAdd21 = new TriviaQuestion("What is the name of the conceptual telescope design created by the European Southern Observatory in 1998?", TriviaQuestionAnswerOptions21, 0);
+            ListofTriviaToWrite.Add(TriviaQuestionToAdd20);
 
-             Utility.WriteTriviaToFile(ListofTriviaToWrite, Triviadatafiletouse);
+            List<string> TriviaQuestionAnswerOptions22 = new List<string>();
+            TriviaQuestionAnswerOptions22.Add("Over two trillion.");
+            TriviaQuestionAnswerOptions22.Add("457.");
+            TriviaQuestionAnswerOptions22.Add("Almost 19 billion.");
+            TriviaQuestionAnswerOptions22.Add("15.");
+            TriviaQuestion TriviaQuestionToAdd22 = new TriviaQuestion("How many galaxies do we know of?", TriviaQuestionAnswerOptions22, 0);
+            ListofTriviaToWrite.Add(TriviaQuestionToAdd22);
+
+            /*
+            List<string> TriviaQuestionAnswerOptions20 = new List<string>();
+            TriviaQuestionAnswerOptions20.Add("Microwave X-Ray Distant Ray Telescope.");
+            TriviaQuestionAnswerOptions20.Add("Gran Telescopio Canarias.");
+            TriviaQuestionAnswerOptions20.Add("Extremely Large Telescope.");
+            TriviaQuestionAnswerOptions20.Add("500-meter Aperture Spherical Telescope.");
+            TriviaQuestion TriviaQuestionToAdd20 = new TriviaQuestion("Which of the following is not the name of a telescope?", TriviaQuestionAnswerOptions20, 0);
+            ListofTriviaToWrite.Add(TriviaQuestionToAdd20);
+
+            List<string> TriviaQuestionAnswerOptions20 = new List<string>();
+            TriviaQuestionAnswerOptions20.Add("Microwave X-Ray Distant Ray Telescope.");
+            TriviaQuestionAnswerOptions20.Add("Gran Telescopio Canarias.");
+            TriviaQuestionAnswerOptions20.Add("Extremely Large Telescope.");
+            TriviaQuestionAnswerOptions20.Add("500-meter Aperture Spherical Telescope.");
+            TriviaQuestion TriviaQuestionToAdd20 = new TriviaQuestion("Which of the following is not the name of a telescope?", TriviaQuestionAnswerOptions20, 0);
+            ListofTriviaToWrite.Add(TriviaQuestionToAdd20);
+
+            List<string> TriviaQuestionAnswerOptions20 = new List<string>();
+            TriviaQuestionAnswerOptions20.Add("Microwave X-Ray Distant Ray Telescope.");
+            TriviaQuestionAnswerOptions20.Add("Gran Telescopio Canarias.");
+            TriviaQuestionAnswerOptions20.Add("Extremely Large Telescope.");
+            TriviaQuestionAnswerOptions20.Add("500-meter Aperture Spherical Telescope.");
+            TriviaQuestion TriviaQuestionToAdd20 = new TriviaQuestion("Which of the following is not the name of a telescope?", TriviaQuestionAnswerOptions20, 0);
+            ListofTriviaToWrite.Add(TriviaQuestionToAdd20);
+
+            List<string> TriviaQuestionAnswerOptions20 = new List<string>();
+            TriviaQuestionAnswerOptions20.Add("Microwave X-Ray Distant Ray Telescope.");
+            TriviaQuestionAnswerOptions20.Add("Gran Telescopio Canarias.");
+            TriviaQuestionAnswerOptions20.Add("Extremely Large Telescope.");
+            TriviaQuestionAnswerOptions20.Add("500-meter Aperture Spherical Telescope.");
+            TriviaQuestion TriviaQuestionToAdd20 = new TriviaQuestion("Which of the following is not the name of a telescope?", TriviaQuestionAnswerOptions20, 0);
+            ListofTriviaToWrite.Add(TriviaQuestionToAdd20);
+
+            List<string> TriviaQuestionAnswerOptions20 = new List<string>();
+            TriviaQuestionAnswerOptions20.Add("Microwave X-Ray Distant Ray Telescope.");
+            TriviaQuestionAnswerOptions20.Add("Gran Telescopio Canarias.");
+            TriviaQuestionAnswerOptions20.Add("Extremely Large Telescope.");
+            TriviaQuestionAnswerOptions20.Add("500-meter Aperture Spherical Telescope.");
+            TriviaQuestion TriviaQuestionToAdd20 = new TriviaQuestion("Which of the following is not the name of a telescope?", TriviaQuestionAnswerOptions20, 0);
+            ListofTriviaToWrite.Add(TriviaQuestionToAdd20);
+
+            List<string> TriviaQuestionAnswerOptions20 = new List<string>();
+            TriviaQuestionAnswerOptions20.Add("Microwave X-Ray Distant Ray Telescope.");
+            TriviaQuestionAnswerOptions20.Add("Gran Telescopio Canarias.");
+            TriviaQuestionAnswerOptions20.Add("Extremely Large Telescope.");
+            TriviaQuestionAnswerOptions20.Add("500-meter Aperture Spherical Telescope.");
+            TriviaQuestion TriviaQuestionToAdd20 = new TriviaQuestion("Which of the following is not the name of a telescope?", TriviaQuestionAnswerOptions20, 0);
+            ListofTriviaToWrite.Add(TriviaQuestionToAdd20);
+
+            List<string> TriviaQuestionAnswerOptions20 = new List<string>();
+            TriviaQuestionAnswerOptions20.Add("Microwave X-Ray Distant Ray Telescope.");
+            TriviaQuestionAnswerOptions20.Add("Gran Telescopio Canarias.");
+            TriviaQuestionAnswerOptions20.Add("Extremely Large Telescope.");
+            TriviaQuestionAnswerOptions20.Add("500-meter Aperture Spherical Telescope.");
+            TriviaQuestion TriviaQuestionToAdd20 = new TriviaQuestion("Which of the following is not the name of a telescope?", TriviaQuestionAnswerOptions20, 0);
+            ListofTriviaToWrite.Add(TriviaQuestionToAdd20);
+
+            List<string> TriviaQuestionAnswerOptions20 = new List<string>();
+            TriviaQuestionAnswerOptions20.Add("Microwave X-Ray Distant Ray Telescope.");
+            TriviaQuestionAnswerOptions20.Add("Gran Telescopio Canarias.");
+            TriviaQuestionAnswerOptions20.Add("Extremely Large Telescope.");
+            TriviaQuestionAnswerOptions20.Add("500-meter Aperture Spherical Telescope.");
+            TriviaQuestion TriviaQuestionToAdd20 = new TriviaQuestion("Which of the following is not the name of a telescope?", TriviaQuestionAnswerOptions20, 0);
+            ListofTriviaToWrite.Add(TriviaQuestionToAdd20);
+            */ 
+
+            Utility.WriteTriviaToFile(ListofTriviaToWrite, Triviadatafiletouse);
         }
     }
 }
