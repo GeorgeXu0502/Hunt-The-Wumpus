@@ -263,15 +263,27 @@ namespace HuntTheWumpus_Team1
             {
                 checkBoxbatsnearby.Checked = true;
             }
+            else
+            {
+                checkBoxbatsnearby.Checked = false;
+            }
 
             if (hasPit == true)
             {
                 checkBoxpitnearby.Checked = true;
             }
+            else
+            {
+                checkBoxpitnearby.Checked = false;
+            }
 
             if (hasWumpus == true)
             {
                 checkBoxwumpusneabry.Checked = true;
+            }
+            else
+            {
+                checkBoxwumpusneabry.Checked = false;
             }
 
             bool[] BoolListToReturn = { listofadjacentrooms[0].HasWumpus, listofadjacentrooms[0].HasBats, listofadjacentrooms[0].HasPit };
