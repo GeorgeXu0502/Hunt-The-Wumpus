@@ -78,7 +78,7 @@ namespace HuntTheWumpus_Team1
         {
             TriviaAnswerUI TriviaAnswerUIDlg = new TriviaAnswerUI();
             TriviaAnswerUIDlg.TriviaAnswerToUse = GameControlObject.SendTriviaQuestion();
-            TriviaAnswerUIDlg.Show();
+            TriviaAnswerUIDlg.ShowDialog();
         }
         private void StartTheGame()
         {

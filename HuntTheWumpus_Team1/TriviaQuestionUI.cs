@@ -79,13 +79,30 @@ namespace HuntTheWumpus_Team1
 
         public void ProcessAnswer(int ButtonPrececd)
         {
+            if (CurrentTriviaQuestion.CorrectAnswerIndex == 0)
+            {
+                buttonOptionA.BackColor = Color.DarkGreen;
+            }
+            else if (CurrentTriviaQuestion.CorrectAnswerIndex == 1)
+            {
+                buttonOptionB.BackColor = Color.DarkGreen;
+            }
+            else if (CurrentTriviaQuestion.CorrectAnswerIndex == 2)
+            {
+                buttonOptionC.BackColor = Color.DarkGreen;
+            }
+            else
+            {
+                buttonOptionD.BackColor = Color.DarkGreen;
+            }
+
             if (ButtonPrececd == 0)
             {
                 if (CurrentTriviaQuestion.CorrectAnswerIndex == 0)
                 {
                     AmountofCorrectQuestions += 1;
                 }
-                buttonOptionA.BackColor = Color.DarkGreen;
+
                 MovetoTheMidScreen();
             }
             else if (ButtonPrececd == 1)
@@ -94,7 +111,7 @@ namespace HuntTheWumpus_Team1
                 {
                     AmountofCorrectQuestions += 1;
                 }
-                buttonOptionB.BackColor = Color.DarkGreen;
+                
                 MovetoTheMidScreen();
             }
             else if (ButtonPrececd == 2)
@@ -103,7 +120,7 @@ namespace HuntTheWumpus_Team1
                 {
                     AmountofCorrectQuestions += 1;
                 }
-                buttonOptionC.BackColor = Color.DarkGreen;
+
                 MovetoTheMidScreen();
             }
             else if (ButtonPrececd == 3)
@@ -112,28 +129,31 @@ namespace HuntTheWumpus_Team1
                 {
                     AmountofCorrectQuestions += 1;
                 }
-                buttonOptionD.BackColor = Color.DarkGreen;
                 MovetoTheMidScreen();
             }
         }
 
         private void buttonOptionA_Click(object sender, EventArgs e)
         {
+            GameControlObject.RemoveGoldCoin();
             ProcessAnswer(0);
         }
 
         private void buttonOptionB_Click(object sender, EventArgs e)
         {
+            GameControlObject.RemoveGoldCoin();
             ProcessAnswer(1);
         }
 
         private void buttonOptionC_Click(object sender, EventArgs e)
         {
+            GameControlObject.RemoveGoldCoin();
             ProcessAnswer(2);
         }
 
         private void buttonOptionD_Click(object sender, EventArgs e)
         {
+            GameControlObject.RemoveGoldCoin();
             ProcessAnswer(3);
         }
 
@@ -145,7 +165,6 @@ namespace HuntTheWumpus_Team1
             }
             else
             {
-
                 if (GameControlObject.PlayerGoldCoinAmount() < 0)
                 {
                     GotOffWithCoins = false;
@@ -159,13 +178,16 @@ namespace HuntTheWumpus_Team1
                 {
                     GotOffWithQuestions = false;
                 }
-
-                if (AmountofQuestions == 3 && AmountofCorrectQuestions < 2)
+                else if (AmountofQuestions == 3 && AmountofCorrectQuestions < 2)
                 {
                     GotOffWithQuestions = false;
                 }
+                else
+                {
+                    GotOffWithQuestions = true;
+                }
 
-                this.Close();
+               this.Close();
             }
         }
     }
