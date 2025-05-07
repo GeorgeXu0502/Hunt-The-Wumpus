@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Newtonsoft.Json;
 using System.Threading.Tasks;
+using System.Runtime.CompilerServices;
 
 namespace PlayerInventory_Offical
 {
@@ -18,6 +20,7 @@ namespace PlayerInventory_Offical
         public int NumberOfArrows { get; set; }
         public bool SelfWanted { get; set; }
         public int Score { get; set; }
+        public string Username { get; set; }
 
         public int AmoutofArrowsBoughtAlready { get; set; }
 
@@ -30,6 +33,7 @@ namespace PlayerInventory_Offical
             NumberOfArrows = 3;
             SelfWanted = false;
             Score = 0;
+            Username = "Player";
             AmoutofArrowsBoughtAlready = 0;
         }
 
@@ -112,11 +116,11 @@ namespace PlayerInventory_Offical
             GoldCount -= 1;
         }   
 
-        public List<int> GetTopScores()
+        /* public List<int> GetTopScores()
         {
             //return a list of the top 5 scores
             return new List<int>();
-        }
+        } */
 
         public bool CanWeBuyAnArrow()
         {
@@ -128,6 +132,54 @@ namespace PlayerInventory_Offical
             {
                 return true;
             }
+        }
+
+        private static JsonSerializer serializer = new JsonSerializer();
+
+        public static void WriteToFile(string dataFile, List<Player_HighScore> highscores)
+        {
+            StreamWriter writer = new StreamWriter(dataFile, false);
+
+            JsonSerializer jsonSerializer = new JsonSerializer();
+            serializer.Formatting = Formatting.Indented;
+
+            jsonSerializer.Serialize(writer, highscores);
+            writer.Flush();
+            writer.Close();
+        }
+
+        public static List<Player_HighScore> ReadFromFile(string dataFile)
+        {
+            StreamReader reader = new StreamReader(dataFile);
+
+            JsonSerializer jsonSerializer = new JsonSerializer();
+            var list = (List<Player_HighScore>)jsonSerializer.Deserialize(reader, typeof(List<Player_HighScore>));
+            reader.Close();
+            if (list == null)
+            {
+                return new List<Player_HighScore>();
+            }
+
+            return list;
+        }
+
+
+
+        public static List<string> GetTopScores(string dataFile)
+        {
+            List<Player_HighScore> playerhighscores = ReadFromFile(dataFile);
+
+            // Sort the scores in descending order and take the top 5
+            playerhighscores = playerhighscores.OrderByDescending(h => h.Score).Take(5).ToList();
+
+            // Create a list of formatted strings for the top scores
+            List<string> topScores = new List<string>();
+            foreach (var hs in playerhighscores)
+            {
+                topScores.Add($"{hs.Username}: {hs.Score}");
+            }
+
+            return topScores;
         }
     }
 }

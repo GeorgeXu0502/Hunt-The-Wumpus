@@ -50,5 +50,7 @@ namespace HuntTheWumpus_Team1
                 buttonOptionD.BackColor = Color.DarkGreen;
             }
         }
+
+        
     }
 }

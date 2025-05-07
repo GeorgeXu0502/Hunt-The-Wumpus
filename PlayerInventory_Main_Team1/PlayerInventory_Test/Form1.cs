@@ -18,6 +18,8 @@ namespace PlayerInventory_Main_Team1
         private Player_HighScore2 PlayerHighScore;
         private static JsonSerializer serializer = new JsonSerializer();
 
+
+
         public static void WriteToFile(string dataFile, List<Player_HighScore2> highscores)
         {
             StreamWriter writer = new StreamWriter(dataFile, false);
