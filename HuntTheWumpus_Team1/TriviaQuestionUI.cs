@@ -135,21 +135,25 @@ namespace HuntTheWumpus_Team1
 
         private void buttonOptionA_Click(object sender, EventArgs e)
         {
+            GameControlObject.RemoveGoldCoin();
             ProcessAnswer(0);
         }
 
         private void buttonOptionB_Click(object sender, EventArgs e)
         {
+            GameControlObject.RemoveGoldCoin();
             ProcessAnswer(1);
         }
 
         private void buttonOptionC_Click(object sender, EventArgs e)
         {
+            GameControlObject.RemoveGoldCoin();
             ProcessAnswer(2);
         }
 
         private void buttonOptionD_Click(object sender, EventArgs e)
         {
+            GameControlObject.RemoveGoldCoin();
             ProcessAnswer(3);
         }
 
@@ -161,7 +165,6 @@ namespace HuntTheWumpus_Team1
             }
             else
             {
-
                 if (GameControlObject.PlayerGoldCoinAmount() < 0)
                 {
                     GotOffWithCoins = false;
@@ -175,13 +178,16 @@ namespace HuntTheWumpus_Team1
                 {
                     GotOffWithQuestions = false;
                 }
-
-                if (AmountofQuestions == 3 && AmountofCorrectQuestions < 2)
+                else if (AmountofQuestions == 3 && AmountofCorrectQuestions < 2)
                 {
                     GotOffWithQuestions = false;
                 }
+                else
+                {
+                    GotOffWithQuestions = true;
+                }
 
-                this.Close();
+               this.Close();
             }
         }
     }
