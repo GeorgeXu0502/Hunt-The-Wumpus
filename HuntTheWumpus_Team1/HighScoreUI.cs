@@ -32,21 +32,31 @@ namespace HuntTheWumpus_Team1
             {
                 textBoxPlayerScore.Text = GameControlObject.PlayerScoreFinal().ToString();
                 List<string> TopScores = GameControlObject.GetTopScores();
-                textBoxTopScore1.Text = TopScores[0].ToString();
-                textBoxTopScore2.Text = TopScores[1].ToString();
-                textBoxTopScore3.Text = TopScores[2].ToString();
-                textBoxTopScore4.Text = TopScores[3].ToString();
-                textBoxTopScore5.Text = TopScores[4].ToString();
+                textBoxUserName1.Text = TopScores[0];
+                textBoxUserScore1.Text = TopScores[1].ToString();
+                textBoxUserName2.Text = TopScores[2];
+                textBoxUserScore2.Text = TopScores[3].ToString();
+                textBoxUserName3.Text = TopScores[4];
+                textBoxUserScore3.Text = TopScores[5].ToString();
+                textBoxUserName4.Text = TopScores[6];
+                textBoxUserScore4.Text = TopScores[7].ToString();
+                textBoxUserName5.Text = TopScores[8];
+                textBoxUserScore5.Text = TopScores[9].ToString();
             }
             else
             {
                 textBoxPlayerScore.Text = "0";
                 List<string> TopScores = GameControlObject.GetTopScores();
-                textBoxTopScore1.Text = TopScores[0].ToString();
-                textBoxTopScore2.Text = TopScores[1].ToString();
-                textBoxTopScore3.Text = TopScores[2].ToString();
-                textBoxTopScore4.Text = TopScores[3].ToString();
-                textBoxTopScore5.Text = TopScores[4].ToString();
+                textBoxUserName1.Text = TopScores[0];
+                textBoxUserScore1.Text = TopScores[1].ToString();
+                textBoxUserName2.Text = TopScores[2];
+                textBoxUserScore2.Text = TopScores[3].ToString();
+                textBoxUserName3.Text = TopScores[4];
+                textBoxUserScore3.Text = TopScores[5].ToString();
+                textBoxUserName4.Text = TopScores[6];
+                textBoxUserScore4.Text = TopScores[7].ToString();
+                textBoxUserName5.Text = TopScores[8];
+                textBoxUserScore5.Text = TopScores[9].ToString();
             }
         }
 
