@@ -10,11 +10,6 @@ namespace PlayerInventory_Offical
 {
     public class Player_HighScore
     {
-
-
-
-
-
         public int GoldCount { get; set; }
         public int NumberOfTurns { get; set; }
         public int NumberOfArrows { get; set; }
@@ -24,7 +19,7 @@ namespace PlayerInventory_Offical
 
         public int AmoutofArrowsBoughtAlready { get; set; }
 
-
+        string dataFile = "HighScore.json";
         // Constructor
         public Player_HighScore()
         {
@@ -148,7 +143,7 @@ namespace PlayerInventory_Offical
             writer.Close();
         }
 
-        public static List<Player_HighScore> ReadFromFile(string dataFile)
+        public List<Player_HighScore> ReadFromFile()
         {
             StreamReader reader = new StreamReader(dataFile);
 
@@ -165,9 +160,9 @@ namespace PlayerInventory_Offical
 
 
 
-        public static List<string> GetTopScores(string dataFile)
+        public List<string> GetTopScores()
         {
-            List<Player_HighScore> playerhighscores = ReadFromFile(dataFile);
+            List<Player_HighScore> playerhighscores = ReadFromFile();
 
             // Sort the scores in descending order and take the top 5
             playerhighscores = playerhighscores.OrderByDescending(h => h.Score).Take(5).ToList();

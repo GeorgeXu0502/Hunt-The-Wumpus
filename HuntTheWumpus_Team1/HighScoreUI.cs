@@ -31,7 +31,7 @@ namespace HuntTheWumpus_Team1
             if (PlayedGameOrNot)
             {
                 textBoxPlayerScore.Text = GameControlObject.PlayerScoreFinal().ToString();
-                List<int> TopScores = GameControlObject.GetTopScores();
+                List<string> TopScores = GameControlObject.GetTopScores();
                 textBoxTopScore1.Text = TopScores[0].ToString();
                 textBoxTopScore2.Text = TopScores[1].ToString();
                 textBoxTopScore3.Text = TopScores[2].ToString();
@@ -41,7 +41,7 @@ namespace HuntTheWumpus_Team1
             else
             {
                 textBoxPlayerScore.Text = "0";
-                List<int> TopScores = GameControlObject.GetTopScores();
+                List<string> TopScores = GameControlObject.GetTopScores();
                 textBoxTopScore1.Text = TopScores[0].ToString();
                 textBoxTopScore2.Text = TopScores[1].ToString();
                 textBoxTopScore3.Text = TopScores[2].ToString();

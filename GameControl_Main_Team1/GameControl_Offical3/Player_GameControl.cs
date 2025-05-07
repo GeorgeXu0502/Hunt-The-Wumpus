@@ -160,7 +160,7 @@ namespace GameControl_Offical
             return PlayerInventoryObject.CalculateHighScore(WumpusDefeated);
         }
 
-        public List<int> GetTopScores()
+        public List<string> GetTopScores()
         {
             // Return a List with the Top 5 Scores. Ask Player Inventory To Do This.
 
