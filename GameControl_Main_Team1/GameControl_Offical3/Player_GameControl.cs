@@ -27,6 +27,23 @@ namespace GameControl_Offical
         bool WumpusDefeated = false;
 
         
+        public void AddOriginalHighScores()
+        {
+            List<HighScoreObject> ListToWriteToFile = new List<HighScoreObject>();
+            HighScoreObject highscore1 = new HighScoreObject("Sergei", 10);
+            ListToWriteToFile.Add(highscore1);
+            HighScoreObject highscore2 = new HighScoreObject("George", 10);
+            ListToWriteToFile.Add(highscore2);
+            HighScoreObject highscore3 = new HighScoreObject("Anastaia", 10);
+            ListToWriteToFile.Add(highscore3);
+            HighScoreObject highscore4 = new HighScoreObject("Zihe", 10);
+            ListToWriteToFile.Add(highscore4);
+            HighScoreObject highscore5 = new HighScoreObject("Adah", 10);
+            ListToWriteToFile.Add(highscore5);
+
+            PlayerInventoryObject.WriteToFile("HighScore.json", ListToWriteToFile);
+        }
+
         public void AddOriginalTriviaFile()
         {
             FileWritingObject.WriteTriviaToFile(); // This function is to be used only with the greatest care! This is the oringinal Trivia File. 
@@ -160,7 +177,7 @@ namespace GameControl_Offical
             return PlayerInventoryObject.CalculateHighScore(WumpusDefeated);
         }
 
-        public List<string> GetTopScores()
+        public List<HighScoreObject> GetTopScores()
         {
             // Return a List with the Top 5 Scores. Ask Player Inventory To Do This.
 
