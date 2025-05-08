@@ -15,6 +15,7 @@ namespace HuntTheWumpus_Team1
         public string QuestionToDisplay { get; set; }
         public bool ResultOfQuestion;
 
+        bool AllowedtoClose = false;
         public MessageBoxYesorNoCustom()
         {
             InitializeComponent();
@@ -34,7 +35,16 @@ namespace HuntTheWumpus_Team1
         private void buttonNoCountiue_Click(object sender, EventArgs e)
         {
             ResultOfQuestion = false;
+            AllowedtoClose = true;
             this.Close();
+        }
+
+        private void MessageBoxYesorNoCustom_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (!AllowedtoClose)
+            {
+                e.Cancel = true;
+            }
         }
     }
 }

@@ -15,6 +15,7 @@ namespace HuntTheWumpus_Team1
 {
     public partial class TriviaQuestionUI : Form
     {
+        bool AllowedtoClose = false;
         public int AmountofQuestions { get; set; }
 
         public bool GotOffWithQuestions;
@@ -111,7 +112,7 @@ namespace HuntTheWumpus_Team1
                 {
                     AmountofCorrectQuestions += 1;
                 }
-                
+
                 MovetoTheMidScreen();
             }
             else if (ButtonPrececd == 2)
@@ -186,8 +187,16 @@ namespace HuntTheWumpus_Team1
                 {
                     GotOffWithQuestions = true;
                 }
+                AllowedtoClose = true;
+                this.Close();
+            }
+        }
 
-               this.Close();
+        private void TriviaQuestionUI_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (!AllowedtoClose)
+            {
+                e.Cancel = true;
             }
         }
     }

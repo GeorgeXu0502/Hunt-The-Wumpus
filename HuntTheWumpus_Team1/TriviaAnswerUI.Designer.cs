@@ -171,9 +171,10 @@
             Controls.Add(buttonOptionA);
             Controls.Add(richTextBoxMainQuestion);
             Controls.Add(label1);
-            FormBorderStyle = FormBorderStyle.None;
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "TriviaAnswerUI";
             Text = "TriviaAnswerUI";
+            FormClosing += TriviaAnswerUI_FormClosing;
             Load += TriviaAnswerUI_Load;
             ResumeLayout(false);
             PerformLayout();

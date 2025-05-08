@@ -12,8 +12,10 @@ using PlayerInventory_Offical;
 
 namespace HuntTheWumpus_Team1
 {
+    
     public partial class HighScoreUI : Form
     {
+        bool AllowedtoClose = false;
         Player_GameControl GameControlObject = new GameControl_Offical.Player_GameControl();
 
         public bool PlayedGameOrNot { get; set; } // If the Player just wants to see High Scores from the Opening Menu. 
@@ -25,6 +27,7 @@ namespace HuntTheWumpus_Team1
 
         private void buttonExitTheGame_Click(object sender, EventArgs e)
         {
+            AllowedtoClose = true;
             System.Windows.Forms.Application.Exit();
         }
 
@@ -66,5 +69,12 @@ namespace HuntTheWumpus_Team1
             }
         }
 
+        private void HighScoreUI_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (!AllowedtoClose)
+            {
+                e.Cancel = true;
+            }
+        }
     }
 }
