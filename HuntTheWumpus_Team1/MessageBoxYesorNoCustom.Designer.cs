@@ -72,9 +72,11 @@
             Controls.Add(buttonNoCountiue);
             Controls.Add(buttonYesContiue);
             Controls.Add(richTextBoxMainQuestion);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "MessageBoxYesorNoCustom";
             Text = "MessageBoxYesorNoCustom";
             Activated += MessageBoxYesorNoCustom_Activated;
+            FormClosing += MessageBoxYesorNoCustom_FormClosing;
             ResumeLayout(false);
         }
 

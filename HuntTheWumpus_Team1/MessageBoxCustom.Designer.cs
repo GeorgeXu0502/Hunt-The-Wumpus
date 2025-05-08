@@ -59,9 +59,10 @@
             ClientSize = new Size(862, 487);
             Controls.Add(buttonContinue);
             Controls.Add(richTextBoxDispaly);
-            FormBorderStyle = FormBorderStyle.None;
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "MessageBoxCustom";
             Text = "MessageBoxCustom";
+            FormClosing += MessageBoxCustom_FormClosing;
             Load += MessageBoxCustom_Load;
             ResumeLayout(false);
         }

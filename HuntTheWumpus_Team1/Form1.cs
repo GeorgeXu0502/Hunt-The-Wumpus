@@ -27,7 +27,8 @@ namespace HuntTheWumpus_Team1
 
             // Add the Locations
             ListofImageLocation = MakeListofImageLocation();
-            // GameControlObject.AddOriginalTriviaFile(); // Only Active This if you need to write Trivia to File. Please talk to Sergei before doing this!
+            // GameControlObject.AddOriginalTriviaFile(); // Only Active This if you need to write Trivia to File. Please talk to Sergei before doing this! YOU WILL MESS UP YOUR LOCAL FILE!
+            // GameControlObject.AddOriginalHighScores(); // Only Active This if you need to write High Scores to File. Please talk to Sergei before doing this! YOU WILL MESS UP YOUR LOCAL FILE!
             Main();
         }
         private void Main() // THE MAIN FUNCTION HERE!
@@ -94,6 +95,7 @@ namespace HuntTheWumpus_Team1
 
         private void UserMoving(int ChoiceIndex)
         {
+            GameControlObject.AddUserTurn();
             if (ChoiceIndex == 1)
             {
                 UserBuysAnArrow();

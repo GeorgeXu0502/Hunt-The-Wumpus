@@ -32,6 +32,13 @@ namespace PlayerInventory_Offical
             AmoutofArrowsBoughtAlready = 0;
         }
 
+        public void AddNewScoreToPastScoreList(HighScoreObject ObjectToWriteToFile)
+        {
+            List<HighScoreObject> playerhighscores = ReadFromFile();
+            playerhighscores.Add(ObjectToWriteToFile);
+            WriteToFile(dataFile, playerhighscores);
+        }
+
         // Gold coin method which increases gold count by 1 when the users moves forward (SelfWanted)
         public int NumberofGoldCoinIndex()
         {
@@ -64,13 +71,9 @@ namespace PlayerInventory_Offical
             return goldCountLessThanZero;
         }
 
-        public int NumberOfTurnsIndex()
+        public void AddUserTurn()
         {
-            if (SelfWanted)
-            {
-                NumberOfTurns += 1;
-            }
-            return NumberOfTurns;
+            NumberOfTurns += 1;
         }
 
         public int NumberOfArrowsIndex(bool isPurchase)
@@ -111,12 +114,6 @@ namespace PlayerInventory_Offical
             GoldCount -= 1;
         }   
 
-        /* public List<int> GetTopScores()
-        {
-            //return a list of the top 5 scores
-            return new List<int>();
-        } */
-
         public bool CanWeBuyAnArrow()
         {
             if (AmoutofArrowsBoughtAlready >= 2)
@@ -129,52 +126,47 @@ namespace PlayerInventory_Offical
             }
         }
 
-        private static JsonSerializer serializer = new JsonSerializer();
-
-        public static void WriteToFile(string dataFile, List<Player_HighScore> highscores)
+        public void WriteToFile(string dataFile, List<HighScoreObject> highscores)
         {
-            StreamWriter writer = new StreamWriter(dataFile, false);
+            JsonSerializer serlizer = new JsonSerializer();
 
-            JsonSerializer jsonSerializer = new JsonSerializer();
-            serializer.Formatting = Formatting.Indented;
+            serlizer.Formatting = Formatting.Indented;
 
-            jsonSerializer.Serialize(writer, highscores);
-            writer.Flush();
-            writer.Close();
+            StreamWriter streakwriter = new StreamWriter(dataFile);
+            serlizer.Serialize(streakwriter, highscores, typeof(List<HighScoreObject>));
+
+            streakwriter.Flush();
+            streakwriter.Close();
         }
 
-        public List<Player_HighScore> ReadFromFile()
+        public List<HighScoreObject> ReadFromFile()
         {
-            StreamReader reader = new StreamReader(dataFile);
+            JsonSerializer serlizer = new JsonSerializer();
+            StreamReader streamReader = new StreamReader(dataFile);
 
-            JsonSerializer jsonSerializer = new JsonSerializer();
-            var list = (List<Player_HighScore>)jsonSerializer.Deserialize(reader, typeof(List<Player_HighScore>));
-            reader.Close();
-            if (list == null)
+
+            var objectdefied = serlizer.Deserialize(streamReader, typeof(List<HighScoreObject>));
+            streamReader.Close();
+            if (objectdefied != null)
             {
-                return new List<Player_HighScore>();
+                return (List<HighScoreObject>)objectdefied;
             }
-
-            return list;
+            else
+            {
+                List<HighScoreObject> newTriviaQuestionList = new List<HighScoreObject>();
+                return newTriviaQuestionList;
+            }
         }
 
 
 
-        public List<string> GetTopScores()
+        public List<HighScoreObject> GetTopScores()
         {
-            List<Player_HighScore> playerhighscores = ReadFromFile();
+            List<HighScoreObject> playerhighscores = ReadFromFile();
 
-            // Sort the scores in descending order and take the top 5
-            playerhighscores = playerhighscores.OrderByDescending(h => h.Score).Take(5).ToList();
+            List<HighScoreObject>  PlayerHighScoresSorted = playerhighscores.OrderBy(o => o.Score).ToList();
 
-            // Create a list of formatted strings for the top scores
-            List<string> topScores = new List<string>();
-            foreach (var hs in playerhighscores)
-            {
-                topScores.Add($"{hs.Username}: {hs.Score}");
-            }
-
-            return topScores;
+            return PlayerHighScoresSorted;
         }
     }
 }
