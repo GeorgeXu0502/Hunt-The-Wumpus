@@ -32,6 +32,13 @@ namespace PlayerInventory_Offical
             AmoutofArrowsBoughtAlready = 0;
         }
 
+        public void AddNewScoreToPastScoreList(HighScoreObject ObjectToWriteToFile)
+        {
+            List<HighScoreObject> playerhighscores = ReadFromFile();
+            playerhighscores.Add(ObjectToWriteToFile);
+            WriteToFile(dataFile, playerhighscores);
+        }
+
         // Gold coin method which increases gold count by 1 when the users moves forward (SelfWanted)
         public int NumberofGoldCoinIndex()
         {
@@ -64,13 +71,9 @@ namespace PlayerInventory_Offical
             return goldCountLessThanZero;
         }
 
-        public int NumberOfTurnsIndex()
+        public void AddUserTurn()
         {
-            if (SelfWanted)
-            {
-                NumberOfTurns += 1;
-            }
-            return NumberOfTurns;
+            NumberOfTurns += 1;
         }
 
         public int NumberOfArrowsIndex(bool isPurchase)

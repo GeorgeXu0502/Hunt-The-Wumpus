@@ -95,6 +95,7 @@ namespace HuntTheWumpus_Team1
 
         private void UserMoving(int ChoiceIndex)
         {
+            GameControlObject.AddUserTurn();
             if (ChoiceIndex == 1)
             {
                 UserBuysAnArrow();

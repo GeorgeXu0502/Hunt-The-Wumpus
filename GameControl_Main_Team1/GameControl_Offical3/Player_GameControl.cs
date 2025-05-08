@@ -183,5 +183,15 @@ namespace GameControl_Offical
 
             return PlayerInventoryObject.GetTopScores();
         }
+
+        public void AddPlayerScoreToList(HighScoreObject TheHighScoreObjectToWriteToFile)
+        {
+            PlayerInventoryObject.AddNewScoreToPastScoreList(TheHighScoreObjectToWriteToFile);
+        }
+
+        public void AddUserTurn()
+        {
+            PlayerInventoryObject.AddUserTurn();
+        }
     }
 }
