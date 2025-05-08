@@ -15,12 +15,15 @@ namespace HuntTheWumpus_Team1
     {
 
         public TriviaQuestion TriviaAnswerToUse { get; set; }
+
+        bool AllowedtoClose = false;
         public TriviaAnswerUI()
         {
             InitializeComponent();
         }
         private void buttonContiue_Click(object sender, EventArgs e)
         {
+            AllowedtoClose = true;
             this.Close();
         }
 
@@ -48,6 +51,14 @@ namespace HuntTheWumpus_Team1
             else
             {
                 buttonOptionD.BackColor = Color.DarkGreen;
+            }
+        }
+
+        private void TriviaAnswerUI_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (!AllowedtoClose)
+            {
+                e.Cancel = true;
             }
         }
     }

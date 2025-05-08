@@ -13,6 +13,8 @@ namespace HuntTheWumpus_Team1
     public partial class OpeningMenu : Form
     {
         public string UsernameToReturn;
+
+        
         public OpeningMenu()
         {
             InitializeComponent();
@@ -21,7 +23,7 @@ namespace HuntTheWumpus_Team1
 
         private void buttoStarttheGame_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(textBoxUsername.Text) != true)
+            if (string.IsNullOrWhiteSpace(textBoxUsername.Text) != true)
             {
                 UsernameToReturn = textBoxUsername.Text;
                 this.Close();
@@ -46,5 +48,6 @@ namespace HuntTheWumpus_Team1
             MessageBoxDlg.StringToDispaly = StringToDisplay;
             MessageBoxDlg.ShowDialog();
         }
+
     }
 }

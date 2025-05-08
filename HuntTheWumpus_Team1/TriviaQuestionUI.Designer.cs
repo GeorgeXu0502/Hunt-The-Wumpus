@@ -39,13 +39,15 @@
             richTextBoxOptionDText = new RichTextBox();
             buttonOptionD = new Button();
             buttonMoveOnToTheNextQuestion = new Button();
+            label1 = new Label();
+            textBoxAmoutOfQuestionsCorrect = new TextBox();
             SuspendLayout();
             // 
             // labelTopBanner
             // 
             labelTopBanner.AutoSize = true;
             labelTopBanner.Font = new Font("Segoe UI", 20F);
-            labelTopBanner.Location = new Point(12, 18);
+            labelTopBanner.Location = new Point(11, 18);
             labelTopBanner.Name = "labelTopBanner";
             labelTopBanner.Size = new Size(204, 54);
             labelTopBanner.TabIndex = 0;
@@ -56,7 +58,7 @@
             richTextBoxMainQuestion.Location = new Point(313, 18);
             richTextBoxMainQuestion.Name = "richTextBoxMainQuestion";
             richTextBoxMainQuestion.ReadOnly = true;
-            richTextBoxMainQuestion.Size = new Size(1130, 150);
+            richTextBoxMainQuestion.Size = new Size(1130, 151);
             richTextBoxMainQuestion.TabIndex = 1;
             richTextBoxMainQuestion.Text = "";
             // 
@@ -75,7 +77,7 @@
             richTextBoxOptionAText.Location = new Point(256, 227);
             richTextBoxOptionAText.Name = "richTextBoxOptionAText";
             richTextBoxOptionAText.ReadOnly = true;
-            richTextBoxOptionAText.Size = new Size(1221, 93);
+            richTextBoxOptionAText.Size = new Size(1221, 92);
             richTextBoxOptionAText.TabIndex = 3;
             richTextBoxOptionAText.Text = "";
             // 
@@ -84,7 +86,7 @@
             richTextBoxOptionBText.Location = new Point(256, 343);
             richTextBoxOptionBText.Name = "richTextBoxOptionBText";
             richTextBoxOptionBText.ReadOnly = true;
-            richTextBoxOptionBText.Size = new Size(1221, 93);
+            richTextBoxOptionBText.Size = new Size(1221, 92);
             richTextBoxOptionBText.TabIndex = 5;
             richTextBoxOptionBText.Text = "";
             // 
@@ -103,7 +105,7 @@
             richTextBoxOptionCText.Location = new Point(256, 458);
             richTextBoxOptionCText.Name = "richTextBoxOptionCText";
             richTextBoxOptionCText.ReadOnly = true;
-            richTextBoxOptionCText.Size = new Size(1221, 93);
+            richTextBoxOptionCText.Size = new Size(1221, 92);
             richTextBoxOptionCText.TabIndex = 7;
             richTextBoxOptionCText.Text = "";
             // 
@@ -119,16 +121,16 @@
             // 
             // richTextBoxOptionDText
             // 
-            richTextBoxOptionDText.Location = new Point(256, 571);
+            richTextBoxOptionDText.Location = new Point(256, 572);
             richTextBoxOptionDText.Name = "richTextBoxOptionDText";
             richTextBoxOptionDText.ReadOnly = true;
-            richTextBoxOptionDText.Size = new Size(1221, 93);
+            richTextBoxOptionDText.Size = new Size(1221, 92);
             richTextBoxOptionDText.TabIndex = 9;
             richTextBoxOptionDText.Text = "";
             // 
             // buttonOptionD
             // 
-            buttonOptionD.Location = new Point(37, 571);
+            buttonOptionD.Location = new Point(37, 572);
             buttonOptionD.Name = "buttonOptionD";
             buttonOptionD.Size = new Size(183, 93);
             buttonOptionD.TabIndex = 8;
@@ -146,12 +148,33 @@
             buttonMoveOnToTheNextQuestion.UseVisualStyleBackColor = true;
             buttonMoveOnToTheNextQuestion.Click += buttonMoveOnToTheNextQuestion_Click;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(289, 707);
+            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(240, 25);
+            label1.TabIndex = 11;
+            label1.Text = "Amout of Questions Correct:";
+            // 
+            // textBoxAmoutOfQuestionsCorrect
+            // 
+            textBoxAmoutOfQuestionsCorrect.Location = new Point(537, 701);
+            textBoxAmoutOfQuestionsCorrect.Margin = new Padding(4, 5, 4, 5);
+            textBoxAmoutOfQuestionsCorrect.Name = "textBoxAmoutOfQuestionsCorrect";
+            textBoxAmoutOfQuestionsCorrect.ReadOnly = true;
+            textBoxAmoutOfQuestionsCorrect.Size = new Size(271, 31);
+            textBoxAmoutOfQuestionsCorrect.TabIndex = 12;
+            // 
             // TriviaQuestionUI
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(98, 127, 149);
-            ClientSize = new Size(1498, 812);
+            ClientSize = new Size(1499, 812);
+            Controls.Add(textBoxAmoutOfQuestionsCorrect);
+            Controls.Add(label1);
             Controls.Add(buttonMoveOnToTheNextQuestion);
             Controls.Add(richTextBoxOptionDText);
             Controls.Add(buttonOptionD);
@@ -163,8 +186,10 @@
             Controls.Add(buttonOptionA);
             Controls.Add(richTextBoxMainQuestion);
             Controls.Add(labelTopBanner);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "TriviaQuestionUI";
             Text = "TriviaQuestionUI";
+            FormClosing += TriviaQuestionUI_FormClosing;
             Load += TriviaQuestionUI_Load;
             ResumeLayout(false);
             PerformLayout();
@@ -183,5 +208,7 @@
         private RichTextBox richTextBoxOptionDText;
         private Button buttonOptionD;
         private Button buttonMoveOnToTheNextQuestion;
+        private Label label1;
+        private TextBox textBoxAmoutOfQuestionsCorrect;
     }
 }

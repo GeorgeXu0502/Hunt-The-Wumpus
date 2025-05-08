@@ -85,7 +85,7 @@
             label2.AutoSize = true;
             label2.Location = new Point(41, 103);
             label2.Name = "label2";
-            label2.Size = new Size(36, 15);
+            label2.Size = new Size(37, 15);
             label2.TabIndex = 4;
             label2.Text = "Turns";
             // 
@@ -114,6 +114,7 @@
             textBoxGoldCount.ReadOnly = true;
             textBoxGoldCount.Size = new Size(100, 23);
             textBoxGoldCount.TabIndex = 10;
+            textBoxGoldCount.Text = "0";
             // 
             // textBoxTurns
             // 
@@ -122,6 +123,7 @@
             textBoxTurns.ReadOnly = true;
             textBoxTurns.Size = new Size(100, 23);
             textBoxTurns.TabIndex = 11;
+            textBoxTurns.Text = "0";
             // 
             // textBoxArrows
             // 
@@ -130,6 +132,7 @@
             textBoxArrows.ReadOnly = true;
             textBoxArrows.Size = new Size(100, 23);
             textBoxArrows.TabIndex = 14;
+            textBoxArrows.Text = "3";
             // 
             // textBoxHighScore
             // 
@@ -138,6 +141,7 @@
             textBoxHighScore.ReadOnly = true;
             textBoxHighScore.Size = new Size(100, 23);
             textBoxHighScore.TabIndex = 16;
+            textBoxHighScore.Text = "0";
             // 
             // buttonMoveForward
             // 

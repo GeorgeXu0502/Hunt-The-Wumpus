@@ -7,6 +7,9 @@ namespace PlayerInventory_Main_Team1
         public Form1()
         {
             InitializeComponent();
+
+
+            
         }
 
         List<Player_HighScore2> highscores = ReadFromFile("highscores.json");
@@ -15,6 +18,8 @@ namespace PlayerInventory_Main_Team1
         private Player_HighScore2 PlayerHighScore;
         private static JsonSerializer serializer = new JsonSerializer();
 
+
+
         public static void WriteToFile(string dataFile, List<Player_HighScore2> highscores)
         {
             StreamWriter writer = new StreamWriter(dataFile, false);
@@ -22,7 +27,7 @@ namespace PlayerInventory_Main_Team1
             JsonSerializer jsonSerializer = new JsonSerializer();
             serializer.Formatting = Formatting.Indented;
 
-            jsonSerializer.Serialize(writer, highscores, typeof(List<Player_HighScore2>));
+            jsonSerializer.Serialize(writer, highscores);
             writer.Flush();
             writer.Close();
         }
@@ -46,13 +51,25 @@ namespace PlayerInventory_Main_Team1
         private void Form1_Load(object sender, EventArgs e)
         {
 
+            PlayerHighScore = new Player_HighScore2(0, 0, 3, false, 0, "Player");
+
+
+            if (File.Exists(DATA_FILE))
+            {
+                highscores = ReadFromFile(DATA_FILE);
+                listBoxHighScores.Items.Clear();
+                foreach (var hs in highscores.OrderByDescending(h => h.Score).Take(5))
+                {
+                    listBoxHighScores.Items.Add($"{hs.Username}: {hs.Score}");
+                }
+            }
+            else
+            {
+                highscores = new List<Player_HighScore2>();
+            }
         }
 
 
-        private void buttonAddTurn_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void buttonPitEncounter_Click(object sender, EventArgs e)
         {
@@ -88,7 +105,7 @@ namespace PlayerInventory_Main_Team1
 
         private void buttonConstructor_Click(object sender, EventArgs e)
         {
-            // PlayerHighScore = new Player_HighScore2(int.Parse(textBoxGoldCount.Text), int.Parse(textBoxTurns.Text), int.Parse(textBoxArrows.Text), checkBoxSelfWanted.Checked, int.Parse(textBoxHighScore.Text), textBoxUsername.Text);
+
             textBoxGoldCount.Text = "0";
             textBoxTurns.Text = "0";
             textBoxArrows.Text = "3";
@@ -134,26 +151,20 @@ namespace PlayerInventory_Main_Team1
 
 
 
-                highscores.Add(player_highscore2);
-                listBoxHighScores.Items.Add(player_highscore2.Username + " " + player_highscore2.Score);
+            highscores.Add(player_highscore2);
+            highscores = highscores.OrderByDescending(h => h.Score).ToList();
+
+            listBoxHighScores.Items.Clear();
+            foreach (var hs in highscores.Take(5))
+            {
+                listBoxHighScores.Items.Add($"{hs.Username}: {hs.Score}");
+            }
+
+            
             WriteToFile(DATA_FILE, highscores);
             
-
-            /* if (player_highscore2 != null)
-            {
-                // Save the high score to a file or database
-                // For example, you can use a simple text file to store the high scores
-                string filePath = "highscores.txt";
-                using (StreamWriter writer = new StreamWriter(filePath, true))
-                {
-                    writer.WriteLine($"{player_highscore2.Username}: {player_highscore2.Score}");
-                }
-                MessageBox.Show("High score saved successfully!");
-            }
-            else
-            {
-                MessageBox.Show("Failed to save high score.");
-            } */
+            
+            
         }
     }
 }

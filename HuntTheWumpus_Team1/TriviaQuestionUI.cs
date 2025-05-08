@@ -8,12 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using GameControl_Offical;
+using Newtonsoft.Json.Bson;
 using TrivaMachine_Offical;
 
 namespace HuntTheWumpus_Team1
 {
     public partial class TriviaQuestionUI : Form
     {
+        bool AllowedtoClose = false;
         public int AmountofQuestions { get; set; }
 
         public bool GotOffWithQuestions;
@@ -24,46 +26,60 @@ namespace HuntTheWumpus_Team1
 
         int AmountofCorrectQuestions = 0;
 
+        int AmoutofQuestionsAsked = 0;
+
         TriviaQuestion CurrentTriviaQuestion;
 
         public TriviaQuestionUI()
         {
-            InitializeComponent(); 
+            InitializeComponent();
         }
 
-        /*
-        async void WaitForUserToClick()
+        private void TriviaQuestionUI_Load(object sender, EventArgs e)
         {
-            bool Statment = (WasButtonAClicked == false && WasButtonBClicked == false && WasButtonCClicked == false && WasButtonDClicked == false);
-
-            while (Statment == true)
-            {
-                await Task.Delay(100);
-                Statment = (WasButtonAClicked == false && WasButtonBClicked == false && WasButtonCClicked == false && WasButtonDClicked == false);
-            }
+            buttonMoveOnToTheNextQuestion.Enabled = false;
+            buttonMoveOnToTheNextQuestion.Visible = false;
+            PrintQuestion();
         }
-        */
 
         private void PrintQuestion()
         {
-            CurrentTriviaQuestion = GameControlObject.GetQuestion();
+            buttonOptionA.Enabled = true;
+            buttonOptionB.Enabled = true;
+            buttonOptionC.Enabled = true;
+            buttonOptionD.Enabled = true;
 
-            richTextBoxMainQuestion.Text = CurrentTriviaQuestion.QuestionTrivia;
-            richTextBoxOptionAText.Text = CurrentTriviaQuestion.PossibleAnswers[0];
-            richTextBoxOptionBText.Text = CurrentTriviaQuestion.PossibleAnswers[1];
-            richTextBoxOptionCText.Text = CurrentTriviaQuestion.PossibleAnswers[2];
-            richTextBoxOptionDText.Text = CurrentTriviaQuestion.PossibleAnswers[3];
+            buttonMoveOnToTheNextQuestion.Enabled = false;
+            buttonMoveOnToTheNextQuestion.Visible = false;
+
+            buttonOptionA.BackColor = Color.White;
+            buttonOptionB.BackColor = Color.White;
+            buttonOptionC.BackColor = Color.White;
+            buttonOptionD.BackColor = Color.White;
+
+            CurrentTriviaQuestion = GameControlObject.GetQuestion();
+            AmoutofQuestionsAsked += 1;
+            richTextBoxMainQuestion.Text = CurrentTriviaQuestion.QuestionTrivia.ToString();
+            richTextBoxOptionAText.Text = CurrentTriviaQuestion.PossibleAnswers[0].ToString();
+            richTextBoxOptionBText.Text = CurrentTriviaQuestion.PossibleAnswers[1].ToString();
+            richTextBoxOptionCText.Text = CurrentTriviaQuestion.PossibleAnswers[2].ToString();
+            richTextBoxOptionDText.Text = CurrentTriviaQuestion.PossibleAnswers[3].ToString();
         }
 
-        public void DisableQuestionButtonAnswers(TriviaQuestion CurrentTriviaQuestion)
+        private void MovetoTheMidScreen()
         {
-            buttonMoveOnToTheNextQuestion.Enabled = true;
-            buttonMoveOnToTheNextQuestion.Visible = true;
+            textBoxAmoutOfQuestionsCorrect.Text = AmountofCorrectQuestions.ToString();
             buttonOptionA.Enabled = false;
             buttonOptionB.Enabled = false;
             buttonOptionC.Enabled = false;
             buttonOptionD.Enabled = false;
 
+            buttonMoveOnToTheNextQuestion.Enabled = true;
+            buttonMoveOnToTheNextQuestion.Visible = true;
+        }
+
+        public void ProcessAnswer(int ButtonPrececd)
+        {
             if (CurrentTriviaQuestion.CorrectAnswerIndex == 0)
             {
                 buttonOptionA.BackColor = Color.DarkGreen;
@@ -80,108 +96,107 @@ namespace HuntTheWumpus_Team1
             {
                 buttonOptionD.BackColor = Color.DarkGreen;
             }
-        }
-        private void ProcessAnswer(int QuestionClicked, TriviaQuestion CurrentTriviaQuestion)
-        {
 
-            if (QuestionClicked == 0)
+            if (ButtonPrececd == 0)
             {
                 if (CurrentTriviaQuestion.CorrectAnswerIndex == 0)
                 {
                     AmountofCorrectQuestions += 1;
                 }
-                DisableQuestionButtonAnswers(CurrentTriviaQuestion);
+
+                MovetoTheMidScreen();
             }
-            else if (QuestionClicked == 1)
+            else if (ButtonPrececd == 1)
             {
                 if (CurrentTriviaQuestion.CorrectAnswerIndex == 1)
                 {
                     AmountofCorrectQuestions += 1;
                 }
-                DisableQuestionButtonAnswers(CurrentTriviaQuestion);
+
+                MovetoTheMidScreen();
             }
-            else if (QuestionClicked == 2)
+            else if (ButtonPrececd == 2)
             {
                 if (CurrentTriviaQuestion.CorrectAnswerIndex == 2)
                 {
                     AmountofCorrectQuestions += 1;
                 }
-                DisableQuestionButtonAnswers(CurrentTriviaQuestion);
+
+                MovetoTheMidScreen();
             }
-            else if (QuestionClicked == 3)
+            else if (ButtonPrececd == 3)
             {
                 if (CurrentTriviaQuestion.CorrectAnswerIndex == 3)
                 {
                     AmountofCorrectQuestions += 1;
                 }
-                DisableQuestionButtonAnswers(CurrentTriviaQuestion);
-            }
-            else
-            {
-                labelTopBanner.Text = "Question:";
-                richTextBoxMainQuestion.Visible = true;
-                buttonOptionA.BackColor = Color.White;
-                buttonOptionB.BackColor = Color.White;
-                buttonOptionC.BackColor = Color.White;
-                buttonOptionD.BackColor = Color.White;
-                buttonMoveOnToTheNextQuestion.Enabled = false;
-                buttonMoveOnToTheNextQuestion.Visible = false;
+                MovetoTheMidScreen();
             }
         }
 
         private void buttonOptionA_Click(object sender, EventArgs e)
         {
-            ProcessAnswer(0, CurrentTriviaQuestion);
+            GameControlObject.RemoveGoldCoin();
+            ProcessAnswer(0);
         }
 
         private void buttonOptionB_Click(object sender, EventArgs e)
         {
-            ProcessAnswer(1, CurrentTriviaQuestion);
+            GameControlObject.RemoveGoldCoin();
+            ProcessAnswer(1);
         }
 
         private void buttonOptionC_Click(object sender, EventArgs e)
         {
-            ProcessAnswer(2, CurrentTriviaQuestion);
+            GameControlObject.RemoveGoldCoin();
+            ProcessAnswer(2);
         }
 
         private void buttonOptionD_Click(object sender, EventArgs e)
         {
-            ProcessAnswer(3, CurrentTriviaQuestion);
+            GameControlObject.RemoveGoldCoin();
+            ProcessAnswer(3);
         }
 
         private void buttonMoveOnToTheNextQuestion_Click(object sender, EventArgs e)
         {
-            ProcessAnswer(4, CurrentTriviaQuestion);
-        }
-
-        private void TriviaQuestionUI_Load(object sender, EventArgs e)
-        {
-            buttonMoveOnToTheNextQuestion.Enabled = false;
-            buttonMoveOnToTheNextQuestion.Visible = false;
-
-            for (int i = 0; i < AmountofQuestions; i++)
+            if (AmoutofQuestionsAsked < AmountofQuestions)
             {
                 PrintQuestion();
-                GameControlObject.RemoveGoldCoin();
-            }
-
-            if (GameControlObject.PlayerGoldCoinAmount() < 0)
-            {
-                GotOffWithCoins = false;
             }
             else
             {
-                GotOffWithCoins = true;
-            }
+                if (GameControlObject.PlayerGoldCoinAmount() < 0)
+                {
+                    GotOffWithCoins = false;
+                }
+                else
+                {
+                    GotOffWithCoins = true;
+                }
 
-            if (AmountofQuestions == 5 && AmountofCorrectQuestions < 3)
-            {
-                GotOffWithQuestions = false;
+                if (AmountofQuestions == 5 && AmountofCorrectQuestions < 3)
+                {
+                    GotOffWithQuestions = false;
+                }
+                else if (AmountofQuestions == 3 && AmountofCorrectQuestions < 2)
+                {
+                    GotOffWithQuestions = false;
+                }
+                else
+                {
+                    GotOffWithQuestions = true;
+                }
+                AllowedtoClose = true;
+                this.Close();
             }
+        }
 
-            if (AmountofQuestions == 3 && AmountofCorrectQuestions < 2)
+        private void TriviaQuestionUI_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (!AllowedtoClose)
             {
-                GotOffWithQuestions = false;
+                e.Cancel = true;
             }
         }
     }

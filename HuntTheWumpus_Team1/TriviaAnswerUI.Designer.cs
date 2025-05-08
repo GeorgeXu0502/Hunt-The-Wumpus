@@ -46,7 +46,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 20F);
-            label1.Location = new Point(24, 36);
+            label1.Location = new Point(24, 37);
             label1.Name = "label1";
             label1.Size = new Size(193, 54);
             label1.TabIndex = 0;
@@ -54,7 +54,7 @@
             // 
             // richTextBoxMainQuestion
             // 
-            richTextBoxMainQuestion.Location = new Point(242, 36);
+            richTextBoxMainQuestion.Location = new Point(241, 37);
             richTextBoxMainQuestion.Name = "richTextBoxMainQuestion";
             richTextBoxMainQuestion.ReadOnly = true;
             richTextBoxMainQuestion.Size = new Size(1254, 164);
@@ -135,7 +135,7 @@
             // 
             // buttonContiue
             // 
-            buttonContiue.Location = new Point(12, 743);
+            buttonContiue.Location = new Point(11, 743);
             buttonContiue.Name = "buttonContiue";
             buttonContiue.Size = new Size(233, 97);
             buttonContiue.TabIndex = 10;
@@ -147,7 +147,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 20F);
-            label2.Location = new Point(814, 756);
+            label2.Location = new Point(814, 757);
             label2.Name = "label2";
             label2.Size = new Size(682, 54);
             label2.TabIndex = 11;
@@ -171,8 +171,10 @@
             Controls.Add(buttonOptionA);
             Controls.Add(richTextBoxMainQuestion);
             Controls.Add(label1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "TriviaAnswerUI";
             Text = "TriviaAnswerUI";
+            FormClosing += TriviaAnswerUI_FormClosing;
             Load += TriviaAnswerUI_Load;
             ResumeLayout(false);
             PerformLayout();

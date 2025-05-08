@@ -27,7 +27,8 @@ namespace HuntTheWumpus_Team1
 
             // Add the Locations
             ListofImageLocation = MakeListofImageLocation();
-            // GameControlObject.AddOriginalTriviaFile(); // Only Active This if you need to write Trivia to File. Please talk to Sergei before doing this!
+            // GameControlObject.AddOriginalTriviaFile(); // Only Active This if you need to write Trivia to File. Please talk to Sergei before doing this! YOU WILL MESS UP YOUR LOCAL FILE!
+            // GameControlObject.AddOriginalHighScores(); // Only Active This if you need to write High Scores to File. Please talk to Sergei before doing this! YOU WILL MESS UP YOUR LOCAL FILE!
             Main();
         }
         private void Main() // THE MAIN FUNCTION HERE!
@@ -78,7 +79,7 @@ namespace HuntTheWumpus_Team1
         {
             TriviaAnswerUI TriviaAnswerUIDlg = new TriviaAnswerUI();
             TriviaAnswerUIDlg.TriviaAnswerToUse = GameControlObject.SendTriviaQuestion();
-            TriviaAnswerUIDlg.Show();
+            TriviaAnswerUIDlg.ShowDialog();
         }
         private void StartTheGame()
         {
@@ -94,6 +95,7 @@ namespace HuntTheWumpus_Team1
 
         private void UserMoving(int ChoiceIndex)
         {
+            GameControlObject.AddUserTurn();
             if (ChoiceIndex == 1)
             {
                 UserBuysAnArrow();
@@ -263,15 +265,27 @@ namespace HuntTheWumpus_Team1
             {
                 checkBoxbatsnearby.Checked = true;
             }
+            else
+            {
+                checkBoxbatsnearby.Checked = false;
+            }
 
             if (hasPit == true)
             {
                 checkBoxpitnearby.Checked = true;
             }
+            else
+            {
+                checkBoxpitnearby.Checked = false;
+            }
 
             if (hasWumpus == true)
             {
                 checkBoxwumpusneabry.Checked = true;
+            }
+            else
+            {
+                checkBoxwumpusneabry.Checked = false;
             }
 
             bool[] BoolListToReturn = { listofadjacentrooms[0].HasWumpus, listofadjacentrooms[0].HasBats, listofadjacentrooms[0].HasPit };
