@@ -29,6 +29,7 @@ namespace HuntTheWumpus_Team1
         private void buttonYesContiue_Click(object sender, EventArgs e)
         {
             ResultOfQuestion = true;
+            AllowedtoClose = true;
             this.Close();
         }
 
