@@ -1,0 +1,202 @@
+[
+  {
+    "QuestionTrivia": "Which of the following galaxy types is most ubiquitous?",
+    "PossibleAnswers": [
+      "Elliptical.",
+      "Spiral.",
+      "Irregular.",
+      "Cubical."
+    ],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "QuestionTrivia": "What is the approximate age of the universe?",
+    "PossibleAnswers": [
+      "13.7 billion years.",
+      "8.3 billion years",
+      "13.7 million years",
+      "8.3 million years"
+    ],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "QuestionTrivia": "What is the most common type of star in the Milky Way?",
+    "PossibleAnswers": [
+      "Red Dwarf.",
+      "Brown Dwarf.",
+      "Red Giant.",
+      "Neutron Star."
+    ],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "QuestionTrivia": "What is at the center of the Milky Way",
+    "PossibleAnswers": [
+      "A Black Hole.",
+      "A Wormhole.",
+      "Our Solar System.",
+      "A Supernova."
+    ],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "QuestionTrivia": "Outside of the Sun, what is the closest star to Earth?",
+    "PossibleAnswers": [
+      "Proxima Centauri.",
+      "Epsilon Eridani.",
+      "Alpha Centauri.",
+      "There are no other stars in the Milky Way."
+    ],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "QuestionTrivia": "Where is the Oort Cloud located?",
+    "PossibleAnswers": [
+      "Past Pluto.",
+      "Between Mars and Jupiter.",
+      "On Jupiter.",
+      "Around the Sun."
+    ],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "QuestionTrivia": "How long is a lightyear?",
+    "PossibleAnswers": [
+      "A lightyear is not a measure of time.",
+      "1 million years.",
+      "13.7 billion years.",
+      "2.5 nanoseconds."
+    ],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "QuestionTrivia": "Approximately how many miles are in a lightyear?",
+    "PossibleAnswers": [
+      "5.9 trillion miles.",
+      "21.3 billion miles.",
+      "93.7 million miles.",
+      "A lightyear is not a measure of distance."
+    ],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "QuestionTrivia": "What accounts for approximately 85% of matter in the universe?",
+    "PossibleAnswers": [
+      "Dark Matter.",
+      "Hydrogen.",
+      "Electromagnetic Radiation.",
+      "Empty Space."
+    ],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "QuestionTrivia": "What is the coldest place in the universe?",
+    "PossibleAnswers": [
+      "The Boomerang Nebula.",
+      "The Atmosphere.",
+      "The Mariana Trench.",
+      "The Cosmic Microwave Background."
+    ],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "QuestionTrivia": "What percent of the Milky Way is visible from Earth?",
+    "PossibleAnswers": [
+      "0.000003 Percent.",
+      "15.9 Percent.",
+      "99.999998 Percent.",
+      "The Milky Way is not visible from Earth."
+    ],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "QuestionTrivia": "How many stars are in the Milky Way?",
+    "PossibleAnswers": [
+      "100 billion.",
+      "237 million.",
+      "17.9 billion.",
+      "We don’t know."
+    ],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "QuestionTrivia": "What three things are comets made of?",
+    "PossibleAnswers": [
+      "Dust, Rocks, Ice.",
+      "Hydrogen, Helium, Carbon.",
+      "Ice, Water, Gas.",
+      "Sugar, Spice, and a little bit of Everything."
+    ],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "QuestionTrivia": "Which Theory describes the creation of the Universe?",
+    "PossibleAnswers": [
+      "Big Bang Theory.",
+      "Theory of Evolution.",
+      "Quantum Theory.",
+      "Heliocentric Theory."
+    ],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "QuestionTrivia": "What type of galaxy is the Milky Way?",
+    "PossibleAnswers": [
+      "Spiral.",
+      "Elliptical.",
+      "Heliocentric.",
+      "The Milky Way is not a galaxy."
+    ],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "QuestionTrivia": "What is another Name for the North Star?",
+    "PossibleAnswers": [
+      "Polaris.",
+      "The Sun.",
+      "Alpha Centauri.",
+      "North West."
+    ],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "QuestionTrivia": "What color is the hottest kind of star?",
+    "PossibleAnswers": [
+      "Blue.",
+      "Yellow.",
+      "Red.",
+      "White."
+    ],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "QuestionTrivia": "Which of the following telescopes is not stationed in Space?",
+    "PossibleAnswers": [
+      "Hobby Eberly Telescope.",
+      "James Webb Telescope.",
+      "Hubble Telescope.",
+      "Chandra X-Ray."
+    ],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "QuestionTrivia": "What tool is used to detect distant galaxies?",
+    "PossibleAnswers": [
+      "James Webb Space Telescope.",
+      "Binoculars.",
+      "High-Energy Particle Detector.",
+      "Giant Magellan Telescope."
+    ],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "QuestionTrivia": "Which of the following is not the name of a telescope?",
+    "PossibleAnswers": [
+      "Microwave X-Ray Distant Ray Telescope.",
+      "Gran Telescopio Canarias.",
+      "Extremely Large Telescope.",
+      "500-meter Aperture Spherical Telescope."
+    ],
+    "CorrectAnswerIndex": 0
+  }
+]
