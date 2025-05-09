@@ -20,10 +20,11 @@ namespace PlayerInventory_Offical
         public int AmoutofArrowsBoughtAlready { get; set; }
 
         string dataFile = "HighScore.json";
+        
         // Constructor
         public Player_HighScore()
         {
-            GoldCount = 0;
+            // GoldCount = 0;
             NumberOfTurns = 0;
             NumberOfArrows = 3;
             SelfWanted = false;
@@ -32,6 +33,10 @@ namespace PlayerInventory_Offical
             AmoutofArrowsBoughtAlready = 0;
         }
 
+        /// <summary>
+        /// This method is used to add/update the highscores list.
+        /// </summary>
+        /// <param name="ObjectToWriteToFile">Parameter used to write the highscores to the highscores file</param>
         public void AddNewScoreToPastScoreList(HighScoreObject ObjectToWriteToFile)
         {
             List<HighScoreObject> playerhighscores = ReadFromFile();
@@ -40,42 +45,39 @@ namespace PlayerInventory_Offical
         }
 
         // Gold coin method which increases gold count by 1 when the users moves forward (SelfWanted)
+
+        /// <summary>
+        /// This method is used to get the number of gold coins the player has.
+        /// </summary>
+        /// <returns>Returns the gold coin amount</returns>
         public int NumberofGoldCoinIndex()
         {
             return GoldCount;
         }
 
+        /// <summary>
+        /// This method is used to get the number of arrows the player has.
+        /// </summary>
+        /// <returns>Returns the arrow amount</returns>
         public int NumberOfArrowsIndex()
         {
             return NumberOfArrows;
         }
 
-        public bool EncounterTriviaPitCoins(bool goldCountLessThanZero)
-        {
-            for (int i = 0; i < 3; i++)
-            {
-                GoldCount -= 1;
-            }
 
-            goldCountLessThanZero = GoldCount < 0;
-            return goldCountLessThanZero;
-        }
 
-        public bool EncounterWumpusCoins(bool goldCountLessThanZero)
-        {
-            for (int i = 0; i < 5; i++)
-            {
-                GoldCount -= 1;
-            }
-            goldCountLessThanZero = GoldCount < 0;
-            return goldCountLessThanZero;
-        }
-
+        /// <summary>
+        /// This method is used to get the number of turns the player has taken.
+        /// </summary>
         public void AddUserTurn()
         {
             NumberOfTurns += 1;
         }
-
+        /// <summary>
+        /// This method is used to determine whether the player has purchased an arrow or shot an arrow
+        /// </summary>
+        /// <param name="isPurchase">Parameter used to determine if the user is purchasing a arrow or not</param>
+        /// <returns>Returns the newly amount of arrows</returns>
         public int NumberOfArrowsIndex(bool isPurchase)
         {
             if (isPurchase)
@@ -90,6 +92,11 @@ namespace PlayerInventory_Offical
             return NumberOfArrows;
         }
 
+        /// <summary>
+        /// This method is used to calculate the high score based on the number of turns, gold count, number of arrows, and whether the Wumpus was defeated.
+        /// </summary>
+        /// <param name="wumpusDefeated">Parameter used to determine whether wumpus is defeated or no</param>
+        /// <returns>Returns the highscore amount</returns>
         public int CalculateHighScore(bool wumpusDefeated)
         {
             int wumpusBonus;
@@ -103,17 +110,26 @@ namespace PlayerInventory_Offical
         }
 
         // Add a function that returns error gold amount
-
+        /// <summary>
+        /// This method is used to add a gold coin to the player's inventory.
+        /// </summary>
         public void AddGoldCoin()
         {
             GoldCount += 1;
         }
 
+        /// <summary>
+        /// This method is used to remove a gold coin from the player's inventory.
+        /// </summary>
         public void RemoveGoldCoin()
         {
             GoldCount -= 1;
-        }   
+        }
 
+        /// <summary>
+        /// This method is used to check if the player can buy an arrow.
+        /// </summary>
+        /// <returns>Returns the new amount of arrows</returns>
         public bool CanWeBuyAnArrow()
         {
             if (AmoutofArrowsBoughtAlready >= 2)
@@ -126,6 +142,11 @@ namespace PlayerInventory_Offical
             }
         }
 
+        /// <summary>
+        /// This method is used to write the high scores to a file.
+        /// </summary>
+        /// <param name="dataFile">Parameter used to have the datafile</param>
+        /// <param name="highscores">Parameter used to have a highscores list</param>
         public void WriteToFile(string dataFile, List<HighScoreObject> highscores)
         {
             JsonSerializer serlizer = new JsonSerializer();
@@ -139,6 +160,11 @@ namespace PlayerInventory_Offical
             streakwriter.Close();
         }
 
+
+        /// <summary>
+        /// This method is used to read the high scores from a file.
+        /// </summary>
+        /// <returns></returns>
         public List<HighScoreObject> ReadFromFile()
         {
             JsonSerializer serlizer = new JsonSerializer();
@@ -159,7 +185,10 @@ namespace PlayerInventory_Offical
         }
 
 
-
+        /// <summary>
+        /// This method is used to get the top scores from the high score list.
+        /// </summary>
+        /// <returns></returns>
         public List<HighScoreObject> GetTopScores()
         {
             List<HighScoreObject> playerhighscores = ReadFromFile();
