@@ -14,6 +14,7 @@ namespace HuntTheWumpus_Team1
         // int RoomNumber = 1;
         // bool SelfInitated = true;
         // CREATE A STATIC PLAYER CLASS. FIGURE OUT HOW TO USE IT!
+
         string UserUsername;
         // System Specific Image Location:
         List<string> ListofImageLocation = new List<string>();
@@ -25,20 +26,16 @@ namespace HuntTheWumpus_Team1
         {
             InitializeComponent();
 
-            // Add the Locations
-            ListofImageLocation = MakeListofImageLocation();
             // GameControlObject.AddOriginalTriviaFile(); // Only Active This if you need to write Trivia to File. Please talk to Sergei before doing this! YOU WILL MESS UP YOUR LOCAL FILE!
             // GameControlObject.AddOriginalHighScores(); // Only Active This if you need to write High Scores to File. Please talk to Sergei before doing this! YOU WILL MESS UP YOUR LOCAL FILE!
-            Main();
-        }
-        private void Main() // THE MAIN FUNCTION HERE!
-        {
             StartTheGame();
-            // UserMoving();
-
-            // The Question that might come up is: Why so few? This is because after the User Selects to Move, We Move to the Function Below. This repeats on Innite till the Game Ends. 
         }
 
+        /// <summary>
+        /// Works with Moving the Location of the User or Having the User Shoot a Arrow. 
+        /// </summary>
+        /// <param name="RoomNumber"> The Room Number to Consider </param>
+        /// <param name="MovingForWhat"> What are we moving for: 0 - User is Moving. 1 - User is Shooting. </param>
         private void MoveToNewRoomOrshootWampus(int RoomNumber, int MovingForWhat)
         {
             if (MovingForWhat == 0) // This means that we are moving for actual moving. 
@@ -75,12 +72,19 @@ namespace HuntTheWumpus_Team1
             buttonNextRoom6.Enabled = false;
         }
 
+        /// <summary>
+        /// Shows a Trivia Answer to the User. 
+        /// </summary>
         private void ShowTriviaAnswer()
         {
             TriviaAnswerUI TriviaAnswerUIDlg = new TriviaAnswerUI();
             TriviaAnswerUIDlg.TriviaAnswerToUse = GameControlObject.SendTriviaQuestion();
             TriviaAnswerUIDlg.ShowDialog();
         }
+
+        /// <summary>
+        /// Starts the Game. Shows the Opening Menu, and then draws the Initial Room. 
+        /// </summary>
         private void StartTheGame()
         {
             // Open the inital Menu. Give the User the oppertunity to login.
@@ -93,6 +97,10 @@ namespace HuntTheWumpus_Team1
             bool[] DangerInRoom = DrawTheRoom(GameControlObject.WhereIsUser());
         }
 
+        /// <summary>
+        /// Facilitates the Choice of the User. The Six Different Turns on the Right Side of the UI. 
+        /// </summary>
+        /// <param name="ChoiceIndex"> What is the User Chosing to Do. 1 - Buy Arrow. 2 - Shoot an Arrow. 3 - Buy a Secret. 4 - View a Secret. 5 - User Moving To New Room. 6 - User Wants to End Game Now. </param>
         private void UserMoving(int ChoiceIndex)
         {
             GameControlObject.AddUserTurn();
@@ -144,6 +152,9 @@ namespace HuntTheWumpus_Team1
            textBoxArrowAmount.Text = GameControlObject.PlayerArrowAmount().ToString();
         }
 
+        /// <summary>
+        /// Disables Input for all Buttons except the Room Buttons. 
+        /// </summary>
         public void DisableAllButtonsForRoomInput()
         {
             buttonMovetoNextRoom.Enabled = false;
@@ -154,6 +165,9 @@ namespace HuntTheWumpus_Team1
             buttonEndGameNow.Enabled = false;
         }
 
+        /// <summary>
+        /// Enables Room Input Buttons. 
+        /// </summary>
         public void EnableAllButtonsForRoomInput()
         {
             buttonMovetoNextRoom.Enabled = true;
@@ -164,7 +178,9 @@ namespace HuntTheWumpus_Team1
             buttonEndGameNow.Enabled = true;
         }
 
-
+        /// <summary>
+        /// The End Game Function. Ends the Game and Shows the High Score UI.
+        /// </summary>
         private void EndTheGame() // This Function is most important as it will end the game when needed.
         {
             HighScoreUI HighScoreDlg = new HighScoreUI();
@@ -172,6 +188,7 @@ namespace HuntTheWumpus_Team1
             HighScoreDlg.ShowDialog();
         }
 
+        /* Function not needed. Will delete if I do not find a better usuage for this. 
         private List<String> MakeListofImageLocation()
         {
             List<string> ListtoReturn = new List<string>();
@@ -188,16 +205,22 @@ namespace HuntTheWumpus_Team1
                 ListtoReturn.Add(newString);
             }
 
-            /*
+            
             for (int i = 1; i < 31; i++)
             {
                 string newString = stringAddress + "HuntheWumpusRoom" + i.ToString(); // Notice the one t, in the string. 
                 ListtoReturn2.Add(newString);
             }
-            */
+            
             return ListtoReturn;
         }
+        */ 
 
+        /// <summary>
+        /// Draws the Room. Resets the UI to have just the User Choices Avaliable. Returns a bool[] of Dangers in the Room. 
+        /// </summary>
+        /// <param name="RoomNumberToDraw"> The Room Number of the Room to Draw. </param>
+        /// <returns></returns>
         private bool[] DrawTheRoom(int RoomNumberToDraw)
         {
             // This Room List should be of this form: [RoomUser, RoomtotheTopLeft, .... (Coutnerclockwise), ....]
@@ -292,6 +315,9 @@ namespace HuntTheWumpus_Team1
             return BoolListToReturn;
         }
 
+        /// <summary>
+        /// Function that handels the event of a Wampus in the Room. If User fails ends the game, otherwise moves Wumpus. 
+        /// </summary>
         public void WampusInRoom()
         {
             DisplayaMessage("You encountered a Wumpus! You now have to answer 3 out of 5 Trivia Questions Correctly!");
@@ -316,6 +342,9 @@ namespace HuntTheWumpus_Team1
             }
         }
 
+        /// <summary>
+        /// Function that handels the event of Bats in the Room. Moves Bats and Room to a new location. 
+        /// </summary>
         public void BatsInRoom()
         {
             DisplayaMessage("You encountered a Bat! You will now be moved to a new room at random!");
@@ -325,6 +354,9 @@ namespace HuntTheWumpus_Team1
             MoveToNewRoomOrshootWampus(RoomToUseTo, 0);
         }
 
+        /// <summary>
+        /// Function that handels the event of a Pit in the Room. If User fails ends the game. Otherwise, moves User back to Start. 
+        /// </summary>
         public void PitInRoom()
         {
             DisplayaMessage("You encountered a Pit! You now have to answer 2 out of 3 Trivia Questions Correctly!");
@@ -347,7 +379,9 @@ namespace HuntTheWumpus_Team1
             }
         }
 
-
+        /// <summary>
+        /// Function that handels the desire of the User to Buy An Arrow. Checks if we can actually buy an Arrow. Then if the User gets Trivia Correct, Adds the Arrow. 
+        /// </summary>
         private void UserBuysAnArrow()
         {
             if (GameControlObject.CanWeBuyAnArrow())
@@ -394,7 +428,10 @@ namespace HuntTheWumpus_Team1
                 DisplayaMessage("You can no longer buy an arrows! Only 2 per Game.");
             }
         }
-
+        /// <summary>
+        /// Function that handels the desire of the User to shoot an Arrow. First checks if we have an arrow, then if Wumpus is in the Room, the User shoot into. 
+        /// </summary>
+        /// <param name="RoomToWhichWeShoot"></param>
         private void UserShootAnArrow(int RoomToWhichWeShoot)
         {
             int PlayerArrowAmount = GameControlObject.PlayerArrowAmount();
@@ -499,6 +536,11 @@ namespace HuntTheWumpus_Team1
             DisplayaMessage(StringToShow);
         }
 
+        /// <summary>
+        /// Function that Displays a Custom Yes or No Box, and then uses the input furthur. 
+        /// </summary>
+        /// <param name="StringToDisplay"> Question that the User is Asked. </param>
+        /// <returns></returns>
         private bool DisplayAYesNoMessage(string StringToDisplay)
         {
             MessageBoxYesorNoCustom MessageBoxShowDlg = new MessageBoxYesorNoCustom();
@@ -507,13 +549,20 @@ namespace HuntTheWumpus_Team1
 
             bool ResultOfMessageBox = MessageBoxShowDlg.ResultOfQuestion;
             return ResultOfMessageBox;
-        } // This Function is fine. 
+        } 
+
+        /// <summary>
+        /// Function that displays a Message in a Custom Message Box. 
+        /// </summary>
+        /// <param name="StringToDisplay"> String that the Message Box will Display. </param>
         private void DisplayaMessage(string StringToDisplay)
         {
             MessageBoxCustom MessageBoxDlg = new MessageBoxCustom();
             MessageBoxDlg.StringToDispaly = StringToDisplay;
             MessageBoxDlg.ShowDialog();
-        } // This Function is fine.
+        } 
+
+        // All Functions from this one to Button_End Game Now, are called when the User clicks a Choice Button. The Name is indivicative of the choice. 
         private void buttonMovetoNextRoom_Click(object sender, EventArgs e)
         {
             UserMoving(5);
@@ -574,6 +623,10 @@ namespace HuntTheWumpus_Team1
             UserMoving(4);
         }
 
+        /// <summary>
+        /// Function that changes the background image of the Room. 
+        /// </summary>
+        /// <param name="RoomNumberToGetBackgroundFor"> Using the Room Number to change the background image of the Room to the correct value. </param>
         private void GetCorrectRoomBackground(int RoomNumberToGetBackgroundFor)
         {
             if (RoomNumberToGetBackgroundFor == 1)
