@@ -22,7 +22,7 @@ namespace HuntTheWumpus_Team1
 
         public bool GotOffWithCoins;
 
-        Player_GameControl GameControlObject = new GameControl_Offical.Player_GameControl();
+        public Player_GameControl GameControlObject { get; set; }
 
         int AmountofCorrectQuestions = 0;
 

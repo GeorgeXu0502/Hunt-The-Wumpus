@@ -10,13 +10,13 @@ namespace PlayerInventory_Offical
 {
     public class Player_HighScore
     {
+        
         public int GoldCount { get; set; }
         public int NumberOfTurns { get; set; }
         public int NumberOfArrows { get; set; }
-        public bool SelfWanted { get; set; }
         public int Score { get; set; }
         public string Username { get; set; }
-
+        
         public int AmoutofArrowsBoughtAlready { get; set; }
 
         string dataFile = "HighScore.json";
@@ -24,14 +24,14 @@ namespace PlayerInventory_Offical
         // Constructor
         public Player_HighScore()
         {
-            // GoldCount = 0;
+            GoldCount = 0;
             NumberOfTurns = 0;
             NumberOfArrows = 3;
-            SelfWanted = false;
             Score = 0;
             Username = "Player";
             AmoutofArrowsBoughtAlready = 0;
         }
+        
 
         /// <summary>
         /// This method is used to add/update the highscores list.

@@ -13,7 +13,6 @@ namespace HuntTheWumpus_Team1
         Player_GameControl GameControlObject = new GameControl_Offical.Player_GameControl();
         // int RoomNumber = 1;
         // bool SelfInitated = true;
-        // CREATE A STATIC PLAYER CLASS. FIGURE OUT HOW TO USE IT!
 
         string UserUsername;
         // System Specific Image Location:
@@ -92,8 +91,8 @@ namespace HuntTheWumpus_Team1
             OpeningMenu OpentheMenuObject = new OpeningMenu();
             OpentheMenuObject.ShowDialog();
             UserUsername = OpentheMenuObject.UsernameToReturn;
-            
 
+            
             bool[] DangerInRoom = DrawTheRoom(GameControlObject.WhereIsUser());
         }
 
@@ -324,6 +323,7 @@ namespace HuntTheWumpus_Team1
 
             TriviaQuestionUI triviaDlg = new TriviaQuestionUI();
             triviaDlg.AmountofQuestions = 5;
+            triviaDlg.GameControlObject = GameControlObject;
             triviaDlg.ShowDialog();
 
             bool DidWeMakeItWithCoins = triviaDlg.GotOffWithCoins;
@@ -363,6 +363,7 @@ namespace HuntTheWumpus_Team1
 
             TriviaQuestionUI triviaDlg = new TriviaQuestionUI();
             triviaDlg.AmountofQuestions = 3;
+            triviaDlg.GameControlObject = GameControlObject;
             triviaDlg.ShowDialog();
 
             bool DidWeMakeItWithCoins = triviaDlg.GotOffWithCoins;
@@ -395,6 +396,7 @@ namespace HuntTheWumpus_Team1
 
                     TriviaQuestionUI triviaDlg = new TriviaQuestionUI();
                     triviaDlg.AmountofQuestions = 3;
+                    triviaDlg.GameControlObject = GameControlObject;
                     triviaDlg.ShowDialog();
 
                     bool DidWeMakeItWithCoins = triviaDlg.GotOffWithCoins;

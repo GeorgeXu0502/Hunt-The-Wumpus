@@ -25,7 +25,6 @@ namespace GameControl_Offical
         List<string> SecretList = new List<string>();
 
         bool WumpusDefeated = false;
-
         
         public void AddOriginalHighScores()
         {
@@ -48,8 +47,6 @@ namespace GameControl_Offical
         {
             FileWritingObject.WriteTriviaToFile(); // This function is to be used only with the greatest care! This is the oringinal Trivia File. 
         }
-        
-        
         
 
         public List<Room> AdjacentRoomInformation(int RoomToGetInformationFor)
