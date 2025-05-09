@@ -137,6 +137,7 @@ namespace HuntTheWumpus_Team1
         private void buttonOptionA_Click(object sender, EventArgs e)
         {
             GameControlObject.RemoveGoldCoin();
+            System.Diagnostics.Debug.WriteLine("Amount of Coins: " + GameControlObject.PlayerGoldCoinAmount().ToString());
             ProcessAnswer(0);
         }
 

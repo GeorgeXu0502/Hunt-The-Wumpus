@@ -13,7 +13,7 @@ namespace HuntTheWumpus_Team1
         Player_GameControl GameControlObject = new GameControl_Offical.Player_GameControl();
         // int RoomNumber = 1;
         // bool SelfInitated = true;
-
+        // CREATE A STATIC PLAYER CLASS. FIGURE OUT HOW TO USE IT!
         string UserUsername;
         // System Specific Image Location:
         List<string> ListofImageLocation = new List<string>();
