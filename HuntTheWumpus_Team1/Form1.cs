@@ -253,6 +253,7 @@ namespace HuntTheWumpus_Team1
 
             textBoxGoldCoinAmount.Text = GameControlObject.PlayerGoldCoinAmount().ToString();
             textBoxArrowAmount.Text = GameControlObject.PlayerArrowAmount().ToString();
+            textBoxAmountofTurns.Text = GameControlObject.PlayerTurnAmount().ToString();
 
             // Do the Warnings
             bool hasBat = false;
@@ -475,7 +476,9 @@ namespace HuntTheWumpus_Team1
             }
         }
 
-
+        /// <summary>
+        /// Function that handels the desire of the User to Buy a Secret. 
+        /// </summary>
         private void UserBuysASecret()
         {
             string StringtoShow = "This operations costs 3 Coins. You have: " + GameControlObject.PlayerGoldCoinAmount().ToString() + " Coins. Do You want to contiue?";
@@ -522,7 +525,9 @@ namespace HuntTheWumpus_Team1
                 DisplayaMessage("We will not continue.");
             }
         }
-
+        /// <summary>
+        /// Function that handels the desire of the User to View a Secret. 
+        /// </summary>
         private void UserViewaSecret()
         {
             DisplayaMessage("Please select a Secret From Down Below");

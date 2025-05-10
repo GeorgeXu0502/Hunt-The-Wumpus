@@ -197,5 +197,14 @@ namespace PlayerInventory_Offical
 
             return PlayerHighScoresSorted;
         }
+
+        /// <summary>
+        /// This method is used to get the amount of turn already taken by the User. 
+        /// </summary>
+        /// <returns></returns>
+        public int NumberofTurnsIndex()
+        {
+            return NumberOfTurns;
+        }
     }
 }

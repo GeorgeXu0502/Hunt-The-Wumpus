@@ -28,6 +28,7 @@ namespace GameControl_Offical
         
         public void AddOriginalHighScores()
         {
+            /*
             List<HighScoreObject> ListToWriteToFile = new List<HighScoreObject>();
             HighScoreObject highscore1 = new HighScoreObject("Sergei", 10);
             ListToWriteToFile.Add(highscore1);
@@ -39,8 +40,10 @@ namespace GameControl_Offical
             ListToWriteToFile.Add(highscore4);
             HighScoreObject highscore5 = new HighScoreObject("Adah", 10);
             ListToWriteToFile.Add(highscore5);
+            
 
             PlayerInventoryObject.WriteToFile("HighScore.json", ListToWriteToFile);
+            */
         }
 
         public void AddOriginalTriviaFile()
@@ -67,7 +70,6 @@ namespace GameControl_Offical
 
         public int WhereIsUser()
         {
-            // This Function should return where the User is. Room Number (int)
             return RoomUserIsIn;
         }
 
@@ -80,77 +82,60 @@ namespace GameControl_Offical
 
         public int PlayerGoldCoinAmount()
         {
-            // Write a Function to return the amount of Gold Coin the Player Has. 
             return PlayerInventoryObject.NumberofGoldCoinIndex();
         }
 
         public int PlayerArrowAmount()
         {
-            // Write a Function to return the amount of Arrows the Player Has.
-
             return PlayerInventoryObject.NumberOfArrowsIndex();
         }
 
         public TriviaQuestion GetQuestion()
         {
-            // Write a Function to return a TriviaQuestion Variable. 
            return TriviaMachineObject.GetTriviaAnswer();
         }
 
         public void MoveWumpus(int RoomNumberWhereUserIsIn)
         {
-            // Given Where the User Is, Have the Cave move the Wumpus From This Room.
             CaveMainObject.MoveWumpus(RoomNumberWhereUserIsIn);
         }
 
         public bool CheckIfWampusInRoom(int RoomToCheck)
         {
-            // Write Code To Check If Wampus is in the Room.
-
             return CaveMainObject.IsWumpusInRoom(RoomToCheck);
         }
 
         public int GetNewUserRoom()
         {
-            // Return a new room with no hazards. Ask Cave to do this. 
             return CaveMainObject.GetNewRoom();
         }
 
         public void MoveBatsFromRoom(int RoomWhereUserIsMoved)
         {
-            // Move Bats from the Room the User is In, to a new Room. Ask Cave to do this.
             CaveMainObject.MoveBatsToDifferentRoom(RoomUserIsIn, RoomWhereUserIsMoved);
         }
 
         public void AddGoldCoin()
         {
-            // Add a Gold Coin to the Player Inventory. 
             PlayerInventoryObject.AddGoldCoin();
         }
 
         public void AddArrow()
         {
-            // Add a Arrow to the Player Invnetory. 
             PlayerInventoryObject.NumberOfArrowsIndex(true);
         }
 
         public void RemoveGoldCoin()
         {
-            // Remove a Gold Coin From the Player. 
             PlayerInventoryObject.RemoveGoldCoin();
         }
         public void RemoveArrowPlayerInventory()
         {
-            // Take a Arrow From the Player.
             PlayerInventoryObject.NumberOfArrowsIndex(false);
         }
 
         public string AddASecretToList()
         {
-            // Get a Secret and Add it To The List defined at the Top. SecretList[]
-            // Get the Secret From Trivia Machine, also return the string.
-
-
             string secret = TriviaMachineObject.GetSecret();
             SecretList.Add(secret);
             return secret;
@@ -163,21 +148,16 @@ namespace GameControl_Offical
 
         public bool CanWeBuyAnArrow()
         {
-            // Write a Function if we can buy a Arrow Still. Rember only 2 per Game. Collaborate with Player Invnetory. 
             return PlayerInventoryObject.CanWeBuyAnArrow();
         }
 
         public int PlayerScoreFinal()
         {
-            // Return Player Score. Ask Player Inventory To Do This. 
-
             return PlayerInventoryObject.CalculateHighScore(WumpusDefeated);
         }
 
         public List<HighScoreObject> GetTopScores()
         {
-            // Return a List with the Top 5 Scores. Ask Player Inventory To Do This.
-
             return PlayerInventoryObject.GetTopScores();
         }
 
@@ -189,6 +169,11 @@ namespace GameControl_Offical
         public void AddUserTurn()
         {
             PlayerInventoryObject.AddUserTurn();
+        }
+
+        public int PlayerTurnAmount()
+        {
+            return PlayerInventoryObject.NumberofTurnsIndex();
         }
     }
 }
