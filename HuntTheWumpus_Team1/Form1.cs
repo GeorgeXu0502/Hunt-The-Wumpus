@@ -77,8 +77,10 @@ namespace HuntTheWumpus_Team1
         private void ShowTriviaAnswer()
         {
             TriviaAnswerUI TriviaAnswerUIDlg = new TriviaAnswerUI();
+            this.Hide();
             TriviaAnswerUIDlg.TriviaAnswerToUse = GameControlObject.SendTriviaQuestion();
             TriviaAnswerUIDlg.ShowDialog();
+            this.Show();
         }
 
         /// <summary>
@@ -490,6 +492,7 @@ namespace HuntTheWumpus_Team1
 
                 TriviaQuestionUI triviaDlg = new TriviaQuestionUI();
                 triviaDlg.AmountofQuestions = 3;
+                triviaDlg.GameControlObject = GameControlObject;
                 triviaDlg.ShowDialog();
 
                 bool DidWeMakeItWithCoins = triviaDlg.GotOffWithCoins;
