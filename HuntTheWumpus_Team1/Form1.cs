@@ -4,6 +4,8 @@ using Microsoft.VisualBasic.ApplicationServices;
 using GameControl_Offical;
 using CaveMain_Official2;
 using TrivaMachine_Offical;
+using System.Net.Sockets;
+using TriviaMachine_Offical3;
 
 
 namespace HuntTheWumpus_Team1
@@ -501,9 +503,9 @@ namespace HuntTheWumpus_Team1
                     if (DidWeMakeItWithQuestions)
                     {
                         DisplayaMessage("We have an Extra Secret!");
-                        string SecretToShow = GameControlObject.AddASecretToList();
-                        DisplayaMessage("Secret is: " + SecretToShow);
-                        List<string> ListofSecrets = GameControlObject.ReturnSecretList();
+                        SecretObject SecretToShow = GameControlObject.AddASecretToList();
+                        DisplayaMessage("Secret is: " + SecretToShow.SecretString);
+                        List<SecretObject> ListofSecrets = GameControlObject.ReturnSecretList();
 
                         for (int i = 0; i < ListofSecrets.Count; i++)
                         {
@@ -535,8 +537,8 @@ namespace HuntTheWumpus_Team1
             }
 
             int index = listBoxSecretsList.SelectedIndex;
-            string SecretToShow = GameControlObject.ReturnSecretList()[index];
-            string StringToShow = "Secret " + index.ToString() + ": " + SecretToShow;
+            SecretObject SecretToShow = GameControlObject.ReturnSecretList()[index];
+            string StringToShow = "Secret " + index.ToString() + ": " + SecretToShow.SecretString;
             DisplayaMessage(StringToShow);
         }
 
