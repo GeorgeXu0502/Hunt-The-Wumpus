@@ -7,6 +7,7 @@ using CaveMain_Official2;
 using TrivaMachine_Offical;
 using PlayerInventory_Offical;
 using TriviaMachine_Offical;
+using TriviaMachine_Offical3;
 
 namespace GameControl_Offical
 {
@@ -22,7 +23,7 @@ namespace GameControl_Offical
 
         int RoomUserIsIn = 1; // This is where the User Starts
         int goldCoinsCount = 0;
-        List<string> SecretList = new List<string>();
+        List<SecretObject> SecretList = new List<SecretObject>();
 
         bool WumpusDefeated = false;
         
@@ -134,14 +135,14 @@ namespace GameControl_Offical
             PlayerInventoryObject.NumberOfArrowsIndex(false);
         }
 
-        public string AddASecretToList()
+        public SecretObject AddASecretToList()
         {
-            string secret = TriviaMachineObject.GetSecret();
+            SecretObject secret = TriviaMachineObject.GetSecret();
             SecretList.Add(secret);
             return secret;
         }
 
-        public List<string> ReturnSecretList()
+        public List<SecretObject> ReturnSecretList()
         {
             return SecretList;
         }

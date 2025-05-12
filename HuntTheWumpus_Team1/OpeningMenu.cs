@@ -39,6 +39,7 @@ namespace HuntTheWumpus_Team1
         {
             HighScoreUI HighScoreDlg = new HighScoreUI();
             HighScoreDlg.PlayedGameOrNot = false;
+            this.Hide();
             HighScoreDlg.ShowDialog();
         }
 

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
+using TriviaMachine_Offical3;
 
 namespace TrivaMachine_Offical
 {
@@ -13,7 +14,7 @@ namespace TrivaMachine_Offical
         string Secretdatafiletouse = "SecretList.json";
         // List of Trivia Questions and Secrets.
         List<TriviaQuestion> ListofTriviaQuestions = new List<TriviaQuestion>();
-        List<string> ListofSecrets = new List<string>();
+        List<SecretObject> ListofSecrets = new List<SecretObject>();
 
         int ListTriviaQuestionIndex = 0; // This Index is Used to Monitor The Questions.
         int ListSecretIndex = 0; //This Index is Used to Monitor the Secrets.
@@ -33,7 +34,6 @@ namespace TrivaMachine_Offical
 
         public void ReadSecretFile()
         {
-            ListofSecrets.Add("The Wumpus is currently at: ");
             // ListofSecrets = Utility.ReadSecretsFromFile(Secretdatafiletouse);
         }
         
@@ -51,7 +51,7 @@ namespace TrivaMachine_Offical
             return TriviaQuestionToReturn;
         }
 
-        public string GetSecret()
+        public SecretObject GetSecret()
         {
             // Might want to fix this in anyway possible. This just cycles the questions, could implement anything else? Like a random function, only give questions to which we have given an answer.
             if (ListSecretIndex == ListofSecrets.Count)
@@ -59,7 +59,7 @@ namespace TrivaMachine_Offical
                 ListSecretIndex = 0;
             }
 
-            string SecretToReturn = ListofSecrets[ListSecretIndex];
+            SecretObject SecretToReturn = ListofSecrets[ListSecretIndex];
             ListSecretIndex++;
             return SecretToReturn;
         }

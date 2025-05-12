@@ -34,18 +34,20 @@
             // 
             // richTextBoxDispaly
             // 
-            richTextBoxDispaly.Location = new Point(93, 40);
+            richTextBoxDispaly.Location = new Point(65, 24);
+            richTextBoxDispaly.Margin = new Padding(2, 2, 2, 2);
             richTextBoxDispaly.Name = "richTextBoxDispaly";
             richTextBoxDispaly.ReadOnly = true;
-            richTextBoxDispaly.Size = new Size(612, 285);
+            richTextBoxDispaly.Size = new Size(430, 173);
             richTextBoxDispaly.TabIndex = 0;
             richTextBoxDispaly.Text = "";
             // 
             // buttonContinue
             // 
-            buttonContinue.Location = new Point(234, 340);
+            buttonContinue.Location = new Point(164, 204);
+            buttonContinue.Margin = new Padding(2, 2, 2, 2);
             buttonContinue.Name = "buttonContinue";
-            buttonContinue.Size = new Size(327, 122);
+            buttonContinue.Size = new Size(229, 73);
             buttonContinue.TabIndex = 1;
             buttonContinue.Text = "Continue";
             buttonContinue.UseVisualStyleBackColor = true;
@@ -53,14 +55,16 @@
             // 
             // MessageBoxCustom
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(98, 127, 149);
-            ClientSize = new Size(862, 487);
+            ClientSize = new Size(603, 292);
             Controls.Add(buttonContinue);
             Controls.Add(richTextBoxDispaly);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Margin = new Padding(2, 2, 2, 2);
             Name = "MessageBoxCustom";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "MessageBoxCustom";
             FormClosing += MessageBoxCustom_FormClosing;
             Load += MessageBoxCustom_Load;

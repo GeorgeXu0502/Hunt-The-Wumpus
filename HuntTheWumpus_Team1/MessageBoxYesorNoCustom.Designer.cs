@@ -36,18 +36,20 @@
             // richTextBoxMainQuestion
             // 
             richTextBoxMainQuestion.BackColor = SystemColors.Window;
-            richTextBoxMainQuestion.Location = new Point(119, 65);
+            richTextBoxMainQuestion.Location = new Point(83, 39);
+            richTextBoxMainQuestion.Margin = new Padding(2, 2, 2, 2);
             richTextBoxMainQuestion.Name = "richTextBoxMainQuestion";
             richTextBoxMainQuestion.ReadOnly = true;
-            richTextBoxMainQuestion.Size = new Size(672, 298);
+            richTextBoxMainQuestion.Size = new Size(472, 180);
             richTextBoxMainQuestion.TabIndex = 0;
             richTextBoxMainQuestion.Text = "";
             // 
             // buttonYesContiue
             // 
-            buttonYesContiue.Location = new Point(156, 385);
+            buttonYesContiue.Location = new Point(109, 231);
+            buttonYesContiue.Margin = new Padding(2, 2, 2, 2);
             buttonYesContiue.Name = "buttonYesContiue";
-            buttonYesContiue.Size = new Size(227, 139);
+            buttonYesContiue.Size = new Size(159, 83);
             buttonYesContiue.TabIndex = 1;
             buttonYesContiue.Text = "Yes, Continue";
             buttonYesContiue.UseVisualStyleBackColor = true;
@@ -55,9 +57,10 @@
             // 
             // buttonNoCountiue
             // 
-            buttonNoCountiue.Location = new Point(451, 385);
+            buttonNoCountiue.Location = new Point(316, 231);
+            buttonNoCountiue.Margin = new Padding(2, 2, 2, 2);
             buttonNoCountiue.Name = "buttonNoCountiue";
-            buttonNoCountiue.Size = new Size(227, 139);
+            buttonNoCountiue.Size = new Size(159, 83);
             buttonNoCountiue.TabIndex = 2;
             buttonNoCountiue.Text = "No, Stop";
             buttonNoCountiue.UseVisualStyleBackColor = true;
@@ -65,15 +68,17 @@
             // 
             // MessageBoxYesorNoCustom
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(98, 127, 149);
-            ClientSize = new Size(966, 536);
+            ClientSize = new Size(676, 322);
             Controls.Add(buttonNoCountiue);
             Controls.Add(buttonYesContiue);
             Controls.Add(richTextBoxMainQuestion);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Margin = new Padding(2, 2, 2, 2);
             Name = "MessageBoxYesorNoCustom";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "MessageBoxYesorNoCustom";
             Activated += MessageBoxYesorNoCustom_Activated;
             FormClosing += MessageBoxYesorNoCustom_FormClosing;
