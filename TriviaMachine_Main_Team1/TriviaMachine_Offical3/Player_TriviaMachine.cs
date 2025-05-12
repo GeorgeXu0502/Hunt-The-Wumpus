@@ -33,7 +33,7 @@ namespace TrivaMachine_Offical
 
         public void ReadSecretFile()
         {
-            ListofSecrets.Add("The Wumpus is currentlly at: ");
+            ListofSecrets.Add("The Wumpus is currently at: ");
             // ListofSecrets = Utility.ReadSecretsFromFile(Secretdatafiletouse);
         }
         
