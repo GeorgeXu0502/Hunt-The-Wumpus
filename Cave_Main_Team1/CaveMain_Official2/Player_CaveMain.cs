@@ -528,6 +528,32 @@ namespace CaveMain_Official2
 
         }
 
+        // Functions to determine the location of certain objects in the Cave System. 
+
+        public int WhereisWampus()
+        {
+            // Write a Function to Figure out where is Wumpus. 
+            return 0;
+        }
+
+        public int WhereisPit()
+        {
+            // Write a Function to Figure out where is Pit. 
+            return 0;
+        }
+
+        public int WhereisaBat()
+        {
+            // Write a Function to Figure out where is some Bat. 
+            return 0;
+        }
+
+        public int HowManyRoomsAwayIsWampus(int RoomWhereUserIs)
+        {
+            // Try to write a function to identify how many rooms away the Wumpus is from the User. 
+            return 0;
+        }
+
         public List<Room> GenerateCave()
         {
             Random rndWumpus = new Random();

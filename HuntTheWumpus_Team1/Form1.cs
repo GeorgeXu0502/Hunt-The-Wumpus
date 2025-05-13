@@ -29,6 +29,7 @@ namespace HuntTheWumpus_Team1
 
             // GameControlObject.AddOriginalTriviaFile(); // Only Active This if you need to write Trivia to File. Please talk to Sergei before doing this! YOU WILL MESS UP YOUR LOCAL FILE!
             // GameControlObject.AddOriginalHighScores(); // Only Active This if you need to write High Scores to File. Please talk to Sergei before doing this! YOU WILL MESS UP YOUR LOCAL FILE!
+            // GameControlObject.AddOriginalSecretFile(); // Only Active This if you need to write High Scores to File. Please talk to Sergei before doing this! YOU WILL MESS UP YOUR LOCAL FILE!
             StartTheGame();
         }
 
@@ -140,7 +141,7 @@ namespace HuntTheWumpus_Team1
             }
             else if (ChoiceIndex == 4)
             {
-                UserViewaSecret();
+                UserViewsASecret();
             }
             else if (ChoiceIndex == 5)
             { 
@@ -503,14 +504,8 @@ namespace HuntTheWumpus_Team1
                     if (DidWeMakeItWithQuestions)
                     {
                         DisplayaMessage("We have an Extra Secret!");
-                        SecretObject SecretToShow = GameControlObject.AddASecretToList();
-                        DisplayaMessage("Secret is: " + SecretToShow.SecretString);
-                        List<SecretObject> ListofSecrets = GameControlObject.ReturnSecretList();
-
-                        for (int i = 0; i < ListofSecrets.Count; i++)
-                        {
-                            listBoxSecretsList.Items.Add("Secret " + i.ToString());
-                        }
+                        string SecretToShow = GameControlObject.GetSecretObject();
+                        DisplayaMessage("Secret is: " + SecretToShow);
                     }
                     else
                     {
@@ -527,19 +522,9 @@ namespace HuntTheWumpus_Team1
         /// <summary>
         /// Function that handels the desire of the User to View a Secret. 
         /// </summary>
-        private void UserViewaSecret()
+        private void UserViewsASecret()
         {
-            DisplayaMessage("Please select a Secret From Down Below");
-
-            while (listBoxSecretsList.SelectedIndex == -1)
-            {
-                // Do Nothing. Wait for User to select a Index.
-            }
-
-            int index = listBoxSecretsList.SelectedIndex;
-            SecretObject SecretToShow = GameControlObject.ReturnSecretList()[index];
-            string StringToShow = "Secret " + index.ToString() + ": " + SecretToShow.SecretString;
-            DisplayaMessage(StringToShow);
+            // Change this function.
         }
 
         /// <summary>

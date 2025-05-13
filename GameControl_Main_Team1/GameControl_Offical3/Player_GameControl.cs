@@ -23,7 +23,6 @@ namespace GameControl_Offical
 
         int RoomUserIsIn = 1; // This is where the User Starts
         int goldCoinsCount = 0;
-        List<SecretObject> SecretList = new List<SecretObject>();
 
         bool WumpusDefeated = false;
         
@@ -52,6 +51,10 @@ namespace GameControl_Offical
             FileWritingObject.WriteTriviaToFile(); // This function is to be used only with the greatest care! This is the oringinal Trivia File. 
         }
         
+        public void AddOriginalSecretFile()
+        {
+            TriviaMachineObject.WriteSecretsToFile();
+        }
 
         public List<Room> AdjacentRoomInformation(int RoomToGetInformationFor)
         {
@@ -135,17 +138,45 @@ namespace GameControl_Offical
             PlayerInventoryObject.NumberOfArrowsIndex(false);
         }
 
-        public SecretObject AddASecretToList()
+        public string GetSecretObject()
         {
-            SecretObject secret = TriviaMachineObject.GetSecret();
-            SecretList.Add(secret);
-            return secret;
+            // Please fix the actual implementation this is wrong. 
+            SecretObject SecretToUse = TriviaMachineObject.GetSecret();
+
+            if (SecretToUse.SecretIndex == 0)
+            {
+                return SecretToUse.SecretString + CaveMainObject.WhereisWampus();
+            }
+            else if (SecretToUse.SecretIndex == 1)
+            {
+                return SecretToUse.SecretString + CaveMainObject.WhereisWampus();
+            }
+            else if (SecretToUse.SecretIndex == 2)
+            {
+                return SecretToUse.SecretString + CaveMainObject.WhereisWampus();
+            }
+            else if (SecretToUse.SecretIndex == 3)
+            {
+                return SecretToUse.SecretString + CaveMainObject.WhereisWampus();
+            }
+            else if (SecretToUse.SecretIndex == 4)
+            {
+                return SecretToUse.SecretString + CaveMainObject.WhereisWampus();
+            }
+            else if (SecretToUse.SecretIndex == 5)
+            {
+                return SecretToUse.SecretString + CaveMainObject.WhereisWampus();
+            }
+            else if (SecretToUse.SecretIndex == 6)
+            {
+                return SecretToUse.SecretString + CaveMainObject.WhereisWampus();
+            }
+            else 
+            {
+                return SecretToUse.SecretString + CaveMainObject.WhereisWampus();
+            }
         }
 
-        public List<SecretObject> ReturnSecretList()
-        {
-            return SecretList;
-        }
 
         public bool CanWeBuyAnArrow()
         {

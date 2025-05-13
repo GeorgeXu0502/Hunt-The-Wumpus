@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
@@ -17,13 +18,36 @@ namespace TrivaMachine_Offical
         List<SecretObject> ListofSecrets = new List<SecretObject>();
 
         int ListTriviaQuestionIndex = 0; // This Index is Used to Monitor The Questions.
-        int ListSecretIndex = 0; //This Index is Used to Monitor the Secrets.
 
         // The Construcutor for the File. 
         public Player_TriviaMachine()
         {
              ReadTriviaFile();
-            // ReadSecretFile(); 
+            ReadSecretFile(); 
+        }
+
+        public void WriteSecretsToFile()
+        {
+            List<SecretObject> ListtoWriteToFile = new List<SecretObject>();
+            SecretObject SecrectObject1 = new SecretObject("The Wumpus is currently in room: ", 0);
+            SecretObject SecrectObject2 = new SecretObject("The Pit is currently in room: ", 1);
+            SecretObject SecrectObject3 = new SecretObject("Some Bat is currently in room: ", 2);
+            SecretObject SecrectObject4 = new SecretObject("The Wumpus is currently X rooms away from you. Where X is: ", 3);
+            SecretObject SecrectObject5 = new SecretObject("A Pit is currently X rooms away from you. Where X is: ", 4);
+            SecretObject SecrectObject6 = new SecretObject("You are currently in room: ", 5);
+            SecretObject SecrectObject7 = new SecretObject("One answer to a interseting Trivia Question will apear soon as your secret. ", 6);
+            SecretObject SecrectObject8 = new SecretObject("One answer to a interseting Trivia Question will apear soon as your secret. ", 7);
+
+            ListtoWriteToFile.Add(SecrectObject1);
+            ListtoWriteToFile.Add(SecrectObject2);
+            ListtoWriteToFile.Add(SecrectObject3);
+            ListtoWriteToFile.Add(SecrectObject4);
+            ListtoWriteToFile.Add(SecrectObject5);
+            ListtoWriteToFile.Add(SecrectObject6);
+            ListtoWriteToFile.Add(SecrectObject7);
+            ListtoWriteToFile.Add(SecrectObject8);
+
+            Utility.WriteSecretToFile(ListtoWriteToFile, Secretdatafiletouse);
         }
 
         public void ReadTriviaFile()
@@ -34,7 +58,7 @@ namespace TrivaMachine_Offical
 
         public void ReadSecretFile()
         {
-            // ListofSecrets = Utility.ReadSecretsFromFile(Secretdatafiletouse);
+            ListofSecrets = Utility.ReadSecretsFromFile(Secretdatafiletouse);
         }
         
         // Returns both the Trivia Answer and Question, contrary to the Name. 
@@ -53,15 +77,10 @@ namespace TrivaMachine_Offical
 
         public SecretObject GetSecret()
         {
-            // Might want to fix this in anyway possible. This just cycles the questions, could implement anything else? Like a random function, only give questions to which we have given an answer.
-            if (ListSecretIndex == ListofSecrets.Count)
-            {
-                ListSecretIndex = 0;
-            }
+            Random RandomObject = new Random();
+            int RandomInteger = RandomObject.Next(0, 8);
 
-            SecretObject SecretToReturn = ListofSecrets[ListSecretIndex];
-            ListSecretIndex++;
-            return SecretToReturn;
+            return ListofSecrets[RandomInteger];
         }
 
     }
