@@ -145,35 +145,35 @@ namespace GameControl_Offical
 
             if (SecretToUse.SecretIndex == 0)
             {
-                return SecretToUse.SecretString + CaveMainObject.WhereisWampus();
+                return SecretToUse.SecretString + CaveMainObject.WhereisWampus().ToString();
             }
             else if (SecretToUse.SecretIndex == 1)
             {
-                return SecretToUse.SecretString + CaveMainObject.WhereisWampus();
+                return SecretToUse.SecretString + CaveMainObject.WhereisPit().ToString();
             }
             else if (SecretToUse.SecretIndex == 2)
             {
-                return SecretToUse.SecretString + CaveMainObject.WhereisWampus();
+                return SecretToUse.SecretString + CaveMainObject.WhereisaBat().ToString();
             }
             else if (SecretToUse.SecretIndex == 3)
             {
-                return SecretToUse.SecretString + CaveMainObject.WhereisWampus();
+                return SecretToUse.SecretString + CaveMainObject.HowManyRoomsAwayIsWampus(RoomUserIsIn).ToString();
             }
             else if (SecretToUse.SecretIndex == 4)
             {
-                return SecretToUse.SecretString + CaveMainObject.WhereisWampus();
+                return SecretToUse.SecretString + CaveMainObject.HowManyRoomsAwayIsPit(RoomUserIsIn).ToString();
             }
             else if (SecretToUse.SecretIndex == 5)
             {
-                return SecretToUse.SecretString + CaveMainObject.WhereisWampus();
+                return SecretToUse.SecretString + RoomUserIsIn.ToString();
             }
             else if (SecretToUse.SecretIndex == 6)
             {
-                return SecretToUse.SecretString + CaveMainObject.WhereisWampus();
+                return SecretToUse.SecretString;
             }
             else 
             {
-                return SecretToUse.SecretString + CaveMainObject.WhereisWampus();
+                return SecretToUse.SecretString;
             }
         }
 

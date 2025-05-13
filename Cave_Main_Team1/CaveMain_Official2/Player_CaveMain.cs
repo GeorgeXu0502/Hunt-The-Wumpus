@@ -554,6 +554,12 @@ namespace CaveMain_Official2
             return 0;
         }
 
+        public int HowManyRoomsAwayIsPit(int RoomWhereUserIs)
+        {
+            // Try to write a function to identify how many rooms away the Wumpus is from the User. 
+            return 0;
+        }
+
         public List<Room> GenerateCave()
         {
             Random rndWumpus = new Random();
