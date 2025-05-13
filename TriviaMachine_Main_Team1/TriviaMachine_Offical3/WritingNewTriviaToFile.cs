@@ -208,320 +208,631 @@ namespace TriviaMachine_Offical
             TriviaQuestionAnswerOptions22.Add("15.");
             TriviaQuestion TriviaQuestionToAdd22 = new TriviaQuestion("How many galaxies do we know of?", TriviaQuestionAnswerOptions22, 0);
             ListofTriviaToWrite.Add(TriviaQuestionToAdd22);
-
             
             List<string> TriviaQuestionAnswerOptions23 = new List<string>();
-            TriviaQuestionAnswerOptions20.Add("One.");
-            TriviaQuestionAnswerOptions20.Add("17.8 million.");
-            TriviaQuestionAnswerOptions20.Add("Three trillion.");
-            TriviaQuestionAnswerOptions20.Add("We can’t see any other galaxies.");
+            TriviaQuestionAnswerOptions23.Add("One.");
+            TriviaQuestionAnswerOptions23.Add("17.8 million.");
+            TriviaQuestionAnswerOptions23.Add("Three trillion.");
+            TriviaQuestionAnswerOptions23.Add("We can’t see any other galaxies.");
             TriviaQuestion TriviaQuestionToAdd23 = new TriviaQuestion("How many galaxies outside the Milky Way can we see with the naked eye?", TriviaQuestionAnswerOptions23, 0);
             ListofTriviaToWrite.Add(TriviaQuestionToAdd23);
 
             List<string> TriviaQuestionAnswerOptions24 = new List<string>();
-            TriviaQuestionAnswerOptions20.Add("3,196.");
-            TriviaQuestionAnswerOptions20.Add("14 Million.");
-            TriviaQuestionAnswerOptions20.Add("187.");
-            TriviaQuestionAnswerOptions20.Add("One.");
+            TriviaQuestionAnswerOptions24.Add("3,196.");
+            TriviaQuestionAnswerOptions24.Add("14 Million.");
+            TriviaQuestionAnswerOptions24.Add("187.");
+            TriviaQuestionAnswerOptions24.Add("One.");
             TriviaQuestion TriviaQuestionToAdd24 = new TriviaQuestion("How many solar systems are estimated to be in the Milky Way?", TriviaQuestionAnswerOptions24, 0);
             ListofTriviaToWrite.Add(TriviaQuestionToAdd24);
 
             List<string> TriviaQuestionAnswerOptions25 = new List<string>();
-            TriviaQuestionAnswerOptions20.Add("Neptune.");
-            TriviaQuestionAnswerOptions20.Add("Mercury.");
-            TriviaQuestionAnswerOptions20.Add("Venus.");
-            TriviaQuestionAnswerOptions20.Add("Mars.");
+            TriviaQuestionAnswerOptions25.Add("Neptune.");
+            TriviaQuestionAnswerOptions25.Add("Mercury.");
+            TriviaQuestionAnswerOptions25.Add("Venus.");
+            TriviaQuestionAnswerOptions25.Add("Mars.");
             TriviaQuestion TriviaQuestionToAdd25 = new TriviaQuestion("Which of the following planets in our Solar System wouldn’t it be possible to walk on?", TriviaQuestionAnswerOptions25, 0);
             ListofTriviaToWrite.Add(TriviaQuestionToAdd25);
 
             List<string> TriviaQuestionAnswerOptions26 = new List<string>();
-            TriviaQuestionAnswerOptions20.Add("Jupiter.");
-            TriviaQuestionAnswerOptions20.Add("Earth.");
-            TriviaQuestionAnswerOptions20.Add("Pluto.");
-            TriviaQuestionAnswerOptions20.Add("Also Earth (duh?).");
+            TriviaQuestionAnswerOptions26.Add("Jupiter.");
+            TriviaQuestionAnswerOptions26.Add("Earth.");
+            TriviaQuestionAnswerOptions26.Add("Pluto.");
+            TriviaQuestionAnswerOptions26.Add("Also Earth (duh?).");
             TriviaQuestion TriviaQuestionToAdd26 = new TriviaQuestion("Which planet has the largest ocean?", TriviaQuestionAnswerOptions26, 0);
             ListofTriviaToWrite.Add(TriviaQuestionToAdd26);
 
             List<string> TriviaQuestionAnswerOptions27 = new List<string>();
-            TriviaQuestionAnswerOptions20.Add("165 Years.");
-            TriviaQuestionAnswerOptions20.Add("Thirteen Days.");
-            TriviaQuestionAnswerOptions20.Add("Twenty Years.");
-            TriviaQuestionAnswerOptions20.Add("Four Hours");
+            TriviaQuestionAnswerOptions27.Add("165 Years.");
+            TriviaQuestionAnswerOptions27.Add("Thirteen Days.");
+            TriviaQuestionAnswerOptions27.Add("Twenty Years.");
+            TriviaQuestionAnswerOptions27.Add("Four Hours");
             TriviaQuestion TriviaQuestionToAdd27 = new TriviaQuestion("How long (in relation to the Gregorian calendar system) is one year on Neptune?", TriviaQuestionAnswerOptions27, 0);
             ListofTriviaToWrite.Add(TriviaQuestionToAdd27);
 
             List<string> TriviaQuestionAnswerOptions28 = new List<string>();
-            TriviaQuestionAnswerOptions20.Add("Celestial Flare.");
-            TriviaQuestionAnswerOptions20.Add("Solar Storm.");
-            TriviaQuestionAnswerOptions20.Add("Coronal Mass Ejection.");
-            TriviaQuestionAnswerOptions20.Add("Radiation Storm.");
+            TriviaQuestionAnswerOptions28.Add("Celestial Flare.");
+            TriviaQuestionAnswerOptions28.Add("Solar Storm.");
+            TriviaQuestionAnswerOptions28.Add("Coronal Mass Ejection.");
+            TriviaQuestionAnswerOptions28.Add("Radiation Storm.");
             TriviaQuestion TriviaQuestionToAdd28 = new TriviaQuestion("Which of the following is not a name for a storm produced by the Sun?", TriviaQuestionAnswerOptions28, 0);
             ListofTriviaToWrite.Add(TriviaQuestionToAdd28);
 
             List<string> TriviaQuestionAnswerOptions29 = new List<string>();
-            TriviaQuestionAnswerOptions20.Add("Venus.");
-            TriviaQuestionAnswerOptions20.Add("Mercury.");
-            TriviaQuestionAnswerOptions20.Add("Saturn.");
-            TriviaQuestionAnswerOptions20.Add("The Sun.");
+            TriviaQuestionAnswerOptions29.Add("Venus.");
+            TriviaQuestionAnswerOptions29.Add("Mercury.");
+            TriviaQuestionAnswerOptions29.Add("Saturn.");
+            TriviaQuestionAnswerOptions29.Add("The Sun.");
             TriviaQuestion TriviaQuestionToAdd29 = new TriviaQuestion("What is the hottest planet in our Solar System?", TriviaQuestionAnswerOptions29, 0);
             ListofTriviaToWrite.Add(TriviaQuestionToAdd29);
 
             List<string> TriviaQuestionAnswerOptions30 = new List<string>();
-            TriviaQuestionAnswerOptions20.Add("Solar System.");
-            TriviaQuestionAnswerOptions20.Add("solar system.");
-            TriviaQuestionAnswerOptions20.Add("SOLAR SYSTEM.");
-            TriviaQuestionAnswerOptions20.Add("Solar system.");
+            TriviaQuestionAnswerOptions30.Add("Solar System.");
+            TriviaQuestionAnswerOptions30.Add("solar system.");
+            TriviaQuestionAnswerOptions30.Add("SOLAR SYSTEM.");
+            TriviaQuestionAnswerOptions30.Add("Solar system.");
             TriviaQuestion TriviaQuestionToAdd30 = new TriviaQuestion("Which of the following terms for describing our section of the galaxy is capitalised correctly?", TriviaQuestionAnswerOptions30, 0);
             ListofTriviaToWrite.Add(TriviaQuestionToAdd30);
 
             List<string> TriviaQuestionAnswerOptions31 = new List<string>();
-            TriviaQuestionAnswerOptions20.Add("Earth.");
-            TriviaQuestionAnswerOptions20.Add("Mercury.");
-            TriviaQuestionAnswerOptions20.Add("Pluto.");
-            TriviaQuestionAnswerOptions20.Add("Uranus.");
+            TriviaQuestionAnswerOptions31.Add("Earth.");
+            TriviaQuestionAnswerOptions31.Add("Mercury.");
+            TriviaQuestionAnswerOptions31.Add("Pluto.");
+            TriviaQuestionAnswerOptions31.Add("Uranus.");
             TriviaQuestion TriviaQuestionToAdd31 = new TriviaQuestion("Which of the following planets is not named after a god?", TriviaQuestionAnswerOptions31, 0);
             ListofTriviaToWrite.Add(TriviaQuestionToAdd31);
 
             List<string> TriviaQuestionAnswerOptions32 = new List<string>();
-            TriviaQuestionAnswerOptions20.Add("One Million.");
-            TriviaQuestionAnswerOptions20.Add("Two Thousand.");
-            TriviaQuestionAnswerOptions20.Add("Thirty.");
-            TriviaQuestionAnswerOptions20.Add("Seven Hundred.");
+            TriviaQuestionAnswerOptions32.Add("One Million.");
+            TriviaQuestionAnswerOptions32.Add("Two Thousand.");
+            TriviaQuestionAnswerOptions32.Add("Thirty.");
+            TriviaQuestionAnswerOptions32.Add("Seven Hundred.");
             TriviaQuestion TriviaQuestionToAdd32 = new TriviaQuestion("Approximately how many Earths could fit inside the Sun?", TriviaQuestionAnswerOptions32, 0);
             ListofTriviaToWrite.Add(TriviaQuestionToAdd32);
 
             List<string> TriviaQuestionAnswerOptions33 = new List<string>();
-            TriviaQuestionAnswerOptions20.Add("Corona.");
-            TriviaQuestionAnswerOptions20.Add("Radiative Zone.");
-            TriviaQuestionAnswerOptions20.Add("Transition Zone.");
-            TriviaQuestionAnswerOptions20.Add("Chromosphere.");
+            TriviaQuestionAnswerOptions33.Add("Corona.");
+            TriviaQuestionAnswerOptions33.Add("Radiative Zone.");
+            TriviaQuestionAnswerOptions33.Add("Transition Zone.");
+            TriviaQuestionAnswerOptions33.Add("Chromosphere.");
             TriviaQuestion TriviaQuestionToAdd33 = new TriviaQuestion("Which of the following is the Sun’s outermost layer?", TriviaQuestionAnswerOptions33, 0);
             ListofTriviaToWrite.Add(TriviaQuestionToAdd33);
 
             List<string> TriviaQuestionAnswerOptions34 = new List<string>();
-            TriviaQuestionAnswerOptions20.Add("Third.");
-            TriviaQuestionAnswerOptions20.Add("Fifth.");
-            TriviaQuestionAnswerOptions20.Add("Fourteenth.");
-            TriviaQuestionAnswerOptions20.Add("First.");
+            TriviaQuestionAnswerOptions34.Add("Third.");
+            TriviaQuestionAnswerOptions34.Add("Fifth.");
+            TriviaQuestionAnswerOptions34.Add("Fourteenth.");
+            TriviaQuestionAnswerOptions34.Add("First.");
             TriviaQuestion TriviaQuestionToAdd34 = new TriviaQuestion("When ranking all celestial objects by their apparent brightness in our sky, what ranking is Venus?", TriviaQuestionAnswerOptions34, 0);
             ListofTriviaToWrite.Add(TriviaQuestionToAdd34);
 
             List<string> TriviaQuestionAnswerOptions35 = new List<string>();
-            TriviaQuestionAnswerOptions20.Add("Blue.");
-            TriviaQuestionAnswerOptions20.Add("Yellow.");
-            TriviaQuestionAnswerOptions20.Add("Red.");
-            TriviaQuestionAnswerOptions20.Add("White.");
+            TriviaQuestionAnswerOptions35.Add("Blue.");
+            TriviaQuestionAnswerOptions35.Add("Yellow.");
+            TriviaQuestionAnswerOptions35.Add("Red.");
+            TriviaQuestionAnswerOptions35.Add("White.");
             TriviaQuestion TriviaQuestionToAdd35 = new TriviaQuestion("What color is the sunset on Mars?", TriviaQuestionAnswerOptions35, 0);
             ListofTriviaToWrite.Add(TriviaQuestionToAdd35);
 
-            /*
             List<string> TriviaQuestionAnswerOptions36 = new List<string>();
-            TriviaQuestionAnswerOptions20.Add("S.");
-            TriviaQuestionAnswerOptions20.Add("S.");
-            TriviaQuestionAnswerOptions20.Add("S.");
-            TriviaQuestionAnswerOptions20.Add("S.");
-            TriviaQuestion TriviaQuestionToAdd36 = new TriviaQuestion("S", TriviaQuestionAnswerOptions36, 0);
+            TriviaQuestionAnswerOptions36.Add("Saturn.");
+            TriviaQuestionAnswerOptions36.Add("Earth.");
+            TriviaQuestionAnswerOptions36.Add("Jupiter.");
+            TriviaQuestionAnswerOptions36.Add("Uranus.");
+            TriviaQuestion TriviaQuestionToAdd36 = new TriviaQuestion("What planet does the moon Titan orbit?", TriviaQuestionAnswerOptions36, 0);
             ListofTriviaToWrite.Add(TriviaQuestionToAdd36);
 
             List<string> TriviaQuestionAnswerOptions37 = new List<string>();
-            TriviaQuestionAnswerOptions20.Add("S.");
-            TriviaQuestionAnswerOptions20.Add("S.");
-            TriviaQuestionAnswerOptions20.Add("S.");
-            TriviaQuestionAnswerOptions20.Add("S.");
-            TriviaQuestion TriviaQuestionToAdd37 = new TriviaQuestion("S", TriviaQuestionAnswerOptions37, 0);
+            TriviaQuestionAnswerOptions37.Add("Sol.");
+            TriviaQuestionAnswerOptions37.Add("Sidereal Day.");
+            TriviaQuestionAnswerOptions37.Add("Rotation.");
+            TriviaQuestionAnswerOptions37.Add("Jovia.");
+            TriviaQuestion TriviaQuestionToAdd37 = new TriviaQuestion("What is a day on Mars called?", TriviaQuestionAnswerOptions37, 0);
             ListofTriviaToWrite.Add(TriviaQuestionToAdd37);
 
             List<string> TriviaQuestionAnswerOptions38 = new List<string>();
-            TriviaQuestionAnswerOptions20.Add("S.");
-            TriviaQuestionAnswerOptions20.Add("S.");
-            TriviaQuestionAnswerOptions20.Add("S.");
-            TriviaQuestionAnswerOptions20.Add("S.");
-            TriviaQuestion TriviaQuestionToAdd38 = new TriviaQuestion("S", TriviaQuestionAnswerOptions38, 0);
+            TriviaQuestionAnswerOptions38.Add("Venus.");
+            TriviaQuestionAnswerOptions37.Add("Earth.");
+            TriviaQuestionAnswerOptions37.Add("Uranus.");
+            TriviaQuestionAnswerOptions37.Add("Neptune.");
+            TriviaQuestion TriviaQuestionToAdd38 = new TriviaQuestion("Which of the following planets does not have a moon", TriviaQuestionAnswerOptions38, 0);
             ListofTriviaToWrite.Add(TriviaQuestionToAdd38);
 
             List<string> TriviaQuestionAnswerOptions39 = new List<string>();
-            TriviaQuestionAnswerOptions20.Add("S.");
-            TriviaQuestionAnswerOptions20.Add("S.");
-            TriviaQuestionAnswerOptions20.Add("S.");
-            TriviaQuestionAnswerOptions20.Add("S.");
-            TriviaQuestion TriviaQuestionToAdd39 = new TriviaQuestion("S", TriviaQuestionAnswerOptions39, 0);
+            TriviaQuestionAnswerOptions39.Add("It hasn’t cleared the area around its orbit.");
+            TriviaQuestionAnswerOptions39.Add("It doesn’t orbit a star.");
+            TriviaQuestionAnswerOptions39.Add("It doesn’t have any moons.");
+            TriviaQuestionAnswerOptions39.Add("It lacks an atmosphere.");
+            TriviaQuestion TriviaQuestionToAdd39 = new TriviaQuestion("For which of the following reasons is Pluto not considered a planet?", TriviaQuestionAnswerOptions39, 0);
             ListofTriviaToWrite.Add(TriviaQuestionToAdd39);
 
             List<string> TriviaQuestionAnswerOptions40 = new List<string>();
-            TriviaQuestionAnswerOptions20.Add("S.");
-            TriviaQuestionAnswerOptions20.Add("S.");
-            TriviaQuestionAnswerOptions20.Add("S.");
-            TriviaQuestionAnswerOptions20.Add("S.");
-            TriviaQuestion TriviaQuestionToAdd40 = new TriviaQuestion("S", TriviaQuestionAnswerOptions40, 0);
+            TriviaQuestionAnswerOptions40.Add("Saturn.");
+            TriviaQuestionAnswerOptions40.Add("Jupiter.");
+            TriviaQuestionAnswerOptions40.Add("Uranus.");
+            TriviaQuestionAnswerOptions40.Add("Each planet has only one moon.");
+            TriviaQuestion TriviaQuestionToAdd40 = new TriviaQuestion("Which planet has the most moons?", TriviaQuestionAnswerOptions40, 0);
             ListofTriviaToWrite.Add(TriviaQuestionToAdd40);
 
             List<string> TriviaQuestionAnswerOptions41 = new List<string>();
-            TriviaQuestionAnswerOptions20.Add("S.");
-            TriviaQuestionAnswerOptions20.Add("S.");
-            TriviaQuestionAnswerOptions20.Add("S.");
-            TriviaQuestionAnswerOptions20.Add("S.");
-            TriviaQuestion TriviaQuestionToAdd41 = new TriviaQuestion("S", TriviaQuestionAnswerOptions41, 0);
+            TriviaQuestionAnswerOptions41.Add("95.");
+            TriviaQuestionAnswerOptions41.Add("15.");
+            TriviaQuestionAnswerOptions41.Add("274.");
+            TriviaQuestionAnswerOptions41.Add("83.");
+            TriviaQuestion TriviaQuestionToAdd41 = new TriviaQuestion("How many moons does Jupiter have?", TriviaQuestionAnswerOptions41, 0);
             ListofTriviaToWrite.Add(TriviaQuestionToAdd41);
 
             List<string> TriviaQuestionAnswerOptions42 = new List<string>();
-            TriviaQuestionAnswerOptions20.Add("S.");
-            TriviaQuestionAnswerOptions20.Add("S.");
-            TriviaQuestionAnswerOptions20.Add("S.");
-            TriviaQuestionAnswerOptions20.Add("S.");
-            TriviaQuestion TriviaQuestionToAdd42 = new TriviaQuestion("S", TriviaQuestionAnswerOptions42, 0);
+            TriviaQuestionAnswerOptions42.Add("274.");
+            TriviaQuestionAnswerOptions42.Add("83.");
+            TriviaQuestionAnswerOptions42.Add("15.");
+            TriviaQuestionAnswerOptions42.Add("95.");
+            TriviaQuestion TriviaQuestionToAdd42 = new TriviaQuestion("How many moons does Saturn have?", TriviaQuestionAnswerOptions42, 0);
             ListofTriviaToWrite.Add(TriviaQuestionToAdd30);
 
             List<string> TriviaQuestionAnswerOptions43 = new List<string>();
-            TriviaQuestionAnswerOptions20.Add("S.");
-            TriviaQuestionAnswerOptions20.Add("S.");
-            TriviaQuestionAnswerOptions20.Add("S.");
-            TriviaQuestionAnswerOptions20.Add("S.");
-            TriviaQuestion TriviaQuestionToAdd43 = new TriviaQuestion("S", TriviaQuestionAnswerOptions43, 0);
+            TriviaQuestionAnswerOptions43.Add("2006.");
+            TriviaQuestionAnswerOptions43.Add("2003.");
+            TriviaQuestionAnswerOptions43.Add("2015.");
+            TriviaQuestionAnswerOptions43.Add("1998.");
+            TriviaQuestion TriviaQuestionToAdd43 = new TriviaQuestion("In what year was Pluto reclassified as a dwarf planet?", TriviaQuestionAnswerOptions43, 0);
             ListofTriviaToWrite.Add(TriviaQuestionToAdd43);
 
             List<string> TriviaQuestionAnswerOptions44 = new List<string>();
-            TriviaQuestionAnswerOptions20.Add("S.");
-            TriviaQuestionAnswerOptions20.Add("S.");
-            TriviaQuestionAnswerOptions20.Add("S.");
-            TriviaQuestionAnswerOptions20.Add("S.");
-            TriviaQuestion TriviaQuestionToAdd44 = new TriviaQuestion("S", TriviaQuestionAnswerOptions44, 0);
+            TriviaQuestionAnswerOptions44.Add("National Aeronautics and Space Administration.");
+            TriviaQuestionAnswerOptions44.Add("New American Soviet Alliance.");
+            TriviaQuestionAnswerOptions44.Add("National Astronomy and Space Agency.");
+            TriviaQuestionAnswerOptions44.Add("National Astronautical Satellite Agency.");
+            TriviaQuestion TriviaQuestionToAdd44 = new TriviaQuestion("What does NASA stand for?", TriviaQuestionAnswerOptions44, 0);
             ListofTriviaToWrite.Add(TriviaQuestionToAdd44);
 
             List<string> TriviaQuestionAnswerOptions45 = new List<string>();
-            TriviaQuestionAnswerOptions20.Add("S.");
-            TriviaQuestionAnswerOptions20.Add("S.");
-            TriviaQuestionAnswerOptions20.Add("S.");
-            TriviaQuestionAnswerOptions20.Add("S.");
-            TriviaQuestion TriviaQuestionToAdd45 = new TriviaQuestion("S", TriviaQuestionAnswerOptions45, 0);
+            TriviaQuestionAnswerOptions45.Add("Apollo 11.");
+            TriviaQuestionAnswerOptions45.Add("Apollo 13.");
+            TriviaQuestionAnswerOptions45.Add("Apollo 9.");
+            TriviaQuestionAnswerOptions45.Add("Sputnik.");
+            TriviaQuestion TriviaQuestionToAdd45 = new TriviaQuestion("What spacecraft first brought astronauts to the Moon?", TriviaQuestionAnswerOptions45, 0);
             ListofTriviaToWrite.Add(TriviaQuestionToAdd45);
 
             List<string> TriviaQuestionAnswerOptions46 = new List<string>();
-            TriviaQuestionAnswerOptions20.Add("S.");
-            TriviaQuestionAnswerOptions20.Add("S.");
-            TriviaQuestionAnswerOptions20.Add("S.");
-            TriviaQuestionAnswerOptions20.Add("S.");
-            TriviaQuestion TriviaQuestionToAdd46 = new TriviaQuestion("S", TriviaQuestionAnswerOptions46, 0);
+            TriviaQuestionAnswerOptions46.Add("The former refers to Americans, and the latter refers to Soviets.");
+            TriviaQuestionAnswerOptions46.Add("The former is the American spelling, and the latter is the British spelling.");
+            TriviaQuestionAnswerOptions46.Add("The former focus on planets, and the latter focus on the atmosphere.");
+            TriviaQuestionAnswerOptions46.Add("There is no difference.");
+            TriviaQuestion TriviaQuestionToAdd46 = new TriviaQuestion("What is the difference between astronauts and cosmonauts?", TriviaQuestionAnswerOptions46, 0);
             ListofTriviaToWrite.Add(TriviaQuestionToAdd46);
 
             List<string> TriviaQuestionAnswerOptions47 = new List<string>();
-            TriviaQuestionAnswerOptions20.Add("S.");
-            TriviaQuestionAnswerOptions20.Add("S.");
-            TriviaQuestionAnswerOptions20.Add("S.");
-            TriviaQuestionAnswerOptions20.Add("S.");
-            TriviaQuestion TriviaQuestionToAdd47 = new TriviaQuestion("S", TriviaQuestionAnswerOptions47, 0);
+            TriviaQuestionAnswerOptions47.Add("1963.");
+            TriviaQuestionAnswerOptions47.Add("2007.");
+            TriviaQuestionAnswerOptions47.Add("1984.");
+            TriviaQuestionAnswerOptions47.Add("2000.");
+            TriviaQuestion TriviaQuestionToAdd47 = new TriviaQuestion("What year did the first woman go to space?", TriviaQuestionAnswerOptions47, 0);
             ListofTriviaToWrite.Add(TriviaQuestionToAdd47);
 
             List<string> TriviaQuestionAnswerOptions48 = new List<string>();
-            TriviaQuestionAnswerOptions20.Add("S.");
-            TriviaQuestionAnswerOptions20.Add("S.");
-            TriviaQuestionAnswerOptions20.Add("S.");
-            TriviaQuestionAnswerOptions20.Add("S.");
-            TriviaQuestion TriviaQuestionToAdd48 = new TriviaQuestion("S", TriviaQuestionAnswerOptions48, 0);
+            TriviaQuestionAnswerOptions48.Add("Voyager 2.");
+            TriviaQuestionAnswerOptions48.Add("Apollo 11.");
+            TriviaQuestionAnswerOptions48.Add("Gemini.");
+            TriviaQuestionAnswerOptions48.Add("Apollo 3.");
+            TriviaQuestion TriviaQuestionToAdd48 = new TriviaQuestion("What was the only spacecraft to visit Uranus?", TriviaQuestionAnswerOptions48, 0);
             ListofTriviaToWrite.Add(TriviaQuestionToAdd48);
 
             List<string> TriviaQuestionAnswerOptions49 = new List<string>();
-            TriviaQuestionAnswerOptions20.Add("S.");
-            TriviaQuestionAnswerOptions20.Add("S.");
-            TriviaQuestionAnswerOptions20.Add("S.");
-            TriviaQuestionAnswerOptions20.Add("S.");
-            TriviaQuestion TriviaQuestionToAdd49 = new TriviaQuestion("S", TriviaQuestionAnswerOptions49, 0);
+            TriviaQuestionAnswerOptions49.Add("International Space Station.");
+            TriviaQuestionAnswerOptions49.Add("Intergalactic Space Sector.");
+            TriviaQuestionAnswerOptions49.Add("Intermediate Shooting Star.");
+            TriviaQuestionAnswerOptions49.Add("International Space Solutions.");
+            TriviaQuestion TriviaQuestionToAdd49 = new TriviaQuestion("What does I.S.S. stand for in the context of space?", TriviaQuestionAnswerOptions49, 0);
             ListofTriviaToWrite.Add(TriviaQuestionToAdd49);
 
             List<string> TriviaQuestionAnswerOptions50 = new List<string>();
-            TriviaQuestionAnswerOptions20.Add("S.");
-            TriviaQuestionAnswerOptions20.Add("S.");
-            TriviaQuestionAnswerOptions20.Add("S.");
-            TriviaQuestionAnswerOptions20.Add("S.");
-            TriviaQuestion TriviaQuestionToAdd50 = new TriviaQuestion("S", TriviaQuestionAnswerOptions50, 0);
+            TriviaQuestionAnswerOptions50.Add("Peggy Whitson.");
+            TriviaQuestionAnswerOptions50.Add("Sally Ride.");
+            TriviaQuestionAnswerOptions50.Add("Valentina Tereshkova.");
+            TriviaQuestionAnswerOptions50.Add("Barbara Morgan.");
+            TriviaQuestion TriviaQuestionToAdd50 = new TriviaQuestion("Who was the first female commander of the International Space Station?", TriviaQuestionAnswerOptions50, 0);
             ListofTriviaToWrite.Add(TriviaQuestionToAdd50);
 
             List<string> TriviaQuestionAnswerOptions51 = new List<string>();
-            TriviaQuestionAnswerOptions20.Add("S.");
-            TriviaQuestionAnswerOptions20.Add("S.");
-            TriviaQuestionAnswerOptions20.Add("S.");
-            TriviaQuestionAnswerOptions20.Add("S.");
-            TriviaQuestion TriviaQuestionToAdd51 = new TriviaQuestion("S", TriviaQuestionAnswerOptions51, 0);
+            TriviaQuestionAnswerOptions51.Add("Eros.");
+            TriviaQuestionAnswerOptions51.Add("Psyche.");
+            TriviaQuestionAnswerOptions51.Add("Juno.");
+            TriviaQuestionAnswerOptions51.Add("Europa.");
+            TriviaQuestion TriviaQuestionToAdd51 = new TriviaQuestion("What was the first asteroid to be landed on by a space probe?", TriviaQuestionAnswerOptions51, 0);
             ListofTriviaToWrite.Add(TriviaQuestionToAdd51);
 
             List<string> TriviaQuestionAnswerOptions52 = new List<string>();
-            TriviaQuestionAnswerOptions20.Add("S.");
-            TriviaQuestionAnswerOptions20.Add("S.");
-            TriviaQuestionAnswerOptions20.Add("S.");
-            TriviaQuestionAnswerOptions20.Add("S.");
-            TriviaQuestion TriviaQuestionToAdd52 = new TriviaQuestion("S", TriviaQuestionAnswerOptions52, 0);
+            TriviaQuestionAnswerOptions52.Add("Dog.");
+            TriviaQuestionAnswerOptions52.Add("Lizard.");
+            TriviaQuestionAnswerOptions52.Add("Fly.");
+            TriviaQuestionAnswerOptions52.Add("Cockroach.");
+            TriviaQuestion TriviaQuestionToAdd52 = new TriviaQuestion("Which animal was the first to be in orbit?", TriviaQuestionAnswerOptions52, 0);
             ListofTriviaToWrite.Add(TriviaQuestionToAdd52);
 
             List<string> TriviaQuestionAnswerOptions53 = new List<string>();
-            TriviaQuestionAnswerOptions20.Add("S.");
-            TriviaQuestionAnswerOptions20.Add("S.");
-            TriviaQuestionAnswerOptions20.Add("S.");
-            TriviaQuestionAnswerOptions20.Add("S.");
-            TriviaQuestion TriviaQuestionToAdd53 = new TriviaQuestion("S", TriviaQuestionAnswerOptions53, 0);
+            TriviaQuestionAnswerOptions53.Add("Laika.");
+            TriviaQuestionAnswerOptions53.Add("Belka.");
+            TriviaQuestionAnswerOptions53.Add("Strelka.");
+            TriviaQuestionAnswerOptions53.Add("Veterok.");
+            TriviaQuestion TriviaQuestionToAdd53 = new TriviaQuestion("What was the name of the first dog in space?", TriviaQuestionAnswerOptions53, 0);
             ListofTriviaToWrite.Add(TriviaQuestionToAdd53);
 
             List<string> TriviaQuestionAnswerOptions54 = new List<string>();
-            TriviaQuestionAnswerOptions20.Add("S.");
-            TriviaQuestionAnswerOptions20.Add("S.");
-            TriviaQuestionAnswerOptions20.Add("S.");
-            TriviaQuestionAnswerOptions20.Add("S.");
-            TriviaQuestion TriviaQuestionToAdd54 = new TriviaQuestion("S", TriviaQuestionAnswerOptions54, 0);
+            TriviaQuestionAnswerOptions54.Add("88.");
+            TriviaQuestionAnswerOptions54.Add("14,720.");
+            TriviaQuestionAnswerOptions54.Add("14.");
+            TriviaQuestionAnswerOptions54.Add("There are infinite possible constellations.");
+            TriviaQuestion TriviaQuestionToAdd54 = new TriviaQuestion("How many constellations are there?", TriviaQuestionAnswerOptions54, 0);
             ListofTriviaToWrite.Add(TriviaQuestionToAdd54);
 
             List<string> TriviaQuestionAnswerOptions55 = new List<string>();
-            TriviaQuestionAnswerOptions20.Add("S.");
-            TriviaQuestionAnswerOptions20.Add("S.");
-            TriviaQuestionAnswerOptions20.Add("S.");
-            TriviaQuestionAnswerOptions20.Add("S.");
-            TriviaQuestion TriviaQuestionToAdd55 = new TriviaQuestion("S", TriviaQuestionAnswerOptions55, 0);
+            TriviaQuestionAnswerOptions55.Add("7.");
+            TriviaQuestionAnswerOptions55.Add("18.");
+            TriviaQuestionAnswerOptions55.Add("247.");
+            TriviaQuestionAnswerOptions55.Add("2.");
+            TriviaQuestion TriviaQuestionToAdd55 = new TriviaQuestion("How many stars make up the Big Dipper?", TriviaQuestionAnswerOptions55, 0);
             ListofTriviaToWrite.Add(TriviaQuestionToAdd55);
 
             List<string> TriviaQuestionAnswerOptions56 = new List<string>();
-            TriviaQuestionAnswerOptions20.Add("S.");
-            TriviaQuestionAnswerOptions20.Add("S.");
-            TriviaQuestionAnswerOptions20.Add("S.");
-            TriviaQuestionAnswerOptions20.Add("S.");
-            TriviaQuestion TriviaQuestionToAdd56 = new TriviaQuestion("S", TriviaQuestionAnswerOptions56, 0);
+            TriviaQuestionAnswerOptions56.Add("SpaceX.");
+            TriviaQuestionAnswerOptions56.Add("Boeing.");
+            TriviaQuestionAnswerOptions56.Add("Blue Origin.");
+            TriviaQuestionAnswerOptions56.Add("Virgin Galactic.");
+            TriviaQuestion TriviaQuestionToAdd56 = new TriviaQuestion("Which private company was the first to launch a rocket into space?", TriviaQuestionAnswerOptions56, 0);
             ListofTriviaToWrite.Add(TriviaQuestionToAdd56);
 
             List<string> TriviaQuestionAnswerOptions57 = new List<string>();
-            TriviaQuestionAnswerOptions20.Add("S.");
-            TriviaQuestionAnswerOptions20.Add("S.");
-            TriviaQuestionAnswerOptions20.Add("S.");
-            TriviaQuestionAnswerOptions20.Add("S.");
-            TriviaQuestion TriviaQuestionToAdd57 = new TriviaQuestion("S", TriviaQuestionAnswerOptions57, 0);
+            TriviaQuestionAnswerOptions57.Add("Jupiter.");
+            TriviaQuestionAnswerOptions57.Add("Earth.");
+            TriviaQuestionAnswerOptions57.Add("Saturn.");
+            TriviaQuestionAnswerOptions57.Add("Neptune.");
+            TriviaQuestion TriviaQuestionToAdd57 = new TriviaQuestion("Aside from Earth, which planet’s moons were the first to be discovered?", TriviaQuestionAnswerOptions57, 0);
             ListofTriviaToWrite.Add(TriviaQuestionToAdd57);
 
             List<string> TriviaQuestionAnswerOptions58 = new List<string>();
-            TriviaQuestionAnswerOptions20.Add("S.");
-            TriviaQuestionAnswerOptions20.Add("S.");
-            TriviaQuestionAnswerOptions20.Add("S.");
-            TriviaQuestionAnswerOptions20.Add("S.");
-            TriviaQuestion TriviaQuestionToAdd58 = new TriviaQuestion("S", TriviaQuestionAnswerOptions58, 0);
+            TriviaQuestionAnswerOptions58.Add("Voyager 1.");
+            TriviaQuestionAnswerOptions58.Add("Voyager 2.");
+            TriviaQuestionAnswerOptions58.Add("Apollo 11.");
+            TriviaQuestionAnswerOptions58.Add("Pioneer 10.");
+            TriviaQuestion TriviaQuestionToAdd58 = new TriviaQuestion("What was the first spacecraft to enter interstellar space?", TriviaQuestionAnswerOptions58, 0);
             ListofTriviaToWrite.Add(TriviaQuestionToAdd58);
 
             List<string> TriviaQuestionAnswerOptions59 = new List<string>();
-            TriviaQuestionAnswerOptions20.Add("S.");
-            TriviaQuestionAnswerOptions20.Add("S.");
-            TriviaQuestionAnswerOptions20.Add("S.");
-            TriviaQuestionAnswerOptions20.Add("S.");
-            TriviaQuestion TriviaQuestionToAdd59 = new TriviaQuestion("S", TriviaQuestionAnswerOptions59, 0);
+            TriviaQuestionAnswerOptions59.Add("Uranus.");
+            TriviaQuestionAnswerOptions59.Add("Jupiter.");
+            TriviaQuestionAnswerOptions59.Add("Mars.");
+            TriviaQuestionAnswerOptions59.Add("Neptune.");
+            TriviaQuestion TriviaQuestionToAdd59 = new TriviaQuestion("What was the first planet found using a telescope?", TriviaQuestionAnswerOptions59, 0);
             ListofTriviaToWrite.Add(TriviaQuestionToAdd59);
 
             List<string> TriviaQuestionAnswerOptions60 = new List<string>();
-            TriviaQuestionAnswerOptions20.Add("S.");
-            TriviaQuestionAnswerOptions20.Add("S.");
-            TriviaQuestionAnswerOptions20.Add("S.");
-            TriviaQuestionAnswerOptions20.Add("S.");
-            TriviaQuestion TriviaQuestionToAdd60 = new TriviaQuestion("S", TriviaQuestionAnswerOptions60, 0);
+            TriviaQuestionAnswerOptions60.Add("Apollo 13.");
+            TriviaQuestionAnswerOptions60.Add("Apollo 11.");
+            TriviaQuestionAnswerOptions60.Add("Sputnik 1.");
+            TriviaQuestionAnswerOptions60.Add("Challenger.");
+            TriviaQuestion TriviaQuestionToAdd60 = new TriviaQuestion("Which spacecraft was famously repaired using duct tape?", TriviaQuestionAnswerOptions60, 0);
             ListofTriviaToWrite.Add(TriviaQuestionToAdd60);
 
+            /*
             List<string> TriviaQuestionAnswerOptions61 = new List<string>();
-            TriviaQuestionAnswerOptions20.Add("S.");
-            TriviaQuestionAnswerOptions20.Add("S.");
-            TriviaQuestionAnswerOptions20.Add("S.");
-            TriviaQuestionAnswerOptions20.Add("S.");
-            TriviaQuestion TriviaQuestionToAdd61 = new TriviaQuestion("S", TriviaQuestionAnswerOptions61, 0);
+            TriviaQuestionAnswerOptions61.Add(".");
+            TriviaQuestionAnswerOptions61.Add(".");
+            TriviaQuestionAnswerOptions61.Add(".");
+            TriviaQuestionAnswerOptions61.Add(".");
+            TriviaQuestion TriviaQuestionToAdd61 = new TriviaQuestion("", TriviaQuestionAnswerOptions61, 0);
             ListofTriviaToWrite.Add(TriviaQuestionToAdd61);
+
+            List<string> TriviaQuestionAnswerOptions62 = new List<string>();
+            TriviaQuestionAnswerOptions62.Add(".");
+            TriviaQuestionAnswerOptions62.Add(".");
+            TriviaQuestionAnswerOptions62.Add(".");
+            TriviaQuestionAnswerOptions62.Add(".");
+            TriviaQuestion TriviaQuestionToAdd62 = new TriviaQuestion("", TriviaQuestionAnswerOptions62, 0);
+            ListofTriviaToWrite.Add(TriviaQuestionToAdd62);
+
+            List<string> TriviaQuestionAnswerOptions63 = new List<string>();
+            TriviaQuestionAnswerOptions63.Add(".");
+            TriviaQuestionAnswerOptions63.Add(".");
+            TriviaQuestionAnswerOptions63.Add(".");
+            TriviaQuestionAnswerOptions63.Add(".");
+            TriviaQuestion TriviaQuestionToAdd63 = new TriviaQuestion("", TriviaQuestionAnswerOptions63, 0);
+            ListofTriviaToWrite.Add(TriviaQuestionToAdd63);
+
+            List<string> TriviaQuestionAnswerOptions64 = new List<string>();
+            TriviaQuestionAnswerOptions64.Add(".");
+            TriviaQuestionAnswerOptions64.Add(".");
+            TriviaQuestionAnswerOptions64.Add(".");
+            TriviaQuestionAnswerOptions64.Add(".");
+            TriviaQuestion TriviaQuestionToAdd64 = new TriviaQuestion("", TriviaQuestionAnswerOptions64, 0);
+            ListofTriviaToWrite.Add(TriviaQuestionToAdd64);
+
+            List<string> TriviaQuestionAnswerOptions65 = new List<string>();
+            TriviaQuestionAnswerOptions65.Add(".");
+            TriviaQuestionAnswerOptions65.Add(".");
+            TriviaQuestionAnswerOptions65.Add(".");
+            TriviaQuestionAnswerOptions65.Add(".");
+            TriviaQuestion TriviaQuestionToAdd65 = new TriviaQuestion("", TriviaQuestionAnswerOptions65, 0);
+            ListofTriviaToWrite.Add(TriviaQuestionToAdd65);
+
+            List<string> TriviaQuestionAnswerOptions66 = new List<string>();
+            TriviaQuestionAnswerOptions66.Add(".");
+            TriviaQuestionAnswerOptions66.Add(".");
+            TriviaQuestionAnswerOptions66.Add(".");
+            TriviaQuestionAnswerOptions66.Add(".");
+            TriviaQuestion TriviaQuestionToAdd66 = new TriviaQuestion("", TriviaQuestionAnswerOptions66, 0);
+            ListofTriviaToWrite.Add(TriviaQuestionToAdd66);
+
+            List<string> TriviaQuestionAnswerOptions67 = new List<string>();
+            TriviaQuestionAnswerOptions67.Add(".");
+            TriviaQuestionAnswerOptions67.Add(".");
+            TriviaQuestionAnswerOptions67.Add(".");
+            TriviaQuestionAnswerOptions67.Add(".");
+            TriviaQuestion TriviaQuestionToAdd67 = new TriviaQuestion("", TriviaQuestionAnswerOptions67, 0);
+            ListofTriviaToWrite.Add(TriviaQuestionToAdd67);
+
+            List<string> TriviaQuestionAnswerOptions68 = new List<string>();
+            TriviaQuestionAnswerOptions68.Add(".");
+            TriviaQuestionAnswerOptions68.Add(".");
+            TriviaQuestionAnswerOptions68.Add(".");
+            TriviaQuestionAnswerOptions68.Add(".");
+            TriviaQuestion TriviaQuestionToAdd68 = new TriviaQuestion("", TriviaQuestionAnswerOptions68, 0);
+            ListofTriviaToWrite.Add(TriviaQuestionToAdd68);
+
+            List<string> TriviaQuestionAnswerOptions69 = new List<string>();
+            TriviaQuestionAnswerOptions69.Add(".");
+            TriviaQuestionAnswerOptions69.Add(".");
+            TriviaQuestionAnswerOptions69.Add(".");
+            TriviaQuestionAnswerOptions69.Add(".");
+            TriviaQuestion TriviaQuestionToAdd69 = new TriviaQuestion("", TriviaQuestionAnswerOptions69, 0);
+            ListofTriviaToWrite.Add(TriviaQuestionToAdd69);
+
+            List<string> TriviaQuestionAnswerOptions70 = new List<string>();
+            TriviaQuestionAnswerOptions70.Add(".");
+            TriviaQuestionAnswerOptions70.Add(".");
+            TriviaQuestionAnswerOptions70.Add(".");
+            TriviaQuestionAnswerOptions70.Add(".");
+            TriviaQuestion TriviaQuestionToAdd70 = new TriviaQuestion("", TriviaQuestionAnswerOptions70, 0);
+            ListofTriviaToWrite.Add(TriviaQuestionToAdd70);
+
+            List<string> TriviaQuestionAnswerOptions71 = new List<string>();
+            TriviaQuestionAnswerOptions71.Add(".");
+            TriviaQuestionAnswerOptions71.Add(".");
+            TriviaQuestionAnswerOptions71.Add(".");
+            TriviaQuestionAnswerOptions71.Add(".");
+            TriviaQuestion TriviaQuestionToAdd71 = new TriviaQuestion("", TriviaQuestionAnswerOptions71, 0);
+            ListofTriviaToWrite.Add(TriviaQuestionToAdd71);
+
+            List<string> TriviaQuestionAnswerOptions72 = new List<string>();
+            TriviaQuestionAnswerOptions72.Add(".");
+            TriviaQuestionAnswerOptions72.Add(".");
+            TriviaQuestionAnswerOptions72.Add(".");
+            TriviaQuestionAnswerOptions72.Add(".");
+            TriviaQuestion TriviaQuestionToAdd72 = new TriviaQuestion("", TriviaQuestionAnswerOptions72, 0);
+            ListofTriviaToWrite.Add(TriviaQuestionToAdd72);
+
+            List<string> TriviaQuestionAnswerOptions73 = new List<string>();
+            TriviaQuestionAnswerOptions73.Add(".");
+            TriviaQuestionAnswerOptions73.Add(".");
+            TriviaQuestionAnswerOptions73.Add(".");
+            TriviaQuestionAnswerOptions73.Add(".");
+            TriviaQuestion TriviaQuestionToAdd73 = new TriviaQuestion("", TriviaQuestionAnswerOptions73, 0);
+            ListofTriviaToWrite.Add(TriviaQuestionToAdd73);
+
+            List<string> TriviaQuestionAnswerOptions74 = new List<string>();
+            TriviaQuestionAnswerOptions74.Add(".");
+            TriviaQuestionAnswerOptions74.Add(".");
+            TriviaQuestionAnswerOptions74.Add(".");
+            TriviaQuestionAnswerOptions74.Add(".");
+            TriviaQuestion TriviaQuestionToAdd74 = new TriviaQuestion("", TriviaQuestionAnswerOptions74, 0);
+            ListofTriviaToWrite.Add(TriviaQuestionToAdd74);
+
+            List<string> TriviaQuestionAnswerOptions75 = new List<string>();
+            TriviaQuestionAnswerOptions75.Add(".");
+            TriviaQuestionAnswerOptions75.Add(".");
+            TriviaQuestionAnswerOptions75.Add(".");
+            TriviaQuestionAnswerOptions75.Add(".");
+            TriviaQuestion TriviaQuestionToAdd75 = new TriviaQuestion("", TriviaQuestionAnswerOptions75, 0);
+            ListofTriviaToWrite.Add(TriviaQuestionToAdd75);
+
+            List<string> TriviaQuestionAnswerOptions76 = new List<string>();
+            TriviaQuestionAnswerOptions76.Add(".");
+            TriviaQuestionAnswerOptions76.Add(".");
+            TriviaQuestionAnswerOptions76.Add(".");
+            TriviaQuestionAnswerOptions76.Add(".");
+            TriviaQuestion TriviaQuestionToAdd76 = new TriviaQuestion("", TriviaQuestionAnswerOptions76, 0);
+            ListofTriviaToWrite.Add(TriviaQuestionToAdd76);
+
+            List<string> TriviaQuestionAnswerOptions77 = new List<string>();
+            TriviaQuestionAnswerOptions77.Add(".");
+            TriviaQuestionAnswerOptions77.Add(".");
+            TriviaQuestionAnswerOptions77.Add(".");
+            TriviaQuestionAnswerOptions77.Add(".");
+            TriviaQuestion TriviaQuestionToAdd77 = new TriviaQuestion("", TriviaQuestionAnswerOptions77, 0);
+            ListofTriviaToWrite.Add(TriviaQuestionToAdd77);
+
+            List<string> TriviaQuestionAnswerOptions78 = new List<string>();
+            TriviaQuestionAnswerOptions78.Add(".");
+            TriviaQuestionAnswerOptions78.Add(".");
+            TriviaQuestionAnswerOptions78.Add(".");
+            TriviaQuestionAnswerOptions78.Add(".");
+            TriviaQuestion TriviaQuestionToAdd78 = new TriviaQuestion("", TriviaQuestionAnswerOptions78, 0);
+            ListofTriviaToWrite.Add(TriviaQuestionToAdd78);
+
+            List<string> TriviaQuestionAnswerOptions79 = new List<string>();
+            TriviaQuestionAnswerOptions79.Add(".");
+            TriviaQuestionAnswerOptions79.Add(".");
+            TriviaQuestionAnswerOptions79.Add(".");
+            TriviaQuestionAnswerOptions79.Add(".");
+            TriviaQuestion TriviaQuestionToAdd79 = new TriviaQuestion("", TriviaQuestionAnswerOptions79, 0);
+            ListofTriviaToWrite.Add(TriviaQuestionToAdd79);
+
+            List<string> TriviaQuestionAnswerOptions80 = new List<string>();
+            TriviaQuestionAnswerOptions80.Add(".");
+            TriviaQuestionAnswerOptions80.Add(".");
+            TriviaQuestionAnswerOptions80.Add(".");
+            TriviaQuestionAnswerOptions80.Add(".");
+            TriviaQuestion TriviaQuestionToAdd80 = new TriviaQuestion("", TriviaQuestionAnswerOptions80, 0);
+            ListofTriviaToWrite.Add(TriviaQuestionToAdd80);
+
+            List<string> TriviaQuestionAnswerOptions81 = new List<string>();
+            TriviaQuestionAnswerOptions81.Add(".");
+            TriviaQuestionAnswerOptions81.Add(".");
+            TriviaQuestionAnswerOptions81.Add(".");
+            TriviaQuestionAnswerOptions81.Add(".");
+            TriviaQuestion TriviaQuestionToAdd81 = new TriviaQuestion("", TriviaQuestionAnswerOptions81, 0);
+            ListofTriviaToWrite.Add(TriviaQuestionToAdd81);
+
+            List<string> TriviaQuestionAnswerOptions82 = new List<string>();
+            TriviaQuestionAnswerOptions82.Add(".");
+            TriviaQuestionAnswerOptions82.Add(".");
+            TriviaQuestionAnswerOptions82.Add(".");
+            TriviaQuestionAnswerOptions82.Add(".");
+            TriviaQuestion TriviaQuestionToAdd82 = new TriviaQuestion("", TriviaQuestionAnswerOptions82, 0);
+            ListofTriviaToWrite.Add(TriviaQuestionToAdd82);
+
+            List<string> TriviaQuestionAnswerOptions83 = new List<string>();
+            TriviaQuestionAnswerOptions83.Add(".");
+            TriviaQuestionAnswerOptions83.Add(".");
+            TriviaQuestionAnswerOptions83.Add(".");
+            TriviaQuestionAnswerOptions83.Add(".");
+            TriviaQuestion TriviaQuestionToAdd83 = new TriviaQuestion("", TriviaQuestionAnswerOptions83, 0);
+            ListofTriviaToWrite.Add(TriviaQuestionToAdd83);
+
+            List<string> TriviaQuestionAnswerOptions84 = new List<string>();
+            TriviaQuestionAnswerOptions84.Add(".");
+            TriviaQuestionAnswerOptions84.Add(".");
+            TriviaQuestionAnswerOptions84.Add(".");
+            TriviaQuestionAnswerOptions84.Add(".");
+            TriviaQuestion TriviaQuestionToAdd84 = new TriviaQuestion("", TriviaQuestionAnswerOptions84, 0);
+            ListofTriviaToWrite.Add(TriviaQuestionToAdd84);
+
+            List<string> TriviaQuestionAnswerOptions85 = new List<string>();
+            TriviaQuestionAnswerOptions85.Add(".");
+            TriviaQuestionAnswerOptions85.Add(".");
+            TriviaQuestionAnswerOptions85.Add(".");
+            TriviaQuestionAnswerOptions85.Add(".");
+            TriviaQuestion TriviaQuestionToAdd85 = new TriviaQuestion("", TriviaQuestionAnswerOptions85, 0);
+            ListofTriviaToWrite.Add(TriviaQuestionToAdd85);
+
+            List<string> TriviaQuestionAnswerOptions86 = new List<string>();
+            TriviaQuestionAnswerOptions86.Add(".");
+            TriviaQuestionAnswerOptions86.Add(".");
+            TriviaQuestionAnswerOptions86.Add(".");
+            TriviaQuestionAnswerOptions86.Add(".");
+            TriviaQuestion TriviaQuestionToAdd86 = new TriviaQuestion("", TriviaQuestionAnswerOptions86, 0);
+            ListofTriviaToWrite.Add(TriviaQuestionToAdd86);
+
+            List<string> TriviaQuestionAnswerOptions87 = new List<string>();
+            TriviaQuestionAnswerOptions87.Add(".");
+            TriviaQuestionAnswerOptions87.Add(".");
+            TriviaQuestionAnswerOptions87.Add(".");
+            TriviaQuestionAnswerOptions87.Add(".");
+            TriviaQuestion TriviaQuestionToAdd87 = new TriviaQuestion("", TriviaQuestionAnswerOptions87, 0);
+            ListofTriviaToWrite.Add(TriviaQuestionToAdd87);
+
+            List<string> TriviaQuestionAnswerOptions88 = new List<string>();
+            TriviaQuestionAnswerOptions88.Add(".");
+            TriviaQuestionAnswerOptions88.Add(".");
+            TriviaQuestionAnswerOptions88.Add(".");
+            TriviaQuestionAnswerOptions88.Add(".");
+            TriviaQuestion TriviaQuestionToAdd88 = new TriviaQuestion("", TriviaQuestionAnswerOptions88, 0);
+            ListofTriviaToWrite.Add(TriviaQuestionToAdd88);
+
+            List<string> TriviaQuestionAnswerOptions89 = new List<string>();
+            TriviaQuestionAnswerOptions89.Add(".");
+            TriviaQuestionAnswerOptions89.Add(".");
+            TriviaQuestionAnswerOptions89.Add(".");
+            TriviaQuestionAnswerOptions89.Add(".");
+            TriviaQuestion TriviaQuestionToAdd89 = new TriviaQuestion("", TriviaQuestionAnswerOptions89, 0);
+            ListofTriviaToWrite.Add(TriviaQuestionToAdd89);
+
+            List<string> TriviaQuestionAnswerOptions90 = new List<string>();
+            TriviaQuestionAnswerOptions90.Add(".");
+            TriviaQuestionAnswerOptions90.Add(".");
+            TriviaQuestionAnswerOptions90.Add(".");
+            TriviaQuestionAnswerOptions90.Add(".");
+            TriviaQuestion TriviaQuestionToAdd90 = new TriviaQuestion("", TriviaQuestionAnswerOptions90, 0);
+            ListofTriviaToWrite.Add(TriviaQuestionToAdd90);
+
+            List<string> TriviaQuestionAnswerOptions91 = new List<string>();
+            TriviaQuestionAnswerOptions91.Add(".");
+            TriviaQuestionAnswerOptions91.Add(".");
+            TriviaQuestionAnswerOptions91.Add(".");
+            TriviaQuestionAnswerOptions91.Add(".");
+            TriviaQuestion TriviaQuestionToAdd91 = new TriviaQuestion("", TriviaQuestionAnswerOptions91, 0);
+            ListofTriviaToWrite.Add(TriviaQuestionToAdd91);
+
+            List<string> TriviaQuestionAnswerOptions92 = new List<string>();
+            TriviaQuestionAnswerOptions92.Add(".");
+            TriviaQuestionAnswerOptions92.Add(".");
+            TriviaQuestionAnswerOptions92.Add(".");
+            TriviaQuestionAnswerOptions92.Add(".");
+            TriviaQuestion TriviaQuestionToAdd92 = new TriviaQuestion("", TriviaQuestionAnswerOptions92, 0);
+            ListofTriviaToWrite.Add(TriviaQuestionToAdd92);
+
+            List<string> TriviaQuestionAnswerOptions93 = new List<string>();
+            TriviaQuestionAnswerOptions93.Add(".");
+            TriviaQuestionAnswerOptions93.Add(".");
+            TriviaQuestionAnswerOptions93.Add(".");
+            TriviaQuestionAnswerOptions93.Add(".");
+            TriviaQuestion TriviaQuestionToAdd93 = new TriviaQuestion("", TriviaQuestionAnswerOptions93, 0);
+            ListofTriviaToWrite.Add(TriviaQuestionToAdd93);
+
+            List<string> TriviaQuestionAnswerOptions94 = new List<string>();
+            TriviaQuestionAnswerOptions94.Add(".");
+            TriviaQuestionAnswerOptions94.Add(".");
+            TriviaQuestionAnswerOptions94.Add(".");
+            TriviaQuestionAnswerOptions94.Add(".");
+            TriviaQuestion TriviaQuestionToAdd94 = new TriviaQuestion("", TriviaQuestionAnswerOptions94, 0);
+            ListofTriviaToWrite.Add(TriviaQuestionToAdd94);
+
+            List<string> TriviaQuestionAnswerOptions95 = new List<string>();
+            TriviaQuestionAnswerOptions95.Add(".");
+            TriviaQuestionAnswerOptions95.Add(".");
+            TriviaQuestionAnswerOptions95.Add(".");
+            TriviaQuestionAnswerOptions95.Add(".");
+            TriviaQuestion TriviaQuestionToAdd95 = new TriviaQuestion("", TriviaQuestionAnswerOptions95, 0);
+            ListofTriviaToWrite.Add(TriviaQuestionToAdd95);
+
+            List<string> TriviaQuestionAnswerOptions96 = new List<string>();
+            TriviaQuestionAnswerOptions96.Add(".");
+            TriviaQuestionAnswerOptions96.Add(".");
+            TriviaQuestionAnswerOptions96.Add(".");
+            TriviaQuestionAnswerOptions96.Add(".");
+            TriviaQuestion TriviaQuestionToAdd96 = new TriviaQuestion("", TriviaQuestionAnswerOptions96, 0);
+            ListofTriviaToWrite.Add(TriviaQuestionToAdd96);
+
+            List<string> TriviaQuestionAnswerOptions97 = new List<string>();
+            TriviaQuestionAnswerOptions97.Add(".");
+            TriviaQuestionAnswerOptions97.Add(".");
+            TriviaQuestionAnswerOptions97.Add(".");
+            TriviaQuestionAnswerOptions97.Add(".");
+            TriviaQuestion TriviaQuestionToAdd97 = new TriviaQuestion("", TriviaQuestionAnswerOptions97, 0);
+            ListofTriviaToWrite.Add(TriviaQuestionToAdd97);
+
+            List<string> TriviaQuestionAnswerOptions98 = new List<string>();
+            TriviaQuestionAnswerOptions98.Add(".");
+            TriviaQuestionAnswerOptions98.Add(".");
+            TriviaQuestionAnswerOptions98.Add(".");
+            TriviaQuestionAnswerOptions98.Add(".");
+            TriviaQuestion TriviaQuestionToAdd98 = new TriviaQuestion("", TriviaQuestionAnswerOptions98, 0);
+            ListofTriviaToWrite.Add(TriviaQuestionToAdd98);
+
+            List<string> TriviaQuestionAnswerOptions99 = new List<string>();
+            TriviaQuestionAnswerOptions99.Add(".");
+            TriviaQuestionAnswerOptions99.Add(".");
+            TriviaQuestionAnswerOptions99.Add(".");
+            TriviaQuestionAnswerOptions99.Add(".");
+            TriviaQuestion TriviaQuestionToAdd99 = new TriviaQuestion("", TriviaQuestionAnswerOptions99, 0);
+            ListofTriviaToWrite.Add(TriviaQuestionToAdd99);
+
+            List<string> TriviaQuestionAnswerOptions100 = new List<string>();
+            TriviaQuestionAnswerOptions100.Add(".");
+            TriviaQuestionAnswerOptions100.Add(".");
+            TriviaQuestionAnswerOptions100.Add(".");
+            TriviaQuestionAnswerOptions100.Add(".");
+            TriviaQuestion TriviaQuestionToAdd100 = new TriviaQuestion("", TriviaQuestionAnswerOptions100, 0);
+            ListofTriviaToWrite.Add(TriviaQuestionToAdd100);
             */
 
             Utility.WriteTriviaToFile(ListofTriviaToWrite, Triviadatafiletouse);
