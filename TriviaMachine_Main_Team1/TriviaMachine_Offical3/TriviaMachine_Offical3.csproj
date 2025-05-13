@@ -11,6 +11,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="SecretList.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="TriviaQuestion.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
