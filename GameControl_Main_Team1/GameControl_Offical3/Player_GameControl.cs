@@ -206,26 +206,12 @@ namespace GameControl_Offical
             {
                 return SecretToUse.SecretString;
             }
-            else 
+            else
             {
                 return SecretToUse.SecretString;
             }
-        /// <summary>
-        /// Get a secret from the trivia machine and add it to the list of secrets.
-        /// </summary>
-        public string AddASecretToList()
-        {
-            string secret = TriviaMachineObject.GetSecret();
-            SecretList.Add(secret);
-            return secret;
         }
-        /// <summary>
-        /// Return the list of secrets
-        /// </summary>
-        public List<string> ReturnSecretList()
-        {
-            return SecretList;
-        }
+
         /// <summary>
         /// Returns whether or not we can buy an arrow
         /// </summary>
