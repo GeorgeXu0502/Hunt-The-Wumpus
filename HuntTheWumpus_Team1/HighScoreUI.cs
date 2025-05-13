@@ -31,8 +31,24 @@ namespace HuntTheWumpus_Team1
             System.Windows.Forms.Application.Exit();
         }
 
+        private void DisableSelectingOfText()
+        {
+            textBoxPlayerScore.TabStop = false;
+            textBoxUserName1.TabStop = false;
+            textBoxUserName2.TabStop = false;
+            textBoxUserName3.TabStop = false;
+            textBoxUserName4.TabStop = false;
+            textBoxUserName5.TabStop = false;
+            textBoxUserScore1.TabStop = false;
+            textBoxUserScore2.TabStop = false;
+            textBoxUserScore3.TabStop = false;
+            textBoxUserScore4.TabStop = false;
+            textBoxUserScore5.TabStop = false;
+        }
+
         private void HighScoreUI_Load(object sender, EventArgs e)
         {
+            DisableSelectingOfText();
             if (PlayedGameOrNot)
             {
                 textBoxPlayerScore.Text = GameControlObject.PlayerScoreFinal().ToString();

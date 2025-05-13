@@ -46,14 +46,14 @@
             buttonShootanArrow = new Button();
             buttonMovetoNextRoom = new Button();
             groupBoxPlayerInventory = new GroupBox();
+            textBoxAmountofTurns = new TextBox();
+            label1 = new Label();
             textBoxArrowAmount = new TextBox();
             textBoxGoldCoinAmount = new TextBox();
             label3 = new Label();
             label2 = new Label();
-            listBoxSecretsList = new ListBox();
+            listBoxTriviaQuestion = new ListBox();
             groupBox1 = new GroupBox();
-            label1 = new Label();
-            textBoxAmountofTurns = new TextBox();
             ((System.ComponentModel.ISupportInitialize)pictureBoxGeneralRoomBackground).BeginInit();
             groupBoxplayeractions.SuspendLayout();
             groupBoxPlayerInventory.SuspendLayout();
@@ -83,7 +83,7 @@
             // checkBoxwumpusneabry
             // 
             checkBoxwumpusneabry.AutoSize = true;
-            checkBoxwumpusneabry.Location = new Point(50, 29);
+            checkBoxwumpusneabry.Location = new Point(50, 28);
             checkBoxwumpusneabry.Margin = new Padding(4, 5, 4, 5);
             checkBoxwumpusneabry.Name = "checkBoxwumpusneabry";
             checkBoxwumpusneabry.Size = new Size(283, 29);
@@ -94,7 +94,7 @@
             // checkBoxpitnearby
             // 
             checkBoxpitnearby.AutoSize = true;
-            checkBoxpitnearby.Location = new Point(50, 71);
+            checkBoxpitnearby.Location = new Point(50, 72);
             checkBoxpitnearby.Margin = new Padding(4, 5, 4, 5);
             checkBoxpitnearby.Name = "checkBoxpitnearby";
             checkBoxpitnearby.Size = new Size(231, 29);
@@ -268,6 +268,25 @@
             groupBoxPlayerInventory.TabStop = false;
             groupBoxPlayerInventory.Text = "Player Inventory";
             // 
+            // textBoxAmountofTurns
+            // 
+            textBoxAmountofTurns.Location = new Point(237, 128);
+            textBoxAmountofTurns.Margin = new Padding(4, 5, 4, 5);
+            textBoxAmountofTurns.Name = "textBoxAmountofTurns";
+            textBoxAmountofTurns.ReadOnly = true;
+            textBoxAmountofTurns.Size = new Size(115, 31);
+            textBoxAmountofTurns.TabIndex = 5;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(14, 128);
+            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(151, 25);
+            label1.TabIndex = 4;
+            label1.Text = "Amount of Turns:";
+            // 
             // textBoxArrowAmount
             // 
             textBoxArrowAmount.Location = new Point(237, 88);
@@ -306,14 +325,14 @@
             label2.TabIndex = 0;
             label2.Text = "Amount of Gold Coins:";
             // 
-            // listBoxSecretsList
+            // listBoxTriviaQuestion
             // 
-            listBoxSecretsList.FormattingEnabled = true;
-            listBoxSecretsList.ItemHeight = 25;
-            listBoxSecretsList.Location = new Point(1261, 997);
-            listBoxSecretsList.Name = "listBoxSecretsList";
-            listBoxSecretsList.Size = new Size(505, 304);
-            listBoxSecretsList.TabIndex = 18;
+            listBoxTriviaQuestion.FormattingEnabled = true;
+            listBoxTriviaQuestion.ItemHeight = 25;
+            listBoxTriviaQuestion.Location = new Point(1261, 997);
+            listBoxTriviaQuestion.Name = "listBoxTriviaQuestion";
+            listBoxTriviaQuestion.Size = new Size(505, 304);
+            listBoxTriviaQuestion.TabIndex = 18;
             // 
             // groupBox1
             // 
@@ -324,32 +343,13 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "groupBox1";
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(14, 128);
-            label1.Margin = new Padding(4, 0, 4, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(151, 25);
-            label1.TabIndex = 4;
-            label1.Text = "Amount of Turns:";
-            // 
-            // textBoxAmountofTurns
-            // 
-            textBoxAmountofTurns.Location = new Point(237, 129);
-            textBoxAmountofTurns.Margin = new Padding(4, 5, 4, 5);
-            textBoxAmountofTurns.Name = "textBoxAmountofTurns";
-            textBoxAmountofTurns.ReadOnly = true;
-            textBoxAmountofTurns.Size = new Size(115, 31);
-            textBoxAmountofTurns.TabIndex = 5;
-            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(98, 127, 149);
-            ClientSize = new Size(1815, 1376);
-            Controls.Add(listBoxSecretsList);
+            ClientSize = new Size(1814, 1062);
+            Controls.Add(listBoxTriviaQuestion);
             Controls.Add(groupBoxPlayerInventory);
             Controls.Add(groupBoxplayeractions);
             Controls.Add(buttonNextRoom4);
@@ -365,6 +365,7 @@
             Controls.Add(groupBox1);
             Margin = new Padding(4, 5, 4, 5);
             Name = "Form1";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "UI: Hunt the Wumpus";
             ((System.ComponentModel.ISupportInitialize)pictureBoxGeneralRoomBackground).EndInit();
             groupBoxplayeractions.ResumeLayout(false);
@@ -397,7 +398,7 @@
         private Button buttonShootanArrow;
         private Button buttonMovetoNextRoom;
         private Button buttonEndGameNow;
-        private ListBox listBoxSecretsList;
+        private ListBox listBoxTriviaQuestion;
         private Button buttonViewSecret;
         private GroupBox groupBox1;
         private TextBox textBoxAmountofTurns;

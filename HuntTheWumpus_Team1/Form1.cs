@@ -4,6 +4,8 @@ using Microsoft.VisualBasic.ApplicationServices;
 using GameControl_Offical;
 using CaveMain_Official2;
 using TrivaMachine_Offical;
+using System.Net.Sockets;
+using TriviaMachine_Offical3;
 
 
 namespace HuntTheWumpus_Team1
@@ -27,6 +29,7 @@ namespace HuntTheWumpus_Team1
 
             // GameControlObject.AddOriginalTriviaFile(); // Only Active This if you need to write Trivia to File. Please talk to Sergei before doing this! YOU WILL MESS UP YOUR LOCAL FILE!
             // GameControlObject.AddOriginalHighScores(); // Only Active This if you need to write High Scores to File. Please talk to Sergei before doing this! YOU WILL MESS UP YOUR LOCAL FILE!
+            // GameControlObject.AddOriginalSecretFile(); // Only Active This if you need to write High Scores to File. Please talk to Sergei before doing this! YOU WILL MESS UP YOUR LOCAL FILE!
             StartTheGame();
         }
 
@@ -111,17 +114,26 @@ namespace HuntTheWumpus_Team1
             }
             else if (ChoiceIndex == 2)
             {
-                WhatAreWeChoosingMove0orWampus1 = 1;
-                DisplayaMessage("Please choose a room into which to shoot the arrow");
-                buttonNextRoom1.Enabled = true;
-                buttonNextRoom2.Enabled = true;
-                buttonNextRoom3.Enabled = true;
-                buttonNextRoom4.Enabled = true;
-                buttonNextRoom5.Enabled = true;
-                buttonNextRoom6.Enabled = true;
+                int PlayerArrowAmount = GameControlObject.PlayerArrowAmount();
 
-                // Just Diables all the other buttons the other can press. 
-                DisableAllButtonsForRoomInput();
+                if (PlayerArrowAmount > 0)
+                {
+                    WhatAreWeChoosingMove0orWampus1 = 1;
+                    DisplayaMessage("Please choose a room into which to shoot the arrow");
+                    buttonNextRoom1.Enabled = true;
+                    buttonNextRoom2.Enabled = true;
+                    buttonNextRoom3.Enabled = true;
+                    buttonNextRoom4.Enabled = true;
+                    buttonNextRoom5.Enabled = true;
+                    buttonNextRoom6.Enabled = true;
+
+                    // Just Diables all the other buttons the other can press. 
+                    DisableAllButtonsForRoomInput();
+                }
+                else
+                {
+                    DisplayaMessage("Sorry. You do not have arrows to shoot. Please buy them if possible, otherwise end the game.");
+                }
             }
             else if (ChoiceIndex == 3)
             {
@@ -129,21 +141,21 @@ namespace HuntTheWumpus_Team1
             }
             else if (ChoiceIndex == 4)
             {
-                UserViewaSecret();
+                UserViewsASecret();
             }
             else if (ChoiceIndex == 5)
-            {
-                buttonNextRoom1.Enabled = true;
-                buttonNextRoom2.Enabled = true;
-                buttonNextRoom3.Enabled = true;
-                buttonNextRoom4.Enabled = true;
-                buttonNextRoom5.Enabled = true;
-                buttonNextRoom6.Enabled = true;
+            { 
+                    buttonNextRoom1.Enabled = true;
+                    buttonNextRoom2.Enabled = true;
+                    buttonNextRoom3.Enabled = true;
+                    buttonNextRoom4.Enabled = true;
+                    buttonNextRoom5.Enabled = true;
+                    buttonNextRoom6.Enabled = true;
 
-                // Just Diables all the other buttons the other can press. 
-                DisableAllButtonsForRoomInput();
+                    // Just Diables all the other buttons the other can press. 
+                    DisableAllButtonsForRoomInput();
 
-                WhatAreWeChoosingMove0orWampus1 = 0;
+                    WhatAreWeChoosingMove0orWampus1 = 0;
             }
             else
             {
@@ -186,6 +198,7 @@ namespace HuntTheWumpus_Team1
         {
             HighScoreUI HighScoreDlg = new HighScoreUI();
             HighScoreDlg.PlayedGameOrNot = true;
+            this.Hide();
             HighScoreDlg.ShowDialog();
         }
 
@@ -439,43 +452,27 @@ namespace HuntTheWumpus_Team1
         /// <param name="RoomToWhichWeShoot"></param>
         private void UserShootAnArrow(int RoomToWhichWeShoot)
         {
-            int PlayerArrowAmount = GameControlObject.PlayerArrowAmount();
+            GameControlObject.RemoveArrowPlayerInventory();
+            bool GotWampus = GameControlObject.CheckIfWampusInRoom(RoomToWhichWeShoot);
 
-            if (PlayerArrowAmount > 0)
+            if (GotWampus)
             {
-                GameControlObject.RemoveArrowPlayerInventory();
-                // DisplayaMessage("Please select the Room into which you want to shoot an arrow.");
-
-                // int RoomToWhichWeShoot = GetRoomInput();
-
-                // Check if Wampus Was in that Room.
-
-                bool GotWampus = GameControlObject.CheckIfWampusInRoom(RoomToWhichWeShoot);
-
-                if (GotWampus)
-                {
-                    DisplayaMessage("You got the Wampus! Ending the Game");
-                    GameControlObject.ChangeWumpusDefetedStatus();
-                    EndTheGame();
-                }
-                else
-                {
-                    DisplayaMessage("You did not get the Wampus. We will now move the Wumpus.");
-                    Random randomvariable = new Random();
-
-                    if (randomvariable.Next(1, 2) == 1) // Randomly move Wampus.
-                    {
-                        GameControlObject.MoveWumpus(GameControlObject.WhereIsUser());
-                    }
-                }
-
-                textBoxArrowAmount.Text = GameControlObject.PlayerArrowAmount().ToString();
-
+                DisplayaMessage("You got the Wampus! Ending the Game");
+                GameControlObject.ChangeWumpusDefetedStatus();
+                EndTheGame();
             }
             else
             {
-                DisplayaMessage("Sorry. You do not have arrows to shoot. Please buy them if possible, otherwise end the game.");
+                DisplayaMessage("You did not get the Wampus. We will now move the Wumpus.");
+                Random randomvariable = new Random();
+
+                if (randomvariable.Next(1, 2) == 1) // Randomly move Wampus.
+                {
+                    GameControlObject.MoveWumpus(GameControlObject.WhereIsUser());
+                }
             }
+
+            textBoxArrowAmount.Text = GameControlObject.PlayerArrowAmount().ToString();
         }
 
         /// <summary>
@@ -507,14 +504,8 @@ namespace HuntTheWumpus_Team1
                     if (DidWeMakeItWithQuestions)
                     {
                         DisplayaMessage("We have an Extra Secret!");
-                        string SecretToShow = GameControlObject.AddASecretToList();
+                        string SecretToShow = GameControlObject.GetSecretObject();
                         DisplayaMessage("Secret is: " + SecretToShow);
-                        List<string> ListofSecrets = GameControlObject.ReturnSecretList();
-
-                        for (int i = 0; i < ListofSecrets.Count; i++)
-                        {
-                            listBoxSecretsList.Items.Add("Secret " + i.ToString());
-                        }
                     }
                     else
                     {
@@ -531,19 +522,9 @@ namespace HuntTheWumpus_Team1
         /// <summary>
         /// Function that handels the desire of the User to View a Secret. 
         /// </summary>
-        private void UserViewaSecret()
+        private void UserViewsASecret()
         {
-            DisplayaMessage("Please select a Secret From Down Below");
-
-            while (listBoxSecretsList.SelectedIndex == -1)
-            {
-                // Do Nothing. Wait for User to select a Index.
-            }
-
-            int index = listBoxSecretsList.SelectedIndex;
-            string SecretToShow = GameControlObject.ReturnSecretList()[index];
-            string StringToShow = "Secret " + index.ToString() + ": " + SecretToShow;
-            DisplayaMessage(StringToShow);
+            // Change this function.
         }
 
         /// <summary>

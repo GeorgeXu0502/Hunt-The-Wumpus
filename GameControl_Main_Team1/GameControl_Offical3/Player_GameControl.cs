@@ -7,6 +7,7 @@ using CaveMain_Official2;
 using TrivaMachine_Offical;
 using PlayerInventory_Offical;
 using TriviaMachine_Offical;
+using TriviaMachine_Offical3;
 
 namespace GameControl_Offical
 {
@@ -22,7 +23,6 @@ namespace GameControl_Offical
 
         int RoomUserIsIn = 1; // This is where the User Starts
         int goldCoinsCount = 0;
-        List<string> SecretList = new List<string>();
 
         bool WumpusDefeated = false;
         
@@ -50,6 +50,12 @@ namespace GameControl_Offical
         {
             FileWritingObject.WriteTriviaToFile(); // This function is to be used only with the greatest care! This is the oringinal Trivia File. 
         }
+        
+        public void AddOriginalSecretFile()
+        {
+            TriviaMachineObject.WriteSecretsToFile();
+        }
+
 
         /// <summary>
         /// Returns the list of neighboring rooms for the current room.
@@ -166,6 +172,44 @@ namespace GameControl_Offical
         {
             PlayerInventoryObject.NumberOfArrowsIndex(false);
         }
+
+        public string GetSecretObject()
+        {
+            // Please fix the actual implementation this is wrong. 
+            SecretObject SecretToUse = TriviaMachineObject.GetSecret();
+
+            if (SecretToUse.SecretIndex == 0)
+            {
+                return SecretToUse.SecretString + CaveMainObject.WhereisWampus().ToString();
+            }
+            else if (SecretToUse.SecretIndex == 1)
+            {
+                return SecretToUse.SecretString + CaveMainObject.WhereisPit().ToString();
+            }
+            else if (SecretToUse.SecretIndex == 2)
+            {
+                return SecretToUse.SecretString + CaveMainObject.WhereisaBat().ToString();
+            }
+            else if (SecretToUse.SecretIndex == 3)
+            {
+                return SecretToUse.SecretString + CaveMainObject.HowManyRoomsAwayIsWampus(RoomUserIsIn).ToString();
+            }
+            else if (SecretToUse.SecretIndex == 4)
+            {
+                return SecretToUse.SecretString + CaveMainObject.HowManyRoomsAwayIsPit(RoomUserIsIn).ToString();
+            }
+            else if (SecretToUse.SecretIndex == 5)
+            {
+                return SecretToUse.SecretString + RoomUserIsIn.ToString();
+            }
+            else if (SecretToUse.SecretIndex == 6)
+            {
+                return SecretToUse.SecretString;
+            }
+            else 
+            {
+                return SecretToUse.SecretString;
+            }
         /// <summary>
         /// Get a secret from the trivia machine and add it to the list of secrets.
         /// </summary>
