@@ -20,13 +20,13 @@ namespace HuntTheWumpus_Team1
         // System Specific Image Location:
         List<string> ListofImageLocation = new List<string>();
         List<Room> listofadjacentrooms = new List<Room>();
-        // Button Clicking Bool Variables.
+        List<TriviaQuestion> ListofPastTriviaQuestions = new List<TriviaQuestion>();
 
+        // Button Clicking Bool Variables.
         int WhatAreWeChoosingMove0orWampus1;
         public Form1()
         {
             InitializeComponent();
-
             // GameControlObject.AddOriginalTriviaFile(); // Only Active This if you need to write Trivia to File. Please talk to Sergei before doing this! YOU WILL MESS UP YOUR LOCAL FILE!
             // GameControlObject.AddOriginalHighScores(); // Only Active This if you need to write High Scores to File. Please talk to Sergei before doing this! YOU WILL MESS UP YOUR LOCAL FILE!
             // GameControlObject.AddOriginalSecretFile(); // Only Active This if you need to write High Scores to File. Please talk to Sergei before doing this! YOU WILL MESS UP YOUR LOCAL FILE!
@@ -81,8 +81,12 @@ namespace HuntTheWumpus_Team1
         {
             TriviaAnswerUI TriviaAnswerUIDlg = new TriviaAnswerUI();
             this.Hide();
-            TriviaAnswerUIDlg.TriviaAnswerToUse = GameControlObject.SendTriviaQuestion();
+            TriviaQuestion TriviaQuestionToUse = GameControlObject.SendTriviaQuestion();
+            TriviaAnswerUIDlg.TriviaAnswerToUse = TriviaQuestionToUse;
             TriviaAnswerUIDlg.ShowDialog();
+            ListofPastTriviaQuestions.Add(TriviaQuestionToUse);
+            int i = ListofPastTriviaQuestions.Count;
+            listBoxTriviaQuestion.Items.Add("Trivia Question Number: #" + (i).ToString());
             this.Show();
         }
 
@@ -92,12 +96,12 @@ namespace HuntTheWumpus_Team1
         private void StartTheGame()
         {
             // Open the inital Menu. Give the User the oppertunity to login.
-            
+
             OpeningMenu OpentheMenuObject = new OpeningMenu();
             OpentheMenuObject.ShowDialog();
             UserUsername = OpentheMenuObject.UsernameToReturn;
 
-            
+
             bool[] DangerInRoom = DrawTheRoom(GameControlObject.WhereIsUser());
         }
 
@@ -141,28 +145,28 @@ namespace HuntTheWumpus_Team1
             }
             else if (ChoiceIndex == 4)
             {
-                UserViewsASecret();
+                UserViewsATriviaQuestion();
             }
             else if (ChoiceIndex == 5)
-            { 
-                    buttonNextRoom1.Enabled = true;
-                    buttonNextRoom2.Enabled = true;
-                    buttonNextRoom3.Enabled = true;
-                    buttonNextRoom4.Enabled = true;
-                    buttonNextRoom5.Enabled = true;
-                    buttonNextRoom6.Enabled = true;
+            {
+                buttonNextRoom1.Enabled = true;
+                buttonNextRoom2.Enabled = true;
+                buttonNextRoom3.Enabled = true;
+                buttonNextRoom4.Enabled = true;
+                buttonNextRoom5.Enabled = true;
+                buttonNextRoom6.Enabled = true;
 
-                    // Just Diables all the other buttons the other can press. 
-                    DisableAllButtonsForRoomInput();
+                // Just Diables all the other buttons the other can press. 
+                DisableAllButtonsForRoomInput();
 
-                    WhatAreWeChoosingMove0orWampus1 = 0;
+                WhatAreWeChoosingMove0orWampus1 = 0;
             }
             else
             {
                 EndTheGame();
             }
-           textBoxGoldCoinAmount.Text = GameControlObject.PlayerGoldCoinAmount().ToString();
-           textBoxArrowAmount.Text = GameControlObject.PlayerArrowAmount().ToString();
+            textBoxGoldCoinAmount.Text = GameControlObject.PlayerGoldCoinAmount().ToString();
+            textBoxArrowAmount.Text = GameControlObject.PlayerArrowAmount().ToString();
         }
 
         /// <summary>
@@ -174,7 +178,7 @@ namespace HuntTheWumpus_Team1
             buttonShootanArrow.Enabled = false;
             buttonPurchaseArrow.Enabled = false;
             buttonPurchaseSecret.Enabled = false;
-            buttonViewSecret.Enabled = false;
+            buttonViewTrivia.Enabled = false;
             buttonEndGameNow.Enabled = false;
         }
 
@@ -187,7 +191,7 @@ namespace HuntTheWumpus_Team1
             buttonShootanArrow.Enabled = true;
             buttonPurchaseArrow.Enabled = true;
             buttonPurchaseSecret.Enabled = true;
-            buttonViewSecret.Enabled = true;
+            buttonViewTrivia.Enabled = true;
             buttonEndGameNow.Enabled = true;
         }
 
@@ -228,7 +232,7 @@ namespace HuntTheWumpus_Team1
             
             return ListtoReturn;
         }
-        */ 
+        */
 
         /// <summary>
         /// Draws the Room. Resets the UI to have just the User Choices Avaliable. Returns a bool[] of Dangers in the Room. 
@@ -511,7 +515,7 @@ namespace HuntTheWumpus_Team1
                     {
                         DisplayaMessage("We do not have an Extra Secret");
                     }
-                    
+
                 }
             }
             else
@@ -522,7 +526,7 @@ namespace HuntTheWumpus_Team1
         /// <summary>
         /// Function that handels the desire of the User to View a Secret. 
         /// </summary>
-        private void UserViewsASecret()
+        private void UserViewsATriviaQuestion()
         {
             // Change this function.
         }
@@ -540,7 +544,7 @@ namespace HuntTheWumpus_Team1
 
             bool ResultOfMessageBox = MessageBoxShowDlg.ResultOfQuestion;
             return ResultOfMessageBox;
-        } 
+        }
 
         /// <summary>
         /// Function that displays a Message in a Custom Message Box. 
@@ -551,7 +555,7 @@ namespace HuntTheWumpus_Team1
             MessageBoxCustom MessageBoxDlg = new MessageBoxCustom();
             MessageBoxDlg.StringToDispaly = StringToDisplay;
             MessageBoxDlg.ShowDialog();
-        } 
+        }
 
         // All Functions from this one to Button_End Game Now, are called when the User clicks a Choice Button. The Name is indivicative of the choice. 
         private void buttonMovetoNextRoom_Click(object sender, EventArgs e)
@@ -740,6 +744,64 @@ namespace HuntTheWumpus_Team1
             {
                 pictureBoxGeneralRoomBackground.Image = Properties.Resources.HuntheWumpusRoom30;
             }
+        }
+
+        // These Function Make the Checkboxs take the correct state if the user decides to independently change the Checboxes. 
+        private void checkBoxwumpusneabry_CheckedChanged(object sender, EventArgs e)
+        {
+            listofadjacentrooms = GameControlObject.AdjacentRoomInformation(GameControlObject.WhereIsUser());
+
+            bool hasWampus = false;
+
+            for (int i = 1; i < 7; i++)
+            {
+                Room newroomtoconsider = listofadjacentrooms[i];
+
+                if (newroomtoconsider.HasWumpus == true)
+                {
+                    hasWampus = true;
+                }
+            }
+
+            checkBoxwumpusneabry.Checked = hasWampus;
+        }
+
+        private void checkBoxpitnearby_CheckedChanged(object sender, EventArgs e)
+        {
+            listofadjacentrooms = GameControlObject.AdjacentRoomInformation(GameControlObject.WhereIsUser());
+
+            bool hasPit = false;
+
+            for (int i = 1; i < 7; i++)
+            {
+                Room newroomtoconsider = listofadjacentrooms[i];
+
+                if (newroomtoconsider.HasPit == true)
+                {
+                    hasPit = true;
+                }
+            }
+
+            checkBoxpitnearby.Checked = hasPit;
+        }
+
+        private void checkBoxbatsnearby_CheckedChanged(object sender, EventArgs e)
+        {
+            listofadjacentrooms = GameControlObject.AdjacentRoomInformation(GameControlObject.WhereIsUser());
+
+            bool hasBat = false;
+
+            for (int i = 1; i < 7; i++)
+            {
+                Room newroomtoconsider = listofadjacentrooms[i];
+
+                if (newroomtoconsider.HasBats == true)
+                {
+                    hasBat = true;
+                }
+            }
+
+            checkBoxbatsnearby.Checked = hasBat;
         }
     }
 }

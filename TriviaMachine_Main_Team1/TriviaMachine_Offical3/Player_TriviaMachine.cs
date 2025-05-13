@@ -22,7 +22,7 @@ namespace TrivaMachine_Offical
         // The Construcutor for the File. 
         public Player_TriviaMachine()
         {
-             ReadTriviaFile();
+            ReadTriviaFile();
             ReadSecretFile(); 
         }
 

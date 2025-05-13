@@ -56,83 +56,118 @@ namespace GameControl_Offical
             TriviaMachineObject.WriteSecretsToFile();
         }
 
+
+        /// <summary>
+        /// Returns the list of neighboring rooms for the current room.
+        /// </summary>
         public List<Room> AdjacentRoomInformation(int RoomToGetInformationFor)
         {
             // Write Function to get a List: // This Room List should be of this form: [RoomUser, RoomtotheTopLeft, .... (Coutnerclockwise), ....]
             return CaveMainObject.GetAdjacentRoomInformation(RoomToGetInformationFor);
         }
-
+        /// <summary>
+        /// This method is used to change the bool value of whether or not the Wumpus has been defeated.
+        /// </summary>
         public void ChangeWumpusDefetedStatus()
         {
             WumpusDefeated = true;
         }
-
+        /// <summary>
+        /// Update the room number where the user is currently located.
+        /// </summary>
         public void UpdateWhereUserIs(int RoomNumberWeAreMovingTo)
         {
             RoomUserIsIn = RoomNumberWeAreMovingTo;
         }
-
+        /// <summary>
+        /// Returns the room that the user is in
+        /// </summary>
         public int WhereIsUser()
         {
             return RoomUserIsIn;
         }
-
+        /// <summary>
+        /// Returns a trivia answer to the UI
+        /// </summary>
         public TriviaQuestion SendTriviaQuestion()
         {
             TriviaQuestion TriviaAnswertoReturn = TriviaMachineObject.GetTriviaAnswer();
 
             return TriviaAnswertoReturn;
         }
-
+        /// <summary>
+        /// Returns the amount of gold coins the player has.
+        /// </summary>
         public int PlayerGoldCoinAmount()
         {
             return PlayerInventoryObject.NumberofGoldCoinIndex();
         }
-
+        /// <summary>
+        /// Returns the amount of arrows the player has.
+        /// </summary>
         public int PlayerArrowAmount()
         {
             return PlayerInventoryObject.NumberOfArrowsIndex();
         }
-
+        /// <summary>
+        /// Returns a trivia answer to the UI
+        /// </summary>
         public TriviaQuestion GetQuestion()
         {
            return TriviaMachineObject.GetTriviaAnswer();
         }
-
+        /// <summary>
+        /// Moves the wumpus to a different room.
+        /// </summary>
         public void MoveWumpus(int RoomNumberWhereUserIsIn)
         {
             CaveMainObject.MoveWumpus(RoomNumberWhereUserIsIn);
         }
-
+        /// <summary>
+        /// Returns whether or not the Wumpus is in the room.
+        /// </summary>
         public bool CheckIfWampusInRoom(int RoomToCheck)
         {
             return CaveMainObject.IsWumpusInRoom(RoomToCheck);
         }
-
+        /// <summary>
+        /// Get new room for the user to be moved to.
+        /// </summary>
         public int GetNewUserRoom()
         {
             return CaveMainObject.GetNewRoom();
         }
-
+        /// <summary>
+        /// Move bats to a different room from the user
+        /// </summary>
         public void MoveBatsFromRoom(int RoomWhereUserIsMoved)
         {
             CaveMainObject.MoveBatsToDifferentRoom(RoomUserIsIn, RoomWhereUserIsMoved);
         }
-
+        /// <summary>
+        /// Increase gold coin amount by 1.
+        /// </summary>
         public void AddGoldCoin()
         {
             PlayerInventoryObject.AddGoldCoin();
         }
-
+        /// <summary>
+        /// Increase arrow amount by 1.
+        /// </summary>
         public void AddArrow()
         {
             PlayerInventoryObject.NumberOfArrowsIndex(true);
         }
-
+        /// <summary>
+        /// Decrease gold coin amount by 1.
+        /// </summary>
         public void RemoveGoldCoin()
         {
             PlayerInventoryObject.RemoveGoldCoin();
         }
+        /// <summary>
+        /// Decrease arrow amount by 1.
+        /// </summary>
         public void RemoveArrowPlayerInventory()
         {
             PlayerInventoryObject.NumberOfArrowsIndex(false);
@@ -145,64 +180,76 @@ namespace GameControl_Offical
 
             if (SecretToUse.SecretIndex == 0)
             {
-                return SecretToUse.SecretString + CaveMainObject.WhereisWampus();
+                return SecretToUse.SecretString + CaveMainObject.WhereisWampus().ToString();
             }
             else if (SecretToUse.SecretIndex == 1)
             {
-                return SecretToUse.SecretString + CaveMainObject.WhereisWampus();
+                return SecretToUse.SecretString + CaveMainObject.WhereisPit().ToString();
             }
             else if (SecretToUse.SecretIndex == 2)
             {
-                return SecretToUse.SecretString + CaveMainObject.WhereisWampus();
+                return SecretToUse.SecretString + CaveMainObject.WhereisaBat().ToString();
             }
             else if (SecretToUse.SecretIndex == 3)
             {
-                return SecretToUse.SecretString + CaveMainObject.WhereisWampus();
+                return SecretToUse.SecretString + CaveMainObject.HowManyRoomsAwayIsWampus(RoomUserIsIn).ToString();
             }
             else if (SecretToUse.SecretIndex == 4)
             {
-                return SecretToUse.SecretString + CaveMainObject.WhereisWampus();
+                return SecretToUse.SecretString + CaveMainObject.HowManyRoomsAwayIsPit(RoomUserIsIn).ToString();
             }
             else if (SecretToUse.SecretIndex == 5)
             {
-                return SecretToUse.SecretString + CaveMainObject.WhereisWampus();
+                return SecretToUse.SecretString + RoomUserIsIn.ToString();
             }
             else if (SecretToUse.SecretIndex == 6)
             {
-                return SecretToUse.SecretString + CaveMainObject.WhereisWampus();
+                return SecretToUse.SecretString;
             }
-            else 
+            else
             {
-                return SecretToUse.SecretString + CaveMainObject.WhereisWampus();
+                return SecretToUse.SecretString;
             }
         }
 
-
+        /// <summary>
+        /// Returns whether or not we can buy an arrow
+        /// </summary>
         public bool CanWeBuyAnArrow()
         {
             return PlayerInventoryObject.CanWeBuyAnArrow();
         }
-
+        /// <summary>
+        /// Returns the final calculated score of the user after playing the game.
+        /// </summary>
         public int PlayerScoreFinal()
         {
             return PlayerInventoryObject.CalculateHighScore(WumpusDefeated);
         }
-
+        /// <summary>
+        /// Returns a list of the top scores.
+        /// </summary>
         public List<HighScoreObject> GetTopScores()
         {
             return PlayerInventoryObject.GetTopScores();
         }
-
+        /// <summary>
+        /// Add new score to the list of past scores.
+        /// </summary>
         public void AddPlayerScoreToList(HighScoreObject TheHighScoreObjectToWriteToFile)
         {
             PlayerInventoryObject.AddNewScoreToPastScoreList(TheHighScoreObjectToWriteToFile);
         }
-
+        /// <summary>
+        /// Increase the number of turns by 1.
+        /// </summary>
         public void AddUserTurn()
         {
             PlayerInventoryObject.AddUserTurn();
         }
-
+        /// <summary>
+        /// Returns the number of turns the player has taken.
+        /// </summary>
         public int PlayerTurnAmount()
         {
             return PlayerInventoryObject.NumberofTurnsIndex();

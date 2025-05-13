@@ -39,7 +39,7 @@
             buttonNextRoom3 = new Button();
             buttonNextRoom4 = new Button();
             groupBoxplayeractions = new GroupBox();
-            buttonViewSecret = new Button();
+            buttonViewTrivia = new Button();
             buttonEndGameNow = new Button();
             buttonPurchaseSecret = new Button();
             buttonPurchaseArrow = new Button();
@@ -53,7 +53,7 @@
             label3 = new Label();
             label2 = new Label();
             listBoxTriviaQuestion = new ListBox();
-            groupBox1 = new GroupBox();
+            groupBoxRoomWarnings = new GroupBox();
             ((System.ComponentModel.ISupportInitialize)pictureBoxGeneralRoomBackground).BeginInit();
             groupBoxplayeractions.SuspendLayout();
             groupBoxPlayerInventory.SuspendLayout();
@@ -62,9 +62,10 @@
             // pictureBoxGeneralRoomBackground
             // 
             pictureBoxGeneralRoomBackground.Image = Properties.Resources.HuntheWumpusRoom1;
-            pictureBoxGeneralRoomBackground.Location = new Point(96, 170);
+            pictureBoxGeneralRoomBackground.Location = new Point(67, 102);
+            pictureBoxGeneralRoomBackground.Margin = new Padding(2);
             pictureBoxGeneralRoomBackground.Name = "pictureBoxGeneralRoomBackground";
-            pictureBoxGeneralRoomBackground.Size = new Size(1156, 1003);
+            pictureBoxGeneralRoomBackground.Size = new Size(809, 602);
             pictureBoxGeneralRoomBackground.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBoxGeneralRoomBackground.TabIndex = 0;
             pictureBoxGeneralRoomBackground.TabStop = false;
@@ -72,9 +73,10 @@
             // buttonNextRoom5
             // 
             buttonNextRoom5.BackColor = SystemColors.ActiveCaption;
-            buttonNextRoom5.Location = new Point(966, 590);
+            buttonNextRoom5.Location = new Point(676, 354);
+            buttonNextRoom5.Margin = new Padding(2);
             buttonNextRoom5.Name = "buttonNextRoom5";
-            buttonNextRoom5.Size = new Size(286, 138);
+            buttonNextRoom5.Size = new Size(200, 83);
             buttonNextRoom5.TabIndex = 5;
             buttonNextRoom5.Text = "button1";
             buttonNextRoom5.UseVisualStyleBackColor = false;
@@ -83,42 +85,43 @@
             // checkBoxwumpusneabry
             // 
             checkBoxwumpusneabry.AutoSize = true;
-            checkBoxwumpusneabry.Location = new Point(50, 28);
-            checkBoxwumpusneabry.Margin = new Padding(4, 5, 4, 5);
+            checkBoxwumpusneabry.Location = new Point(35, 17);
             checkBoxwumpusneabry.Name = "checkBoxwumpusneabry";
-            checkBoxwumpusneabry.Size = new Size(283, 29);
+            checkBoxwumpusneabry.Size = new Size(189, 19);
             checkBoxwumpusneabry.TabIndex = 8;
             checkBoxwumpusneabry.Text = "Device sences Wumpus nearby";
             checkBoxwumpusneabry.UseVisualStyleBackColor = true;
+            checkBoxwumpusneabry.CheckedChanged += checkBoxwumpusneabry_CheckedChanged;
             // 
             // checkBoxpitnearby
             // 
             checkBoxpitnearby.AutoSize = true;
-            checkBoxpitnearby.Location = new Point(50, 72);
-            checkBoxpitnearby.Margin = new Padding(4, 5, 4, 5);
+            checkBoxpitnearby.Location = new Point(35, 43);
             checkBoxpitnearby.Name = "checkBoxpitnearby";
-            checkBoxpitnearby.Size = new Size(231, 29);
+            checkBoxpitnearby.Size = new Size(155, 19);
             checkBoxpitnearby.TabIndex = 9;
             checkBoxpitnearby.Text = "Device sences Pit nearby";
             checkBoxpitnearby.UseVisualStyleBackColor = true;
+            checkBoxpitnearby.CheckedChanged += checkBoxpitnearby_CheckedChanged;
             // 
             // checkBoxbatsnearby
             // 
             checkBoxbatsnearby.AutoSize = true;
-            checkBoxbatsnearby.Location = new Point(50, 113);
-            checkBoxbatsnearby.Margin = new Padding(4, 5, 4, 5);
+            checkBoxbatsnearby.Location = new Point(35, 68);
             checkBoxbatsnearby.Name = "checkBoxbatsnearby";
-            checkBoxbatsnearby.Size = new Size(244, 29);
+            checkBoxbatsnearby.Size = new Size(163, 19);
             checkBoxbatsnearby.TabIndex = 10;
             checkBoxbatsnearby.Text = "Device sences Bats nearby";
             checkBoxbatsnearby.UseVisualStyleBackColor = true;
+            checkBoxbatsnearby.CheckedChanged += checkBoxbatsnearby_CheckedChanged;
             // 
             // buttonNextRoom2
             // 
             buttonNextRoom2.BackColor = SystemColors.ActiveCaption;
-            buttonNextRoom2.Location = new Point(96, 590);
+            buttonNextRoom2.Location = new Point(67, 354);
+            buttonNextRoom2.Margin = new Padding(2);
             buttonNextRoom2.Name = "buttonNextRoom2";
-            buttonNextRoom2.Size = new Size(286, 138);
+            buttonNextRoom2.Size = new Size(200, 83);
             buttonNextRoom2.TabIndex = 11;
             buttonNextRoom2.Text = "button1";
             buttonNextRoom2.UseVisualStyleBackColor = false;
@@ -127,9 +130,10 @@
             // buttonNextRoom1
             // 
             buttonNextRoom1.BackColor = SystemColors.ActiveCaption;
-            buttonNextRoom1.Location = new Point(189, 265);
+            buttonNextRoom1.Location = new Point(132, 159);
+            buttonNextRoom1.Margin = new Padding(2);
             buttonNextRoom1.Name = "buttonNextRoom1";
-            buttonNextRoom1.Size = new Size(286, 138);
+            buttonNextRoom1.Size = new Size(200, 83);
             buttonNextRoom1.TabIndex = 12;
             buttonNextRoom1.Text = "button1";
             buttonNextRoom1.UseVisualStyleBackColor = false;
@@ -138,9 +142,10 @@
             // buttonNextRoom6
             // 
             buttonNextRoom6.BackColor = SystemColors.ActiveCaption;
-            buttonNextRoom6.Location = new Point(884, 265);
+            buttonNextRoom6.Location = new Point(619, 159);
+            buttonNextRoom6.Margin = new Padding(2);
             buttonNextRoom6.Name = "buttonNextRoom6";
-            buttonNextRoom6.Size = new Size(286, 138);
+            buttonNextRoom6.Size = new Size(200, 83);
             buttonNextRoom6.TabIndex = 13;
             buttonNextRoom6.Text = "button1";
             buttonNextRoom6.UseVisualStyleBackColor = false;
@@ -149,9 +154,10 @@
             // buttonNextRoom3
             // 
             buttonNextRoom3.BackColor = SystemColors.ActiveCaption;
-            buttonNextRoom3.Location = new Point(189, 933);
+            buttonNextRoom3.Location = new Point(132, 560);
+            buttonNextRoom3.Margin = new Padding(2);
             buttonNextRoom3.Name = "buttonNextRoom3";
-            buttonNextRoom3.Size = new Size(286, 138);
+            buttonNextRoom3.Size = new Size(200, 83);
             buttonNextRoom3.TabIndex = 14;
             buttonNextRoom3.Text = "button1";
             buttonNextRoom3.UseVisualStyleBackColor = false;
@@ -160,9 +166,10 @@
             // buttonNextRoom4
             // 
             buttonNextRoom4.BackColor = SystemColors.ActiveCaption;
-            buttonNextRoom4.Location = new Point(884, 933);
+            buttonNextRoom4.Location = new Point(619, 560);
+            buttonNextRoom4.Margin = new Padding(2);
             buttonNextRoom4.Name = "buttonNextRoom4";
-            buttonNextRoom4.Size = new Size(286, 138);
+            buttonNextRoom4.Size = new Size(200, 83);
             buttonNextRoom4.TabIndex = 15;
             buttonNextRoom4.Text = "button1";
             buttonNextRoom4.UseVisualStyleBackColor = false;
@@ -170,38 +177,38 @@
             // 
             // groupBoxplayeractions
             // 
-            groupBoxplayeractions.Controls.Add(buttonViewSecret);
+            groupBoxplayeractions.Controls.Add(buttonViewTrivia);
             groupBoxplayeractions.Controls.Add(buttonEndGameNow);
             groupBoxplayeractions.Controls.Add(buttonPurchaseSecret);
             groupBoxplayeractions.Controls.Add(buttonPurchaseArrow);
             groupBoxplayeractions.Controls.Add(buttonShootanArrow);
             groupBoxplayeractions.Controls.Add(buttonMovetoNextRoom);
-            groupBoxplayeractions.Location = new Point(1261, 23);
-            groupBoxplayeractions.Margin = new Padding(4, 5, 4, 5);
+            groupBoxplayeractions.Location = new Point(883, 14);
             groupBoxplayeractions.Name = "groupBoxplayeractions";
-            groupBoxplayeractions.Padding = new Padding(4, 5, 4, 5);
-            groupBoxplayeractions.Size = new Size(363, 935);
+            groupBoxplayeractions.Size = new Size(254, 561);
             groupBoxplayeractions.TabIndex = 16;
             groupBoxplayeractions.TabStop = false;
             groupBoxplayeractions.Text = "Possible Actions";
             // 
-            // buttonViewSecret
+            // buttonViewTrivia
             // 
-            buttonViewSecret.BackColor = SystemColors.ActiveCaption;
-            buttonViewSecret.Location = new Point(7, 645);
-            buttonViewSecret.Name = "buttonViewSecret";
-            buttonViewSecret.Size = new Size(349, 138);
-            buttonViewSecret.TabIndex = 23;
-            buttonViewSecret.Text = "View A Selected Secret";
-            buttonViewSecret.UseVisualStyleBackColor = false;
-            buttonViewSecret.Click += buttonViewSecret_Click;
+            buttonViewTrivia.BackColor = SystemColors.ActiveCaption;
+            buttonViewTrivia.Location = new Point(5, 387);
+            buttonViewTrivia.Margin = new Padding(2);
+            buttonViewTrivia.Name = "buttonViewTrivia";
+            buttonViewTrivia.Size = new Size(244, 83);
+            buttonViewTrivia.TabIndex = 23;
+            buttonViewTrivia.Text = "View A Selected Secret";
+            buttonViewTrivia.UseVisualStyleBackColor = false;
+            buttonViewTrivia.Click += buttonViewSecret_Click;
             // 
             // buttonEndGameNow
             // 
             buttonEndGameNow.BackColor = SystemColors.ActiveCaption;
-            buttonEndGameNow.Location = new Point(7, 788);
+            buttonEndGameNow.Location = new Point(5, 473);
+            buttonEndGameNow.Margin = new Padding(2);
             buttonEndGameNow.Name = "buttonEndGameNow";
-            buttonEndGameNow.Size = new Size(349, 138);
+            buttonEndGameNow.Size = new Size(244, 83);
             buttonEndGameNow.TabIndex = 22;
             buttonEndGameNow.Text = "End Game Now";
             buttonEndGameNow.UseVisualStyleBackColor = false;
@@ -210,9 +217,10 @@
             // buttonPurchaseSecret
             // 
             buttonPurchaseSecret.BackColor = SystemColors.ActiveCaption;
-            buttonPurchaseSecret.Location = new Point(7, 505);
+            buttonPurchaseSecret.Location = new Point(5, 303);
+            buttonPurchaseSecret.Margin = new Padding(2);
             buttonPurchaseSecret.Name = "buttonPurchaseSecret";
-            buttonPurchaseSecret.Size = new Size(349, 138);
+            buttonPurchaseSecret.Size = new Size(244, 83);
             buttonPurchaseSecret.TabIndex = 21;
             buttonPurchaseSecret.Text = "Purchase Secret";
             buttonPurchaseSecret.UseVisualStyleBackColor = false;
@@ -221,9 +229,10 @@
             // buttonPurchaseArrow
             // 
             buttonPurchaseArrow.BackColor = SystemColors.ActiveCaption;
-            buttonPurchaseArrow.Location = new Point(7, 360);
+            buttonPurchaseArrow.Location = new Point(5, 216);
+            buttonPurchaseArrow.Margin = new Padding(2);
             buttonPurchaseArrow.Name = "buttonPurchaseArrow";
-            buttonPurchaseArrow.Size = new Size(349, 138);
+            buttonPurchaseArrow.Size = new Size(244, 83);
             buttonPurchaseArrow.TabIndex = 20;
             buttonPurchaseArrow.Text = "Purchase Arrow";
             buttonPurchaseArrow.UseVisualStyleBackColor = false;
@@ -232,9 +241,10 @@
             // buttonShootanArrow
             // 
             buttonShootanArrow.BackColor = SystemColors.ActiveCaption;
-            buttonShootanArrow.Location = new Point(7, 215);
+            buttonShootanArrow.Location = new Point(5, 129);
+            buttonShootanArrow.Margin = new Padding(2);
             buttonShootanArrow.Name = "buttonShootanArrow";
-            buttonShootanArrow.Size = new Size(349, 138);
+            buttonShootanArrow.Size = new Size(244, 83);
             buttonShootanArrow.TabIndex = 19;
             buttonShootanArrow.Text = "Shoot an Arrow";
             buttonShootanArrow.UseVisualStyleBackColor = false;
@@ -243,9 +253,10 @@
             // buttonMovetoNextRoom
             // 
             buttonMovetoNextRoom.BackColor = SystemColors.ActiveCaption;
-            buttonMovetoNextRoom.Location = new Point(7, 70);
+            buttonMovetoNextRoom.Location = new Point(5, 42);
+            buttonMovetoNextRoom.Margin = new Padding(2);
             buttonMovetoNextRoom.Name = "buttonMovetoNextRoom";
-            buttonMovetoNextRoom.Size = new Size(349, 138);
+            buttonMovetoNextRoom.Size = new Size(244, 83);
             buttonMovetoNextRoom.TabIndex = 18;
             buttonMovetoNextRoom.Text = "Move to Next Room";
             buttonMovetoNextRoom.UseVisualStyleBackColor = false;
@@ -259,96 +270,91 @@
             groupBoxPlayerInventory.Controls.Add(textBoxGoldCoinAmount);
             groupBoxPlayerInventory.Controls.Add(label3);
             groupBoxPlayerInventory.Controls.Add(label2);
-            groupBoxPlayerInventory.Location = new Point(401, 3);
-            groupBoxPlayerInventory.Margin = new Padding(4, 5, 4, 5);
+            groupBoxPlayerInventory.Location = new Point(281, 2);
             groupBoxPlayerInventory.Name = "groupBoxPlayerInventory";
-            groupBoxPlayerInventory.Padding = new Padding(4, 5, 4, 5);
-            groupBoxPlayerInventory.Size = new Size(363, 167);
+            groupBoxPlayerInventory.Size = new Size(254, 100);
             groupBoxPlayerInventory.TabIndex = 17;
             groupBoxPlayerInventory.TabStop = false;
             groupBoxPlayerInventory.Text = "Player Inventory";
             // 
             // textBoxAmountofTurns
             // 
-            textBoxAmountofTurns.Location = new Point(237, 128);
-            textBoxAmountofTurns.Margin = new Padding(4, 5, 4, 5);
+            textBoxAmountofTurns.Location = new Point(166, 77);
             textBoxAmountofTurns.Name = "textBoxAmountofTurns";
             textBoxAmountofTurns.ReadOnly = true;
-            textBoxAmountofTurns.Size = new Size(115, 31);
+            textBoxAmountofTurns.Size = new Size(82, 23);
             textBoxAmountofTurns.TabIndex = 5;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(14, 128);
-            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Location = new Point(10, 77);
             label1.Name = "label1";
-            label1.Size = new Size(151, 25);
+            label1.Size = new Size(100, 15);
             label1.TabIndex = 4;
             label1.Text = "Amount of Turns:";
             // 
             // textBoxArrowAmount
             // 
-            textBoxArrowAmount.Location = new Point(237, 88);
-            textBoxArrowAmount.Margin = new Padding(4, 5, 4, 5);
+            textBoxArrowAmount.Location = new Point(166, 48);
             textBoxArrowAmount.Name = "textBoxArrowAmount";
             textBoxArrowAmount.ReadOnly = true;
-            textBoxArrowAmount.Size = new Size(115, 31);
+            textBoxArrowAmount.Size = new Size(82, 23);
             textBoxArrowAmount.TabIndex = 3;
             // 
             // textBoxGoldCoinAmount
             // 
-            textBoxGoldCoinAmount.Location = new Point(237, 42);
-            textBoxGoldCoinAmount.Margin = new Padding(4, 5, 4, 5);
+            textBoxGoldCoinAmount.Location = new Point(166, 19);
             textBoxGoldCoinAmount.Name = "textBoxGoldCoinAmount";
             textBoxGoldCoinAmount.ReadOnly = true;
-            textBoxGoldCoinAmount.Size = new Size(115, 31);
+            textBoxGoldCoinAmount.Size = new Size(82, 23);
             textBoxGoldCoinAmount.TabIndex = 2;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(14, 93);
-            label3.Margin = new Padding(4, 0, 4, 0);
+            label3.Location = new Point(10, 56);
             label3.Name = "label3";
-            label3.Size = new Size(164, 25);
+            label3.Size = new Size(108, 15);
             label3.TabIndex = 1;
             label3.Text = "Amount of Arrows:";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(14, 52);
-            label2.Margin = new Padding(4, 0, 4, 0);
+            label2.Location = new Point(10, 22);
             label2.Name = "label2";
-            label2.Size = new Size(195, 25);
+            label2.Size = new Size(129, 15);
             label2.TabIndex = 0;
             label2.Text = "Amount of Gold Coins:";
             // 
             // listBoxTriviaQuestion
             // 
             listBoxTriviaQuestion.FormattingEnabled = true;
-            listBoxTriviaQuestion.ItemHeight = 25;
-            listBoxTriviaQuestion.Location = new Point(1261, 997);
+            listBoxTriviaQuestion.ItemHeight = 15;
+            listBoxTriviaQuestion.Location = new Point(883, 598);
+            listBoxTriviaQuestion.Margin = new Padding(2);
             listBoxTriviaQuestion.Name = "listBoxTriviaQuestion";
-            listBoxTriviaQuestion.Size = new Size(505, 304);
+            listBoxTriviaQuestion.Size = new Size(355, 184);
             listBoxTriviaQuestion.TabIndex = 18;
             // 
-            // groupBox1
+            // groupBoxRoomWarnings
             // 
-            groupBox1.Location = new Point(7, 3);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(353, 167);
-            groupBox1.TabIndex = 19;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "groupBox1";
+            groupBoxRoomWarnings.Location = new Point(5, 2);
+            groupBoxRoomWarnings.Margin = new Padding(2);
+            groupBoxRoomWarnings.Name = "groupBoxRoomWarnings";
+            groupBoxRoomWarnings.Padding = new Padding(2);
+            groupBoxRoomWarnings.Size = new Size(247, 100);
+            groupBoxRoomWarnings.TabIndex = 19;
+            groupBoxRoomWarnings.TabStop = false;
+            groupBoxRoomWarnings.Text = "Room Warnings";
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(98, 127, 149);
-            ClientSize = new Size(1814, 1062);
+            ClientSize = new Size(1270, 637);
             Controls.Add(listBoxTriviaQuestion);
             Controls.Add(groupBoxPlayerInventory);
             Controls.Add(groupBoxplayeractions);
@@ -362,8 +368,7 @@
             Controls.Add(checkBoxwumpusneabry);
             Controls.Add(buttonNextRoom5);
             Controls.Add(pictureBoxGeneralRoomBackground);
-            Controls.Add(groupBox1);
-            Margin = new Padding(4, 5, 4, 5);
+            Controls.Add(groupBoxRoomWarnings);
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "UI: Hunt the Wumpus";
@@ -399,8 +404,8 @@
         private Button buttonMovetoNextRoom;
         private Button buttonEndGameNow;
         private ListBox listBoxTriviaQuestion;
-        private Button buttonViewSecret;
-        private GroupBox groupBox1;
+        private Button buttonViewTrivia;
+        private GroupBox groupBoxRoomWarnings;
         private TextBox textBoxAmountofTurns;
         private Label label1;
     }
