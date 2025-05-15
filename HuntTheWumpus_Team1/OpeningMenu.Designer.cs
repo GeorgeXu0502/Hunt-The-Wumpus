@@ -97,6 +97,7 @@
             Name = "OpeningMenu";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "OpeningMenu";
+            FormClosing += OpeningMenu_FormClosing;
             ResumeLayout(false);
             PerformLayout();
         }

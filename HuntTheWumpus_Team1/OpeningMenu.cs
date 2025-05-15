@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GameControl_Offical;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,7 +15,8 @@ namespace HuntTheWumpus_Team1
     {
         public string UsernameToReturn;
 
-        
+        bool AllowedtoClose = false;
+
         public OpeningMenu()
         {
             InitializeComponent();
@@ -26,6 +28,7 @@ namespace HuntTheWumpus_Team1
             if (string.IsNullOrWhiteSpace(textBoxUsername.Text) != true)
             {
                 UsernameToReturn = textBoxUsername.Text;
+                AllowedtoClose = true;
                 this.Close();
             }
             else
@@ -39,6 +42,8 @@ namespace HuntTheWumpus_Team1
         {
             HighScoreUI HighScoreDlg = new HighScoreUI();
             HighScoreDlg.PlayedGameOrNot = false;
+            Player_GameControl GameControlObject = new Player_GameControl();
+            HighScoreDlg.GameControlObject = GameControlObject;
             this.Hide();
             HighScoreDlg.ShowDialog();
         }
@@ -50,5 +55,12 @@ namespace HuntTheWumpus_Team1
             MessageBoxDlg.ShowDialog();
         }
 
+        private void OpeningMenu_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (!AllowedtoClose)
+            {
+                e.Cancel = true;
+            }
+        }
     }
 }

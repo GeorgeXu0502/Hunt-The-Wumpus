@@ -29,6 +29,11 @@ namespace HuntTheWumpus_Team1
 
         private void TriviaAnswerUI_Load(object sender, EventArgs e)
         {
+            buttonOptionA.Enabled = false;
+            buttonOptionB.Enabled = false;
+            buttonOptionC.Enabled = false;
+            buttonOptionD.Enabled = false;
+
             richTextBoxMainQuestion.Text = TriviaAnswerToUse.QuestionTrivia;
 
             richTextBoxOptionA.Text = TriviaAnswerToUse.PossibleAnswers[0];

@@ -111,7 +111,6 @@ namespace HuntTheWumpus_Team1
         /// <param name="ChoiceIndex"> What is the User Chosing to Do. 1 - Buy Arrow. 2 - Shoot an Arrow. 3 - Buy a Secret. 4 - View a Secret. 5 - User Moving To New Room. 6 - User Wants to End Game Now. </param>
         private void UserMoving(int ChoiceIndex)
         {
-            GameControlObject.AddUserTurn();
             if (ChoiceIndex == 1)
             {
                 UserBuysAnArrow();
@@ -122,6 +121,7 @@ namespace HuntTheWumpus_Team1
 
                 if (PlayerArrowAmount > 0)
                 {
+                    GameControlObject.AddUserTurn();
                     WhatAreWeChoosingMove0orWampus1 = 1;
                     DisplayaMessage("Please choose a room into which to shoot the arrow");
                     buttonNextRoom1.Enabled = true;
@@ -149,6 +149,7 @@ namespace HuntTheWumpus_Team1
             }
             else if (ChoiceIndex == 5)
             {
+                GameControlObject.AddUserTurn();
                 buttonNextRoom1.Enabled = true;
                 buttonNextRoom2.Enabled = true;
                 buttonNextRoom3.Enabled = true;
@@ -202,6 +203,7 @@ namespace HuntTheWumpus_Team1
         {
             HighScoreUI HighScoreDlg = new HighScoreUI();
             HighScoreDlg.PlayedGameOrNot = true;
+            HighScoreDlg.GameControlObject = GameControlObject; 
             this.Hide();
             HighScoreDlg.ShowDialog();
         }
@@ -412,6 +414,7 @@ namespace HuntTheWumpus_Team1
 
                 if (DoWeContiueWithAction)
                 {
+                    GameControlObject.AddUserTurn();
                     DisplayaMessage("We Will Contiue. Please Get 2 Questions out of 3 Correct!");
 
                     TriviaQuestionUI triviaDlg = new TriviaQuestionUI();
@@ -489,6 +492,7 @@ namespace HuntTheWumpus_Team1
 
             if (DoWeContiueWithAction)
             {
+                GameControlObject.AddUserTurn();
                 DisplayaMessage("We Will Contiue. Please Get 2 Questions out of 3 Correct!");
 
                 TriviaQuestionUI triviaDlg = new TriviaQuestionUI();
