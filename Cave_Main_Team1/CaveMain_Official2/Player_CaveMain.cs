@@ -532,20 +532,44 @@ namespace CaveMain_Official2
 
         public int WhereisWampus()
         {
-            // Write a Function to Figure out where is Wumpus. 
-            return 0;
+            int wumpusRoom = 0;
+            foreach(Room room in RandomMap)
+            {
+                if (room.HasWumpus == true)
+                {
+                    wumpusRoom += room.RoomNumber;
+                    break;
+                }
+            }
+            return wumpusRoom;
         }
 
         public int WhereisPit()
         {
-            // Write a Function to Figure out where is Pit. 
-            return 0;
+            int pitRoom = 0;
+            foreach (Room room in RandomMap)
+            {
+                if (room.HasPit == true)
+                {
+                    pitRoom += room.RoomNumber;
+                    break;
+                }
+            }
+            return pitRoom;
         }
 
         public int WhereisaBat()
         {
-            // Write a Function to Figure out where is some Bat. 
-            return 0;
+            int batRoom = 0;
+            foreach (Room room in RandomMap)
+            {
+                if (room.HasBats == true)
+                {
+                    batRoom += room.RoomNumber;
+                    break;
+                }
+            }
+            return batRoom;
         }
 
         public int HowManyRoomsAwayIsWampus(int RoomWhereUserIs)
