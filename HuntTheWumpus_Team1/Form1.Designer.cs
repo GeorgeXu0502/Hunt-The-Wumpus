@@ -39,7 +39,6 @@
             buttonNextRoom3 = new Button();
             buttonNextRoom4 = new Button();
             groupBoxplayeractions = new GroupBox();
-            buttonViewTrivia = new Button();
             buttonEndGameNow = new Button();
             buttonPurchaseSecret = new Button();
             buttonPurchaseArrow = new Button();
@@ -177,7 +176,6 @@
             // 
             // groupBoxplayeractions
             // 
-            groupBoxplayeractions.Controls.Add(buttonViewTrivia);
             groupBoxplayeractions.Controls.Add(buttonEndGameNow);
             groupBoxplayeractions.Controls.Add(buttonPurchaseSecret);
             groupBoxplayeractions.Controls.Add(buttonPurchaseArrow);
@@ -185,27 +183,15 @@
             groupBoxplayeractions.Controls.Add(buttonMovetoNextRoom);
             groupBoxplayeractions.Location = new Point(883, 14);
             groupBoxplayeractions.Name = "groupBoxplayeractions";
-            groupBoxplayeractions.Size = new Size(254, 561);
+            groupBoxplayeractions.Size = new Size(254, 480);
             groupBoxplayeractions.TabIndex = 16;
             groupBoxplayeractions.TabStop = false;
             groupBoxplayeractions.Text = "Possible Actions";
             // 
-            // buttonViewTrivia
-            // 
-            buttonViewTrivia.BackColor = SystemColors.ActiveCaption;
-            buttonViewTrivia.Location = new Point(5, 387);
-            buttonViewTrivia.Margin = new Padding(2);
-            buttonViewTrivia.Name = "buttonViewTrivia";
-            buttonViewTrivia.Size = new Size(244, 83);
-            buttonViewTrivia.TabIndex = 23;
-            buttonViewTrivia.Text = "View A Selected Secret";
-            buttonViewTrivia.UseVisualStyleBackColor = false;
-            buttonViewTrivia.Click += buttonViewSecret_Click;
-            // 
             // buttonEndGameNow
             // 
             buttonEndGameNow.BackColor = SystemColors.ActiveCaption;
-            buttonEndGameNow.Location = new Point(5, 473);
+            buttonEndGameNow.Location = new Point(5, 390);
             buttonEndGameNow.Margin = new Padding(2);
             buttonEndGameNow.Name = "buttonEndGameNow";
             buttonEndGameNow.Size = new Size(244, 83);
@@ -332,11 +318,12 @@
             // 
             listBoxTriviaQuestion.FormattingEnabled = true;
             listBoxTriviaQuestion.ItemHeight = 15;
-            listBoxTriviaQuestion.Location = new Point(883, 598);
+            listBoxTriviaQuestion.Location = new Point(883, 499);
             listBoxTriviaQuestion.Margin = new Padding(2);
             listBoxTriviaQuestion.Name = "listBoxTriviaQuestion";
             listBoxTriviaQuestion.Size = new Size(355, 184);
             listBoxTriviaQuestion.TabIndex = 18;
+            listBoxTriviaQuestion.SelectedIndexChanged += listBoxTriviaQuestion_SelectedIndexChanged;
             // 
             // groupBoxRoomWarnings
             // 
@@ -404,7 +391,6 @@
         private Button buttonMovetoNextRoom;
         private Button buttonEndGameNow;
         private ListBox listBoxTriviaQuestion;
-        private Button buttonViewTrivia;
         private GroupBox groupBoxRoomWarnings;
         private TextBox textBoxAmountofTurns;
         private Label label1;

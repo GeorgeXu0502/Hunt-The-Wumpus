@@ -43,7 +43,8 @@ namespace HuntTheWumpus_Team1
             if (MovingForWhat == 0) // This means that we are moving for actual moving. 
             {
                 GameControlObject.UpdateWhereUserIs(RoomNumber);
-                ShowTriviaAnswer();
+                TriviaQuestion TriviaQuestionToUse = GameControlObject.SendTriviaQuestion();
+                ShowTriviaAnswer(TriviaQuestionToUse, true);
                 GameControlObject.AddGoldCoin();
                 bool[] BoolArrayOfWarnings = DrawTheRoom(RoomNumber);
 
@@ -77,16 +78,20 @@ namespace HuntTheWumpus_Team1
         /// <summary>
         /// Shows a Trivia Answer to the User. 
         /// </summary>
-        private void ShowTriviaAnswer()
+        /// <param name="TriviaQuestionToUse"> The Trivia Answer to Show </param>
+        private void ShowTriviaAnswer(TriviaQuestion TriviaQuestionToUse, bool newQuestion)
         {
             TriviaAnswerUI TriviaAnswerUIDlg = new TriviaAnswerUI();
             this.Hide();
-            TriviaQuestion TriviaQuestionToUse = GameControlObject.SendTriviaQuestion();
             TriviaAnswerUIDlg.TriviaAnswerToUse = TriviaQuestionToUse;
             TriviaAnswerUIDlg.ShowDialog();
-            ListofPastTriviaQuestions.Add(TriviaQuestionToUse);
-            int i = ListofPastTriviaQuestions.Count;
-            listBoxTriviaQuestion.Items.Add("Trivia Question Number: #" + (i).ToString());
+
+            if (newQuestion)
+            {
+                ListofPastTriviaQuestions.Add(TriviaQuestionToUse);
+                int i = ListofPastTriviaQuestions.Count;
+                listBoxTriviaQuestion.Items.Add("Trivia Question Number: #" + (i).ToString());
+            }
             this.Show();
         }
 
@@ -183,7 +188,6 @@ namespace HuntTheWumpus_Team1
             buttonShootanArrow.Enabled = false;
             buttonPurchaseArrow.Enabled = false;
             buttonPurchaseSecret.Enabled = false;
-            buttonViewTrivia.Enabled = false;
             buttonEndGameNow.Enabled = false;
         }
 
@@ -196,7 +200,6 @@ namespace HuntTheWumpus_Team1
             buttonShootanArrow.Enabled = true;
             buttonPurchaseArrow.Enabled = true;
             buttonPurchaseSecret.Enabled = true;
-            buttonViewTrivia.Enabled = true;
             buttonEndGameNow.Enabled = true;
         }
 
@@ -207,7 +210,7 @@ namespace HuntTheWumpus_Team1
         {
             HighScoreUI HighScoreDlg = new HighScoreUI();
             HighScoreDlg.PlayedGameOrNot = true;
-            HighScoreDlg.GameControlObject = GameControlObject; 
+            HighScoreDlg.GameControlObject = GameControlObject;
             this.Hide();
             HighScoreDlg.ShowDialog();
         }
@@ -810,6 +813,18 @@ namespace HuntTheWumpus_Team1
             }
 
             checkBoxbatsnearby.Checked = hasBat;
+        }
+
+        private void listBoxTriviaQuestion_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (listBoxTriviaQuestion.SelectedIndex != -1)
+            {
+                int IndexofTrivia = listBoxTriviaQuestion.SelectedIndex;
+
+                ShowTriviaAnswer(ListofPastTriviaQuestions[IndexofTrivia], false);
+            }
+
+            listBoxTriviaQuestion.SelectedIndex = -1;
         }
     }
 }
