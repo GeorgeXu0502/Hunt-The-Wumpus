@@ -31,6 +31,7 @@ namespace HuntTheWumpus_Team1
         private void MessageBoxCustom_Load(object sender, EventArgs e)
         {
             richTextBoxDispaly.Text = StringToDispaly;
+            richTextBoxDispaly.TabStop = false;
         }
 
         private void MessageBoxCustom_FormClosing(object sender, FormClosingEventArgs e)
