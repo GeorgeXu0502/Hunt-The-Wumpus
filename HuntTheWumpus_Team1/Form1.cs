@@ -152,10 +152,6 @@ namespace HuntTheWumpus_Team1
             {
                 UserBuysASecret();
             }
-            else if (ChoiceIndex == 4)
-            {
-                UserViewsATriviaQuestion();
-            }
             else if (ChoiceIndex == 5)
             {
                 GameControlObject.AddUserTurn();
@@ -537,10 +533,6 @@ namespace HuntTheWumpus_Team1
         /// <summary>
         /// Function that handels the desire of the User to View a Secret. 
         /// </summary>
-        private void UserViewsATriviaQuestion()
-        {
-            // Change this function.
-        }
 
         /// <summary>
         /// Function that Displays a Custom Yes or No Box, and then uses the input furthur. 
@@ -622,11 +614,6 @@ namespace HuntTheWumpus_Team1
         private void buttonNextRoom1_Click(object sender, EventArgs e)
         {
             MoveToNewRoomOrshootWampus(listofadjacentrooms[1].RoomNumber, WhatAreWeChoosingMove0orWampus1);
-        }
-
-        private void buttonViewSecret_Click(object sender, EventArgs e)
-        {
-            UserMoving(4);
         }
 
         /// <summary>
