@@ -15,8 +15,6 @@ namespace HuntTheWumpus_Team1
     {
         public string UsernameToReturn;
 
-        bool AllowedtoClose = false;
-
         public OpeningMenu()
         {
             InitializeComponent();
@@ -28,7 +26,6 @@ namespace HuntTheWumpus_Team1
             if (string.IsNullOrWhiteSpace(textBoxUsername.Text) != true)
             {
                 UsernameToReturn = textBoxUsername.Text;
-                AllowedtoClose = true;
                 this.Close();
             }
             else
@@ -53,14 +50,6 @@ namespace HuntTheWumpus_Team1
             MessageBoxCustom MessageBoxDlg = new MessageBoxCustom();
             MessageBoxDlg.StringToDispaly = StringToDisplay;
             MessageBoxDlg.ShowDialog();
-        }
-
-        private void OpeningMenu_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            if (!AllowedtoClose)
-            {
-                e.Cancel = true;
-            }
         }
     }
 }

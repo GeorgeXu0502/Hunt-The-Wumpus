@@ -29,7 +29,7 @@ namespace HuntTheWumpus_Team1
         private void buttonExitTheGame_Click(object sender, EventArgs e)
         {
             AllowedtoClose = true;
-            System.Windows.Forms.Application.Exit();
+            Application.Exit();
         }
 
         private void DisableSelectingOfText()

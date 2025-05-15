@@ -101,6 +101,11 @@ namespace HuntTheWumpus_Team1
             OpentheMenuObject.ShowDialog();
             UserUsername = OpentheMenuObject.UsernameToReturn;
 
+            while (string.IsNullOrWhiteSpace(UserUsername) == true)
+            {
+                OpentheMenuObject.ShowDialog();
+                UserUsername = OpentheMenuObject.UsernameToReturn;
+            }
 
             bool[] DangerInRoom = DrawTheRoom(GameControlObject.WhereIsUser());
         }
