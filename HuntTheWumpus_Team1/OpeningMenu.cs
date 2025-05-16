@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Media;
 
 namespace HuntTheWumpus_Team1
 {
@@ -15,6 +16,7 @@ namespace HuntTheWumpus_Team1
     {
         public string UsernameToReturn;
 
+        SoundPlayer openingMusicPlayer = new SoundPlayer(Properties.Resources.);
         public OpeningMenu()
         {
             InitializeComponent();
@@ -50,6 +52,16 @@ namespace HuntTheWumpus_Team1
             MessageBoxCustom MessageBoxDlg = new MessageBoxCustom();
             MessageBoxDlg.StringToDispaly = StringToDisplay;
             MessageBoxDlg.ShowDialog();
+        }
+
+        private void OpeningMenu_Load(object sender, EventArgs e)
+        {
+            openingMusicPlayer.Play();
+        }
+
+        private void OpeningMenu_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            openingMusicPlayer.Stop();
         }
     }
 }
