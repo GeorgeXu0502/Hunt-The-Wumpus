@@ -16,7 +16,8 @@ namespace HuntTheWumpus_Team1
     {
         public string UsernameToReturn;
 
-        SoundPlayer openingMusicPlayer = new SoundPlayer(Properties.Resources.);
+        SoundPlayer openingMusicPlayer = new SoundPlayer("C:\\Users\\Sergei\\Downloads\\AdhesiveWombat - Night Shade-[AudioTrimmer.com].wav");
+
         public OpeningMenu()
         {
             InitializeComponent();

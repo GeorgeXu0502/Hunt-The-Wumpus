@@ -35,9 +35,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="Properties\AdhesiveWombat - Night Shade.mp3">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
+    <Folder Include="Resources\" />
   </ItemGroup>
 
 </Project>

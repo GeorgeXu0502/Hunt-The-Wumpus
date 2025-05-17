@@ -6,6 +6,7 @@ using CaveMain_Official2;
 using TrivaMachine_Offical;
 using System.Net.Sockets;
 using TriviaMachine_Offical3;
+using System.Xml;
 
 
 namespace HuntTheWumpus_Team1
@@ -24,13 +25,43 @@ namespace HuntTheWumpus_Team1
 
         // Button Clicking Bool Variables.
         int WhatAreWeChoosingMove0orWampus1;
+
+        List<ResizeObject> ListofAllObjects = new List<ResizeObject>();
+        private Rectangle MovetoNextRoomButtonRectangle;
+        private Rectangle originalFormSize;
+        private Rectangle ShootanArrowButtonRectangle;
+        private Rectangle PurchaseAnArrowButtonRectangle;
+        private Rectangle PurchaseSecretButtonRectangle;
+        private Rectangle EndGameButtonRectangle;
+        private Rectangle GroupBoxRectangle;
+
+
         public Form1()
         {
             InitializeComponent();
-            // GameControlObject.AddOriginalTriviaFile(); // Only Active This if you need to write Trivia to File. Please talk to Sergei before doing this! YOU WILL MESS UP YOUR LOCAL FILE!
-            // GameControlObject.AddOriginalHighScores(); // Only Active This if you need to write High Scores to File. Please talk to Sergei before doing this! YOU WILL MESS UP YOUR LOCAL FILE!
-            // GameControlObject.AddOriginalSecretFile(); // Only Active This if you need to write High Scores to File. Please talk to Sergei before doing this! YOU WILL MESS UP YOUR LOCAL FILE!
-            StartTheGame();
+        }
+
+        private void ResizeMethod(Rectangle r, Control c)
+        {
+            float xRatio = (float)(this.Size.Width) - (float)(originalFormSize.Width);
+            float yRatio = (float)(this.Size.Height) - (float)(originalFormSize.Height);
+
+            // float centerofOldObjectX = r.Location.X + r.Width / 2;
+            // float centerofOldObjectY = r.Location.Y + r.Height / 2;
+
+            int newCenterX = (int)(r.Location.X + xRatio);
+            int newCenterY = (int)(r.Location.Y + yRatio);
+
+            /*
+            int newWidth = (int)(r.Width * xRatio);
+            int newHeight = (int)(r.Height * yRatio);
+            */
+
+            // int newX = (int)(newCenterX - r.Width / 2);
+            // int newY = (int)(newCenterY - r.Height / 2);
+
+            c.Location = new Point(newCenterX, newCenterY);
+            // c.Size = new Size(newWidth, newHeight);
         }
 
         /// <summary>
@@ -530,9 +561,6 @@ namespace HuntTheWumpus_Team1
                 DisplayaMessage("We will not continue.");
             }
         }
-        /// <summary>
-        /// Function that handels the desire of the User to View a Secret. 
-        /// </summary>
 
         /// <summary>
         /// Function that Displays a Custom Yes or No Box, and then uses the input furthur. 
@@ -812,6 +840,48 @@ namespace HuntTheWumpus_Team1
             }
 
             listBoxTriviaQuestion.SelectedIndex = -1;
+        }
+
+        private void Form1_Resize(object sender, EventArgs e)
+        {
+            /*
+            if (this.Size.Width != 1836)
+            {
+                foreach (ResizeObject i in ListofAllObjects)
+                {
+                    ResizeMethod(i.RectangleToUse, i.ControlToChange);
+                }
+                this.Refresh();
+            }
+            */
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            originalFormSize = new Rectangle(this.Location.X, this.Location.Y, this.Size.Width, this.Size.Height);
+            MovetoNextRoomButtonRectangle = new Rectangle(buttonMovetoNextRoom.Location.X, buttonMovetoNextRoom.Location.Y, buttonMovetoNextRoom.Size.Width, buttonMovetoNextRoom.Size.Height);
+            ResizeObject MovetoNewRoomButton = new ResizeObject(MovetoNextRoomButtonRectangle, buttonMovetoNextRoom);
+            ShootanArrowButtonRectangle = new Rectangle(buttonShootanArrow.Location.X, buttonShootanArrow.Location.Y, buttonShootanArrow.Size.Width, buttonShootanArrow.Size.Height);
+            ResizeObject ShootAnArrowButton = new ResizeObject(ShootanArrowButtonRectangle, buttonShootanArrow);
+            PurchaseAnArrowButtonRectangle = new Rectangle(buttonPurchaseArrow.Location.X, buttonPurchaseArrow.Location.Y, buttonPurchaseArrow.Size.Width, buttonPurchaseArrow.Size.Height);
+            ResizeObject PurchaseAnArrowButton = new ResizeObject(PurchaseAnArrowButtonRectangle, buttonPurchaseArrow);
+            PurchaseSecretButtonRectangle = new Rectangle(buttonPurchaseSecret.Location.X, buttonPurchaseSecret.Location.Y, buttonPurchaseSecret.Size.Width, buttonPurchaseSecret.Size.Height);
+            ResizeObject PurchaseSecretButton = new ResizeObject(PurchaseSecretButtonRectangle, buttonPurchaseSecret);
+            EndGameButtonRectangle = new Rectangle(buttonEndGameNow.Location.X, buttonEndGameNow.Location.Y, buttonEndGameNow.Size.Width, buttonEndGameNow.Size.Height);
+            ResizeObject EndGameNowButton = new ResizeObject(EndGameButtonRectangle, buttonEndGameNow);
+            GroupBoxRectangle = new Rectangle(groupBoxplayeractions.Location.X, groupBoxplayeractions.Location.Y, groupBoxplayeractions.Size.Width, groupBoxplayeractions.Size.Height);
+            ResizeObject GroupBoxButotn = new ResizeObject(GroupBoxRectangle, groupBoxplayeractions);
+
+            ListofAllObjects.Add(MovetoNewRoomButton);
+            ListofAllObjects.Add(ShootAnArrowButton);
+            ListofAllObjects.Add(PurchaseAnArrowButton);
+            ListofAllObjects.Add(PurchaseSecretButton);
+            ListofAllObjects.Add(EndGameNowButton);
+            ListofAllObjects.Add(GroupBoxButotn);
+            // GameControlObject.AddOriginalTriviaFile(); // Only Active This if you need to write Trivia to File. Please talk to Sergei before doing this! YOU WILL MESS UP YOUR LOCAL FILE!
+            // GameControlObject.AddOriginalHighScores(); // Only Active This if you need to write High Scores to File. Please talk to Sergei before doing this! YOU WILL MESS UP YOUR LOCAL FILE!
+            // GameControlObject.AddOriginalSecretFile(); // Only Active This if you need to write High Scores to File. Please talk to Sergei before doing this! YOU WILL MESS UP YOUR LOCAL FILE!
+            StartTheGame();
         }
     }
 }
