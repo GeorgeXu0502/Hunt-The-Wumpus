@@ -254,5 +254,20 @@ namespace GameControl_Offical
         {
             return PlayerInventoryObject.NumberofTurnsIndex();
         }
+
+        public bool IsWampusInTheNextRoom()
+        {
+            return CaveMainObject.IsWampusInTheNextRoom(RoomUserIsIn);
+        }
+
+        public bool IsPitInTheNextRoom()
+        {
+            return CaveMainObject.IsPitInTheNextRoom(RoomUserIsIn);
+        }
+
+        public bool IsBatInTheNextRoom()
+        {
+            return CaveMainObject.IsBatInTheNextRoom(RoomUserIsIn);
+        }
     }
 }

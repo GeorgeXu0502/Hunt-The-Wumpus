@@ -7,6 +7,7 @@ using TrivaMachine_Offical;
 using System.Net.Sockets;
 using TriviaMachine_Offical3;
 using System.Xml;
+using System.Security.AccessControl;
 
 
 namespace HuntTheWumpus_Team1
@@ -127,6 +128,51 @@ namespace HuntTheWumpus_Team1
         }
 
         /// <summary>
+        /// Enables only the rooms next to the room where the User is in, that the User cna actually shoot an arrow or move into. 
+        /// </summary>
+        private void EnableOnlyTheCorrectRooms()
+        {
+            buttonNextRoom1.Enabled = true;
+            buttonNextRoom2.Enabled = true;
+            buttonNextRoom3.Enabled = true;
+            buttonNextRoom4.Enabled = true;
+            buttonNextRoom5.Enabled = true;
+            buttonNextRoom6.Enabled = true;
+
+            listofadjacentrooms = GameControlObject.AdjacentRoomInformation(GameControlObject.WhereIsUser());
+
+            if (listofadjacentrooms[0].CanGoToRoom[0] == false)
+            {
+                buttonNextRoom1.Enabled = false;
+            }
+
+            if (listofadjacentrooms[0].CanGoToRoom[1] == false)
+            {
+                buttonNextRoom2.Enabled = false;
+            }
+
+            if (listofadjacentrooms[0].CanGoToRoom[2] == false)
+            {
+                buttonNextRoom3.Enabled = false;
+            }
+
+            if (listofadjacentrooms[0].CanGoToRoom[3] == false)
+            {
+                buttonNextRoom4.Enabled = false;
+            }
+
+            if (listofadjacentrooms[0].CanGoToRoom[4] == false)
+            {
+                buttonNextRoom5.Enabled = false;
+            }
+
+            if (listofadjacentrooms[0].CanGoToRoom[5] == false)
+            {
+                buttonNextRoom6.Enabled = false;
+            }
+        }
+        
+        /// <summary>
         /// Starts the Game. Shows the Opening Menu, and then draws the Initial Room. 
         /// </summary>
         private void StartTheGame()
@@ -164,12 +210,7 @@ namespace HuntTheWumpus_Team1
                     GameControlObject.AddUserTurn();
                     WhatAreWeChoosingMove0orWampus1 = 1;
                     DisplayaMessage("Please choose a room into which to shoot the arrow");
-                    buttonNextRoom1.Enabled = true;
-                    buttonNextRoom2.Enabled = true;
-                    buttonNextRoom3.Enabled = true;
-                    buttonNextRoom4.Enabled = true;
-                    buttonNextRoom5.Enabled = true;
-                    buttonNextRoom6.Enabled = true;
+                    EnableOnlyTheCorrectRooms();
 
                     // Just Diables all the other buttons the other can press. 
                     DisableAllButtonsForRoomInput();
@@ -186,12 +227,7 @@ namespace HuntTheWumpus_Team1
             else if (ChoiceIndex == 5)
             {
                 GameControlObject.AddUserTurn();
-                buttonNextRoom1.Enabled = true;
-                buttonNextRoom2.Enabled = true;
-                buttonNextRoom3.Enabled = true;
-                buttonNextRoom4.Enabled = true;
-                buttonNextRoom5.Enabled = true;
-                buttonNextRoom6.Enabled = true;
+                EnableOnlyTheCorrectRooms();
 
                 // Just Diables all the other buttons the other can press. 
                 DisableAllButtonsForRoomInput();
@@ -280,12 +316,11 @@ namespace HuntTheWumpus_Team1
             // This Room List should be of this form: [RoomUser, RoomtotheTopLeft, .... (Coutnerclockwise), ....]
             listofadjacentrooms = GameControlObject.AdjacentRoomInformation(RoomNumberToDraw);
 
-            int RoomIndex = listofadjacentrooms[0].RoomNumber;
             // The Following are some other ways to get the Background Image to be correct. 
             // pictureBoxGeneralRoomBackground.Image = Properties.Resources.ListofImageLocations[] 
             // pictureBoxGeneralRoomBackground.Image = Image.FromFile(ListofImageLocation[RoomIndex]);
             // "\"C:\\Users\\1117057\\source\\repos\\SergeiMakarevich_HuntTheWumpusLocal\\HuntTheWumpus_Team1\\PictureforRoomBackground\\HuntheWumpusRoom1.png\""
-            GetCorrectRoomBackground(RoomIndex);
+            GetCorrectRoomBackground(RoomNumberToDraw);
             // Change the Button Labels and disable the Buttons in order to stop User from touching them. 
 
             buttonNextRoom1.Text = "Room: " + listofadjacentrooms[1].RoomNumber.ToString();
@@ -302,6 +337,45 @@ namespace HuntTheWumpus_Team1
             buttonNextRoom5.Enabled = false;
             buttonNextRoom6.Enabled = false;
 
+            buttonNextRoom1.Visible = true;
+            buttonNextRoom2.Visible = true;
+            buttonNextRoom3.Visible = true;
+            buttonNextRoom4.Visible = true;
+            buttonNextRoom5.Visible = true;
+            buttonNextRoom6.Visible = true;
+
+            // Hide from view all the rooms that are actually not connected.
+
+            if (listofadjacentrooms[0].CanGoToRoom[0] == false)
+            {
+                buttonNextRoom1.Visible = false;
+            }
+
+            if (listofadjacentrooms[0].CanGoToRoom[1] == false)
+            {
+                buttonNextRoom2.Visible = false;
+            }
+
+            if (listofadjacentrooms[0].CanGoToRoom[2] == false)
+            {
+                buttonNextRoom3.Visible = false;
+            }
+
+            if (listofadjacentrooms[0].CanGoToRoom[3] == false)
+            {
+                buttonNextRoom4.Visible = false;
+            }
+
+            if (listofadjacentrooms[0].CanGoToRoom[4] == false)
+            {
+                buttonNextRoom5.Visible = false;
+            }
+
+            if (listofadjacentrooms[0].CanGoToRoom[5] == false)
+            {
+                buttonNextRoom6.Visible = false;
+            }
+
             EnableAllButtonsForRoomInput();
 
             // Redraw Inventory
@@ -310,61 +384,9 @@ namespace HuntTheWumpus_Team1
             textBoxArrowAmount.Text = GameControlObject.PlayerArrowAmount().ToString();
             textBoxAmountofTurns.Text = GameControlObject.PlayerTurnAmount().ToString();
 
-            // Do the Warnings
-            bool hasBat = false;
-            bool hasPit = false;
-            bool hasWumpus = false;
-
-            for (int i = 1; i < 7; i++)
-            {
-                Room newroomtoconsider = listofadjacentrooms[i];
-
-                if (newroomtoconsider.HasBats == true)
-                {
-                    hasBat = true;
-                }
-
-                if (newroomtoconsider.HasWumpus == true)
-                {
-                    hasWumpus = true;
-                }
-
-                if (newroomtoconsider.HasPit == true)
-                {
-
-                    hasPit = true;
-                }
-
-
-            }
-
-            // Change the Actual Checkboxes
-            if (hasBat == true)
-            {
-                checkBoxbatsnearby.Checked = true;
-            }
-            else
-            {
-                checkBoxbatsnearby.Checked = false;
-            }
-
-            if (hasPit == true)
-            {
-                checkBoxpitnearby.Checked = true;
-            }
-            else
-            {
-                checkBoxpitnearby.Checked = false;
-            }
-
-            if (hasWumpus == true)
-            {
-                checkBoxwumpusneabry.Checked = true;
-            }
-            else
-            {
-                checkBoxwumpusneabry.Checked = false;
-            }
+            checkBoxbatsnearby.Checked = GameControlObject.IsBatInTheNextRoom();
+            checkBoxpitnearby.Checked = GameControlObject.IsPitInTheNextRoom();
+            checkBoxwumpusneabry.Checked = GameControlObject.IsWampusInTheNextRoom();
 
             bool[] BoolListToReturn = { listofadjacentrooms[0].HasWumpus, listofadjacentrooms[0].HasBats, listofadjacentrooms[0].HasPit };
             return BoolListToReturn;
@@ -775,59 +797,17 @@ namespace HuntTheWumpus_Team1
         // These Function Make the Checkboxs take the correct state if the user decides to independently change the Checboxes. 
         private void checkBoxwumpusneabry_CheckedChanged(object sender, EventArgs e)
         {
-            listofadjacentrooms = GameControlObject.AdjacentRoomInformation(GameControlObject.WhereIsUser());
-
-            bool hasWampus = false;
-
-            for (int i = 1; i < 7; i++)
-            {
-                Room newroomtoconsider = listofadjacentrooms[i];
-
-                if (newroomtoconsider.HasWumpus == true)
-                {
-                    hasWampus = true;
-                }
-            }
-
-            checkBoxwumpusneabry.Checked = hasWampus;
+            checkBoxwumpusneabry.Checked = GameControlObject.IsWampusInTheNextRoom();
         }
 
         private void checkBoxpitnearby_CheckedChanged(object sender, EventArgs e)
         {
-            listofadjacentrooms = GameControlObject.AdjacentRoomInformation(GameControlObject.WhereIsUser());
-
-            bool hasPit = false;
-
-            for (int i = 1; i < 7; i++)
-            {
-                Room newroomtoconsider = listofadjacentrooms[i];
-
-                if (newroomtoconsider.HasPit == true)
-                {
-                    hasPit = true;
-                }
-            }
-
-            checkBoxpitnearby.Checked = hasPit;
+            checkBoxpitnearby.Checked = GameControlObject.IsPitInTheNextRoom();
         }
 
         private void checkBoxbatsnearby_CheckedChanged(object sender, EventArgs e)
         {
-            listofadjacentrooms = GameControlObject.AdjacentRoomInformation(GameControlObject.WhereIsUser());
-
-            bool hasBat = false;
-
-            for (int i = 1; i < 7; i++)
-            {
-                Room newroomtoconsider = listofadjacentrooms[i];
-
-                if (newroomtoconsider.HasBats == true)
-                {
-                    hasBat = true;
-                }
-            }
-
-            checkBoxbatsnearby.Checked = hasBat;
+            checkBoxbatsnearby.Checked = GameControlObject.IsBatInTheNextRoom();
         }
 
         private void listBoxTriviaQuestion_SelectedIndexChanged(object sender, EventArgs e)
