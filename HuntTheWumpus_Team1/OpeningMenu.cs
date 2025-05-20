@@ -64,5 +64,13 @@ namespace HuntTheWumpus_Team1
         {
             openingMusicPlayer.Stop();
         }
+
+        private void buttonLogIn_Click(object sender, EventArgs e)
+        {
+            LoginScreen LoginScreenDlg = new LoginScreen();
+            this.Hide();
+            LoginScreenDlg.ShowDialog();
+            this.Show();
+        }
     }
 }
