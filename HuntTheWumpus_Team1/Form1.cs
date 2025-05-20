@@ -397,7 +397,7 @@ namespace HuntTheWumpus_Team1
         /// </summary>
         public void WampusInRoom()
         {
-            DisplayaMessage("You encountered a Wumpus! You now have to answer 3 out of 5 Trivia Questions Correctly!");
+            DisplayaMessage("You encountered a Wumpus! You now have to answer 3 out of 5 Trivia Questions correctly to escape!");
 
             TriviaQuestionUI triviaDlg = new TriviaQuestionUI();
             triviaDlg.AmountofQuestions = 5;
@@ -415,7 +415,7 @@ namespace HuntTheWumpus_Team1
             }
             else
             {
-                DisplayaMessage("We narowly avoided the Wampus! It will now move to a different room!");
+                DisplayaMessage("We narrowly avoided the Wampus! It will now move to a different room!");
                 GameControlObject.MoveWumpus(GameControlObject.WhereIsUser());
             }
         }
@@ -437,7 +437,7 @@ namespace HuntTheWumpus_Team1
         /// </summary>
         public void PitInRoom()
         {
-            DisplayaMessage("You encountered a Pit! You now have to answer 2 out of 3 Trivia Questions Correctly!");
+            DisplayaMessage("You encountered a Pit! You now have to answer 2 out of 3 Trivia Questions correctly to escape!");
 
             TriviaQuestionUI triviaDlg = new TriviaQuestionUI();
             triviaDlg.AmountofQuestions = 3;
@@ -465,13 +465,13 @@ namespace HuntTheWumpus_Team1
         {
             if (GameControlObject.CanWeBuyAnArrow())
             {
-                string StringtoShow = "This operations costs 3 Coins. You have: " + GameControlObject.PlayerGoldCoinAmount().ToString() + " Coins. Do You want to contiue?";
+                string StringtoShow = "This operation costs 3 Coins. You have: " + GameControlObject.PlayerGoldCoinAmount().ToString() + " Coins. Do You want to contiue?";
                 bool DoWeContiueWithAction = DisplayAYesNoMessage(StringtoShow);
 
                 if (DoWeContiueWithAction)
                 {
                     GameControlObject.AddUserTurn();
-                    DisplayaMessage("We Will Contiue. Please Get 2 Questions out of 3 Correct!");
+                    DisplayaMessage("We will continue. You must get 2 Questions out of 3 correct!");
 
                     TriviaQuestionUI triviaDlg = new TriviaQuestionUI();
                     triviaDlg.AmountofQuestions = 3;
@@ -489,13 +489,13 @@ namespace HuntTheWumpus_Team1
                     {
                         if (DidWeMakeItWithQuestions)
                         {
-                            DisplayaMessage("We have an Extra Arrow!");
+                            DisplayaMessage("We have an extra Arrow!");
                             GameControlObject.AddArrow();
                             textBoxArrowAmount.Text = GameControlObject.PlayerArrowAmount().ToString();
                         }
                         else
                         {
-                            DisplayaMessage("We did not get an extra Extra Arrow!");
+                            DisplayaMessage("We did not get an extra Arrow!");
                         }
                     }
                 }
@@ -506,7 +506,7 @@ namespace HuntTheWumpus_Team1
             }
             else
             {
-                DisplayaMessage("You can no longer buy an arrows! Only 2 per Game.");
+                DisplayaMessage("You can no longer buy an arrow! Only 2 per game can fit in your quiver!.");
             }
         }
         /// <summary>
@@ -520,13 +520,13 @@ namespace HuntTheWumpus_Team1
 
             if (GotWampus)
             {
-                DisplayaMessage("You got the Wampus! Ending the Game");
+                DisplayaMessage("You got the Wumpus! Ending the Game");
                 GameControlObject.ChangeWumpusDefetedStatus();
                 EndTheGame();
             }
             else
             {
-                DisplayaMessage("You did not get the Wampus. We will now move the Wumpus.");
+                DisplayaMessage("You did not get the Wumpus. The Wumpus fled to a new room.");
                 Random randomvariable = new Random();
 
                 if (randomvariable.Next(1, 2) == 1) // Randomly move Wampus.
@@ -543,13 +543,13 @@ namespace HuntTheWumpus_Team1
         /// </summary>
         private void UserBuysASecret()
         {
-            string StringtoShow = "This operations costs 3 Coins. You have: " + GameControlObject.PlayerGoldCoinAmount().ToString() + " Coins. Do You want to contiue?";
+            string StringtoShow = "This operation costs 3 Coins. You have: " + GameControlObject.PlayerGoldCoinAmount().ToString() + " Coins. Do You want to contiue?";
             bool DoWeContiueWithAction = DisplayAYesNoMessage(StringtoShow);
 
             if (DoWeContiueWithAction)
             {
                 GameControlObject.AddUserTurn();
-                DisplayaMessage("We Will Contiue. Please Get 2 Questions out of 3 Correct!");
+                DisplayaMessage("We will continue. You must get 2 Questions out of 3 correct!");
 
                 TriviaQuestionUI triviaDlg = new TriviaQuestionUI();
                 triviaDlg.AmountofQuestions = 3;
@@ -567,13 +567,13 @@ namespace HuntTheWumpus_Team1
                 {
                     if (DidWeMakeItWithQuestions)
                     {
-                        DisplayaMessage("We have an Extra Secret!");
+                        DisplayaMessage("We have an extra Secret!");
                         string SecretToShow = GameControlObject.GetSecretObject();
                         DisplayaMessage("Secret is: " + SecretToShow);
                     }
                     else
                     {
-                        DisplayaMessage("We do not have an Extra Secret");
+                        DisplayaMessage("We do not have an extra Secret");
                     }
 
                 }
