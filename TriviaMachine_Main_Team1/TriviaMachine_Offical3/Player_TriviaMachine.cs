@@ -9,6 +9,9 @@ using TriviaMachine_Offical3;
 
 namespace TrivaMachine_Offical
 {
+    /// <summary>
+    /// the trivia machine stores and returns questions, and does all trivia-related tasks
+    /// </summary>
     public class Player_TriviaMachine
     {
         string Triviadatafiletouse = "TriviaQuestion.json";
@@ -19,13 +22,18 @@ namespace TrivaMachine_Offical
 
         int ListTriviaQuestionIndex = 0; // This Index is Used to Monitor The Questions.
 
-        // The Construcutor for the File. 
+    /// <summary>
+    /// the constructor for the file
+    /// </summary>
         public Player_TriviaMachine()
         {
             ReadTriviaFile();
             ReadSecretFile(); 
         }
 
+    /// <summary>
+    /// this method writes all secret options to the json
+    /// </summary>
         public void WriteSecretsToFile()
         {
             List<SecretObject> ListtoWriteToFile = new List<SecretObject>();
@@ -50,18 +58,27 @@ namespace TrivaMachine_Offical
             Utility.WriteSecretToFile(ListtoWriteToFile, Secretdatafiletouse);
         }
 
+       /// <summary>
+       /// reads the trivia file
+       /// </summary>
         public void ReadTriviaFile()
         {
             // Use this Function to Read The Trivia From the File.
             ListofTriviaQuestions = Utility.ReadTriviaFromFile(Triviadatafiletouse);
         }
 
+        /// <summary>
+        /// reads the secret file (contains hints)
+        /// </summary>
         public void ReadSecretFile()
         {
             ListofSecrets = Utility.ReadSecretsFromFile(Secretdatafiletouse);
         }
-        
-        // Returns both the Trivia Answer and Question, contrary to the Name. 
+
+        /// <summary>
+        /// Returns both the Trivia Answer and Question, contrary to the Name. 
+        /// </summary>
+        /// <returns></returns>
         public TriviaQuestion GetTriviaAnswer()
         {
             // Might want to fix this in anyway possible. This just cycles the questions, could implement anything else? Like a random function, only give questions to which we have given an answer.
@@ -75,6 +92,10 @@ namespace TrivaMachine_Offical
             return TriviaQuestionToReturn;
         }
 
+        /// <summary>
+        /// returns a random secret
+        /// </summary>
+        /// <returns></returns>
         public SecretObject GetSecret()
         {
             Random RandomObject = new Random();
