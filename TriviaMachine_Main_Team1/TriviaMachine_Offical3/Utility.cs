@@ -9,6 +9,9 @@ using TriviaMachine_Offical3;
 
 namespace TrivaMachine_Offical
 {
+    /// <summary>
+    /// utility class
+    /// </summary>
     public class Utility
     {
         public static void WriteTriviaToFile(List<TriviaQuestion> ListofTriviaQuestion, string filename)
@@ -24,6 +27,11 @@ namespace TrivaMachine_Offical
             streakwriter.Close();
         }
 
+        /// <summary>
+        /// reads trivia from the file and returns a list of questions
+        /// </summary>
+        /// <param name="filename"></param>
+        /// <returns></returns>
         public static List<TriviaQuestion> ReadTriviaFromFile(string filename)
         {
             JsonSerializer serlizer = new JsonSerializer();
@@ -43,6 +51,11 @@ namespace TrivaMachine_Offical
             }
         }
 
+        /// <summary>
+        /// writes the secrets to file
+        /// </summary>
+        /// <param name="ListofSecrets"></param>
+        /// <param name="filename"></param>
         public static void WriteSecretToFile(List<SecretObject> ListofSecrets, string filename)
         {
             JsonSerializer serlizer = new JsonSerializer();
@@ -56,6 +69,11 @@ namespace TrivaMachine_Offical
             streakwriter.Close();
         }
 
+        /// <summary>
+        /// reads the secrets from the file and returns a list of secrets
+        /// </summary>
+        /// <param name="filename"></param>
+        /// <returns></returns>
         public static List<SecretObject> ReadSecretsFromFile(string filename)
         {
             JsonSerializer serlizer = new JsonSerializer();

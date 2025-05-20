@@ -9,11 +9,18 @@ using TrivaMachine_Offical;
 
 namespace TriviaMachine_Offical
 { // THIS IS AN AUXILERLY FUNCTION. NO ACTUAL PROGRAMMING SHOULD BE DONE HERE!
+
+    /// <summary>
+    /// this class holds all the stuff for writing new trivia to the file
+    /// </summary>
     public class WritingNewTriviaToFile
     {
         string Triviadatafiletouse = "TriviaQuestion.json";
         string Secretdatafiletouse = "SecretList.json";
 
+        /// <summary>
+        /// writing all trivia to file for the first time
+        /// </summary>
         public void WriteTriviaToFile()
         {
             // Use this function to write the Trivia to the File for the First Time.
