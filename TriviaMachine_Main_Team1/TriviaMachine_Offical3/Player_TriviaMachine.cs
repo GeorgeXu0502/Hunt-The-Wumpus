@@ -27,6 +27,7 @@ namespace TrivaMachine_Offical
     /// </summary>
         public Player_TriviaMachine()
         {
+            
             ReadTriviaFile();
             ReadSecretFile(); 
         }
@@ -81,15 +82,53 @@ namespace TrivaMachine_Offical
         /// <returns></returns>
         public TriviaQuestion GetTriviaAnswer()
         {
-            // Might want to fix this in anyway possible. This just cycles the questions, could implement anything else? Like a random function, only give questions to which we have given an answer.
-            if (ListTriviaQuestionIndex == ListofTriviaQuestions.Count)
+            //generates random number which corresponds to trivia question
+            //possible thing to change: there is the possibility of repeating questions here
+
+            Random random = new Random();
+            ListTriviaQuestionIndex = random.Next(0,99);
+
+            // calls the shuffleanswers method to shuffle the answer options before returning
+            TriviaQuestion TriviaQuestionUnordered = ListofTriviaQuestions[ListTriviaQuestionIndex];
+            return ShuffleAnswers(TriviaQuestionUnordered);
+        }
+
+        /// <summary>
+        /// shuffles the answer options for the triviaquestion by turning them into a dictionary and then back to a list, after determining the new correct answer index
+        /// </summary>
+        /// <param name="question"></param>
+        /// <returns></returns>
+        public TriviaQuestion ShuffleAnswers (TriviaQuestion question)
+        {
+            //
+            var arr = question.PossibleAnswers.ToArray();
+            int length = 4;
+            int correct = 0;
+
+
+            Dictionary<string, bool> dictionary = new Dictionary<string, bool>(); 
+            Random random = new Random();
+            
+            for(int i = 0; i < arr.Length; i++)
             {
-                ListTriviaQuestionIndex = 0;
+                int nextInt = random.Next(length);
+                dictionary.Add(arr[nextInt], i == question.CorrectAnswerIndex);
+
+                if(nextInt < length-1)
+                {
+                    arr[nextInt] = arr[length - 1];
+                }
+
+                length--;
+
+                if (i == question.CorrectAnswerIndex)
+                {
+                    correct = i;
+                }
             }
 
-            TriviaQuestion TriviaQuestionToReturn = ListofTriviaQuestions[ListTriviaQuestionIndex];
-            ListTriviaQuestionIndex++;
-            return TriviaQuestionToReturn;
+            TriviaQuestion shuffled = new TriviaQuestion(question.QuestionTrivia, dictionary.Keys.ToList(), correct);
+            return shuffled;
         }
 
         /// <summary>

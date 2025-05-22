@@ -14,7 +14,6 @@ namespace GameControl_Offical
     
     public class Player_GameControl
     {
-        
         Player_TriviaMachine TriviaMachineObject = new TrivaMachine_Offical.Player_TriviaMachine();
         WritingNewTriviaToFile FileWritingObject = new TriviaMachine_Offical.WritingNewTriviaToFile();
         Player_CaveMain CaveMainObject = new CaveMain_Official2.Player_CaveMain();

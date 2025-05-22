@@ -57,7 +57,7 @@ namespace HuntTheWumpus_Team1
 
         private void OpeningMenu_Load(object sender, EventArgs e)
         {
-            openingMusicPlayer.Play();
+            //openingMusicPlayer.Play();
         }
 
         private void OpeningMenu_FormClosing(object sender, FormClosingEventArgs e)

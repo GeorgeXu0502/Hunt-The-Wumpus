@@ -198,5 +198,805 @@
       "500-meter Aperture Spherical Telescope."
     ],
     "CorrectAnswerIndex": 0
+  },
+  {
+    "QuestionTrivia": "Which of the following is not the name of a telescope?",
+    "PossibleAnswers": [
+      "Microwave X-Ray Distant Ray Telescope.",
+      "Gran Telescopio Canarias.",
+      "Extremely Large Telescope.",
+      "500-meter Aperture Spherical Telescope."
+    ],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "QuestionTrivia": "How many galaxies do we know of?",
+    "PossibleAnswers": [
+      "Over two trillion.",
+      "457.",
+      "Almost 19 billion.",
+      "15."
+    ],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "QuestionTrivia": "How many galaxies outside the Milky Way can we see with the naked eye?",
+    "PossibleAnswers": [
+      "One.",
+      "17.8 million.",
+      "Three trillion.",
+      "We can’t see any other galaxies."
+    ],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "QuestionTrivia": "How many solar systems are estimated to be in the Milky Way?",
+    "PossibleAnswers": [
+      "3,196.",
+      "14 Million.",
+      "187.",
+      "One."
+    ],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "QuestionTrivia": "Which of the following planets in our Solar System wouldn’t it be possible to walk on?",
+    "PossibleAnswers": [
+      "Neptune.",
+      "Mercury.",
+      "Venus.",
+      "Mars."
+    ],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "QuestionTrivia": "Which planet has the largest ocean?",
+    "PossibleAnswers": [
+      "Jupiter.",
+      "Earth.",
+      "Pluto.",
+      "Also Earth (duh?)."
+    ],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "QuestionTrivia": "How long (in relation to the Gregorian calendar system) is one year on Neptune?",
+    "PossibleAnswers": [
+      "165 Years.",
+      "Thirteen Days.",
+      "Twenty Years.",
+      "Four Hours"
+    ],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "QuestionTrivia": "Which of the following is not a name for a storm produced by the Sun?",
+    "PossibleAnswers": [
+      "Celestial Flare.",
+      "Solar Storm.",
+      "Coronal Mass Ejection.",
+      "Radiation Storm."
+    ],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "QuestionTrivia": "What is the hottest planet in our Solar System?",
+    "PossibleAnswers": [
+      "Venus.",
+      "Mercury.",
+      "Saturn.",
+      "The Sun."
+    ],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "QuestionTrivia": "Which of the following terms for describing our section of the galaxy is capitalised correctly?",
+    "PossibleAnswers": [
+      "Solar System.",
+      "solar system.",
+      "SOLAR SYSTEM.",
+      "Solar system."
+    ],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "QuestionTrivia": "Which of the following planets is not named after a god?",
+    "PossibleAnswers": [
+      "Earth.",
+      "Mercury.",
+      "Pluto.",
+      "Uranus."
+    ],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "QuestionTrivia": "Approximately how many Earths could fit inside the Sun?",
+    "PossibleAnswers": [
+      "One Million.",
+      "Two Thousand.",
+      "Thirty.",
+      "Seven Hundred."
+    ],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "QuestionTrivia": "Which of the following is the Sun’s outermost layer?",
+    "PossibleAnswers": [
+      "Corona.",
+      "Radiative Zone.",
+      "Transition Zone.",
+      "Chromosphere."
+    ],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "QuestionTrivia": "When ranking all celestial objects by their apparent brightness in our sky, what ranking is Venus?",
+    "PossibleAnswers": [
+      "Third.",
+      "Fifth.",
+      "Fourteenth.",
+      "First."
+    ],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "QuestionTrivia": "What color is the sunset on Mars?",
+    "PossibleAnswers": [
+      "Blue.",
+      "Yellow.",
+      "Red.",
+      "White."
+    ],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "QuestionTrivia": "What planet does the moon Titan orbit?",
+    "PossibleAnswers": [
+      "Saturn.",
+      "Earth.",
+      "Jupiter.",
+      "Uranus."
+    ],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "QuestionTrivia": "What is a day on Mars called?",
+    "PossibleAnswers": [
+      "Sol.",
+      "Sidereal Day.",
+      "Rotation.",
+      "Jovia.",
+      "Earth.",
+      "Uranus.",
+      "Neptune."
+    ],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "QuestionTrivia": "Which of the following planets does not have a moon",
+    "PossibleAnswers": [
+      "Venus."
+    ],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "QuestionTrivia": "For which of the following reasons is Pluto not considered a planet?",
+    "PossibleAnswers": [
+      "It hasn’t cleared the area around its orbit.",
+      "It doesn’t orbit a star.",
+      "It doesn’t have any moons.",
+      "It lacks an atmosphere."
+    ],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "QuestionTrivia": "Which planet has the most moons?",
+    "PossibleAnswers": [
+      "Saturn.",
+      "Jupiter.",
+      "Uranus.",
+      "Each planet has only one moon."
+    ],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "QuestionTrivia": "How many moons does Jupiter have?",
+    "PossibleAnswers": [
+      "95.",
+      "15.",
+      "274.",
+      "83."
+    ],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "QuestionTrivia": "Which of the following terms for describing our section of the galaxy is capitalised correctly?",
+    "PossibleAnswers": [
+      "Solar System.",
+      "solar system.",
+      "SOLAR SYSTEM.",
+      "Solar system."
+    ],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "QuestionTrivia": "In what year was Pluto reclassified as a dwarf planet?",
+    "PossibleAnswers": [
+      "2006.",
+      "2003.",
+      "2015.",
+      "1998."
+    ],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "QuestionTrivia": "What does NASA stand for?",
+    "PossibleAnswers": [
+      "National Aeronautics and Space Administration.",
+      "New American Soviet Alliance.",
+      "National Astronomy and Space Agency.",
+      "National Astronautical Satellite Agency."
+    ],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "QuestionTrivia": "What spacecraft first brought astronauts to the Moon?",
+    "PossibleAnswers": [
+      "Apollo 11.",
+      "Apollo 13.",
+      "Apollo 9.",
+      "Sputnik."
+    ],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "QuestionTrivia": "What is the difference between astronauts and cosmonauts?",
+    "PossibleAnswers": [
+      "The former refers to Americans, and the latter refers to Soviets.",
+      "The former is the American spelling, and the latter is the British spelling.",
+      "The former focus on planets, and the latter focus on the atmosphere.",
+      "There is no difference."
+    ],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "QuestionTrivia": "What year did the first woman go to space?",
+    "PossibleAnswers": [
+      "1963.",
+      "2007.",
+      "1984.",
+      "2000."
+    ],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "QuestionTrivia": "What was the only spacecraft to visit Uranus?",
+    "PossibleAnswers": [
+      "Voyager 2.",
+      "Apollo 11.",
+      "Gemini.",
+      "Apollo 3."
+    ],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "QuestionTrivia": "What does I.S.S. stand for in the context of space?",
+    "PossibleAnswers": [
+      "International Space Station.",
+      "Intergalactic Space Sector.",
+      "Intermediate Shooting Star.",
+      "International Space Solutions."
+    ],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "QuestionTrivia": "Who was the first female commander of the International Space Station?",
+    "PossibleAnswers": [
+      "Peggy Whitson.",
+      "Sally Ride.",
+      "Valentina Tereshkova.",
+      "Barbara Morgan."
+    ],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "QuestionTrivia": "What was the first asteroid to be landed on by a space probe?",
+    "PossibleAnswers": [
+      "Eros.",
+      "Psyche.",
+      "Juno.",
+      "Europa."
+    ],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "QuestionTrivia": "Which animal was the first to be in orbit?",
+    "PossibleAnswers": [
+      "Dog.",
+      "Lizard.",
+      "Fly.",
+      "Cockroach."
+    ],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "QuestionTrivia": "What was the name of the first dog in space?",
+    "PossibleAnswers": [
+      "Laika.",
+      "Belka.",
+      "Strelka.",
+      "Veterok."
+    ],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "QuestionTrivia": "How many constellations are there?",
+    "PossibleAnswers": [
+      "88.",
+      "14,720.",
+      "14.",
+      "There are infinite possible constellations."
+    ],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "QuestionTrivia": "How many stars make up the Big Dipper?",
+    "PossibleAnswers": [
+      "7.",
+      "18.",
+      "247.",
+      "2."
+    ],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "QuestionTrivia": "Which private company was the first to launch a rocket into space?",
+    "PossibleAnswers": [
+      "SpaceX.",
+      "Boeing.",
+      "Blue Origin.",
+      "Virgin Galactic."
+    ],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "QuestionTrivia": "Aside from Earth, which planet’s moons were the first to be discovered?",
+    "PossibleAnswers": [
+      "Jupiter.",
+      "Earth.",
+      "Saturn.",
+      "Neptune."
+    ],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "QuestionTrivia": "What was the first spacecraft to enter interstellar space?",
+    "PossibleAnswers": [
+      "Voyager 1.",
+      "Voyager 2.",
+      "Apollo 11.",
+      "Pioneer 10."
+    ],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "QuestionTrivia": "What was the first planet found using a telescope?",
+    "PossibleAnswers": [
+      "Uranus.",
+      "Jupiter.",
+      "Mars.",
+      "Neptune."
+    ],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "QuestionTrivia": "Which spacecraft was famously repaired using duct tape?",
+    "PossibleAnswers": [
+      "Apollo 13.",
+      "Apollo 11.",
+      "Sputnik 1.",
+      "Challenger."
+    ],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "QuestionTrivia": "How many humans have been in space as of March 2025?",
+    "PossibleAnswers": [
+      "682.",
+      "82.",
+      "126.",
+      "103."
+    ],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "QuestionTrivia": "How many women have been in space as of April 2025?",
+    "PossibleAnswers": [
+      "104.",
+      "12.",
+      "3.",
+      "318."
+    ],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "QuestionTrivia": "As of 2025, what percent of people who have been in space are women?",
+    "PossibleAnswers": [
+      "11%.",
+      "4%.",
+      "50%.",
+      "36%."
+    ],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "QuestionTrivia": "How many humans have been on the Moon?",
+    "PossibleAnswers": [
+      "12.",
+      "3.",
+      "107.",
+      "34."
+    ],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "QuestionTrivia": "How many women have been on the Moon?",
+    "PossibleAnswers": [
+      "No women have ever been on the Moon.",
+      "14.",
+      "3.",
+      "7."
+    ],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "QuestionTrivia": "What is the estimated cost of the latest NASA space suit?",
+    "PossibleAnswers": [
+      "1 Billion USD.",
+      "17 Million USD.",
+      "40 Thousand USD.",
+      "9.3 Million USD."
+    ],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "QuestionTrivia": "In the context of astronomy, what is Interstellar Space?",
+    "PossibleAnswers": [
+      "The space between star systems.",
+      "The area immediately around our Sun.",
+      "The space that exists within our star system.",
+      "A really good movie."
+    ],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "QuestionTrivia": "In what year did humans last set foot on the Moon?",
+    "PossibleAnswers": [
+      "1972.",
+      "2025.",
+      "2009.",
+      "2016."
+    ],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "QuestionTrivia": "What was the name of the last manned mission to the Moon?",
+    "PossibleAnswers": [
+      "Apollo 17.",
+      "Apollo 13.",
+      "Apollo 11.",
+      "Apollo 15."
+    ],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "QuestionTrivia": "What is the most time any human has spent on the Moon?",
+    "PossibleAnswers": [
+      "75 Hours.",
+      "14 Hours.",
+      "183 Hours.",
+      "Humans have never been on the Moon."
+    ],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "QuestionTrivia": "In what year is the next scheduled Moon landing?",
+    "PossibleAnswers": [
+      "2027.",
+      "2026.",
+      "2031.",
+      "There are no scheduled Moon landings."
+    ],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "QuestionTrivia": "What spacecraft took a crew to the Moon in 2007?",
+    "PossibleAnswers": [
+      "No manned spacecrafts went to the Moon in 2007.",
+      "Apollo 19.",
+      "Gemini 4.",
+      "Apollo 17."
+    ],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "QuestionTrivia": "What is the name of the next planned crewed mission to land on the Moon?",
+    "PossibleAnswers": [
+      "Artemis III.",
+      "Apollo 19.",
+      "Artemis IV.",
+      "Apollo 18."
+    ],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "QuestionTrivia": "What is the Heliosphere?",
+    "PossibleAnswers": [
+      "An invisible bubble that surrounds the Solar System.",
+      "The Sun’s atmosphere.",
+      "The livable region of our Solar System.",
+      "The theory that the Earth and other planets revolve around the Sun."
+    ],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "QuestionTrivia": "What is the Heliopause?",
+    "PossibleAnswers": [
+      "The boundary where the Sun’s solar wind crashes against interstellar space.",
+      "A part of the Sun’s annual cycle.",
+      "A theoretical scenario where the Sun ceases to turn.",
+      "The area beyond our Solar System where the Sun’s light and warmth can no longer be felt."
+    ],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "QuestionTrivia": "How many planets are in our Solar System?",
+    "PossibleAnswers": [
+      "8.",
+      "9.",
+      "1.",
+      "1."
+    ],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "QuestionTrivia": "What is Pluto classified as?",
+    "PossibleAnswers": [
+      "Dwarf Planet.",
+      "Regular Planet.",
+      "Asteroid.",
+      "Exoplanet."
+    ],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "QuestionTrivia": "In what year was Pluto discovered?",
+    "PossibleAnswers": [
+      "1930.",
+      "2001.",
+      "1969.",
+      "1845."
+    ],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "QuestionTrivia": "In what year was Pluto declassified as a planet?",
+    "PossibleAnswers": [
+      "2006.",
+      "1987.",
+      "2014.",
+      "Pluto is still a planet."
+    ],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "QuestionTrivia": "How many planets in our Solar System are known to be able to support life?",
+    "PossibleAnswers": [
+      "One.",
+      "Three.",
+      "Two.",
+      "Eight."
+    ],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "QuestionTrivia": "Aside from Earth, which planet in our Solar System is known to be capable of supporting life?",
+    "PossibleAnswers": [
+      "No other planets are known to be capable of supporting life.",
+      "Venus.",
+      "Mars.",
+      "Jupiter."
+    ],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "QuestionTrivia": "Which of the following spacecraft famously exploded right after takeoff?",
+    "PossibleAnswers": [
+      "Challenger.",
+      "Apollo 8.",
+      "Apollo 3.",
+      "Sputnik 3."
+    ],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "QuestionTrivia": "How long after takeoff did the Challenger space shuttle explode?",
+    "PossibleAnswers": [
+      "73 Seconds.",
+      "12 Minutes.",
+      "1 Hour.",
+      "4 Minutes."
+    ],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "QuestionTrivia": "Who was the schoolteacher slated to be the first civilian in space?",
+    "PossibleAnswers": [
+      "Christa McAuliffe.",
+      "Sally Ride.",
+      "Ronald J. Smith.",
+      "Nick Francis."
+    ],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "QuestionTrivia": "In what year did the Challenger space shuttle explode?",
+    "PossibleAnswers": [
+      "1986.",
+      "2003.",
+      "2017.",
+      "1962."
+    ],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "QuestionTrivia": "In what year was the first commercial space flight?",
+    "PossibleAnswers": [
+      "2023.",
+      "2010.",
+      "2025.",
+      "1998."
+    ],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "QuestionTrivia": "Who was the first human being in space?",
+    "PossibleAnswers": [
+      "Yuri Gagarin.",
+      "Alan Shepard.",
+      "Neil Armstrong.",
+      "Virgil Grissom."
+    ],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "QuestionTrivia": "Who was the first American in space?",
+    "PossibleAnswers": [
+      "Alan Shepard.",
+      "Neil Armstrong.",
+      "Yuri Gagarin.",
+      "Virgil Grissom."
+    ],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "QuestionTrivia": "Who was the first person to step on the Moon?",
+    "PossibleAnswers": [
+      "Neil Armstrong.",
+      "Yuri Gagarin.",
+      "Alan Shepard.",
+      "Buzz Aldrin."
+    ],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "QuestionTrivia": "When did the first human set foot on the Moon?",
+    "PossibleAnswers": [
+      "1969.",
+      "1968.",
+      "2001.",
+      "1965."
+    ],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "QuestionTrivia": "What was the date of the first moon landing?",
+    "PossibleAnswers": [
+      "July 16.",
+      "July 20.",
+      "September 11.",
+      "June 19."
+    ],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "QuestionTrivia": "Which of the following phrases was not inscribed on the plaque left on the Moon by the crew of Apollo 11?",
+    "PossibleAnswers": [
+      "As a tribute to the strength of our nation.",
+      "July 1969 A.D.",
+      "We came in peace for all mankind.",
+      "Here men from the planet Earth first set foot upon the moon."
+    ],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "QuestionTrivia": "Which United States President famously promised to send a man to the Moon before 1970?",
+    "PossibleAnswers": [
+      "Kennedy.",
+      "Nixon.",
+      "Johnson.",
+      "Eisenhower."
+    ],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "QuestionTrivia": "What was the name of the famous speech in which President Kennedy committed America to sending a man to the Moon?",
+    "PossibleAnswers": [
+      "We Choose the Moon.",
+      "I Have a Dream.",
+      "The American Space Effort.",
+      "Sending Humanity to the Stars."
+    ],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "QuestionTrivia": "Which of the following spacecraft carries a copy of the Golden Record?",
+    "PossibleAnswers": [
+      "Voyager 1.",
+      "Gemini.",
+      "Apollo 13.",
+      "Voyager 3."
+    ],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "QuestionTrivia": "What is the Golden Record?",
+    "PossibleAnswers": [
+      "A disk with information on Earth sent into space for aliens to find.",
+      "An list of deceased NASA astronauts carried aboard each space shuttle.",
+      "The circular plaque left on the Moon by the Apollo 11 crew.",
+      "A playlist created by NASA of space sounds."
+    ],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "QuestionTrivia": "In how many languages does the Golden Record contain greetings?",
+    "PossibleAnswers": [
+      "55.",
+      "3.",
+      "14.",
+      "127."
+    ],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "QuestionTrivia": "What is the Goldilocks Zone?",
+    "PossibleAnswers": [
+      "The area around a star where a habitable planet could form.",
+      "A region of space where stars are named exclusively after fairytales and myths.",
+      "The region in the sky where there is the highest chance of finding habitable planets.",
+      "The area around Earth inhabited by the Moon."
+    ],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "QuestionTrivia": "Who was the first woman in space?",
+    "PossibleAnswers": [
+      "Valentina Tereshkova.",
+      "Sally Ride.",
+      "Katherine Johnson.",
+      "Nancy Grace Roman."
+    ],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "QuestionTrivia": "When did the first woman go to space?",
+    "PossibleAnswers": [
+      "1963.",
+      "2003.",
+      "1959.",
+      "1974."
+    ],
+    "CorrectAnswerIndex": 0
   }
 ]
