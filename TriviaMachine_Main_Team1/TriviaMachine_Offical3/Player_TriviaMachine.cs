@@ -14,10 +14,14 @@ namespace TrivaMachine_Offical
     /// </summary>
     public class Player_TriviaMachine
     {
+        //this is how long we are pretending the trivia array is
+        //the purpose of this is that it means we no longer have repeating questions
+        int virtualTriviaLength;
+
         string Triviadatafiletouse = "TriviaQuestion.json";
         string Secretdatafiletouse = "SecretList.json";
         // List of Trivia Questions and Secrets.
-        List<TriviaQuestion> ListofTriviaQuestions = new List<TriviaQuestion>();
+        TriviaQuestion[] ListofTriviaQuestions;
         List<SecretObject> ListofSecrets = new List<SecretObject>();
 
         int ListTriviaQuestionIndex = 0; // This Index is Used to Monitor The Questions.
@@ -27,7 +31,6 @@ namespace TrivaMachine_Offical
     /// </summary>
         public Player_TriviaMachine()
         {
-            
             ReadTriviaFile();
             ReadSecretFile(); 
         }
@@ -65,7 +68,9 @@ namespace TrivaMachine_Offical
         public void ReadTriviaFile()
         {
             // Use this Function to Read The Trivia From the File.
-            ListofTriviaQuestions = Utility.ReadTriviaFromFile(Triviadatafiletouse);
+            ListofTriviaQuestions = Utility.ReadTriviaFromFile(Triviadatafiletouse).ToArray();
+            //sets the virtual trivia length to what the ctual trivia length is when the program is initially loaded
+            virtualTriviaLength = ListofTriviaQuestions.Length;
         }
 
         /// <summary>
@@ -83,13 +88,28 @@ namespace TrivaMachine_Offical
         public TriviaQuestion GetTriviaAnswer()
         {
             //generates random number which corresponds to trivia question
-            //possible thing to change: there is the possibility of repeating questions here
 
             Random random = new Random();
-            ListTriviaQuestionIndex = random.Next(0,99);
+            ListTriviaQuestionIndex = random.Next(0,virtualTriviaLength);
 
-            // calls the shuffleanswers method to shuffle the answer options before returning
+            //calls the shuffleanswers method to shuffle the answer options before returning
             TriviaQuestion TriviaQuestionUnordered = ListofTriviaQuestions[ListTriviaQuestionIndex];
+
+            //replacing the used question with the last question in the array and shortenning the virtual length
+            //this is to prevent repeating questions
+            ListofTriviaQuestions[ListTriviaQuestionIndex] = ListofTriviaQuestions[--virtualTriviaLength];
+
+            //moves the already asked trivia question to the end of the line
+            ListofTriviaQuestions[virtualTriviaLength] = TriviaQuestionUnordered;
+
+            //if the user somehow gets sent 100 trivia questions, this makes the vitual trivia length 100 again
+            //so we can cycle through the questions again
+            if (virtualTriviaLength < 0)
+            {
+                virtualTriviaLength = ListofTriviaQuestions.Length;
+            }
+
+            //returns the TriviaQuestion that is now shuffled
             return ShuffleAnswers(TriviaQuestionUnordered);
         }
 
