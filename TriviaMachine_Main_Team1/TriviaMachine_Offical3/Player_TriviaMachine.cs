@@ -100,33 +100,45 @@ namespace TrivaMachine_Offical
         /// <returns></returns>
         public TriviaQuestion ShuffleAnswers (TriviaQuestion question)
         {
-            //
+            //creates an array of possible answers out of the list of answer options
             var arr = question.PossibleAnswers.ToArray();
+            //current array length
             int length = 4;
+            //correct answer index (set to 0 to begin with)
             int correct = 0;
 
-
+            //creates new dictionary with a string and bool
             Dictionary<string, bool> dictionary = new Dictionary<string, bool>(); 
+            //randomizer
             Random random = new Random();
             
+            //for loop that goes through each answer option in the array
             for(int i = 0; i < arr.Length; i++)
             {
+                //creates a new random number
                 int nextInt = random.Next(length);
+                //copies the answer with index i to the dictionary with index nextInt
+                //the value of the bool is dependent on if the answer is the actually correct one
                 dictionary.Add(arr[nextInt], i == question.CorrectAnswerIndex);
 
+                //if loop which moves all the possible answer values forward
                 if(nextInt < length-1)
                 {
                     arr[nextInt] = arr[length - 1];
                 }
 
+                //shortens the length of the working section of the answer option array
                 length--;
 
+                //if the answer being worked with is the actually correct one, this
+                //assigns the new value of "correct" to its new index in the dictionary
                 if (i == question.CorrectAnswerIndex)
                 {
                     correct = i;
                 }
             }
 
+            //returns new TriviaQuestion with the now shuffled answer options and updated correct answer index
             TriviaQuestion shuffled = new TriviaQuestion(question.QuestionTrivia, dictionary.Keys.ToList(), correct);
             return shuffled;
         }
