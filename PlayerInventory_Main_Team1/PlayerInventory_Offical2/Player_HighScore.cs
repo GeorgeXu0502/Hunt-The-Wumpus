@@ -1,26 +1,26 @@
-﻿using System;
+﻿using PlayerInventory_Offical;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Newtonsoft.Json;
 using System.Threading.Tasks;
-using System.Runtime.CompilerServices;
+using Newtonsoft.Json;
 
 namespace PlayerInventory_Offical
 {
     public class Player_HighScore
     {
-        
+
         public int GoldCount { get; set; }
         public int NumberOfTurns { get; set; }
         public int NumberOfArrows { get; set; }
         public int Score { get; set; }
         public string Username { get; set; }
-        
+
         public int AmoutofArrowsBoughtAlready { get; set; }
 
         string dataFile = "HighScore.json";
-        
+
         // Constructor
         public Player_HighScore()
         {
@@ -31,7 +31,7 @@ namespace PlayerInventory_Offical
             Username = "Player";
             AmoutofArrowsBoughtAlready = 0;
         }
-        
+
 
         /// <summary>
         /// This method is used to add/update the highscores list.
@@ -193,7 +193,7 @@ namespace PlayerInventory_Offical
         {
             List<HighScoreObject> playerhighscores = ReadFromFile();
 
-            List<HighScoreObject>  PlayerHighScoresSorted = playerhighscores.OrderBy(o => o.Score).ToList();
+            List<HighScoreObject> PlayerHighScoresSorted = playerhighscores.OrderBy(o => o.Score).ToList();
 
             return PlayerHighScoresSorted;
         }
