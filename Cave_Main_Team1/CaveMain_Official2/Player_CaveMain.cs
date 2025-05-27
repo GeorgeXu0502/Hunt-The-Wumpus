@@ -497,7 +497,7 @@ namespace CaveMain_Official2
         /// <summary>
         /// This method gives which room has the pit
         /// </summary>
-        /// <returns></returns>
+        /// <returns> pit room </returns>
         public int WhereisPit()
         {
             int pitRoom = 0;
@@ -515,7 +515,7 @@ namespace CaveMain_Official2
         /// <summary>
         /// This method gives one of the rooms with a bat
         /// </summary>
-        /// <returns></returns>
+        /// <returns>bat room</returns>
         public int WhereisaBat()
         {
             int batRoom = 0;
