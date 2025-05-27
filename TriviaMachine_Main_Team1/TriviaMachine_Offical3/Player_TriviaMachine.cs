@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography;
@@ -21,8 +22,9 @@ namespace TrivaMachine_Offical
         string Triviadatafiletouse = "TriviaQuestion.json";
         string Secretdatafiletouse = "SecretList.json";
         // List of Trivia Questions and Secrets.
-        TriviaQuestion[] ListofTriviaQuestions;
+        List<TriviaQuestion> ListofTriviaQuestions = new List<TriviaQuestion>();
         List<SecretObject> ListofSecrets = new List<SecretObject>();
+        List<int> ListofQuestionsIndexesAlreadyAsked = new List<int>();
 
         int ListTriviaQuestionIndex = 0; // This Index is Used to Monitor The Questions.
 
@@ -68,9 +70,9 @@ namespace TrivaMachine_Offical
         public void ReadTriviaFile()
         {
             // Use this Function to Read The Trivia From the File.
-            ListofTriviaQuestions = Utility.ReadTriviaFromFile(Triviadatafiletouse).ToArray();
+            ListofTriviaQuestions = Utility.ReadTriviaFromFile(Triviadatafiletouse);
             //sets the virtual trivia length to what the ctual trivia length is when the program is initially loaded
-            virtualTriviaLength = ListofTriviaQuestions.Length;
+            virtualTriviaLength = ListofTriviaQuestions.Count;
         }
 
         /// <summary>
@@ -87,80 +89,23 @@ namespace TrivaMachine_Offical
         /// <returns></returns>
         public TriviaQuestion GetTriviaAnswer()
         {
-            //generates random number which corresponds to trivia question
+            Random RandomCaller = new Random();
+            int QuestionIndexToAsk = RandomCaller.Next(0, virtualTriviaLength - 1);
 
-            Random random = new Random();
-            ListTriviaQuestionIndex = random.Next(0,virtualTriviaLength);
-
-            //calls the shuffleanswers method to shuffle the answer options before returning
-            TriviaQuestion TriviaQuestionUnordered = ListofTriviaQuestions[ListTriviaQuestionIndex];
-
-            //replacing the used question with the last question in the array and shortenning the virtual length
-            //this is to prevent repeating questions
-            ListofTriviaQuestions[ListTriviaQuestionIndex] = ListofTriviaQuestions[--virtualTriviaLength];
-
-            //moves the already asked trivia question to the end of the line
-            ListofTriviaQuestions[virtualTriviaLength] = TriviaQuestionUnordered;
-
-            //if the user somehow gets sent 100 trivia questions, this makes the vitual trivia length 100 again
-            //so we can cycle through the questions again
-            if (virtualTriviaLength < 0)
+            while (ListofQuestionsIndexesAlreadyAsked.Contains(QuestionIndexToAsk))
             {
-                virtualTriviaLength = ListofTriviaQuestions.Length;
+                QuestionIndexToAsk = RandomCaller.Next(0, virtualTriviaLength - 1);
             }
 
-            //returns the TriviaQuestion that is now shuffled
-            return ShuffleAnswers(TriviaQuestionUnordered);
-        }
+            ListofQuestionsIndexesAlreadyAsked.Add(QuestionIndexToAsk);
 
-        /// <summary>
-        /// shuffles the answer options for the triviaquestion by turning them into a dictionary and then back to a list, after determining the new correct answer index
-        /// </summary>
-        /// <param name="question"></param>
-        /// <returns></returns>
-        public TriviaQuestion ShuffleAnswers (TriviaQuestion question)
-        {
-            //creates an array of possible answers out of the list of answer options
-            var arr = question.PossibleAnswers.ToArray();
-            //current array length
-            int length = 4;
-            //correct answer index (set to 0 to begin with)
-            int correct = 0;
-
-            //creates new dictionary with a string and bool
-            Dictionary<string, bool> dictionary = new Dictionary<string, bool>(); 
-            //randomizer
-            Random random = new Random();
-            
-            //for loop that goes through each answer option in the array
-            for(int i = 0; i < arr.Length; i++)
+            if (ListofQuestionsIndexesAlreadyAsked.Count == virtualTriviaLength)
             {
-                //creates a new random number
-                int nextInt = random.Next(length);
-                //copies the answer with index i to the dictionary with index nextInt
-                //the value of the bool is dependent on if the answer is the actually correct one
-                dictionary.Add(arr[nextInt], i == question.CorrectAnswerIndex);
-
-                //if loop which moves all the possible answer values forward
-                if(nextInt < length-1)
-                {
-                    arr[nextInt] = arr[length - 1];
-                }
-
-                //shortens the length of the working section of the answer option array
-                length--;
-
-                //if the answer being worked with is the actually correct one, this
-                //assigns the new value of "correct" to its new index in the dictionary
-                if (i == question.CorrectAnswerIndex)
-                {
-                    correct = i;
-                }
+                ListofQuestionsIndexesAlreadyAsked.Clear();
             }
 
-            //returns new TriviaQuestion with the now shuffled answer options and updated correct answer index
-            TriviaQuestion shuffled = new TriviaQuestion(question.QuestionTrivia, dictionary.Keys.ToList(), correct);
-            return shuffled;
+            TriviaQuestion TriviaQuestionToReturn = ListofTriviaQuestions[QuestionIndexToAsk];
+            string ShuffeledAnswersList = TriviaQuestionToReturn.PossibleAnswers.OrderBy(x => Random.value).ToList();
         }
 
         /// <summary>
