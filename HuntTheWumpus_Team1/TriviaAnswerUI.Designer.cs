@@ -56,7 +56,7 @@
             // richTextBoxMainQuestion
             // 
             richTextBoxMainQuestion.Location = new Point(169, 22);
-            richTextBoxMainQuestion.Margin = new Padding(2, 2, 2, 2);
+            richTextBoxMainQuestion.Margin = new Padding(2);
             richTextBoxMainQuestion.Name = "richTextBoxMainQuestion";
             richTextBoxMainQuestion.ReadOnly = true;
             richTextBoxMainQuestion.Size = new Size(879, 100);
@@ -66,7 +66,7 @@
             // buttonOptionA
             // 
             buttonOptionA.Location = new Point(7, 157);
-            buttonOptionA.Margin = new Padding(2, 2, 2, 2);
+            buttonOptionA.Margin = new Padding(2);
             buttonOptionA.Name = "buttonOptionA";
             buttonOptionA.Size = new Size(163, 58);
             buttonOptionA.TabIndex = 2;
@@ -76,7 +76,7 @@
             // richTextBoxOptionA
             // 
             richTextBoxOptionA.Location = new Point(184, 157);
-            richTextBoxOptionA.Margin = new Padding(2, 2, 2, 2);
+            richTextBoxOptionA.Margin = new Padding(2);
             richTextBoxOptionA.Name = "richTextBoxOptionA";
             richTextBoxOptionA.ReadOnly = true;
             richTextBoxOptionA.Size = new Size(879, 60);
@@ -86,7 +86,7 @@
             // richTextBoxOptionB
             // 
             richTextBoxOptionB.Location = new Point(184, 229);
-            richTextBoxOptionB.Margin = new Padding(2, 2, 2, 2);
+            richTextBoxOptionB.Margin = new Padding(2);
             richTextBoxOptionB.Name = "richTextBoxOptionB";
             richTextBoxOptionB.ReadOnly = true;
             richTextBoxOptionB.Size = new Size(879, 60);
@@ -96,7 +96,7 @@
             // buttonOptionB
             // 
             buttonOptionB.Location = new Point(7, 229);
-            buttonOptionB.Margin = new Padding(2, 2, 2, 2);
+            buttonOptionB.Margin = new Padding(2);
             buttonOptionB.Name = "buttonOptionB";
             buttonOptionB.Size = new Size(163, 58);
             buttonOptionB.TabIndex = 4;
@@ -106,7 +106,7 @@
             // richTextBoxOptionC
             // 
             richTextBoxOptionC.Location = new Point(184, 298);
-            richTextBoxOptionC.Margin = new Padding(2, 2, 2, 2);
+            richTextBoxOptionC.Margin = new Padding(2);
             richTextBoxOptionC.Name = "richTextBoxOptionC";
             richTextBoxOptionC.ReadOnly = true;
             richTextBoxOptionC.Size = new Size(879, 60);
@@ -116,7 +116,7 @@
             // buttonOptionC
             // 
             buttonOptionC.Location = new Point(7, 298);
-            buttonOptionC.Margin = new Padding(2, 2, 2, 2);
+            buttonOptionC.Margin = new Padding(2);
             buttonOptionC.Name = "buttonOptionC";
             buttonOptionC.Size = new Size(163, 58);
             buttonOptionC.TabIndex = 6;
@@ -126,7 +126,7 @@
             // richTextBoxOptionD
             // 
             richTextBoxOptionD.Location = new Point(184, 371);
-            richTextBoxOptionD.Margin = new Padding(2, 2, 2, 2);
+            richTextBoxOptionD.Margin = new Padding(2);
             richTextBoxOptionD.Name = "richTextBoxOptionD";
             richTextBoxOptionD.ReadOnly = true;
             richTextBoxOptionD.Size = new Size(879, 60);
@@ -136,7 +136,7 @@
             // buttonOptionD
             // 
             buttonOptionD.Location = new Point(7, 371);
-            buttonOptionD.Margin = new Padding(2, 2, 2, 2);
+            buttonOptionD.Margin = new Padding(2);
             buttonOptionD.Name = "buttonOptionD";
             buttonOptionD.Size = new Size(163, 58);
             buttonOptionD.TabIndex = 8;
@@ -146,11 +146,11 @@
             // buttonContiue
             // 
             buttonContiue.Location = new Point(8, 446);
-            buttonContiue.Margin = new Padding(2, 2, 2, 2);
+            buttonContiue.Margin = new Padding(2);
             buttonContiue.Name = "buttonContiue";
             buttonContiue.Size = new Size(163, 58);
             buttonContiue.TabIndex = 10;
-            buttonContiue.Text = "Contiue to the Room";
+            buttonContiue.Text = "Continue to the Room";
             buttonContiue.UseVisualStyleBackColor = true;
             buttonContiue.Click += buttonContiue_Click;
             // 
@@ -161,9 +161,9 @@
             label2.Location = new Point(570, 454);
             label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new Size(456, 37);
+            label2.Size = new Size(433, 37);
             label2.TabIndex = 11;
-            label2.Text = "A hint to help in the comming Room!";
+            label2.Text = "A hint to help in the coming Room!";
             // 
             // TriviaAnswerUI
             // 
@@ -184,7 +184,7 @@
             Controls.Add(richTextBoxMainQuestion);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
-            Margin = new Padding(2, 2, 2, 2);
+            Margin = new Padding(2);
             Name = "TriviaAnswerUI";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "TriviaAnswerUI";
