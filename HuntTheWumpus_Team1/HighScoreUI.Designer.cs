@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HighScoreUI));
             label1 = new Label();
             textBoxPlayerScore = new TextBox();
             label2 = new Label();
@@ -49,13 +50,16 @@
             textBoxUserScore3 = new TextBox();
             textBoxUserScore4 = new TextBox();
             textBoxUserScore5 = new TextBox();
+            pictureBox1 = new PictureBox();
+            label11 = new Label();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 20F);
-            label1.Location = new Point(8, 20);
+            label1.Location = new Point(10, 15);
             label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
             label1.Size = new Size(148, 37);
@@ -65,8 +69,8 @@
             // textBoxPlayerScore
             // 
             textBoxPlayerScore.Font = new Font("Segoe UI", 20F);
-            textBoxPlayerScore.Location = new Point(188, 16);
-            textBoxPlayerScore.Margin = new Padding(2, 2, 2, 2);
+            textBoxPlayerScore.Location = new Point(190, 11);
+            textBoxPlayerScore.Margin = new Padding(2);
             textBoxPlayerScore.Name = "textBoxPlayerScore";
             textBoxPlayerScore.ReadOnly = true;
             textBoxPlayerScore.Size = new Size(344, 43);
@@ -76,7 +80,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 20F);
-            label2.Location = new Point(8, 103);
+            label2.Location = new Point(11, 113);
             label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
             label2.Size = new Size(149, 37);
@@ -87,7 +91,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 9F);
-            label3.Location = new Point(65, 183);
+            label3.Location = new Point(68, 193);
             label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
             label3.Size = new Size(16, 15);
@@ -97,8 +101,8 @@
             // textBoxUserName1
             // 
             textBoxUserName1.Font = new Font("Segoe UI", 9F);
-            textBoxUserName1.Location = new Point(124, 175);
-            textBoxUserName1.Margin = new Padding(2, 2, 2, 2);
+            textBoxUserName1.Location = new Point(127, 185);
+            textBoxUserName1.Margin = new Padding(2);
             textBoxUserName1.Name = "textBoxUserName1";
             textBoxUserName1.ReadOnly = true;
             textBoxUserName1.Size = new Size(139, 23);
@@ -107,8 +111,8 @@
             // textBoxUserName2
             // 
             textBoxUserName2.Font = new Font("Segoe UI", 9F);
-            textBoxUserName2.Location = new Point(124, 213);
-            textBoxUserName2.Margin = new Padding(2, 2, 2, 2);
+            textBoxUserName2.Location = new Point(127, 223);
+            textBoxUserName2.Margin = new Padding(2);
             textBoxUserName2.Name = "textBoxUserName2";
             textBoxUserName2.ReadOnly = true;
             textBoxUserName2.Size = new Size(139, 23);
@@ -118,7 +122,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 9F);
-            label4.Location = new Point(65, 217);
+            label4.Location = new Point(68, 227);
             label4.Margin = new Padding(2, 0, 2, 0);
             label4.Name = "label4";
             label4.Size = new Size(16, 15);
@@ -128,8 +132,8 @@
             // textBoxUserName3
             // 
             textBoxUserName3.Font = new Font("Segoe UI", 9F);
-            textBoxUserName3.Location = new Point(124, 253);
-            textBoxUserName3.Margin = new Padding(2, 2, 2, 2);
+            textBoxUserName3.Location = new Point(127, 263);
+            textBoxUserName3.Margin = new Padding(2);
             textBoxUserName3.Name = "textBoxUserName3";
             textBoxUserName3.ReadOnly = true;
             textBoxUserName3.Size = new Size(139, 23);
@@ -139,7 +143,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 9F);
-            label5.Location = new Point(65, 257);
+            label5.Location = new Point(68, 267);
             label5.Margin = new Padding(2, 0, 2, 0);
             label5.Name = "label5";
             label5.Size = new Size(16, 15);
@@ -149,8 +153,8 @@
             // textBoxUserName4
             // 
             textBoxUserName4.Font = new Font("Segoe UI", 9F);
-            textBoxUserName4.Location = new Point(124, 290);
-            textBoxUserName4.Margin = new Padding(2, 2, 2, 2);
+            textBoxUserName4.Location = new Point(127, 300);
+            textBoxUserName4.Margin = new Padding(2);
             textBoxUserName4.Name = "textBoxUserName4";
             textBoxUserName4.ReadOnly = true;
             textBoxUserName4.Size = new Size(139, 23);
@@ -160,7 +164,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 9F);
-            label6.Location = new Point(65, 294);
+            label6.Location = new Point(68, 304);
             label6.Margin = new Padding(2, 0, 2, 0);
             label6.Name = "label6";
             label6.Size = new Size(16, 15);
@@ -170,8 +174,8 @@
             // textBoxUserName5
             // 
             textBoxUserName5.Font = new Font("Segoe UI", 9F);
-            textBoxUserName5.Location = new Point(124, 327);
-            textBoxUserName5.Margin = new Padding(2, 2, 2, 2);
+            textBoxUserName5.Location = new Point(127, 337);
+            textBoxUserName5.Margin = new Padding(2);
             textBoxUserName5.Name = "textBoxUserName5";
             textBoxUserName5.ReadOnly = true;
             textBoxUserName5.Size = new Size(139, 23);
@@ -181,7 +185,7 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 9F);
-            label7.Location = new Point(65, 330);
+            label7.Location = new Point(68, 340);
             label7.Margin = new Padding(2, 0, 2, 0);
             label7.Name = "label7";
             label7.Size = new Size(16, 15);
@@ -190,8 +194,8 @@
             // 
             // buttonExitTheGame
             // 
-            buttonExitTheGame.Location = new Point(508, 147);
-            buttonExitTheGame.Margin = new Padding(2, 2, 2, 2);
+            buttonExitTheGame.Location = new Point(608, 11);
+            buttonExitTheGame.Margin = new Padding(2);
             buttonExitTheGame.Name = "buttonExitTheGame";
             buttonExitTheGame.Size = new Size(181, 77);
             buttonExitTheGame.TabIndex = 13;
@@ -203,7 +207,7 @@
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI", 9F);
-            label8.Location = new Point(124, 147);
+            label8.Location = new Point(127, 157);
             label8.Margin = new Padding(2, 0, 2, 0);
             label8.Name = "label8";
             label8.Size = new Size(68, 15);
@@ -214,7 +218,7 @@
             // 
             label9.AutoSize = true;
             label9.Font = new Font("Segoe UI", 9F);
-            label9.Location = new Point(303, 147);
+            label9.Location = new Point(306, 157);
             label9.Margin = new Padding(2, 0, 2, 0);
             label9.Name = "label9";
             label9.Size = new Size(65, 15);
@@ -224,8 +228,8 @@
             // textBoxUserScore1
             // 
             textBoxUserScore1.Font = new Font("Segoe UI", 9F);
-            textBoxUserScore1.Location = new Point(303, 175);
-            textBoxUserScore1.Margin = new Padding(2, 2, 2, 2);
+            textBoxUserScore1.Location = new Point(306, 185);
+            textBoxUserScore1.Margin = new Padding(2);
             textBoxUserScore1.Name = "textBoxUserScore1";
             textBoxUserScore1.ReadOnly = true;
             textBoxUserScore1.Size = new Size(139, 23);
@@ -234,8 +238,8 @@
             // textBoxUserScore2
             // 
             textBoxUserScore2.Font = new Font("Segoe UI", 9F);
-            textBoxUserScore2.Location = new Point(303, 209);
-            textBoxUserScore2.Margin = new Padding(2, 2, 2, 2);
+            textBoxUserScore2.Location = new Point(306, 219);
+            textBoxUserScore2.Margin = new Padding(2);
             textBoxUserScore2.Name = "textBoxUserScore2";
             textBoxUserScore2.ReadOnly = true;
             textBoxUserScore2.Size = new Size(139, 23);
@@ -244,8 +248,8 @@
             // textBoxUserScore3
             // 
             textBoxUserScore3.Font = new Font("Segoe UI", 9F);
-            textBoxUserScore3.Location = new Point(303, 249);
-            textBoxUserScore3.Margin = new Padding(2, 2, 2, 2);
+            textBoxUserScore3.Location = new Point(306, 259);
+            textBoxUserScore3.Margin = new Padding(2);
             textBoxUserScore3.Name = "textBoxUserScore3";
             textBoxUserScore3.ReadOnly = true;
             textBoxUserScore3.Size = new Size(139, 23);
@@ -254,8 +258,8 @@
             // textBoxUserScore4
             // 
             textBoxUserScore4.Font = new Font("Segoe UI", 9F);
-            textBoxUserScore4.Location = new Point(303, 286);
-            textBoxUserScore4.Margin = new Padding(2, 2, 2, 2);
+            textBoxUserScore4.Location = new Point(306, 296);
+            textBoxUserScore4.Margin = new Padding(2);
             textBoxUserScore4.Name = "textBoxUserScore4";
             textBoxUserScore4.ReadOnly = true;
             textBoxUserScore4.Size = new Size(139, 23);
@@ -264,19 +268,41 @@
             // textBoxUserScore5
             // 
             textBoxUserScore5.Font = new Font("Segoe UI", 9F);
-            textBoxUserScore5.Location = new Point(303, 323);
-            textBoxUserScore5.Margin = new Padding(2, 2, 2, 2);
+            textBoxUserScore5.Location = new Point(306, 333);
+            textBoxUserScore5.Margin = new Padding(2);
             textBoxUserScore5.Name = "textBoxUserScore5";
             textBoxUserScore5.ReadOnly = true;
             textBoxUserScore5.Size = new Size(139, 23);
             textBoxUserScore5.TabIndex = 20;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(553, 113);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(225, 225);
+            pictureBox1.SizeMode = PictureBoxSizeMode.AutoSize;
+            pictureBox1.TabIndex = 21;
+            pictureBox1.TabStop = false;
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Font = new Font("Segoe UI", 12F);
+            label11.Location = new Point(553, 362);
+            label11.Name = "label11";
+            label11.Size = new Size(166, 21);
+            label11.TabIndex = 23;
+            label11.Text = "Thank you for playing!";
             // 
             // HighScoreUI
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(98, 127, 149);
-            ClientSize = new Size(718, 357);
+            ClientSize = new Size(800, 450);
+            Controls.Add(label11);
+            Controls.Add(pictureBox1);
             Controls.Add(textBoxUserScore5);
             Controls.Add(textBoxUserScore4);
             Controls.Add(textBoxUserScore3);
@@ -300,12 +326,13 @@
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             HelpButton = true;
-            Margin = new Padding(2, 2, 2, 2);
+            Margin = new Padding(2);
             Name = "HighScoreUI";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "HighScoreUI";
             FormClosing += HighScoreUI_FormClosing;
             Load += HighScoreUI_Load;
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -333,5 +360,7 @@
         private TextBox textBoxUserScore3;
         private TextBox textBoxUserScore4;
         private TextBox textBoxUserScore5;
+        private PictureBox pictureBox1;
+        private Label label11;
     }
 }

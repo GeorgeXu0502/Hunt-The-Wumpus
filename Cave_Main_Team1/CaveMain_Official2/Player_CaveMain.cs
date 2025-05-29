@@ -561,28 +561,6 @@ namespace CaveMain_Official2
             return batRoom;
         }
 
-        public int HowManyRoomsAwayIsWampus(int RoomWhereUserIs)
-        {
-            // Try to write a function to identify how many rooms away the Wumpus is from the User. 
-            return 0;
-        }
-
-        public int HowManyRoomsAwayIsPit(int RoomWhereUserIs)
-        {
-            // Try to write a function to identify how many rooms away the Wumpus is from the User. 
-            return 0;
-        }
-
-
-
-
-
-
-
-
-
-
-
         // Anastasia please decide what you want to do with these functions
 
         /// <summary>
@@ -590,7 +568,7 @@ namespace CaveMain_Official2
         /// </summary>
         /// <param name="RoomWhereUserIs"></param>
         /// <returns>1, 2, or 0 </returns>
-        public int HowManyRoomsAwayIsWumpus(int RoomWhereUserIs)
+        public string HowManyRoomsAwayIsWumpus(int RoomWhereUserIs)
         {
             int HowManyRoomsAwayIsWumpus = 0;
 
@@ -632,11 +610,11 @@ namespace CaveMain_Official2
 
             if (HowManyRoomsAwayIsWumpus == 1 || HowManyRoomsAwayIsWumpus == 2)
             {
-                return HowManyRoomsAwayIsWumpus;
+                return "True";
             }
             else
             {
-                return 0;
+                return "False";
             }
         }
 
@@ -645,7 +623,7 @@ namespace CaveMain_Official2
         /// </summary>
         /// <param name="RoomWhereUserIs"></param>
         /// <returns>1, 2, or 0 </returns>
-        public int HowManyRoomsAwayIsThePit(int RoomWhereUserIs)
+        public string HowManyRoomsAwayIsThePit(int RoomWhereUserIs)
         {
             int HowManyRoomsAwayIsPit = 0;
 
@@ -687,11 +665,11 @@ namespace CaveMain_Official2
 
             if (HowManyRoomsAwayIsPit == 1 || HowManyRoomsAwayIsPit == 2)
             {
-                return HowManyRoomsAwayIsPit;
+                return "True";
             }
             else
             {
-                return 0;
+                return "False";
             }
         }
 
