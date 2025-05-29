@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace HuntTheWumpus_Team1
 {
@@ -13,7 +14,7 @@ namespace HuntTheWumpus_Team1
         string MainFile = "UserObjectFile.json";
         public PlayerDataBase_Offical()
         {
-            // ListofAllUsers = Utility.ReadUserLoginFromFile(MainFile);
+            ListofAllUsers = Utility.ReadUserLoginFromFile(MainFile);
         }
 
         public bool DoesUserExsit(string Username, string Password)
@@ -39,6 +40,42 @@ namespace HuntTheWumpus_Team1
             }
 
             return new UserLoginObject("None", "None", -1, "None");
+        }
+
+
+        public bool IsEmailValid(string EmailToConsider)
+        {
+            foreach (UserLoginObject UserToObserve in ListofAllUsers)
+            {
+                if (UserToObserve.UserEmail == EmailToConsider)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        public bool IsUserNameValid(string UsernameToConsider)
+        {
+            foreach (UserLoginObject UserToObserve in ListofAllUsers)
+            {
+                if (UserToObserve.UserUsername == UsernameToConsider)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        public void AddUserToList(UserLoginObject UserToAdd)
+        {
+            ListofAllUsers.Add(UserToAdd);
+            Utility.WriteUserLoginToFile(ListofAllUsers, MainFile);
+        }
+
+        public int GetLatestIdentificationNumber()
+        {
+            return ListofAllUsers[ListofAllUsers.Count - 1].UserIdentificationNumber;
         }
     }
 }

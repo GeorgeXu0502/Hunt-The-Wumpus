@@ -10,38 +10,57 @@ using System.Windows.Forms;
 
 namespace HuntTheWumpus_Team1
 {
-    public partial class LoginScreen : Form
+    public partial class AddAccountScreen : Form
     {
         int AmountofLetters = 0;
         string StringPassword = "";
 
-        public UserLoginObject UserToReturn;
-
         PlayerDataBase_Offical ObjectToInteractwithDataBase = new PlayerDataBase_Offical();
-        public LoginScreen()
+        public AddAccountScreen()
         {
             InitializeComponent();
         }
 
-        private void buttonLogIn_Click(object sender, EventArgs e)
+        private void buttonReturnToHomeScreen_Click(object sender, EventArgs e)
         {
-            string UserEnteredUsername = textBoxUsername.Text;
-            string UesrEnteredPassword = StringPassword;
+            this.Close();
+        }
 
-            if (ObjectToInteractwithDataBase.DoesUserExsit(UserEnteredUsername, UesrEnteredPassword))
+        private void buttonAddAccount_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(textBoxEmail.Text) != true && string.IsNullOrWhiteSpace(textBoxUsername.Text) != true && string.IsNullOrWhiteSpace(textBoxPassword.Text) != true)
             {
-                UserToReturn = ObjectToInteractwithDataBase.GetUserInformation(UserEnteredUsername);
-                DisplayaMessage("Sucessfully signed In!");
-                this.Close();
+                if (ObjectToInteractwithDataBase.IsUserNameValid(textBoxUsername.Text) && ObjectToInteractwithDataBase.IsEmailValid(textBoxEmail.Text))
+                {
+                    int UserIdentificationNumberToUse = ObjectToInteractwithDataBase.GetLatestIdentificationNumber();
+                    UserLoginObject UserToAdd = new UserLoginObject(textBoxUsername.Text, StringPassword, UserIdentificationNumberToUse, textBoxEmail.Text);
+                    ObjectToInteractwithDataBase.AddUserToList(UserToAdd);
+                    DisplayaMessage("User sucessfully added. Please login into your new account! ");
+                    this.Close();
+                }
+                else
+                {
+                    if (ObjectToInteractwithDataBase.IsUserNameValid(textBoxUsername.Text) != true)
+                    {
+                        DisplayaMessage("The Username has already been used. Please choose a new username. ");
+                    }
+                    else
+                    {
+                        DisplayaMessage("The Email has already been used. Please user another email, or login to the account associatated with the email. ");
+                    }
+                }
             }
             else
             {
-                DisplayaMessage("Username and Password do not match. Please Retry");
-                textBoxPassword.Clear();
-                textBoxUsername.Clear();
-                AmountofLetters = 0;
-                StringPassword = "";
+                DisplayaMessage("Not all the information has been filled in. Please contiue filling in all of the fields. ");
             }
+        }
+
+        private void DisplayaMessage(string StringToDisplay)
+        {
+            MessageBoxCustom MessageBoxDlg = new MessageBoxCustom();
+            MessageBoxDlg.StringToDispaly = StringToDisplay;
+            MessageBoxDlg.ShowDialog();
         }
 
         private void textBoxPassword_KeyUp(object sender, KeyEventArgs e)
@@ -96,19 +115,6 @@ namespace HuntTheWumpus_Team1
                     }
                 }
             }
-        }
-
-        private void DisplayaMessage(string StringToDisplay)
-        {
-            MessageBoxCustom MessageBoxDlg = new MessageBoxCustom();
-            MessageBoxDlg.StringToDispaly = StringToDisplay;
-            MessageBoxDlg.ShowDialog();
-        }
-
-        private void buttonReturntoHomeScreen_Click(object sender, EventArgs e)
-        {
-            UserToReturn = new UserLoginObject("None", "None", -1, "None");
-            this.Close();
         }
     }
 }

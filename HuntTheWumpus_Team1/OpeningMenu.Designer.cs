@@ -110,6 +110,7 @@
             buttonCreateAnAccount.TabIndex = 6;
             buttonCreateAnAccount.Text = "Create an Account";
             buttonCreateAnAccount.UseVisualStyleBackColor = true;
+            buttonCreateAnAccount.Click += buttonCreateAnAccount_Click;
             // 
             // OpeningMenu
             // 

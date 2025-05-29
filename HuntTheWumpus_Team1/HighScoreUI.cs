@@ -20,7 +20,7 @@ namespace HuntTheWumpus_Team1
         public Player_GameControl GameControlObject { get; set; }
 
         public bool PlayedGameOrNot { get; set; } // If the Player just wants to see High Scores from the Opening Menu. 
-        public string UserUsername { get; set; }
+        public UserLoginObject UserThatPlayer { get; set; }
         public HighScoreUI()
         {
             InitializeComponent();
@@ -60,7 +60,7 @@ namespace HuntTheWumpus_Team1
             if (PlayedGameOrNot)
             {
                 textBoxPlayerScore.Text = GameControlObject.PlayerScoreFinal().ToString();
-                HighScoreObject IndividualPlayerObject = new HighScoreObject(UserUsername, GameControlObject.PlayerScoreFinal());
+                HighScoreObject IndividualPlayerObject = new HighScoreObject(UserThatPlayer.UserUsername, GameControlObject.PlayerScoreFinal());
                 GameControlObject.AddPlayerScoreToList(IndividualPlayerObject);
                 List<HighScoreObject> TopScores = GameControlObject.GetTopScores();
                 int TopScoreCount = TopScores.Count;

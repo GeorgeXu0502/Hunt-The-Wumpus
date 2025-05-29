@@ -15,6 +15,7 @@ namespace HuntTheWumpus_Team1
     public partial class Form1 : Form
     {
         Player_GameControl GameControlObject = new GameControl_Offical.Player_GameControl();
+        UserLoginObject UserThatIsPlaying;
         // int RoomNumber = 1;
         // bool SelfInitated = true;
 
@@ -181,9 +182,9 @@ namespace HuntTheWumpus_Team1
 
             OpeningMenu OpentheMenuObject = new OpeningMenu();
             OpentheMenuObject.ShowDialog();
-            UserUsername = OpentheMenuObject.UsernameToReturn;
+            UserThatIsPlaying = OpentheMenuObject.UserToReturn;
 
-            while (string.IsNullOrWhiteSpace(UserUsername) == true)
+            while (string.IsNullOrWhiteSpace(UserThatIsPlaying.UserUsername) == true)
             {
                 this.Close();
             }
@@ -275,6 +276,7 @@ namespace HuntTheWumpus_Team1
             HighScoreDlg.PlayedGameOrNot = true;
             HighScoreDlg.DoneFromOpeningMenu = false;
             HighScoreDlg.GameControlObject = GameControlObject;
+            HighScoreDlg.UserThatPlayer = UserThatIsPlaying;
             this.Hide();
             HighScoreDlg.ShowDialog();
         }

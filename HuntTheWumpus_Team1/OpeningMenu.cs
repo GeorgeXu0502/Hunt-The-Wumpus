@@ -82,5 +82,13 @@ namespace HuntTheWumpus_Team1
                 this.Close();
             }
         }
+
+        private void buttonCreateAnAccount_Click(object sender, EventArgs e)
+        {
+            AddAccountScreen AddAcountDlg = new AddAccountScreen();
+            this.Hide();
+            AddAcountDlg.ShowDialog();
+            this.Show();
+        }
     }
 }
