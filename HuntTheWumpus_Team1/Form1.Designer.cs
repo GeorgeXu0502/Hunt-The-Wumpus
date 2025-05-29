@@ -87,7 +87,7 @@
             checkBoxwumpusneabry.Name = "checkBoxwumpusneabry";
             checkBoxwumpusneabry.Size = new Size(283, 29);
             checkBoxwumpusneabry.TabIndex = 8;
-            checkBoxwumpusneabry.Text = "Device sences Wumpus nearby";
+            checkBoxwumpusneabry.Text = "Device senses Wumpus nearby";
             checkBoxwumpusneabry.UseVisualStyleBackColor = true;
             checkBoxwumpusneabry.CheckedChanged += checkBoxwumpusneabry_CheckedChanged;
             // 
@@ -99,7 +99,7 @@
             checkBoxpitnearby.Name = "checkBoxpitnearby";
             checkBoxpitnearby.Size = new Size(231, 29);
             checkBoxpitnearby.TabIndex = 9;
-            checkBoxpitnearby.Text = "Device sences Pit nearby";
+            checkBoxpitnearby.Text = "Device senses Pit nearby";
             checkBoxpitnearby.UseVisualStyleBackColor = true;
             checkBoxpitnearby.CheckedChanged += checkBoxpitnearby_CheckedChanged;
             // 
@@ -111,7 +111,7 @@
             checkBoxbatsnearby.Name = "checkBoxbatsnearby";
             checkBoxbatsnearby.Size = new Size(244, 29);
             checkBoxbatsnearby.TabIndex = 10;
-            checkBoxbatsnearby.Text = "Device sences Bats nearby";
+            checkBoxbatsnearby.Text = "Device senses Bats nearby";
             checkBoxbatsnearby.UseVisualStyleBackColor = true;
             checkBoxbatsnearby.CheckedChanged += checkBoxbatsnearby_CheckedChanged;
             // 

@@ -104,8 +104,37 @@ namespace TrivaMachine_Offical
                 ListofQuestionsIndexesAlreadyAsked.Clear();
             }
 
-            TriviaQuestion TriviaQuestionToReturn = ListofTriviaQuestions[QuestionIndexToAsk];
-            string ShuffeledAnswersList = TriviaQuestionToReturn.PossibleAnswers.OrderBy(x => Random.value).ToList();
+            TriviaQuestion TriviaQautionToUse = ListofTriviaQuestions[QuestionIndexToAsk];
+            string CorrectAnswer = TriviaQautionToUse.PossibleAnswers[0];
+            List<string> ShuffeledAnswersList = ShuffleAnswers(TriviaQautionToUse.PossibleAnswers);
+            int IndexofCorrectAnswer = ShuffeledAnswersList.IndexOf(CorrectAnswer);
+            TriviaQuestion TriviaQuestionToReturn = new TriviaQuestion(TriviaQautionToUse.QuestionTrivia, ShuffeledAnswersList, IndexofCorrectAnswer);
+            return TriviaQuestionToReturn;
+        }
+
+        public List<string> ShuffleAnswers(List<string> PossibleanswerToUse)
+        {
+            List<string> StringListToReturn = new List<string>();
+            Random RandomCaller2 = new Random();
+            int Number1 = RandomCaller2.Next(0, 4);
+            int Number2 = RandomCaller2.Next(0, 4);
+
+            while (Number2 == Number1)
+            {
+                Number2 = RandomCaller2.Next(0, 4);
+            }
+
+            StringListToReturn.Add(PossibleanswerToUse[Number1]);
+            StringListToReturn.Add(PossibleanswerToUse[Number2]);
+
+            for (int i = 0; i < 4; i++)
+            {
+                if (i != Number1 && i!= Number2)
+                {
+                    StringListToReturn.Add(PossibleanswerToUse[i]);
+                }
+            }
+            return StringListToReturn;
         }
 
         /// <summary>

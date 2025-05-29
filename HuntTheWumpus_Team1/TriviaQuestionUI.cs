@@ -103,14 +103,22 @@ namespace HuntTheWumpus_Team1
                 {
                     AmountofCorrectQuestions += 1;
                 }
+                else
+                {
+                    buttonOptionA.BackColor = Color.DarkRed;
+                }
 
-                MovetoTheMidScreen();
+                    MovetoTheMidScreen();
             }
             else if (ButtonPrececd == 1)
             {
                 if (CurrentTriviaQuestion.CorrectAnswerIndex == 1)
                 {
                     AmountofCorrectQuestions += 1;
+                }
+                else
+                {
+                    buttonOptionB.BackColor = Color.DarkRed;
                 }
 
                 MovetoTheMidScreen();
@@ -121,6 +129,10 @@ namespace HuntTheWumpus_Team1
                 {
                     AmountofCorrectQuestions += 1;
                 }
+                else
+                {
+                    buttonOptionC.BackColor = Color.DarkRed;
+                }
 
                 MovetoTheMidScreen();
             }
@@ -130,6 +142,11 @@ namespace HuntTheWumpus_Team1
                 {
                     AmountofCorrectQuestions += 1;
                 }
+                else
+                {
+                    buttonOptionD.BackColor = Color.DarkRed;
+                }
+
                 MovetoTheMidScreen();
             }
         }
