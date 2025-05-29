@@ -191,11 +191,11 @@ namespace GameControl_Offical
             }
             else if (SecretToUse.SecretIndex == 3)
             {
-                return SecretToUse.SecretString + CaveMainObject.HowManyRoomsAwayIsWampus(RoomUserIsIn).ToString();
+                return SecretToUse.SecretString + CaveMainObject.HowManyRoomsAwayIsWumpus(RoomUserIsIn).ToString();
             }
             else if (SecretToUse.SecretIndex == 4)
             {
-                return SecretToUse.SecretString + CaveMainObject.HowManyRoomsAwayIsPit(RoomUserIsIn).ToString();
+                return SecretToUse.SecretString + CaveMainObject.HowManyRoomsAwayIsThePit(RoomUserIsIn).ToString();
             }
             else if (SecretToUse.SecretIndex == 5)
             {
