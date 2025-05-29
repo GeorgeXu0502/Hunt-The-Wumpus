@@ -172,23 +172,29 @@ namespace CaveMain_Official2
         /// <returns> The random map </returns>
         public List<Room> GenerateCave()
         {
+            // gets a random starting room for Wumpus. Since user starts in room 1, make sure it isn't in room 1
             Random rndWumpus = new Random();
             int wumpusRoom = rndWumpus.Next(2, 31);
 
+            // gets a random starting room for Bat 1. Makes sure it isn't in wumpus room, or room 1
             Random rndBat1 = new Random();
-            int batRoom1 = rndBat1.Next(1, 31);
-            while (batRoom1 == wumpusRoom)
+            int batRoom1 = rndBat1.Next(2, 31);
+            while (batRoom1 == wumpusRoom || batRoom1 == 1)
             {
+                // the chances of above happening are relatively low, so will just increment by 1 in case it does happen
                 batRoom1++;
+
+                // for if by incrementing makes room number more than 30
                 if (batRoom1 > 30)
                 {
                     batRoom1 -= 30;
                 }
             }
 
+            // same as above, except also makes sure bat room2 isn't the same as bat room 1
             Random rndBat2 = new Random();
             int batRoom2 = rndBat2.Next(2, 31);
-            while (batRoom2 == wumpusRoom || batRoom1 == batRoom2)
+            while (batRoom2 == wumpusRoom || batRoom1 == batRoom2 || batRoom2 == 1)
             {
                 batRoom2++;
                 if (batRoom2 > 30)
@@ -197,34 +203,42 @@ namespace CaveMain_Official2
                 }
             }
 
+            // same as above, except also makes sure bat room2 isn't the same as bat room 2
             Random rndPit = new Random();
             int pitRoom = rndPit.Next(2, 31);
-            while (pitRoom == wumpusRoom || pitRoom == batRoom1 || pitRoom == batRoom2)
+            while (pitRoom == wumpusRoom || pitRoom == batRoom1 || pitRoom == batRoom2 || pitRoom == 1)
             {
+                pitRoom++;
                 if (pitRoom > 30)
                 {
                     pitRoom -= 30;
                 }
             }
-
+            
+            // since the random map starts with all hazards false, changes required room to have hazards
             RandomMap[wumpusRoom].HasWumpus = true;
             RandomMap[batRoom1].HasBats = true;
             RandomMap[batRoom2].HasBats = true;
             RandomMap[pitRoom].HasPit = true;
 
+            // everything below this is for making it so not all 6 neighboring rooms are accessible from each room
             foreach (Room room in RandomMap)
             {
                 if (room.RoomNumber != 0)
                 {
+                    // to prevent having inaccessible room
                     int numberOfClosedRooms = FindNumberClosedRooms(room);
                     if (numberOfClosedRooms < 4)
                     {
+                        // for each room, selects two random indexes (corresponding to the rooms in the neighboring 
+                        // rooms list, to have closed
                         Random rndInt1 = new Random();
                         int rndClosed1 = rndInt1.Next(0, 6);
 
                         Random rndInt2 = new Random();
                         int rndClosed2 = rndInt1.Next(0, 6);
 
+                        // closes off room from one side
                         room.CanGoToRoom[rndClosed1] = false;
                         room.CanGoToRoom[rndClosed2] = false;
 
@@ -233,6 +247,7 @@ namespace CaveMain_Official2
                         int numberOfClosedRooms1 = FindNumberClosedRooms(RandomMap[roomToChange1]);
                         if (numberOfClosedRooms1 < 4)
                         {
+                            // closes off room from other side
                             RandomMap[roomToChange1].CanGoToRoom[i3] = false;
                         }
 
@@ -261,36 +276,37 @@ namespace CaveMain_Official2
 
         /// <summary>
         /// This method moves the wumpus to a random room (that the player isn't in, and that doesn't have any hazards)
-        /// It is called when the player shoots an arrow into a room and misses.
+        /// It is called when the player shoots an arrow into a room and misses, or encounters wumpus and escapes it.
         /// </summary>
         /// <param name="roomRoomNumberWhereUserIsIn">this parameter is the room number that the player is currently in</param>
         public void MoveWumpus(int roomRoomNumberWhereUserIsIn)
         {
-            
-
-
+            // determines where wumpus is
             int wumpusRoom = 0;
             foreach (Room roomToCheck in RandomMap)
             {
                 if (roomToCheck.HasWumpus == true)
                 {
+                    wumpusRoom += roomToCheck.RoomNumber;
                     break;
                 }
-                else
-                {
-                    wumpusRoom++;
-                }
+                
             }
 
             Random rnd = new Random();
-            int newWumpusRoom = rnd.Next(1, 30);
+            int newWumpusRoom = rnd.Next(1, 31);
 
-
+            // makes sure the room to where wumpus is being moved doesn;t have any hazards, and isn't old room
             while (RandomMap[newWumpusRoom].HasWumpus == true || RandomMap[newWumpusRoom].HasBats == true || RandomMap[newWumpusRoom].HasPit == true || newWumpusRoom == roomRoomNumberWhereUserIsIn || newWumpusRoom == wumpusRoom)
             {
                 newWumpusRoom++;
+                if (newWumpusRoom > 30)
+                {
+                    newWumpusRoom -= 30;
+                }
             }
 
+            // updates room information
             RandomMap[newWumpusRoom].HasWumpus = true;
             RandomMap[wumpusRoom].HasWumpus = false;
         }
@@ -309,6 +325,8 @@ namespace CaveMain_Official2
             Room roomToUse = RandomMap[RoomNumberForWhichToGetInformation];
             List<Room> listotreturn = new List<Room>();
             listotreturn.Add(roomToUse);
+
+            // adds list of accessible rooms
             for (int i = 0; i < 6; i++)
             {
                 listotreturn.Add(RandomMap[roomToUse.NextRoomList[i]]);
@@ -347,9 +365,14 @@ namespace CaveMain_Official2
             Random rnd = new Random();
             int newRoom = rnd.Next(1, 30);
 
+            // makes sure newRoom doesn't have any hazards
             while (RandomMap[newRoom].HasWumpus == true || RandomMap[newRoom].HasBats == true || RandomMap[newRoom].HasPit == true)
             {
                 newRoom++;
+                if (newRoom > 30)
+                {
+                    newRoom -= 30;
+                }
             }
 
             return newRoom;
@@ -366,14 +389,19 @@ namespace CaveMain_Official2
             // Move bats to any other room bu thits.
 
             Random rnd = new Random();
-            int newBatRoom = rnd.Next(1, 30);
+            int newBatRoom = rnd.Next(1, 31);
 
-
+            // makes sure new bat room doesn't have any hazard, and isn't the same room it was before/where user is moved to
             while (RandomMap[newBatRoom].HasWumpus == true || RandomMap[newBatRoom].HasBats == true || RandomMap[newBatRoom].HasPit == true || newBatRoom == RoomWhereUserIsMoved)
             {
                 newBatRoom++;
+                if (newBatRoom > 30)
+                {
+                    newBatRoom -= 30;
+                }
             }
 
+            // updates room information
             RandomMap[newBatRoom].HasBats = true;
             RandomMap[RoomNumberWhereUserIs].HasBats = false;
         }
@@ -387,10 +415,11 @@ namespace CaveMain_Official2
         {
             Room RoomWhereUserIs = RandomMap[RoomNumberwhereUserIs];
 
-            bool IsWampusIntheNextRoom = false;
+            bool IsWumpusIntheNextRoom = false;
 
             List<Room> RoomsToCheck = new List<Room>();
 
+            // finds which rooms are accessible from current room
             for (int i = 0; i < 6; i++)
             {
                 if (RoomWhereUserIs.CanGoToRoom[i] == true)
@@ -399,15 +428,16 @@ namespace CaveMain_Official2
                 }
             }
 
+            // checks each of the accessible rooms for the wumpus
             foreach (Room RoomToCheck in RoomsToCheck)
             {
                 if (RoomToCheck.HasWumpus == true)
                 {
-                    IsWampusIntheNextRoom = true;
+                    IsWumpusIntheNextRoom = true;
                 }
             }
 
-            return IsWampusIntheNextRoom;
+            return IsWumpusIntheNextRoom;
         }
 
         /// <summary>
@@ -417,9 +447,10 @@ namespace CaveMain_Official2
         /// <returns> true/false, depending on if the pit is there </returns>
         public bool IsPitInTheNextRoom(int RoomNumberwhereUserIs)
         {
+            
             Room RoomWhereUserIs = RandomMap[RoomNumberwhereUserIs];
 
-            bool IsWampusIntheNextRoom = false;
+            bool IsPitInNextRoom = false;
 
             List<Room> RoomstoCheck = new List<Room>();
 
@@ -435,11 +466,11 @@ namespace CaveMain_Official2
             {
                 if (RoomToCheck.HasPit == true)
                 {
-                    IsWampusIntheNextRoom = true;
+                    IsPitInNextRoom = true;
                 }
             }
 
-            return IsWampusIntheNextRoom;
+            return IsPitInNextRoom;
         }
 
         /// <summary>
