@@ -4,5 +4,11 @@
     "UserPassword": "sergei",
     "UserIdentificationNumber": 1,
     "UserEmail": "sergei@gmail.com"
+  },
+  {
+    "UserUsername": "sergei2",
+    "UserPassword": "sergei2",
+    "UserIdentificationNumber": 2,
+    "UserEmail": "sergei2@gmail.com"
   }
 ]
