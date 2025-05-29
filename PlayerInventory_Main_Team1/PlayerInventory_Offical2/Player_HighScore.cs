@@ -105,7 +105,7 @@ namespace PlayerInventory_Offical
                 wumpusBonus = 25000;
             }
             else wumpusBonus = 0;
-            Score = 10000 - (100 * NumberOfTurns) + (500 * GoldCount) + (1000 * NumberOfArrows) + wumpusBonus;
+            Score = 12000 - (100 * NumberOfTurns) + (500 * GoldCount) + (1000 * NumberOfArrows) + wumpusBonus;
             return Score;
         }
 
