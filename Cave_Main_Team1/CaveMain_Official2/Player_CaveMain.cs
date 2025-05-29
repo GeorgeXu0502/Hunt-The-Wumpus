@@ -553,9 +553,9 @@ namespace CaveMain_Official2
 
 
         // Anastasia please decide what you want to do with these functions
-        public bool IsWumpusClose(int RoomWhereUserIs)
+        public int HowManyRoomsAwayIsWumpus(int RoomWhereUserIs)
         {
-            bool IsWumpusClose = false;
+            int HowManyRoomsAwayIsWumpus = 0;
 
             Room roomToUse = RandomMap[RoomWhereUserIs];
             List<Room> roomsToCheck = new List<Room>();
@@ -572,7 +572,7 @@ namespace CaveMain_Official2
             {
                 if (room.HasWumpus == true)
                 {
-                    IsWumpusClose = true;
+                    HowManyRoomsAwayIsWumpus += 1;
 
 
                 }
@@ -585,7 +585,7 @@ namespace CaveMain_Official2
                         {
                             if (room.HasWumpus == true)
                             {
-                                IsWumpusClose = true;
+                                HowManyRoomsAwayIsWumpus += 2;
                             }
                         }
                     }
@@ -593,19 +593,19 @@ namespace CaveMain_Official2
                 }
             }
 
-            if (IsWumpusClose == true)
+            if (HowManyRoomsAwayIsWumpus == 1 || HowManyRoomsAwayIsWumpus == 2)
             {
-                return true;
+                return HowManyRoomsAwayIsWumpus;
             }
             else
             {
-                return false;
+                return 0;
             }
         }
 
-        public bool IsPitClose(int RoomWhereUserIs)
+        public int HowManyRoomsAwayIsThePit(int RoomWhereUserIs)
         {
-            bool IsPitClose = false;
+            int HowManyRoomsAwayIsPit = 0;
 
             Room roomToUse = RandomMap[RoomWhereUserIs];
             List<Room> roomsToCheck = new List<Room>();
@@ -622,7 +622,7 @@ namespace CaveMain_Official2
             {
                 if (room.HasPit == true)
                 {
-                    IsPitClose = true;
+                    HowManyRoomsAwayIsPit += 1;
 
 
                 }
@@ -635,7 +635,7 @@ namespace CaveMain_Official2
                         {
                             if (room.HasPit == true)
                             {
-                                IsPitClose = true;
+                                HowManyRoomsAwayIsPit += 2;
                             }
                         }
                     }
@@ -643,13 +643,13 @@ namespace CaveMain_Official2
                 }
             }
 
-            if (IsPitClose == true)
+            if (HowManyRoomsAwayIsPit == 1 || HowManyRoomsAwayIsPit == 2)
             {
-                return true;
+                return HowManyRoomsAwayIsPit;
             }
             else
             {
-                return false;
+                return 0;
             }
         }
 
