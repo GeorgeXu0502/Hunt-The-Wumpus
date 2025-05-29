@@ -553,6 +553,12 @@ namespace CaveMain_Official2
 
 
         // Anastasia please decide what you want to do with these functions
+
+        /// <summary>
+        /// This method determines if the wumpus is 1 or 2 accessible rooms away from where the user is (if neither, returns 0)
+        /// </summary>
+        /// <param name="RoomWhereUserIs"></param>
+        /// <returns>1, 2, or 0 </returns>
         public int HowManyRoomsAwayIsWumpus(int RoomWhereUserIs)
         {
             int HowManyRoomsAwayIsWumpus = 0;
@@ -603,6 +609,11 @@ namespace CaveMain_Official2
             }
         }
 
+        /// <summary>
+        /// This method determines if the pit is 1 or 2 accessible rooms away from where the user is (if neither, returns 0)
+        /// </summary>
+        /// <param name="RoomWhereUserIs"></param>
+        /// <returns>1, 2, or 0 </returns>
         public int HowManyRoomsAwayIsThePit(int RoomWhereUserIs)
         {
             int HowManyRoomsAwayIsPit = 0;
