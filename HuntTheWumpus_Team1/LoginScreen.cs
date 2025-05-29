@@ -15,6 +15,8 @@ namespace HuntTheWumpus_Team1
         int AmountofLetters = 0;
         string StringPassword = "";
 
+        public UserLoginObject UserToReturn;
+
         PlayerDataBase_Offical ObjectToInteractwithDataBase = new PlayerDataBase_Offical();
         public LoginScreen()
         {
@@ -28,11 +30,17 @@ namespace HuntTheWumpus_Team1
 
             if (ObjectToInteractwithDataBase.DoesUserExsit(UserEnteredUsername, UesrEnteredPassword))
             {
-               
+                UserToReturn = ObjectToInteractwithDataBase.GetUserInformation(UserEnteredUsername);
+                DisplayaMessage("Sucessfully signed In!");
+                this.Close();
             }
             else
             {
-
+                DisplayaMessage("Username and Password do not match. Please Retry");
+                textBoxPassword.Clear();
+                textBoxUsername.Clear();
+                AmountofLetters = 0;
+                StringPassword = "";
             }
         }
 
@@ -79,6 +87,19 @@ namespace HuntTheWumpus_Team1
                     textBoxPassword.Text = StringToShowcase;
                 }
             }
+        }
+
+        private void DisplayaMessage(string StringToDisplay)
+        {
+            MessageBoxCustom MessageBoxDlg = new MessageBoxCustom();
+            MessageBoxDlg.StringToDispaly = StringToDisplay;
+            MessageBoxDlg.ShowDialog();
+        }
+
+        private void buttonReturntoHomeScreen_Click(object sender, EventArgs e)
+        {
+            UserToReturn = new UserLoginObject("None", "None", -1, "None");
+            this.Close();
         }
     }
 }

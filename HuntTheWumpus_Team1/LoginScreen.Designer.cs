@@ -105,6 +105,7 @@
             buttonReturntoHomeScreen.TabIndex = 6;
             buttonReturntoHomeScreen.Text = "Return to Home Screen";
             buttonReturntoHomeScreen.UseVisualStyleBackColor = true;
+            buttonReturntoHomeScreen.Click += buttonReturntoHomeScreen_Click;
             // 
             // label3
             // 

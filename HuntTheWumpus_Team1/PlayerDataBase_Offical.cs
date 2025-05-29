@@ -13,7 +13,7 @@ namespace HuntTheWumpus_Team1
         string MainFile = "UserObjectFile.json";
         public PlayerDataBase_Offical()
         {
-            ListofAllUsers = Utility.ReadUserLoginFromFile(MainFile);
+            // ListofAllUsers = Utility.ReadUserLoginFromFile(MainFile);
         }
 
         public bool DoesUserExsit(string Username, string Password)
@@ -26,6 +26,19 @@ namespace HuntTheWumpus_Team1
                 }
             }
             return false;
+        }
+
+        public UserLoginObject GetUserInformation(string Username)
+        {
+            foreach (UserLoginObject UserToObserve in ListofAllUsers)
+            {
+                if (UserToObserve.UserUsername == Username)
+                {
+                    return UserToObserve;
+                }
+            }
+
+            return new UserLoginObject("None", "None", -1, "None");
         }
     }
 }
