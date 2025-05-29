@@ -12,8 +12,8 @@ namespace HuntTheWumpus_Team1
 {
     public partial class LoginScreen : Form
     {
-        int AmountofLetters = 0;
-        string StringPassword = "";
+        int AmountofLetters = 0; // Letters in the password. 
+        string StringPassword = ""; // Password String that stores the Password. 
 
         public UserLoginObject UserToReturn;
 
@@ -23,18 +23,23 @@ namespace HuntTheWumpus_Team1
             InitializeComponent();
         }
 
+        /// <summary>
+        /// When the Login Button is Clicked. 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonLogIn_Click(object sender, EventArgs e)
         {
             string UserEnteredUsername = textBoxUsername.Text;
             string UesrEnteredPassword = StringPassword;
 
-            if (ObjectToInteractwithDataBase.DoesUserExsit(UserEnteredUsername, UesrEnteredPassword))
+            if (ObjectToInteractwithDataBase.DoesUserExsit(UserEnteredUsername, UesrEnteredPassword)) // Check if such a User exsists. Then sign in and close the form. 
             {
                 UserToReturn = ObjectToInteractwithDataBase.GetUserInformation(UserEnteredUsername);
                 DisplayaMessage("Sucessfully signed In!");
                 this.Close();
             }
-            else
+            else // Otherwise have the user restart. 
             {
                 DisplayaMessage("Username and Password do not match. Please Retry");
                 textBoxPassword.Clear();
@@ -44,11 +49,16 @@ namespace HuntTheWumpus_Team1
             }
         }
 
+        /// <summary>
+        /// Universal function that whenever the User enters a key into the Password Textbox, it stores the Password, but prints *.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void textBoxPassword_KeyUp(object sender, KeyEventArgs e)
         {
             if (string.IsNullOrEmpty(textBoxPassword.Text) != true)
             {
-                if (e.KeyCode != Keys.Enter && e.KeyCode != Keys.LShiftKey && e.KeyCode != Keys.RShiftKey && e.KeyCode != Keys.Back)
+                if (e.KeyCode != Keys.Enter && e.KeyCode != Keys.LShiftKey && e.KeyCode != Keys.RShiftKey && e.KeyCode != Keys.Back) // Check for exagerant keys. 
                 {
                     string StringtoAdd = textBoxPassword.Text.Last().ToString();
 
@@ -71,9 +81,9 @@ namespace HuntTheWumpus_Team1
                     textBoxPassword.SelectionLength = 0;
 
                 }
-                else if (e.KeyCode == Keys.Back)
+                else if (e.KeyCode == Keys.Back) // Write back one letter for each backspace pressed. 
                 {
-                    if (AmountofLetters != 1)
+                    if (AmountofLetters != 1) // Certain case that takes care of the last character in the password text. 
                     {
                         StringPassword = StringPassword.Remove(StringPassword.Length - 1);
                         System.Diagnostics.Debug.WriteLine(StringPassword);
@@ -98,6 +108,10 @@ namespace HuntTheWumpus_Team1
             }
         }
 
+        /// <summary>
+        /// Universal Function to Display a Message with the Custom Message Box. 
+        /// </summary>
+        /// <param name="StringToDisplay"> String to Showcase </param>
         private void DisplayaMessage(string StringToDisplay)
         {
             MessageBoxCustom MessageBoxDlg = new MessageBoxCustom();
@@ -105,6 +119,11 @@ namespace HuntTheWumpus_Team1
             MessageBoxDlg.ShowDialog();
         }
 
+        /// <summary>
+        /// Return to Home Screen with a empty User Object. 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonReturntoHomeScreen_Click(object sender, EventArgs e)
         {
             UserToReturn = new UserLoginObject("None", "None", -1, "None");

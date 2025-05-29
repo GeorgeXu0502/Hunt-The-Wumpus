@@ -15,17 +15,22 @@ namespace HuntTheWumpus_Team1
     
     public partial class HighScoreUI : Form
     {
-        bool AllowedtoClose = false;
-        public bool DoneFromOpeningMenu { get; set; }
+        bool AllowedtoClose = false; // Keeps the form from closing without direct user input. 
+        public bool DoneFromOpeningMenu { get; set; } // Define the Closing attempt. 
         public Player_GameControl GameControlObject { get; set; }
 
         public bool PlayedGameOrNot { get; set; } // If the Player just wants to see High Scores from the Opening Menu. 
-        public UserLoginObject UserThatPlayer { get; set; }
+        public UserLoginObject UserThatPlayer { get; set; } // Player Object to Return. 
         public HighScoreUI()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Function that fully closes the game and the application.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonExitTheGame_Click(object sender, EventArgs e)
         {
             if (DoneFromOpeningMenu)
@@ -39,6 +44,9 @@ namespace HuntTheWumpus_Team1
             }
         }
 
+        /// <summary>
+        /// Fully stops the highlighting of the textboxes in the form.
+        /// </summary>
         private void DisableSelectingOfText()
         {
             textBoxPlayerScore.TabStop = false;
@@ -54,11 +62,17 @@ namespace HuntTheWumpus_Team1
             textBoxUserScore5.TabStop = false;
         }
 
+        /// <summary>
+        /// When the form loads put in the TopScore by reading them from the Game Control Object
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void HighScoreUI_Load(object sender, EventArgs e)
         {
             DisableSelectingOfText();
             if (PlayedGameOrNot)
             {
+                // If the game was played include the User Score and Write it to the File. 
                 textBoxPlayerScore.Text = GameControlObject.PlayerScoreFinal().ToString();
                 HighScoreObject IndividualPlayerObject = new HighScoreObject(UserThatPlayer.UserUsername, GameControlObject.PlayerScoreFinal());
                 GameControlObject.AddPlayerScoreToList(IndividualPlayerObject);
@@ -78,6 +92,7 @@ namespace HuntTheWumpus_Team1
             }
             else
             {
+                // If the game was not played, then do not include the User Score. 
                 textBoxPlayerScore.Text = "0";
                 List<HighScoreObject> TopScores = GameControlObject.GetTopScores();
                 int TopScoreCount = TopScores.Count;
@@ -95,6 +110,11 @@ namespace HuntTheWumpus_Team1
             }
         }
 
+        /// <summary>
+        /// Only close the form, is the Allowed to Close Variable. 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void HighScoreUI_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (!AllowedtoClose)

@@ -21,20 +21,30 @@ namespace HuntTheWumpus_Team1
             InitializeComponent();
         }
 
+        /// <summary>
+        /// If the User chooses to return to the Home Screen, close the current Form. 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonReturnToHomeScreen_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        /// <summary>
+        /// If the User chooses to create an Account, allow the User to do this. 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonAddAccount_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(textBoxEmail.Text) != true && string.IsNullOrWhiteSpace(textBoxUsername.Text) != true && string.IsNullOrWhiteSpace(textBoxPassword.Text) != true)
+            if (string.IsNullOrWhiteSpace(textBoxEmail.Text) != true && string.IsNullOrWhiteSpace(textBoxUsername.Text) != true && string.IsNullOrWhiteSpace(textBoxPassword.Text) != true) // Make sure all the information is in cluded. 
             {
-                if (ObjectToInteractwithDataBase.IsUserNameValid(textBoxUsername.Text) && ObjectToInteractwithDataBase.IsEmailValid(textBoxEmail.Text))
+                if (ObjectToInteractwithDataBase.IsUserNameValid(textBoxUsername.Text) && ObjectToInteractwithDataBase.IsEmailValid(textBoxEmail.Text)) // Make sure the Username and Email have not been used before. 
                 {
-                    int UserIdentificationNumberToUse = ObjectToInteractwithDataBase.GetLatestIdentificationNumber();
+                    int UserIdentificationNumberToUse = ObjectToInteractwithDataBase.GetLatestIdentificationNumber()+1;
                     UserLoginObject UserToAdd = new UserLoginObject(textBoxUsername.Text, StringPassword, UserIdentificationNumberToUse, textBoxEmail.Text);
-                    ObjectToInteractwithDataBase.AddUserToList(UserToAdd);
+                    ObjectToInteractwithDataBase.AddUserToList(UserToAdd); // Add the actual user. 
                     DisplayaMessage("User sucessfully added. Please login into your new account! ");
                     this.Close();
                 }
@@ -56,6 +66,10 @@ namespace HuntTheWumpus_Team1
             }
         }
 
+        /// <summary>
+        /// Universal Function to Display a Message with the Custom Message Box. 
+        /// </summary>
+        /// <param name="StringToDisplay"> String to Showcase </param>
         private void DisplayaMessage(string StringToDisplay)
         {
             MessageBoxCustom MessageBoxDlg = new MessageBoxCustom();
@@ -63,6 +77,11 @@ namespace HuntTheWumpus_Team1
             MessageBoxDlg.ShowDialog();
         }
 
+        /// <summary>
+        /// Universal function that whenever the User enters a key into the Password Textbox, it stores the Password, but prints *.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void textBoxPassword_KeyUp(object sender, KeyEventArgs e)
         {
             if (string.IsNullOrEmpty(textBoxPassword.Text) != true)

@@ -25,6 +25,11 @@ namespace HuntTheWumpus_Team1
             UsernameToReturn = string.Empty;
         }
 
+        /// <summary>
+        /// If the User just wants to play with a simple Username, return a Simple USer Object with no Identitifcation Number. Do not allow User to play with no Username. 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttoStarttheGame_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(textBoxUsername.Text) != true)
@@ -40,6 +45,11 @@ namespace HuntTheWumpus_Team1
 
         }
 
+        /// <summary>
+        /// Showcase the previous High Scores in the High Score Form. 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonViewPreviousHighScores_Click(object sender, EventArgs e)
         {
             HighScoreUI HighScoreDlg = new HighScoreUI();
@@ -52,6 +62,10 @@ namespace HuntTheWumpus_Team1
             System.Environment.Exit(1);
         }
 
+        /// <summary>
+        /// Universal Function to Display a Message with the Custom Message Box. 
+        /// </summary>
+        /// <param name="StringToDisplay"> String to Showcase </param>
         private void DisplayaMessage(string StringToDisplay)
         {
             MessageBoxCustom MessageBoxDlg = new MessageBoxCustom();
@@ -59,16 +73,31 @@ namespace HuntTheWumpus_Team1
             MessageBoxDlg.ShowDialog();
         }
 
+        /// <summary>
+        /// Start the Music when opening the Menu. 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OpeningMenu_Load(object sender, EventArgs e)
         {
             //openingMusicPlayer.Play();
         }
 
+        /// <summary>
+        /// Stop the Music when closing the Form. 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OpeningMenu_FormClosing(object sender, FormClosingEventArgs e)
         {
             openingMusicPlayer.Stop();
         }
 
+        /// <summary>
+        /// When the User clicks the button to Login, showcase the Login Form. Only close if the User actually was able to login. 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonLogIn_Click(object sender, EventArgs e)
         {
             LoginScreen LoginScreenDlg = new LoginScreen();
@@ -83,6 +112,11 @@ namespace HuntTheWumpus_Team1
             }
         }
 
+        /// <summary>
+        /// Allow the User to Create an Account throught the Account Form. 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonCreateAnAccount_Click(object sender, EventArgs e)
         {
             AddAccountScreen AddAcountDlg = new AddAccountScreen();

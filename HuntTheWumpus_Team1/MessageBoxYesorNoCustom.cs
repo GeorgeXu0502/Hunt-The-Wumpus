@@ -21,11 +21,21 @@ namespace HuntTheWumpus_Team1
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Showcase the Message that needs to be showcased. 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MessageBoxYesorNoCustom_Activated(object sender, EventArgs e)
         {
             richTextBoxMainQuestion.Text = QuestionToDisplay;
         }
 
+        /// <summary>
+        /// If the Yes Button is clicked, return this result. 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonYesContiue_Click(object sender, EventArgs e)
         {
             ResultOfQuestion = true;
@@ -33,6 +43,11 @@ namespace HuntTheWumpus_Team1
             this.Close();
         }
 
+        /// <summary>
+        /// If the No Button is clicked, return this result. 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonNoCountiue_Click(object sender, EventArgs e)
         {
             ResultOfQuestion = false;
@@ -40,6 +55,11 @@ namespace HuntTheWumpus_Team1
             this.Close();
         }
 
+        /// <summary>
+        /// Close the Form only if it is allowed to. 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MessageBoxYesorNoCustom_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (!AllowedtoClose)

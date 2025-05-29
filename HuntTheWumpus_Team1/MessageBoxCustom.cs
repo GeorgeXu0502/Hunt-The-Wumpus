@@ -18,22 +18,30 @@ namespace HuntTheWumpus_Team1
         public MessageBoxCustom()
         {
             InitializeComponent();
-
-
         }
 
         private void buttonContinue_Click(object sender, EventArgs e)
         {
-            AllowedtoClose = true;
+            AllowedtoClose = true; // Allow the Application to Close. 
             this.Close();
         }
 
+        /// <summary>
+        /// Display the Message Nesscary. 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MessageBoxCustom_Load(object sender, EventArgs e)
         {
             richTextBoxDispaly.Text = StringToDispaly;
             richTextBoxDispaly.TabStop = false;
         }
 
+        /// <summary>
+        /// Close the Form, but only if it is allowed to. 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MessageBoxCustom_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (!AllowedtoClose)

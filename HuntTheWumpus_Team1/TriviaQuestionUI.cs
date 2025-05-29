@@ -16,11 +16,11 @@ namespace HuntTheWumpus_Team1
     public partial class TriviaQuestionUI : Form
     {
         bool AllowedtoClose = false;
-        public int AmountofQuestions { get; set; }
+        public int AmountofQuestions { get; set; } // Amount of Questions to Ask. 
 
-        public bool GotOffWithQuestions;
+        public bool GotOffWithQuestions; // Did we make the required question amount?
 
-        public bool GotOffWithCoins;
+        public bool GotOffWithCoins; // Do we still have more than -1 coins? 
 
         public Player_GameControl GameControlObject { get; set; }
 
@@ -42,6 +42,9 @@ namespace HuntTheWumpus_Team1
             PrintQuestion();
         }
 
+        /// <summary>
+        /// Print the Correct Question along with the Right Answer Choiced. Enable all of the buttons to be pressed. 
+        /// </summary>
         private void PrintQuestion()
         {
             buttonOptionA.Enabled = true;
@@ -66,6 +69,9 @@ namespace HuntTheWumpus_Team1
             richTextBoxOptionDText.Text = CurrentTriviaQuestion.PossibleAnswers[3].ToString();
         }
 
+        /// <summary>
+        /// Allow the Form to move to a Screen so that the User can only choose to go to the next Question. 
+        /// </summary>
         private void MovetoTheMidScreen()
         {
             textBoxAmoutOfQuestionsCorrect.Text = AmountofCorrectQuestions.ToString();
@@ -78,6 +84,10 @@ namespace HuntTheWumpus_Team1
             buttonMoveOnToTheNextQuestion.Visible = true;
         }
 
+        /// <summary>
+        /// Process the Answer of the User. Showcase the correct Answer and showcase the incorrect answer if it was choosen by the User. 
+        /// </summary>
+        /// <param name="ButtonPrececd"> The button answer that the USer Clicked. 0 - A, 1- B, 2- C, 3 - D. </param>
         public void ProcessAnswer(int ButtonPrececd)
         {
             if (CurrentTriviaQuestion.CorrectAnswerIndex == 0)
@@ -151,6 +161,7 @@ namespace HuntTheWumpus_Team1
             }
         }
 
+        // Next few buttons showcase what to do when the User clickes an answer button. 
         private void buttonOptionA_Click(object sender, EventArgs e)
         {
             GameControlObject.RemoveGoldCoin();
@@ -176,6 +187,11 @@ namespace HuntTheWumpus_Team1
             ProcessAnswer(3);
         }
 
+        /// <summary>
+        /// Move on to the Next Question, by printing the next question, but if all the questions have already been asked, caluclate all the quantities and move on.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonMoveOnToTheNextQuestion_Click(object sender, EventArgs e)
         {
             if (AmoutofQuestionsAsked < AmountofQuestions)
@@ -210,6 +226,11 @@ namespace HuntTheWumpus_Team1
             }
         }
 
+        /// <summary>
+        /// Only allow the form to close when the Game allows for it. 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void TriviaQuestionUI_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (!AllowedtoClose)

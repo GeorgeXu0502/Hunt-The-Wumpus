@@ -21,12 +21,23 @@ namespace HuntTheWumpus_Team1
         {
             InitializeComponent();
         }
+
+        /// <summary>
+        /// Allow the form to close when the User decides to close it. 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonContiue_Click(object sender, EventArgs e)
         {
             AllowedtoClose = true;
             this.Close();
         }
 
+        /// <summary>
+        /// After the Form Loads, showcase the Trivia Question with the correct Answer Highlighted. 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void TriviaAnswerUI_Load(object sender, EventArgs e)
         {
             buttonOptionA.Enabled = false;
@@ -59,6 +70,11 @@ namespace HuntTheWumpus_Team1
             }
         }
 
+        /// <summary>
+        /// Stop the form from closing unless directly asked to by the User. 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void TriviaAnswerUI_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (!AllowedtoClose)
