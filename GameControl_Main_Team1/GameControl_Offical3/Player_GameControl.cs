@@ -253,17 +253,23 @@ namespace GameControl_Offical
         {
             return PlayerInventoryObject.NumberofTurnsIndex();
         }
-
+        /// <summary>
+        /// Returns whether the wumpus is in any of the neighboring rooms of the current room.
+        /// </summary>
         public bool IsWampusInTheNextRoom()
         {
             return CaveMainObject.IsWampusInTheNextRoom(RoomUserIsIn);
         }
-
+        /// <summary>
+        /// Returns whether a pit is in any of the neighboring rooms of the current room.
+        /// </summary>
         public bool IsPitInTheNextRoom()
         {
             return CaveMainObject.IsPitInTheNextRoom(RoomUserIsIn);
         }
-
+        /// <summary>
+        /// Returns whether a bat is in any of the neighboring rooms of the current room.
+        /// </summary>
         public bool IsBatInTheNextRoom()
         {
             return CaveMainObject.IsBatInTheNextRoom(RoomUserIsIn);
