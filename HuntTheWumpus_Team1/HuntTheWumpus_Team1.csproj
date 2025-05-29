@@ -41,7 +41,7 @@
 
   <ItemGroup>
     <None Update="UserObjectFile.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
 

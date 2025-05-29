@@ -12,7 +12,7 @@
 
   <ItemGroup>
     <None Update="SecretList.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="TriviaQuestion.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
