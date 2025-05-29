@@ -15,6 +15,7 @@ namespace HuntTheWumpus_Team1
     public partial class OpeningMenu : Form
     {
         public string UsernameToReturn;
+        public UserLoginObject UserToReturn;
 
         SoundPlayer openingMusicPlayer = new SoundPlayer("C:\\Users\\Sergei\\Downloads\\AdhesiveWombat - Night Shade-[AudioTrimmer.com].wav");
 
@@ -29,6 +30,7 @@ namespace HuntTheWumpus_Team1
             if (string.IsNullOrWhiteSpace(textBoxUsername.Text) != true)
             {
                 UsernameToReturn = textBoxUsername.Text;
+                UserToReturn = new UserLoginObject(UsernameToReturn, "None", -1, "None");
                 this.Close();
             }
             else
@@ -44,8 +46,10 @@ namespace HuntTheWumpus_Team1
             HighScoreDlg.PlayedGameOrNot = false;
             Player_GameControl GameControlObject = new Player_GameControl();
             HighScoreDlg.GameControlObject = GameControlObject;
+            HighScoreDlg.DoneFromOpeningMenu = true;
             this.Hide();
             HighScoreDlg.ShowDialog();
+            System.Environment.Exit(1);
         }
 
         private void DisplayaMessage(string StringToDisplay)
@@ -63,6 +67,20 @@ namespace HuntTheWumpus_Team1
         private void OpeningMenu_FormClosing(object sender, FormClosingEventArgs e)
         {
             openingMusicPlayer.Stop();
+        }
+
+        private void buttonLogIn_Click(object sender, EventArgs e)
+        {
+            LoginScreen LoginScreenDlg = new LoginScreen();
+            this.Hide();
+            LoginScreenDlg.ShowDialog();
+            this.Show();
+            UserToReturn = LoginScreenDlg.UserToReturn;
+
+            if (UserToReturn.UserIdentificationNumber != -1)
+            {
+                this.Close();
+            }
         }
     }
 }

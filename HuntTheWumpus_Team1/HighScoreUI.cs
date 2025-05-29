@@ -16,7 +16,7 @@ namespace HuntTheWumpus_Team1
     public partial class HighScoreUI : Form
     {
         bool AllowedtoClose = false;
-
+        public bool DoneFromOpeningMenu { get; set; }
         public Player_GameControl GameControlObject { get; set; }
 
         public bool PlayedGameOrNot { get; set; } // If the Player just wants to see High Scores from the Opening Menu. 
@@ -28,8 +28,15 @@ namespace HuntTheWumpus_Team1
 
         private void buttonExitTheGame_Click(object sender, EventArgs e)
         {
-            AllowedtoClose = true;
-            Application.Exit();
+            if (DoneFromOpeningMenu)
+            {
+                AllowedtoClose = true;
+                this.Close();
+            }
+            else
+            {
+                System.Environment.Exit(1);
+            }
         }
 
         private void DisableSelectingOfText()

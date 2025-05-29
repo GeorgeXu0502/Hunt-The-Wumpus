@@ -33,33 +33,38 @@
             buttonViewPreviousHighScores = new Button();
             label2 = new Label();
             textBoxUsername = new TextBox();
+            buttonLogIn = new Button();
+            buttonCreateAnAccount = new Button();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 20F);
-            label1.Location = new Point(12, 25);
+            label1.Location = new Point(17, 42);
+            label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(515, 37);
+            label1.Size = new Size(769, 54);
             label1.TabIndex = 0;
             label1.Text = "Welcome to this Hunt the Wumpus Game!";
             // 
             // buttoStarttheGame
             // 
-            buttoStarttheGame.Location = new Point(243, 256);
+            buttoStarttheGame.Location = new Point(114, 427);
+            buttoStarttheGame.Margin = new Padding(4, 5, 4, 5);
             buttoStarttheGame.Name = "buttoStarttheGame";
-            buttoStarttheGame.Size = new Size(303, 75);
+            buttoStarttheGame.Size = new Size(433, 125);
             buttoStarttheGame.TabIndex = 1;
-            buttoStarttheGame.Text = "Start Game";
+            buttoStarttheGame.Text = "Start Game: (Please enter a Username to Use)";
             buttoStarttheGame.UseVisualStyleBackColor = true;
             buttoStarttheGame.Click += buttoStarttheGame_Click;
             // 
             // buttonViewPreviousHighScores
             // 
-            buttonViewPreviousHighScores.Location = new Point(243, 337);
+            buttonViewPreviousHighScores.Location = new Point(114, 562);
+            buttonViewPreviousHighScores.Margin = new Padding(4, 5, 4, 5);
             buttonViewPreviousHighScores.Name = "buttonViewPreviousHighScores";
-            buttonViewPreviousHighScores.Size = new Size(303, 75);
+            buttonViewPreviousHighScores.Size = new Size(433, 125);
             buttonViewPreviousHighScores.TabIndex = 2;
             buttonViewPreviousHighScores.Text = "View Previous High Scores";
             buttonViewPreviousHighScores.UseVisualStyleBackColor = true;
@@ -69,31 +74,57 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 12F);
-            label2.Location = new Point(12, 123);
+            label2.Location = new Point(17, 205);
+            label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new Size(184, 21);
+            label2.Size = new Size(281, 32);
             label2.TabIndex = 3;
             label2.Text = "Please Enter a Username:";
             // 
             // textBoxUsername
             // 
             textBoxUsername.Font = new Font("Segoe UI", 12F);
-            textBoxUsername.Location = new Point(219, 115);
+            textBoxUsername.Location = new Point(313, 192);
+            textBoxUsername.Margin = new Padding(4, 5, 4, 5);
             textBoxUsername.Name = "textBoxUsername";
-            textBoxUsername.Size = new Size(378, 29);
+            textBoxUsername.Size = new Size(538, 39);
             textBoxUsername.TabIndex = 4;
+            // 
+            // buttonLogIn
+            // 
+            buttonLogIn.Location = new Point(555, 427);
+            buttonLogIn.Margin = new Padding(4, 5, 4, 5);
+            buttonLogIn.Name = "buttonLogIn";
+            buttonLogIn.Size = new Size(433, 125);
+            buttonLogIn.TabIndex = 5;
+            buttonLogIn.Text = "Log In";
+            buttonLogIn.UseVisualStyleBackColor = true;
+            buttonLogIn.Click += buttonLogIn_Click;
+            // 
+            // buttonCreateAnAccount
+            // 
+            buttonCreateAnAccount.Location = new Point(555, 562);
+            buttonCreateAnAccount.Margin = new Padding(4, 5, 4, 5);
+            buttonCreateAnAccount.Name = "buttonCreateAnAccount";
+            buttonCreateAnAccount.Size = new Size(433, 125);
+            buttonCreateAnAccount.TabIndex = 6;
+            buttonCreateAnAccount.Text = "Create an Account";
+            buttonCreateAnAccount.UseVisualStyleBackColor = true;
             // 
             // OpeningMenu
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(98, 127, 149);
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1143, 750);
+            Controls.Add(buttonCreateAnAccount);
+            Controls.Add(buttonLogIn);
             Controls.Add(textBoxUsername);
             Controls.Add(label2);
             Controls.Add(buttonViewPreviousHighScores);
             Controls.Add(buttoStarttheGame);
             Controls.Add(label1);
+            Margin = new Padding(4, 5, 4, 5);
             Name = "OpeningMenu";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "OpeningMenu";
@@ -110,5 +141,7 @@
         private Button buttonViewPreviousHighScores;
         private Label label2;
         private TextBox textBoxUsername;
+        private Button buttonLogIn;
+        private Button buttonCreateAnAccount;
     }
 }
