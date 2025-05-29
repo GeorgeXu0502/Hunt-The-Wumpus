@@ -365,16 +365,16 @@
       "Sol.",
       "Sidereal Day.",
       "Rotation.",
-      "Jovia.",
-      "Earth.",
-      "Uranus.",
-      "Neptune."
+      "Jovia."
     ],
     "CorrectAnswerIndex": 0
   },
   {
     "QuestionTrivia": "Which of the following planets does not have a moon",
     "PossibleAnswers": [
+      "Earth.",
+      "Uranus.",
+      "Neptune.",
       "Venus."
     ],
     "CorrectAnswerIndex": 0
