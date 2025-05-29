@@ -57,7 +57,7 @@
             // richTextBoxMainQuestion
             // 
             richTextBoxMainQuestion.Location = new Point(219, 11);
-            richTextBoxMainQuestion.Margin = new Padding(2, 2, 2, 2);
+            richTextBoxMainQuestion.Margin = new Padding(2);
             richTextBoxMainQuestion.Name = "richTextBoxMainQuestion";
             richTextBoxMainQuestion.ReadOnly = true;
             richTextBoxMainQuestion.Size = new Size(792, 92);
@@ -67,7 +67,7 @@
             // buttonOptionA
             // 
             buttonOptionA.Location = new Point(26, 136);
-            buttonOptionA.Margin = new Padding(2, 2, 2, 2);
+            buttonOptionA.Margin = new Padding(2);
             buttonOptionA.Name = "buttonOptionA";
             buttonOptionA.Size = new Size(128, 56);
             buttonOptionA.TabIndex = 2;
@@ -78,7 +78,7 @@
             // richTextBoxOptionAText
             // 
             richTextBoxOptionAText.Location = new Point(179, 136);
-            richTextBoxOptionAText.Margin = new Padding(2, 2, 2, 2);
+            richTextBoxOptionAText.Margin = new Padding(2);
             richTextBoxOptionAText.Name = "richTextBoxOptionAText";
             richTextBoxOptionAText.ReadOnly = true;
             richTextBoxOptionAText.Size = new Size(856, 57);
@@ -88,7 +88,7 @@
             // richTextBoxOptionBText
             // 
             richTextBoxOptionBText.Location = new Point(179, 206);
-            richTextBoxOptionBText.Margin = new Padding(2, 2, 2, 2);
+            richTextBoxOptionBText.Margin = new Padding(2);
             richTextBoxOptionBText.Name = "richTextBoxOptionBText";
             richTextBoxOptionBText.ReadOnly = true;
             richTextBoxOptionBText.Size = new Size(856, 57);
@@ -98,7 +98,7 @@
             // buttonOptionB
             // 
             buttonOptionB.Location = new Point(26, 206);
-            buttonOptionB.Margin = new Padding(2, 2, 2, 2);
+            buttonOptionB.Margin = new Padding(2);
             buttonOptionB.Name = "buttonOptionB";
             buttonOptionB.Size = new Size(128, 56);
             buttonOptionB.TabIndex = 4;
@@ -109,7 +109,7 @@
             // richTextBoxOptionCText
             // 
             richTextBoxOptionCText.Location = new Point(179, 275);
-            richTextBoxOptionCText.Margin = new Padding(2, 2, 2, 2);
+            richTextBoxOptionCText.Margin = new Padding(2);
             richTextBoxOptionCText.Name = "richTextBoxOptionCText";
             richTextBoxOptionCText.ReadOnly = true;
             richTextBoxOptionCText.Size = new Size(856, 57);
@@ -119,18 +119,18 @@
             // buttonOptionC
             // 
             buttonOptionC.Location = new Point(26, 275);
-            buttonOptionC.Margin = new Padding(2, 2, 2, 2);
+            buttonOptionC.Margin = new Padding(2);
             buttonOptionC.Name = "buttonOptionC";
             buttonOptionC.Size = new Size(128, 56);
             buttonOptionC.TabIndex = 6;
-            buttonOptionC.Text = "Opion C:";
+            buttonOptionC.Text = "Option C:";
             buttonOptionC.UseVisualStyleBackColor = true;
             buttonOptionC.Click += buttonOptionC_Click;
             // 
             // richTextBoxOptionDText
             // 
             richTextBoxOptionDText.Location = new Point(179, 343);
-            richTextBoxOptionDText.Margin = new Padding(2, 2, 2, 2);
+            richTextBoxOptionDText.Margin = new Padding(2);
             richTextBoxOptionDText.Name = "richTextBoxOptionDText";
             richTextBoxOptionDText.ReadOnly = true;
             richTextBoxOptionDText.Size = new Size(856, 57);
@@ -140,7 +140,7 @@
             // buttonOptionD
             // 
             buttonOptionD.Location = new Point(26, 343);
-            buttonOptionD.Margin = new Padding(2, 2, 2, 2);
+            buttonOptionD.Margin = new Padding(2);
             buttonOptionD.Name = "buttonOptionD";
             buttonOptionD.Size = new Size(128, 56);
             buttonOptionD.TabIndex = 8;
@@ -151,7 +151,7 @@
             // buttonMoveOnToTheNextQuestion
             // 
             buttonMoveOnToTheNextQuestion.Location = new Point(26, 424);
-            buttonMoveOnToTheNextQuestion.Margin = new Padding(2, 2, 2, 2);
+            buttonMoveOnToTheNextQuestion.Margin = new Padding(2);
             buttonMoveOnToTheNextQuestion.Name = "buttonMoveOnToTheNextQuestion";
             buttonMoveOnToTheNextQuestion.Size = new Size(128, 56);
             buttonMoveOnToTheNextQuestion.TabIndex = 10;
@@ -196,7 +196,7 @@
             Controls.Add(richTextBoxMainQuestion);
             Controls.Add(labelTopBanner);
             FormBorderStyle = FormBorderStyle.FixedSingle;
-            Margin = new Padding(2, 2, 2, 2);
+            Margin = new Padding(2);
             Name = "TriviaQuestionUI";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "TriviaQuestionUI";
