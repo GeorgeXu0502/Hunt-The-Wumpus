@@ -468,38 +468,47 @@ namespace HuntTheWumpus_Team1
         {
             if (GameControlObject.CanWeBuyAnArrow())
             {
-                string StringtoShow = "This operation costs 3 Coins. You have: " + GameControlObject.PlayerGoldCoinAmount().ToString() + " Coins. Do You want to contiue?";
+                string StringtoShow = "This operation costs 3 Coins. You have: " + GameControlObject.PlayerGoldCoinAmount().ToString() + " Coins. Do You want to continue?";
                 bool DoWeContiueWithAction = DisplayAYesNoMessage(StringtoShow);
 
                 if (DoWeContiueWithAction)
                 {
-                    GameControlObject.AddUserTurn();
-                    DisplayaMessage("We will continue. You must get 2 Questions out of 3 correct!");
-
-                    TriviaQuestionUI triviaDlg = new TriviaQuestionUI();
-                    triviaDlg.AmountofQuestions = 3;
-                    triviaDlg.GameControlObject = GameControlObject;
-                    triviaDlg.ShowDialog();
-
-                    bool DidWeMakeItWithCoins = triviaDlg.GotOffWithCoins;
-                    bool DidWeMakeItWithQuestions = triviaDlg.GotOffWithQuestions;
-
-                    if (DidWeMakeItWithCoins == false)
+                    if (GameControlObject.PlayerGoldCoinAmount() >= 3)
                     {
-                        EndTheGame();
-                    }
-                    else
-                    {
-                        if (DidWeMakeItWithQuestions)
+                        GameControlObject.AddUserTurn();
+                        DisplayaMessage("We will continue. You must get 2 Questions out of 3 correct!");
+
+                        TriviaQuestionUI triviaDlg = new TriviaQuestionUI();
+                        triviaDlg.AmountofQuestions = 3;
+                        triviaDlg.GameControlObject = GameControlObject;
+                        this.Hide();
+                        triviaDlg.ShowDialog();
+                        this.Show();
+
+                        bool DidWeMakeItWithCoins = triviaDlg.GotOffWithCoins;
+                        bool DidWeMakeItWithQuestions = triviaDlg.GotOffWithQuestions;
+
+                        if (DidWeMakeItWithCoins == false)
                         {
-                            DisplayaMessage("We have an extra Arrow!");
-                            GameControlObject.AddArrow();
-                            textBoxArrowAmount.Text = GameControlObject.PlayerArrowAmount().ToString();
+                            EndTheGame();
                         }
                         else
                         {
-                            DisplayaMessage("We did not get an extra Arrow!");
+                            if (DidWeMakeItWithQuestions)
+                            {
+                                DisplayaMessage("We have an extra Arrow!");
+                                GameControlObject.AddArrow();
+                                textBoxArrowAmount.Text = GameControlObject.PlayerArrowAmount().ToString();
+                            }
+                            else
+                            {
+                                DisplayaMessage("We did not get an extra Arrow!");
+                            }
                         }
+                    }
+                    else
+                    {
+                        DisplayaMessage("You will not have enought coins to continue with this operation.");
                     }
                 }
                 else
@@ -551,40 +560,49 @@ namespace HuntTheWumpus_Team1
 
             if (DoWeContiueWithAction)
             {
-                GameControlObject.AddUserTurn();
-                DisplayaMessage("We will continue. You must get 2 Questions out of 3 correct!");
-
-                TriviaQuestionUI triviaDlg = new TriviaQuestionUI();
-                triviaDlg.AmountofQuestions = 3;
-                triviaDlg.GameControlObject = GameControlObject;
-                triviaDlg.ShowDialog();
-
-                bool DidWeMakeItWithCoins = triviaDlg.GotOffWithCoins;
-                bool DidWeMakeItWithQuestions = triviaDlg.GotOffWithQuestions;
-
-                if (DidWeMakeItWithCoins == false)
+                if (GameControlObject.PlayerGoldCoinAmount() >= 3)
                 {
-                    EndTheGame();
-                }
-                else
-                {
-                    if (DidWeMakeItWithQuestions)
+                    GameControlObject.AddUserTurn();
+                    DisplayaMessage("We will continue. You must get 2 Questions out of 3 correct!");
+
+                    TriviaQuestionUI triviaDlg = new TriviaQuestionUI();
+                    triviaDlg.AmountofQuestions = 3;
+                    triviaDlg.GameControlObject = GameControlObject;
+                    this.Hide();
+                    triviaDlg.ShowDialog();
+                    this.Show();
+
+                    bool DidWeMakeItWithCoins = triviaDlg.GotOffWithCoins;
+                    bool DidWeMakeItWithQuestions = triviaDlg.GotOffWithQuestions;
+
+                    if (DidWeMakeItWithCoins == false)
                     {
-                        DisplayaMessage("We have an extra Secret!");
-                        string SecretToShow = GameControlObject.GetSecretObject();
-                        DisplayaMessage("Secret is: " + SecretToShow);
+                        EndTheGame();
                     }
                     else
                     {
-                        DisplayaMessage("We do not have an extra Secret");
-                    }
+                        if (DidWeMakeItWithQuestions)
+                        {
+                            DisplayaMessage("We have an extra Secret!");
+                            string SecretToShow = GameControlObject.GetSecretObject();
+                            DisplayaMessage("Secret is: " + SecretToShow);
+                        }
+                        else
+                        {
+                            DisplayaMessage("We do not have an extra Secret");
+                        }
 
+                    }
+                }
+                else
+                {
+                    DisplayaMessage("You will not have enought coins to continue with this operation.");
                 }
             }
             else
             {
                 DisplayaMessage("We will not continue.");
-            }
+            }   
         }
 
         /// <summary>
