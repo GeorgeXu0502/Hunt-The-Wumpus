@@ -17,6 +17,8 @@ namespace HuntTheWumpus_Team1
 
         public UserLoginObject UserToReturn;
 
+        bool AllowedtoClose = false;
+
         PlayerDataBase_Offical ObjectToInteractwithDataBase = new PlayerDataBase_Offical();
         public LoginScreen()
         {
@@ -37,6 +39,7 @@ namespace HuntTheWumpus_Team1
             {
                 UserToReturn = ObjectToInteractwithDataBase.GetUserInformation(UserEnteredUsername);
                 DisplayaMessage("Sucessfully signed In!");
+                AllowedtoClose = true;
                 this.Close();
             }
             else // Otherwise have the user restart. 
@@ -127,7 +130,16 @@ namespace HuntTheWumpus_Team1
         private void buttonReturntoHomeScreen_Click(object sender, EventArgs e)
         {
             UserToReturn = new UserLoginObject("None", "None", -1, "None");
+            AllowedtoClose = true;
             this.Close();
+        }
+
+        private void LoginScreen_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (!AllowedtoClose)
+            {
+                e.Cancel = true;
+            }
         }
     }
 }
