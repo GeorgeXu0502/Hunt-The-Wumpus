@@ -112,6 +112,11 @@ namespace TrivaMachine_Offical
             return TriviaQuestionToReturn;
         }
 
+        /// <summary>
+        /// shuffles trivia answer options
+        /// </summary>
+        /// <param name="PossibleanswerToUse"></param>
+        /// <returns></returns>
         public List<string> ShuffleAnswers(List<string> PossibleanswerToUse)
         {
             List<string> StringListToReturn = new List<string>();
