@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             pictureBoxGeneralRoomBackground = new PictureBox();
             buttonNextRoom5 = new Button();
             checkBoxwumpusneabry = new CheckBox();
@@ -53,9 +54,15 @@
             label2 = new Label();
             listBoxTriviaQuestion = new ListBox();
             groupBoxRoomWarnings = new GroupBox();
+            pictureBox1 = new PictureBox();
+            label4 = new Label();
+            pictureBox2 = new PictureBox();
+            label5 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBoxGeneralRoomBackground).BeginInit();
             groupBoxplayeractions.SuspendLayout();
             groupBoxPlayerInventory.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // pictureBoxGeneralRoomBackground
@@ -335,13 +342,55 @@
             groupBoxRoomWarnings.TabStop = false;
             groupBoxRoomWarnings.Text = "Room Warnings";
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(1631, 72);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(162, 172);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 20;
+            pictureBox1.TabStop = false;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(1631, 35);
+            label4.Name = "label4";
+            label4.Size = new Size(181, 25);
+            label4.TabIndex = 21;
+            label4.Text = "First Select an Action!";
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(12, 1088);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(162, 172);
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox2.TabIndex = 22;
+            pictureBox2.TabStop = false;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(180, 1088);
+            label5.Name = "label5";
+            label5.Size = new Size(266, 25);
+            label5.TabIndex = 23;
+            label5.Text = "Then if needed select the Room!";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
             BackColor = Color.FromArgb(98, 127, 149);
-            ClientSize = new Size(1814, 1062);
+            ClientSize = new Size(1892, 1272);
+            Controls.Add(label5);
+            Controls.Add(pictureBox2);
+            Controls.Add(label4);
+            Controls.Add(pictureBox1);
             Controls.Add(listBoxTriviaQuestion);
             Controls.Add(groupBoxPlayerInventory);
             Controls.Add(groupBoxplayeractions);
@@ -367,6 +416,8 @@
             groupBoxplayeractions.PerformLayout();
             groupBoxPlayerInventory.ResumeLayout(false);
             groupBoxPlayerInventory.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -398,5 +449,9 @@
         private GroupBox groupBoxRoomWarnings;
         private TextBox textBoxAmountofTurns;
         private Label label1;
+        private PictureBox pictureBox1;
+        private Label label4;
+        private PictureBox pictureBox2;
+        private Label label5;
     }
 }
