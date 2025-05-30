@@ -43,7 +43,7 @@ namespace HuntTheWumpus_Team1
                 if (ObjectToInteractwithDataBase.IsUserNameValid(textBoxUsername.Text) && ObjectToInteractwithDataBase.IsEmailValid(textBoxEmail.Text)) // Make sure the Username and Email have not been used before. 
                 {
                     int UserIdentificationNumberToUse = ObjectToInteractwithDataBase.GetLatestIdentificationNumber()+1;
-                    UserLoginObject UserToAdd = new UserLoginObject(textBoxUsername.Text, StringPassword, UserIdentificationNumberToUse, textBoxEmail.Text);
+                    UserLoginObject UserToAdd = new UserLoginObject(textBoxUsername.Text, StringPassword, UserIdentificationNumberToUse, textBoxEmail.Text, 0);
                     ObjectToInteractwithDataBase.AddUserToList(UserToAdd); // Add the actual user. 
                     DisplayaMessage("User sucessfully added. Please login into your new account! ");
                     this.Close();

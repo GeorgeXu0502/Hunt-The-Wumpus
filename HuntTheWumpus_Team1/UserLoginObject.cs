@@ -16,12 +16,15 @@ namespace HuntTheWumpus_Team1
 
         public string UserEmail { get; set; }
 
-        public UserLoginObject(string userUsername, string userPassword, int userIdentificationNumber, string userEmail)
+        public int UserHighScore { get; set; }
+
+        public UserLoginObject(string userUsername, string userPassword, int userIdentificationNumber, string userEmail, int userHighScore)
         {
             UserUsername = userUsername;
             UserPassword = userPassword;
             UserIdentificationNumber = userIdentificationNumber;
             UserEmail = userEmail;
+            UserHighScore = userHighScore;
         }
     }
 }

@@ -50,7 +50,7 @@
             // 
             // buttoStarttheGame
             // 
-            buttoStarttheGame.Location = new Point(114, 427);
+            buttoStarttheGame.Location = new Point(112, 335);
             buttoStarttheGame.Margin = new Padding(4, 5, 4, 5);
             buttoStarttheGame.Name = "buttoStarttheGame";
             buttoStarttheGame.Size = new Size(433, 125);
@@ -61,7 +61,7 @@
             // 
             // buttonViewPreviousHighScores
             // 
-            buttonViewPreviousHighScores.Location = new Point(114, 562);
+            buttonViewPreviousHighScores.Location = new Point(112, 470);
             buttonViewPreviousHighScores.Margin = new Padding(4, 5, 4, 5);
             buttonViewPreviousHighScores.Name = "buttonViewPreviousHighScores";
             buttonViewPreviousHighScores.Size = new Size(433, 125);
@@ -92,7 +92,7 @@
             // 
             // buttonLogIn
             // 
-            buttonLogIn.Location = new Point(555, 427);
+            buttonLogIn.Location = new Point(553, 335);
             buttonLogIn.Margin = new Padding(4, 5, 4, 5);
             buttonLogIn.Name = "buttonLogIn";
             buttonLogIn.Size = new Size(433, 125);
@@ -103,7 +103,7 @@
             // 
             // buttonCreateAnAccount
             // 
-            buttonCreateAnAccount.Location = new Point(555, 562);
+            buttonCreateAnAccount.Location = new Point(553, 470);
             buttonCreateAnAccount.Margin = new Padding(4, 5, 4, 5);
             buttonCreateAnAccount.Name = "buttonCreateAnAccount";
             buttonCreateAnAccount.Size = new Size(433, 125);

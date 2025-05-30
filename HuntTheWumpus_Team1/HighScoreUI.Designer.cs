@@ -52,7 +52,10 @@
             textBoxUserScore5 = new TextBox();
             pictureBox1 = new PictureBox();
             label11 = new Label();
+            labelCongrdualtions = new Label();
+            pictureBoxConfettiImage = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxConfettiImage).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -276,12 +279,34 @@
             label11.TabIndex = 23;
             label11.Text = "Thank you for playing!";
             // 
+            // labelCongrdualtions
+            // 
+            labelCongrdualtions.AutoSize = true;
+            labelCongrdualtions.Font = new Font("Segoe UI", 12F);
+            labelCongrdualtions.Location = new Point(16, 700);
+            labelCongrdualtions.Name = "labelCongrdualtions";
+            labelCongrdualtions.Size = new Size(637, 32);
+            labelCongrdualtions.TabIndex = 24;
+            labelCongrdualtions.Text = "You have beat your Previous High Score! Congradulations!";
+            // 
+            // pictureBoxConfettiImage
+            // 
+            pictureBoxConfettiImage.Image = (Image)resources.GetObject("pictureBoxConfettiImage.Image");
+            pictureBoxConfettiImage.Location = new Point(659, 679);
+            pictureBoxConfettiImage.Name = "pictureBoxConfettiImage";
+            pictureBoxConfettiImage.Size = new Size(132, 59);
+            pictureBoxConfettiImage.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBoxConfettiImage.TabIndex = 25;
+            pictureBoxConfettiImage.TabStop = false;
+            // 
             // HighScoreUI
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(98, 127, 149);
             ClientSize = new Size(1143, 750);
+            Controls.Add(pictureBoxConfettiImage);
+            Controls.Add(labelCongrdualtions);
             Controls.Add(label11);
             Controls.Add(pictureBox1);
             Controls.Add(textBoxUserScore5);
@@ -313,6 +338,7 @@
             FormClosing += HighScoreUI_FormClosing;
             Load += HighScoreUI_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxConfettiImage).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -342,5 +368,7 @@
         private TextBox textBoxUserScore5;
         private PictureBox pictureBox1;
         private Label label11;
+        private Label labelCongrdualtions;
+        private PictureBox pictureBoxConfettiImage;
     }
 }

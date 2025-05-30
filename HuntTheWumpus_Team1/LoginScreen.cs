@@ -136,7 +136,7 @@ namespace HuntTheWumpus_Team1
         /// <param name="e"></param>
         private void buttonReturntoHomeScreen_Click(object sender, EventArgs e)
         {
-            UserToReturn = new UserLoginObject("None", "None", -1, "None");
+            UserToReturn = new UserLoginObject("None", "None", -1, "None", 0);
             AllowedtoClose = true;
             this.Close();
         }

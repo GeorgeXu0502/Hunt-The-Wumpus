@@ -21,6 +21,8 @@ namespace HuntTheWumpus_Team1
 
         public bool PlayedGameOrNot { get; set; } // If the Player just wants to see High Scores from the Opening Menu. 
         public UserLoginObject UserThatPlayer { get; set; } // Player Object to Return. 
+
+        PlayerDataBase_Offical ObjectToInteractwithDataBase = new PlayerDataBase_Offical();
         public HighScoreUI()
         {
             InitializeComponent();
@@ -69,12 +71,15 @@ namespace HuntTheWumpus_Team1
         /// <param name="e"></param>
         private void HighScoreUI_Load(object sender, EventArgs e)
         {
+            labelCongrdualtions.Visible = false;
+            pictureBoxConfettiImage.Visible = false;
             DisableSelectingOfText();
             if (PlayedGameOrNot)
             {
+                int PlayerScore = GameControlObject.PlayerScoreFinal();
                 // If the game was played include the User Score and Write it to the File. 
-                textBoxPlayerScore.Text = GameControlObject.PlayerScoreFinal().ToString();
-                HighScoreObject IndividualPlayerObject = new HighScoreObject(UserThatPlayer.UserUsername, GameControlObject.PlayerScoreFinal());
+                textBoxPlayerScore.Text = PlayerScore.ToString();
+                HighScoreObject IndividualPlayerObject = new HighScoreObject(UserThatPlayer.UserUsername, PlayerScore);
                 GameControlObject.AddPlayerScoreToList(IndividualPlayerObject);
                 List<HighScoreObject> TopScores = GameControlObject.GetTopScores();
                 int TopScoreCount = TopScores.Count;
@@ -89,6 +94,16 @@ namespace HuntTheWumpus_Team1
                 textBoxUserScore4.Text = TopScores[TopScoreCount - 4].Score.ToString();
                 textBoxUserName5.Text = TopScores[TopScoreCount - 5].UserNameOfScorer;
                 textBoxUserScore5.Text = TopScores[TopScoreCount - 5].Score.ToString();
+
+                if (UserThatPlayer.UserIdentificationNumber != -1)
+                {
+                    if (PlayerScore > UserThatPlayer.UserHighScore)
+                    {
+                        labelCongrdualtions.Visible = true;
+                        pictureBoxConfettiImage.Visible = true;
+                        ObjectToInteractwithDataBase.ChangeUserHighScore(UserThatPlayer, PlayerScore);
+                    }
+                }
             }
             else
             {

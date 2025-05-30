@@ -50,7 +50,7 @@ namespace HuntTheWumpus_Team1
                 }
             }
 
-            return new UserLoginObject("None", "None", -1, "None");
+            return new UserLoginObject("None", "None", -1, "None", 0);
         }
 
         /// <summary>
@@ -95,6 +95,7 @@ namespace HuntTheWumpus_Team1
         public void AddUserToList(UserLoginObject UserToAdd)
         {
             ListofAllUsers.Add(UserToAdd);
+            ListofAllUsers.OrderBy(UserLoginObject => UserLoginObject.UserIdentificationNumber);
             Utility.WriteUserLoginToFile(ListofAllUsers, MainFile);
         }
 
@@ -121,8 +122,21 @@ namespace HuntTheWumpus_Team1
                     return UserToObserve;
                 }
             }
-            return new UserLoginObject("None", "None", -1, "None");
+            return new UserLoginObject("None", "None", -1, "None", 0);
         }
 
+        /// <summary>
+        /// Writes a new User High Score to the File.
+        /// </summary>
+        /// <param name="UserToUse"> The User to Rewrite. </param>
+        /// <param name="newHighScore"> The New High Score to Write to the File. </param>
+        public void ChangeUserHighScore(UserLoginObject UserToUse, int newHighScore)
+        {
+            ListofAllUsers.RemoveAt(UserToUse.UserIdentificationNumber - 1);
+            UserLoginObject NewUserObjectToUse = UserToUse;
+            NewUserObjectToUse.UserHighScore = newHighScore;
+            ListofAllUsers.Insert(UserToUse.UserIdentificationNumber - 1, NewUserObjectToUse);
+            Utility.WriteUserLoginToFile(ListofAllUsers, MainFile);
+        }
     }
 }

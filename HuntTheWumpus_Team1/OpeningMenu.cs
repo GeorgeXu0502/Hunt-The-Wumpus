@@ -37,7 +37,7 @@ namespace HuntTheWumpus_Team1
             if (string.IsNullOrWhiteSpace(textBoxUsername.Text) != true)
             {
                 UsernameToReturn = textBoxUsername.Text;
-                UserToReturn = new UserLoginObject(UsernameToReturn, "None", -1, "None");
+                UserToReturn = new UserLoginObject(UsernameToReturn, "None", -1, "None", 0);
                 AllowedToClose = true;
                 this.Close();
             }
