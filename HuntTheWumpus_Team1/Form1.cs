@@ -189,6 +189,11 @@ namespace HuntTheWumpus_Team1
                 this.Close();
             }
 
+            IntroductionVideoForum IntroductionVideoFormDlg = new IntroductionVideoForum();
+            this.Hide();
+            IntroductionVideoFormDlg.ShowDialog();
+            this.Show();
+
             bool[] DangerInRoom = DrawTheRoom(GameControlObject.WhereIsUser());
         }
 
