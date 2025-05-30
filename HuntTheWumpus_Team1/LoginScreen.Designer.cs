@@ -99,7 +99,7 @@
             // buttonReturntoHomeScreen
             // 
             buttonReturntoHomeScreen.Font = new Font("Segoe UI", 12F);
-            buttonReturntoHomeScreen.Location = new Point(314, 608);
+            buttonReturntoHomeScreen.Location = new Point(273, 599);
             buttonReturntoHomeScreen.Name = "buttonReturntoHomeScreen";
             buttonReturntoHomeScreen.Size = new Size(384, 120);
             buttonReturntoHomeScreen.TabIndex = 6;

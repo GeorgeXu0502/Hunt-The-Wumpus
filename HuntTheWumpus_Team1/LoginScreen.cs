@@ -109,6 +109,13 @@ namespace HuntTheWumpus_Team1
                     }
                 }
             }
+
+            if (string.IsNullOrEmpty(textBoxPassword.Text))
+            {
+                AmountofLetters = 0;
+                StringPassword = "";
+                textBoxPassword.Clear();
+            }
         }
 
         /// <summary>

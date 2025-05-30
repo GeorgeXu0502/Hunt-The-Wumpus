@@ -121,8 +121,8 @@ namespace TrivaMachine_Offical
         {
             List<string> StringListToReturn = new List<string>();
             Random RandomCaller2 = new Random();
-            int Number1 = RandomCaller2.Next(0, 4);
-            int Number2 = RandomCaller2.Next(0, 4);
+            int Number1 = RandomCaller2.Next(4);
+            int Number2 = RandomCaller2.Next(4);
 
             while (Number2 == Number1)
             {
@@ -132,14 +132,27 @@ namespace TrivaMachine_Offical
             StringListToReturn.Add(PossibleanswerToUse[Number1]);
             StringListToReturn.Add(PossibleanswerToUse[Number2]);
 
+            List<int> IntegersNotUsedYet = new List<int>();
             for (int i = 0; i < 4; i++)
             {
                 if (i != Number1 && i!= Number2)
                 {
-                    StringListToReturn.Add(PossibleanswerToUse[i]);
+                    IntegersNotUsedYet.Add(i);
                 }
             }
-            return StringListToReturn;
+
+            int Number3 = RandomCaller2.Next(2);
+            if (Number3 == 0)
+            {
+                StringListToReturn.Add(PossibleanswerToUse[IntegersNotUsedYet[0]]);
+                StringListToReturn.Add(PossibleanswerToUse[IntegersNotUsedYet[1]]);
+            }
+            else
+            {
+                StringListToReturn.Add(PossibleanswerToUse[IntegersNotUsedYet[1]]);
+                StringListToReturn.Add(PossibleanswerToUse[IntegersNotUsedYet[0]]);
+            }
+                return StringListToReturn;
         }
 
         /// <summary>
