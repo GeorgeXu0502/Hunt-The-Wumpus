@@ -64,8 +64,6 @@ namespace PlayerInventory_Offical
             return NumberOfArrows;
         }
 
-
-
         /// <summary>
         /// This method is used to get the number of turns the player has taken.
         /// </summary>
@@ -160,7 +158,6 @@ namespace PlayerInventory_Offical
             streakwriter.Close();
         }
 
-
         /// <summary>
         /// This method is used to read the high scores from a file.
         /// </summary>
@@ -183,7 +180,6 @@ namespace PlayerInventory_Offical
                 return newTriviaQuestionList;
             }
         }
-
 
         /// <summary>
         /// This method is used to get the top scores from the high score list.

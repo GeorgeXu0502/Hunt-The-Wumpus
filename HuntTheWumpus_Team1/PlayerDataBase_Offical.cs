@@ -106,5 +106,23 @@ namespace HuntTheWumpus_Team1
         {
             return ListofAllUsers[ListofAllUsers.Count - 1].UserIdentificationNumber;
         }
+
+        /// <summary>
+        /// Return a UserLoginObject associated with the User Email. 
+        /// </summary>
+        /// <param name="EmailToConsider"> The Email that is to be found. </param>
+        /// <returns> The UserLoginObject associated with the Email. </returns>
+        public UserLoginObject GetUserFromEmail(string EmailToConsider)
+        {
+            foreach (UserLoginObject UserToObserve in ListofAllUsers)
+            {
+                if (UserToObserve.UserEmail == EmailToConsider)
+                {
+                    return UserToObserve;
+                }
+            }
+            return new UserLoginObject("None", "None", -1, "None");
+        }
+
     }
 }

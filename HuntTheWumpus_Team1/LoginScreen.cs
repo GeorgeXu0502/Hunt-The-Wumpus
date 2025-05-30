@@ -148,5 +148,13 @@ namespace HuntTheWumpus_Team1
                 e.Cancel = true;
             }
         }
+
+        private void buttonForgotUserInformation_Click(object sender, EventArgs e)
+        {
+            RegainUssernamePassword NewUserNameDlg = new RegainUssernamePassword();
+            this.Hide();
+            NewUserNameDlg.ShowDialog();
+            this.Show();
+        }
     }
 }

@@ -95,6 +95,7 @@
             buttonForgotUserInformation.TabIndex = 5;
             buttonForgotUserInformation.Text = "Forgot Username or Password";
             buttonForgotUserInformation.UseVisualStyleBackColor = true;
+            buttonForgotUserInformation.Click += buttonForgotUserInformation_Click;
             // 
             // buttonReturntoHomeScreen
             // 

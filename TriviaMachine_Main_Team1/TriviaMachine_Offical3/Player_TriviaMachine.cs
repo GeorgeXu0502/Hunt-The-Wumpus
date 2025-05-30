@@ -28,18 +28,18 @@ namespace TrivaMachine_Offical
 
         int ListTriviaQuestionIndex = 0; // This Index is Used to Monitor The Questions.
 
-    /// <summary>
-    /// the constructor for the file
-    /// </summary>
+        /// <summary>
+        /// the constructor for the file
+        /// </summary>
         public Player_TriviaMachine()
         {
             ReadTriviaFile();
             ReadSecretFile(); 
         }
 
-    /// <summary>
-    /// this method writes all secret options to the json
-    /// </summary>
+        /// <summary>
+        /// this method writes all secret options to the json
+        /// </summary>
         public void WriteSecretsToFile()
         {
             List<SecretObject> ListtoWriteToFile = new List<SecretObject>();
@@ -91,18 +91,6 @@ namespace TrivaMachine_Offical
         {
             Random RandomCaller = new Random();
             int QuestionIndexToAsk = RandomCaller.Next(0, virtualTriviaLength - 1);
-
-            while (ListofQuestionsIndexesAlreadyAsked.Contains(QuestionIndexToAsk))
-            {
-                QuestionIndexToAsk = RandomCaller.Next(0, virtualTriviaLength - 1);
-            }
-
-            ListofQuestionsIndexesAlreadyAsked.Add(QuestionIndexToAsk);
-
-            if (ListofQuestionsIndexesAlreadyAsked.Count == virtualTriviaLength)
-            {
-                ListofQuestionsIndexesAlreadyAsked.Clear();
-            }
 
             TriviaQuestion TriviaQautionToUse = ListofTriviaQuestions[QuestionIndexToAsk];
             string CorrectAnswer = TriviaQautionToUse.PossibleAnswers[0];

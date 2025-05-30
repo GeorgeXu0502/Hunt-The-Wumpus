@@ -172,9 +172,9 @@ namespace GameControl_Offical
             PlayerInventoryObject.NumberOfArrowsIndex(false);
         }
 
+        // Return a string that can directly be displayed to the user as a Secret. 
         public string GetSecretObject()
         {
-            // Please fix the actual implementation this is wrong. 
             SecretObject SecretToUse = TriviaMachineObject.GetSecret();
 
             if (SecretToUse.SecretIndex == 0)
