@@ -12,7 +12,7 @@ using PlayerInventory_Offical;
 
 namespace HuntTheWumpus_Team1
 {
-    
+
     public partial class HighScoreUI : Form
     {
         bool AllowedtoClose = false; // Keeps the form from closing without direct user input. 

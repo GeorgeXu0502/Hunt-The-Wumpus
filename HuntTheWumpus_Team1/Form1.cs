@@ -413,12 +413,11 @@ namespace HuntTheWumpus_Team1
             bool DidWeMakeIt = (DidWeMakeItWithCoins == true && DidWeMakeItWithQuestions == true);
             if (DidWeMakeIt == false)
             {
-                // Change this to pass into the Wampus deafeted. YOU DID THIS WRONG!
                 EndTheGame();
             }
             else
             {
-                DisplayaMessage("We narrowly avoided the Wampus! It will now move to a different room!");
+                DisplayaMessage("We narrowly avoided the Wumpus! It will now move to a different room!");
                 GameControlObject.MoveWumpus(GameControlObject.WhereIsUser());
             }
         }

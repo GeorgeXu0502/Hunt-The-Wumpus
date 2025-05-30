@@ -14,6 +14,8 @@ namespace HuntTheWumpus_Team1
 {
     public partial class OpeningMenu : Form
     {
+        bool AllowedToClose = false;
+
         public string UsernameToReturn;
         public UserLoginObject UserToReturn;
 
@@ -36,6 +38,7 @@ namespace HuntTheWumpus_Team1
             {
                 UsernameToReturn = textBoxUsername.Text;
                 UserToReturn = new UserLoginObject(UsernameToReturn, "None", -1, "None");
+                AllowedToClose = true;
                 this.Close();
             }
             else
@@ -90,7 +93,14 @@ namespace HuntTheWumpus_Team1
         /// <param name="e"></param>
         private void OpeningMenu_FormClosing(object sender, FormClosingEventArgs e)
         {
-            openingMusicPlayer.Stop();
+            if (!AllowedToClose)
+            {
+                e.Cancel = true;
+            }
+            else
+            {
+                openingMusicPlayer.Stop();
+            }
         }
 
         /// <summary>
@@ -108,6 +118,7 @@ namespace HuntTheWumpus_Team1
 
             if (UserToReturn.UserIdentificationNumber != -1)
             {
+                AllowedToClose = true;
                 this.Close();
             }
         }

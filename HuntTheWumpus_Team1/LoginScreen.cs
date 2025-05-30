@@ -46,7 +46,7 @@ namespace HuntTheWumpus_Team1
             {
                 DisplayaMessage("Username and Password do not match. Please Retry");
                 textBoxPassword.Clear();
-                textBoxUsername.Clear();
+                textBoxUsername.Focus();
                 AmountofLetters = 0;
                 StringPassword = "";
             }

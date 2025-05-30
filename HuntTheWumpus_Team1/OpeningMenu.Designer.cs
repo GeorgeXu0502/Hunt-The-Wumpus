@@ -55,7 +55,7 @@
             buttoStarttheGame.Name = "buttoStarttheGame";
             buttoStarttheGame.Size = new Size(433, 125);
             buttoStarttheGame.TabIndex = 1;
-            buttoStarttheGame.Text = "Start Game: (Please enter a Username to Use)";
+            buttoStarttheGame.Text = "Start Game: (Please enter a Username to Use As a Guest)";
             buttoStarttheGame.UseVisualStyleBackColor = true;
             buttoStarttheGame.Click += buttoStarttheGame_Click;
             // 
